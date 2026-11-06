@@ -1,0 +1,29 @@
+SITE DE CASAMENTO — KATHLEEN & RAILANDER
+
+Abra index.html em um navegador para visualizar a primeira versão.
+
+Já incluído:
+- Layout responsivo com identidade marfim, azul e dourado
+- Fotos reais fornecidas na conversa
+- Contagem regressiva para 18/12/2027 às 16h
+- História, galeria, cerimônia e link de localização
+- Seção demonstrativa de presentes físicos e Pix
+- Formulário de RSVP em layout inicial
+
+ANTES DE PUBLICAR:
+1. Informar a chave Pix e gerar QR Code Pix válido.
+2. Informar o WhatsApp que receberá as confirmações e reservas.
+3. Definir os produtos reais, fotos, valores e regras de reserva.
+4. Conectar um banco de dados/backend para que confirmações e reservas fiquem salvas e sejam compartilhadas entre todos os convidados. A versão atual é um protótipo visual; não registra dados em servidor.
+5. Configurar domínio e hospedagem.
+
+Não publique a chave Pix nem dados pessoais antes de revisar as configurações.
+
+Fotos adicionais incluídas: Gramado e Nova Petrópolis (duas imagens enviadas posteriormente).
+
+WhatsApp configurado no protótipo:
+- Railander: +55 66 99908-4016
+- Kathleen: +55 88 99263-8694
+As confirmações e consultas de presentes abrem o WhatsApp com mensagem pré-preenchida. A reserva ainda depende de confirmação manual dos noivos; não há backend nem bloqueio automático de duplicidade nesta versão.
+
+Atualização visual: estética alinhada ao convite enviado, com moldura ornamental inspirada nos azulejos, papel marfim, azul profundo, dourado e ilustração da igreja do convite na abertura.
