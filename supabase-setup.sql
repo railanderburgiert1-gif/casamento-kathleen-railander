@@ -103,7 +103,16 @@ as $$
 begin
   if new.status is distinct from old.status then
     update public.gift_catalog
-       set is_reserved = (new.status <> 'Cancelado')
+       set is_reserved = (
+         new.status <> 'Cancelado'
+         or exists (
+           select 1
+           from public.gift_reservations r
+           where r.gift_id = new.gift_id
+             and r.id <> new.id
+             and r.status <> 'Cancelado'
+         )
+       )
      where id = new.gift_id;
     new.updated_at = now();
   end if;
