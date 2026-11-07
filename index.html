@@ -841,6 +841,76 @@ footer strong{font-weight:500!important}
   .church-intro-full .church-art-wrap{transition:none!important}
 }
 
+
+/* Ajustes responsivos da página principal após a abertura do convite */
+@media(max-width:720px){
+  .topbar{position:relative}
+  .nav{
+    width:100%;max-width:none;
+    display:flex;flex-direction:column;align-items:center;justify-content:center;
+    gap:9px;padding:12px 14px 10px;
+  }
+  .brand{
+    display:block;white-space:nowrap;
+    font-size:clamp(19px,5.4vw,23px)!important;
+    line-height:1.15;letter-spacing:-.045em!important;
+    text-align:center;
+  }
+  .links{
+    display:flex;width:100%;max-width:100%;
+    justify-content:center;align-items:center;flex-wrap:nowrap;
+    gap:clamp(9px,3vw,16px);
+    overflow-x:auto;overflow-y:hidden;
+    white-space:nowrap;scrollbar-width:none;
+    padding:2px 0 4px;
+    -webkit-overflow-scrolling:touch;
+  }
+  .links::-webkit-scrollbar{display:none}
+  .links a{flex:0 0 auto;font-size:9px!important;letter-spacing:.045em!important}
+  .hero{min-height:auto;padding:46px 14px 42px}
+  .hero:before{inset:12px}
+  .hero-inner.invitation{
+    width:100%;max-width:100%;
+    padding:18px 12px 14px;
+    border-left:0;border-right:0;
+  }
+  .hero-church{
+    width:min(100%,340px);height:clamp(165px,48vw,205px);
+    object-fit:contain;margin:0 auto;
+  }
+  .cross-ornament{font-size:23px;margin:0 0 5px}
+  .eyebrow{font-size:10px;letter-spacing:.16em}
+  .blessing{font-size:9px;line-height:1.6;letter-spacing:.13em}
+  .hero-inner.invitation h1{
+    font-size:clamp(39px,10.5vw,52px)!important;
+    line-height:1.02!important;
+    margin:12px auto 9px;
+    max-width:100%;
+    overflow-wrap:normal;
+  }
+  .gold-divider{margin:7px 0 12px;font-size:13px}
+  .invitation-copy{
+    max-width:34ch;margin:0 auto 16px;
+    font-size:16px!important;line-height:1.55!important;
+    letter-spacing:0!important;
+  }
+  .invitation-second{margin-top:14px!important}
+  .date-row{gap:12px;margin:17px auto 10px;font-size:19px!important}
+  .date-row i{height:27px}
+  .location-line{font-size:17px!important;line-height:1.5!important;margin:8px 0 16px}
+  .location-line em{font-size:15px}
+  .invitation .button{padding:13px 17px;font-size:9px}
+  .invitation .countdown{gap:12px;margin:17px 0 0}
+  .invitation .countdown strong{font-size:26px}
+  .invitation .countdown span{font-size:8px}
+}
+@media(max-width:380px){
+  .links{gap:8px}
+  .links a{font-size:8px!important}
+  .hero-inner.invitation h1{font-size:39px!important}
+  .invitation-copy{font-size:15px!important}
+}
+
 </style>
 </head>
 <body>
