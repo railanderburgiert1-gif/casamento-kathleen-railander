@@ -1026,15 +1026,19 @@ footer strong{font-weight:500!important}
   touch-action:manipulation;
   transition:transform .18s ease,filter .2s ease,box-shadow .2s ease,background .2s ease;
 }
-.church-intro-full .church-art-hotspot::before{
-  content:"Entrar no Convite";
+.church-intro-full .church-art-hotspot span:first-child{
+  display:inline-block;
   white-space:nowrap;
 }
-.church-intro-full .church-art-hotspot::after{
-  content:"›";
+.church-intro-full .church-art-hotspot .button-arrow{
+  display:inline-block;
   color:#f0d18d;
   font:32px/.7 Georgia,serif;
   margin-top:-3px;
+  transition:transform .18s ease;
+}
+.church-intro-full .church-art-hotspot:active .button-arrow{
+  transform:translateX(2px);
 }
 .church-intro-full .church-art-hotspot:active{
   transform:translateY(2px) scale(.965);
@@ -1084,7 +1088,7 @@ footer strong{font-weight:500!important}
     <img class="church-art-piece" src="cover-art-03.webp" alt="" aria-hidden="true" decoding="async">
     <img class="church-art-piece" src="cover-art-04.webp" alt="" aria-hidden="true" decoding="async">
     <img class="church-art-piece" src="cover-art-05.webp" alt="" aria-hidden="true" decoding="async">
-    <button class="church-art-hotspot" id="openEnvelope" type="button" aria-label="Entrar no convite" title="Entrar no convite"></button>
+    <button class="church-art-hotspot" id="openEnvelope" type="button" aria-label="Entrar no convite" title="Entrar no convite"><span>Entrar no Convite</span><span class="button-arrow" aria-hidden="true">›</span></button>
   </div>
 </div>
 
