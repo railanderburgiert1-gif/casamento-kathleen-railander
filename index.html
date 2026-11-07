@@ -29,11 +29,14 @@ footer{text-align:center;padding:45px 20px;color:#6c6b65;font:italic 20px 'Cormo
 body{background:#fbf7ef url('ornamento-tl.jpg') left top/150px auto no-repeat;color:var(--ink)}
 body:before{content:"";position:fixed;z-index:19;pointer-events:none;inset:9px;border:1px solid #b18b4c}
 body{position:relative}
-body:after{content:"";position:absolute;z-index:0;pointer-events:none;inset:0;background:
+body:after{content:"";position:absolute;z-index:0;pointer-events:none;inset:0 0 auto;height:240px;background:
 url('ornamento-tl.jpg') left top/132px auto no-repeat,
-url('ornamento-tr.jpg') right top/132px auto no-repeat,
-url('ornamento-bl.jpg') left bottom/132px auto no-repeat,
-url('ornamento-br.jpg') right bottom/132px auto no-repeat}
+url('ornamento-tr.jpg') right top/132px auto no-repeat}
+footer{position:relative;z-index:1;overflow:visible;min-height:190px;padding-bottom:90px}
+footer:before,footer:after{content:"";position:absolute;bottom:0;width:132px;height:132px;background-size:contain;background-repeat:no-repeat;pointer-events:none;z-index:0}
+footer:before{left:0;background-image:url('ornamento-bl.jpg')}
+footer:after{right:0;background-image:url('ornamento-br.jpg')}
+footer>*{position:relative;z-index:1}
 body>.topbar,body>main,body>footer{position:relative;z-index:1}
 body>.envelope-intro,body>.modal{z-index:1000}
 .topbar{background:rgba(251,247,239,.96);border-bottom:1px solid #c6a76b;box-shadow:0 2px 12px #243b5b0b}
@@ -242,6 +245,36 @@ footer strong{font-size:42px}
  .invitation-copy{font-size:19px}
  .storytext{font-size:20px}
  .envelope-heading{font-size:38px}
+}
+
+
+/* Data, horário e local como informações centrais do convite */
+.date-row{
+  width:min(100%,560px);margin:25px auto 16px;padding:17px 22px;
+  border-top:1px solid #b18b4c;border-bottom:1px solid #b18b4c;
+  background:linear-gradient(90deg,rgba(177,139,76,.07),rgba(255,255,255,.62),rgba(177,139,76,.07));
+  color:#102b59;font-family:'Playfair Display',serif;font-size:27px;
+  box-shadow:0 5px 18px rgba(16,43,89,.06)
+}
+.date-row span{display:inline-flex;align-items:center;gap:8px}
+.date-row i{border-color:#b18b4c}
+.location-line{
+  width:min(100%,560px);margin:14px auto 23px;padding:17px 20px;
+  border:1px solid #c7a76b;background:#fffdf8;
+  box-shadow:inset 0 0 0 4px #fffdf8,inset 0 0 0 5px #eadfc9;
+  font-family:'DM Sans',sans-serif;font-size:16px;font-weight:600;
+  letter-spacing:.13em;line-height:1.8;color:#102b59
+}
+.location-line em{display:inline-block;margin-top:3px;font-family:'Cormorant Garamond',serif;font-size:20px;font-weight:500;letter-spacing:.04em;color:#876a37}
+.detailcards .detail:first-child,.detailcards .detail:nth-child(2){border:1px solid #b18b4c;background:#fffdf8;box-shadow:inset 0 0 0 4px #fffdf8,inset 0 0 0 5px #eadfc9}
+.detail h3{font-family:'Playfair Display',serif}
+.detail p{font-size:15px;line-height:1.9;color:#263957}
+@media(max-width:720px){
+ .date-row{gap:12px;padding:14px 10px;font-size:22px}
+ .location-line{padding:14px 12px;font-size:14px;letter-spacing:.08em}
+ .location-line em{font-size:18px}
+ footer{padding-bottom:78px}
+ footer:before,footer:after{width:78px;height:78px}
 }
 
 </style>
