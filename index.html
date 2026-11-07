@@ -277,6 +277,81 @@ footer strong{font-size:42px}
  footer:before,footer:after{width:78px;height:78px}
 }
 
+
+
+/* Ajustes finais: moldura acompanha o documento e os ornamentos não ficam presos à tela */
+body:before{
+  position:absolute;
+  inset:9px;
+  z-index:0;
+}
+body:after{
+  position:absolute;
+  pointer-events:none;
+}
+footer{
+  position:relative !important;
+  overflow:hidden;
+  isolation:isolate;
+}
+footer:before,footer:after{
+  position:absolute !important;
+  top:auto !important;
+  bottom:0 !important;
+  z-index:0;
+  pointer-events:none;
+  transform:none !important;
+}
+footer>*{position:relative;z-index:1}
+
+/* Envelope com abertura mais orgânica e transições contínuas */
+.envelope-intro{
+  perspective:1800px;
+  transform:translateZ(0);
+  transition:opacity 1s cubic-bezier(.22,.61,.36,1),visibility 1s;
+}
+.envelope-stage{
+  transform-style:preserve-3d;
+  perspective:1800px;
+}
+.envelope-shell{
+  transform-style:preserve-3d;
+}
+.envelope-flap{
+  transform-origin:50% 0%;
+  transition:transform 1.15s cubic-bezier(.2,.75,.2,1);
+  backface-visibility:hidden;
+}
+.envelope-letter{
+  backface-visibility:hidden;
+  transition:transform 1.2s cubic-bezier(.2,.72,.18,1),box-shadow .9s ease,opacity .9s ease;
+}
+.envelope-intro.opening .envelope-flap{
+  transform:rotateX(180deg);
+}
+.envelope-intro.letter-out .envelope-letter{
+  transform:translate3d(0,-108%,12px) scale(1.035);
+}
+.envelope-intro.letter-expand .envelope-letter{
+  transform:translate3d(0,-104%,30px) scale(2.55);
+  opacity:0;
+  transition:transform 1.15s cubic-bezier(.65,0,.25,1),opacity .85s ease .22s;
+}
+.envelope-seal{
+  transition:opacity .45s ease,transform .55s cubic-bezier(.2,.7,.2,1);
+}
+.envelope-intro.opening .envelope-seal{
+  opacity:0;
+  transform:translate(-50%,-50%) scale(.65) rotate(-18deg);
+}
+.envelope-open:disabled{opacity:.7;cursor:default}
+@media(max-width:600px){
+  body:before{inset:5px}
+  footer:before,footer:after{width:78px;height:78px}
+  .envelope-intro.letter-out .envelope-letter{transform:translate3d(0,-108%,10px) scale(1.02)}
+  .envelope-intro.letter-expand .envelope-letter{transform:translate3d(0,-102%,24px) scale(3.25)}
+}
+
 </style>
 </head>
 <body>
@@ -400,18 +475,18 @@ function openWeddingEnvelope(){
   // A aba abre primeiro; só depois a carta desliza para fora do envelope.
   window.setTimeout(()=>{
     envelopeIntro.classList.add('letter-out');
-  },620);
+  },680);
 
   // A carta se aproxima da câmera e a transição conduz ao convite principal.
   window.setTimeout(()=>{
     envelopeIntro.classList.add('letter-expand');
-  },1780);
+  },1900);
 
   window.setTimeout(()=>{
     envelopeIntro.classList.add('is-gone');
     document.body.style.overflow='';
     envelopeIntro.setAttribute('aria-hidden','true');
-  },2550);
+  },2920);
 }
 if(openEnvelopeButton) openEnvelopeButton.addEventListener('click',openWeddingEnvelope);
 document.body.style.overflow='hidden';
