@@ -534,30 +534,173 @@ footer>*{position:relative;z-index:1}
   .pix-options button{width:100%}
 }
 
+
+/* Entrada da cerimônia: portas duplas com as iniciais K e R */
+.envelope-intro.church-intro{
+  isolation:isolate;
+  gap:0;
+  padding:clamp(26px,5vh,54px) 20px 34px;
+  background:
+    radial-gradient(ellipse at 50% 43%,rgba(255,255,255,.96) 0%,rgba(251,247,239,.95) 54%,rgba(239,229,209,.98) 100%),
+    url('ornamento-tl.jpg') left top/150px auto no-repeat,
+    url('ornamento-tr.jpg') right top/150px auto no-repeat,
+    #fbf7ef;
+}
+.church-intro-frame{
+  position:absolute;inset:14px;border:1px solid #b18b4c;pointer-events:none;z-index:-1;
+  box-shadow:inset 0 0 0 5px rgba(251,247,239,.8),inset 0 0 0 6px #e7dac0;
+}
+.church-intro-frame:before,.church-intro-frame:after{
+  content:"✦";position:absolute;left:50%;transform:translateX(-50%);color:#ad8744;font:20px 'Cormorant Garamond';
+  background:#fbf7ef;padding:0 14px;
+}
+.church-intro-frame:before{top:-12px}.church-intro-frame:after{bottom:-12px}
+.church-intro-heading{position:relative;z-index:2;text-align:center;margin:0 0 clamp(18px,3vh,30px)}
+.church-intro-kicker{display:block;color:#9b7942;font:italic 17px 'Cormorant Garamond';letter-spacing:.13em}
+.church-intro-heading h2{margin:6px 0 5px;color:#102b59;font:clamp(39px,6vw,61px) 'Allura',cursive;font-weight:400}
+.church-intro-heading h2 i{font-style:normal;color:#ad8744}
+.church-intro-heading p{margin:0;color:#536078;font:500 11px Montserrat,Arial,sans-serif;letter-spacing:.2em;text-transform:uppercase}
+.church-intro-heading p span{color:#ad8744;padding:0 7px}
+.church-doorway{
+  position:relative;isolation:isolate;width:min(86vw,590px);height:clamp(300px,48vh,420px);
+  perspective:1600px;transform-style:preserve-3d;
+  border:10px solid #d4bd8e;border-bottom-width:13px;border-radius:320px 320px 8px 8px;
+  padding:10px 9px 8px;background:linear-gradient(180deg,#102344,#07172e);
+  box-shadow:0 22px 48px rgba(20,37,64,.2),inset 0 0 0 2px #f7efdc,inset 0 0 0 5px #8b6d3e;
+}
+.church-doorway:before{
+  content:"";position:absolute;inset:-19px -19px -18px;border:2px solid #b18b4c;border-radius:340px 340px 14px 14px;
+  box-shadow:0 0 0 5px rgba(251,247,239,.95);pointer-events:none;z-index:5;
+}
+.church-doorway:after{
+  content:"";position:absolute;z-index:-1;inset:0;border-radius:300px 300px 0 0;
+  background:radial-gradient(ellipse at 50% 54%,#fff8df 0%,#f0d69b 23%,#b18b4c 48%,#17365f 78%);
+  opacity:.08;transition:opacity 1.4s ease,filter 1.4s ease;filter:blur(7px);
+}
+.door-light{
+  position:absolute;inset:7% 8% 0;z-index:0;border-radius:260px 260px 0 0;
+  background:radial-gradient(ellipse at 50% 42%,rgba(255,250,226,.98),rgba(240,214,157,.8) 28%,rgba(173,135,68,.22) 58%,transparent 76%);
+  opacity:.08;transition:opacity 1.4s ease;
+}
+.door-cross{
+  position:absolute;z-index:1;top:10%;left:50%;transform:translateX(-50%);
+  font:clamp(32px,5vw,48px) 'Cormorant Garamond';color:#f7e7bd;
+  text-shadow:0 0 24px rgba(255,246,214,.8);opacity:.85;
+}
+.church-door{
+  position:absolute;z-index:3;top:10px;bottom:8px;width:50%;
+  display:flex;flex-direction:column;align-items:center;justify-content:center;
+  transform-style:preserve-3d;backface-visibility:hidden;
+  background:
+    linear-gradient(90deg,rgba(255,255,255,.09),transparent 18%,rgba(0,0,0,.12) 50%,transparent 86%,rgba(255,255,255,.05)),
+    repeating-linear-gradient(90deg,transparent 0,transparent 28px,rgba(4,15,34,.12) 29px,rgba(4,15,34,.12) 31px),
+    linear-gradient(135deg,#31568b 0%,#183b70 42%,#102b59 100%);
+  border:1px solid #d0b77f;
+  box-shadow:inset 0 0 0 5px rgba(8,24,48,.55),inset 0 0 0 7px #b18b4c,0 0 18px rgba(0,0,0,.25);
+  transition:transform 1.65s cubic-bezier(.2,.76,.18,1),box-shadow 1.2s ease;
+  overflow:hidden;
+}
+.door-left{left:9px;transform-origin:left center;border-radius:240px 0 0 0}
+.door-right{right:9px;transform-origin:right center;border-radius:0 240px 0 0}
+.church-door:before{
+  content:"";position:absolute;inset:24px 20px;border:1px solid rgba(222,193,133,.9);
+  box-shadow:inset 0 0 0 5px rgba(7,24,49,.22),inset 0 0 0 6px rgba(222,193,133,.52);
+  pointer-events:none;
+}
+.church-door:after{
+  content:"";position:absolute;inset:43px 38px;border:1px solid rgba(222,193,133,.58);
+  box-shadow:0 0 0 4px rgba(7,24,49,.17);pointer-events:none;
+}
+.door-monogram{
+  z-index:1;margin-top:16px;color:#e5c98d;font:clamp(66px,9vw,104px) 'Allura',cursive;
+  text-shadow:0 2px 8px rgba(0,0,0,.25);line-height:1;
+}
+.door-ornament{position:absolute;top:19%;z-index:1;color:#e5c98d;font:24px 'Cormorant Garamond'}
+.door-laurel{position:absolute;bottom:19%;z-index:1;color:#d9bd82;font:32px 'Cormorant Garamond';opacity:.95}
+.door-handle{
+  position:absolute;top:55%;width:13px;height:34px;border-radius:8px;
+  background:linear-gradient(90deg,#80602e,#f3d99e 38%,#b18b4c 70%,#684d27);
+  box-shadow:0 1px 4px #07172eaa,0 0 0 2px rgba(7,23,46,.25);
+}
+.door-left .door-handle{right:15px}.door-right .door-handle{left:15px}
+.envelope-intro.church-intro.opening .door-left{transform:rotateY(-108deg);box-shadow:inset 0 0 0 5px rgba(8,24,48,.55),inset 0 0 0 7px #b18b4c,-8px 0 22px rgba(0,0,0,.14)}
+.envelope-intro.church-intro.opening .door-right{transform:rotateY(108deg);box-shadow:inset 0 0 0 5px rgba(8,24,48,.55),inset 0 0 0 7px #b18b4c,8px 0 22px rgba(0,0,0,.14)}
+.envelope-intro.church-intro.opening .church-doorway:after,
+.envelope-intro.church-intro.opening .door-light{opacity:1;filter:blur(0)}
+.church-intro-footer{position:relative;z-index:2;text-align:center;margin-top:clamp(21px,4vh,34px)}
+.church-intro-footer p{margin:0 0 14px;color:#687184;font:italic 19px 'Cormorant Garamond'}
+.church-intro .envelope-open{
+  min-width:220px;padding:16px 25px;border:1px solid #b18b4c;border-radius:2px;
+  background:linear-gradient(135deg,#173b70,#102b59);box-shadow:0 7px 18px rgba(16,43,89,.16);
+  color:#fffaf0;font:10px Montserrat,Arial,sans-serif;letter-spacing:.18em;text-transform:uppercase;
+}
+.church-intro .envelope-open span{color:#e6cc92;margin-left:12px;font-size:15px}
+.church-intro.is-gone{opacity:0;visibility:hidden;pointer-events:none}
+.church-photo img{object-position:center 52%}
+@media(max-width:600px){
+  .envelope-intro.church-intro{padding:30px 15px 32px}
+  .church-intro-frame{inset:8px}
+  .church-intro-frame:before,.church-intro-frame:after{font-size:16px}
+  .church-intro-heading{margin-bottom:20px}
+  .church-intro-heading h2{font-size:43px}
+  .church-intro-heading p{font-size:9px;letter-spacing:.13em}
+  .church-doorway{width:min(88vw,410px);height:clamp(285px,42vh,350px);border-width:8px 8px 10px;padding:8px 7px 7px}
+  .church-doorway:before{inset:-14px -14px -14px}
+  .church-door{top:8px;bottom:7px}
+  .door-left{left:7px}.door-right{right:7px}
+  .church-door:before{inset:18px 12px}
+  .church-door:after{inset:33px 23px}
+  .door-monogram{font-size:72px}
+  .door-ornament{font-size:18px;top:20%}
+  .door-laurel{font-size:24px;bottom:20%}
+  .door-handle{height:27px;width:10px}
+  .door-left .door-handle{right:11px}.door-right .door-handle{left:11px}
+  .church-intro-footer{margin-top:22px}
+  .church-intro-footer p{font-size:17px}
+  .church-intro .envelope-open{min-width:200px;padding:14px 20px}
+}
+@media(max-height:760px) and (min-width:601px){
+  .envelope-intro.church-intro{padding-top:18px;padding-bottom:20px}
+  .church-intro-heading{margin-bottom:14px}
+  .church-intro-heading h2{font-size:44px}
+  .church-doorway{height:clamp(250px,43vh,330px)}
+  .church-intro-footer{margin-top:14px}
+}
+@media(prefers-reduced-motion:reduce){
+  .church-door,.door-light,.church-doorway:after{transition:none!important}
+}
+
 </style>
 </head>
 <body>
 
-<div class="envelope-intro" id="envelopeIntro" role="dialog" aria-modal="true" aria-label="Convite de casamento de Kathleen e Railander">
-  <p class="envelope-kicker">Uma mensagem especial para você</p>
-  <h2 class="envelope-heading">Com carinho, Kathleen & Railander</h2>
-  <div class="envelope-stage" aria-hidden="true">
-    <div class="envelope-letter">
-      <small>Você está convidado para celebrar conosco</small>
-      <strong>Kathleen & Railander</strong>
-      <span>18 de dezembro de 2027 · 16 horas</span>
+<div class="envelope-intro church-intro" id="envelopeIntro" role="dialog" aria-modal="true" aria-label="Entrada do convite de casamento de Kathleen e Railander">
+  <div class="church-intro-frame" aria-hidden="true"></div>
+  <header class="church-intro-heading">
+    <span class="church-intro-kicker">Um convite especial</span>
+    <h2>Kathleen <i>&</i> Railander</h2>
+    <p>18 de dezembro de 2027 <span>·</span> 16 horas</p>
+  </header>
+  <div class="church-doorway" aria-hidden="true">
+    <div class="door-light"></div>
+    <div class="door-cross">✝</div>
+    <div class="church-door door-left">
+      <span class="door-ornament">✦</span>
+      <span class="door-monogram">K</span>
+      <span class="door-laurel">❧</span>
+      <span class="door-handle"></span>
     </div>
-    <div class="envelope-shell">
-      <div class="envelope-back"></div>
-      <div class="envelope-left"></div>
-      <div class="envelope-right"></div>
-      <div class="envelope-bottom"></div>
-      <div class="envelope-flap"></div>
-      <div class="envelope-seal">K & R</div>
+    <div class="church-door door-right">
+      <span class="door-ornament">✦</span>
+      <span class="door-monogram">R</span>
+      <span class="door-laurel">❧</span>
+      <span class="door-handle"></span>
     </div>
   </div>
-  <p class="envelope-instructions">Preparamos esta carta especialmente para você.</p>
-  <button class="envelope-open" id="openEnvelope" type="button">Abrir convite</button>
+  <div class="church-intro-footer">
+    <p>As portas estão abertas para celebrar conosco</p>
+    <button class="envelope-open" id="openEnvelope" type="button">Abrir as portas <span aria-hidden="true">↗</span></button>
+  </div>
 </div>
 
 <header class="topbar"><nav class="nav"><a class="brand" href="#">Kathleen & Railander</a><div class="links"><a href="#historia">História</a><a href="#cerimonia">Cerimônia</a><a href="#presentes">Presentes</a><a href="#rsvp">Presença</a></div></nav></header>
@@ -583,7 +726,7 @@ footer>*{position:relative;z-index:1}
 <section id="historia" class="story"><div class="wrap"><div class="section-kicker">Nossa caminhada</div><h2 class="section-title">Nossa história</h2><p class="intro">Cada encontro, cada escolha e cada lembrança nos trouxe até aqui. Agora queremos celebrar o próximo capítulo ao lado de pessoas especiais.</p><div class="storygrid"><img src="pedido-2.jpeg" alt="Momento especial do casal"><div class="storytext">Entre momentos simples e lembranças inesquecíveis, construímos uma história feita de companheirismo, fé e amor. Hoje, escolhemos continuar essa caminhada juntos, diante de Deus e das pessoas que fazem parte da nossa vida.<div class="ornament">✧ ❦ ✧</div><p style="text-align:center;color:#b39358;font-style:italic">Com carinho, Kathleen & Railander</p></div></div></div></section>
 <section><div class="wrap"><div class="section-kicker">Memórias que ficam</div><h2 class="section-title">Alguns dos nossos momentos</h2><div class="gallerygrid">
 <a href="casal-igreja-1.jpeg" target="_blank"><img src="casal-igreja-1.jpeg" alt="Casal na igreja"></a><a href="casal-igreja-2.jpeg" target="_blank"><img src="casal-igreja-2.jpeg" alt="Casal na igreja"></a><a href="pedido-1.jpeg" target="_blank"><img src="pedido-1.jpeg" alt="Pedido de casamento"></a><a href="pedido-3.jpeg" target="_blank"><img src="pedido-3.jpeg" alt="Pedido de casamento"></a><a href="pedido-4.jpeg" target="_blank"><img src="pedido-4.jpeg" alt="Momento do casal"></a><a href="pedido-5.jpeg" target="_blank"><img src="pedido-5.jpeg" alt="Momento do casal"></a><a href="gramado-1.jpeg" target="_blank"><img src="gramado-1.jpeg" alt="Viagem do casal a Gramado"></a><a href="nova-petropolis.jpeg" target="_blank"><img src="nova-petropolis.jpeg" alt="Viagem do casal a Nova Petrópolis"></a></div></div></section>
-<section class="details" id="cerimonia"><div class="wrap"><div class="section-kicker">Reserve esta data</div><h2 class="section-title">O nosso casamento</h2><p class="intro">Será uma alegria ter você conosco neste dia tão especial.</p><div class="detailcards"><div class="detail"><div class="symbol">◷</div><h3>Quando</h3><p>Sábado, 18 de dezembro de 2027<br>Às 16h</p></div><div class="detail"><div class="symbol">⌖</div><h3>Onde</h3><p>Igreja São Sebastião<br>Rua Toquinho, 539<br>Canoa Quebrada – Aracati, CE<br>CEP 62800-000</p><a class="button outline" target="_blank" rel="noopener" href="https://www.google.com/maps/dir/?api=1&destination=Igreja+de+S%C3%A3o+Sebasti%C3%A3o%2C+Rua+Toquinho%2C+539%2C+Canoa+Quebrada%2C+Aracati+-+CE">Traçar rota até a igreja</a></div></div><figure class="church-photo"><img src="https://thumb.wikimedia.org/wikipedia/commons/thumb/0/0e/Capela_de_Canoa_Quebrada_e_Cruz_das_Miss%C3%B5es_Populares.JPG/1280px-Capela_de_Canoa_Quebrada_e_Cruz_das_Miss%C3%B5es_Populares.JPG" alt="Fachada da capela de Canoa Quebrada, com portas azuis, escadaria e cruz em primeiro plano" loading="lazy" decoding="async"><figcaption>Capela de Canoa Quebrada · Foto: Ivolindbergh / Wikimedia Commons · <a href="https://creativecommons.org/licenses/by-sa/4.0/" target="_blank" rel="noopener">CC BY-SA 4.0</a></figcaption></figure><div class="map-panel"><div class="map-info"><div class="symbol">⌖</div><h3>Como chegar</h3><p>A igreja fica na Rua Toquinho, em Canoa Quebrada. Use o mapa ao lado para visualizar a localização e planejar seu trajeto.</p><p class="arrival-note">A cerimônia começa às 16h. Programe sua chegada com antecedência.</p><a class="button" target="_blank" rel="noopener" href="https://www.google.com/maps/dir/?api=1&destination=Igreja+de+S%C3%A3o+Sebasti%C3%A3o%2C+Rua+Toquinho%2C+539%2C+Canoa+Quebrada%2C+Aracati+-+CE">Abrir navegação no Google Maps</a></div><div class="map-frame"><iframe title="Mapa da Igreja São Sebastião em Canoa Quebrada" src="https://www.google.com/maps?q=Igreja+de+S%C3%A3o+Sebasti%C3%A3o%2C+Rua+Toquinho%2C+539%2C+Canoa+Quebrada%2C+Aracati+-+CE&output=embed" loading="lazy" referrerpolicy="no-referrer-when-downgrade" allowfullscreen></iframe></div></div></div></section>
+<section class="details" id="cerimonia"><div class="wrap"><div class="section-kicker">Reserve esta data</div><h2 class="section-title">O nosso casamento</h2><p class="intro">Será uma alegria ter você conosco neste dia tão especial.</p><div class="detailcards"><div class="detail"><div class="symbol">◷</div><h3>Quando</h3><p>Sábado, 18 de dezembro de 2027<br>Às 16h</p></div><div class="detail"><div class="symbol">⌖</div><h3>Onde</h3><p>Igreja São Sebastião<br>Rua Toquinho, 539<br>Canoa Quebrada – Aracati, CE<br>CEP 62800-000</p><a class="button outline" target="_blank" rel="noopener" href="https://www.google.com/maps/dir/?api=1&destination=Igreja+de+S%C3%A3o+Sebasti%C3%A3o%2C+Rua+Toquinho%2C+539%2C+Canoa+Quebrada%2C+Aracati+-+CE">Traçar rota até a igreja</a></div></div><figure class="church-photo"><img src="capela-canoa-quebrada-site.webp" alt="Fachada original da capela de Canoa Quebrada, com portas azuis e escadaria" loading="lazy" decoding="async"><figcaption>Capela de Canoa Quebrada · Fotografia enviada pelos noivos</figcaption></figure><div class="map-panel"><div class="map-info"><div class="symbol">⌖</div><h3>Como chegar</h3><p>A igreja fica na Rua Toquinho, em Canoa Quebrada. Use o mapa ao lado para visualizar a localização e planejar seu trajeto.</p><p class="arrival-note">A cerimônia começa às 16h. Programe sua chegada com antecedência.</p><a class="button" target="_blank" rel="noopener" href="https://www.google.com/maps/dir/?api=1&destination=Igreja+de+S%C3%A3o+Sebasti%C3%A3o%2C+Rua+Toquinho%2C+539%2C+Canoa+Quebrada%2C+Aracati+-+CE">Abrir navegação no Google Maps</a></div><div class="map-frame"><iframe title="Mapa da Igreja São Sebastião em Canoa Quebrada" src="https://www.google.com/maps?q=Igreja+de+S%C3%A3o+Sebasti%C3%A3o%2C+Rua+Toquinho%2C+539%2C+Canoa+Quebrada%2C+Aracati+-+CE&output=embed" loading="lazy" referrerpolicy="no-referrer-when-downgrade" allowfullscreen></iframe></div></div></div></section>
 <section class="gifts" id="presentes"><div class="wrap"><div class="section-kicker">Com carinho, para nossa nova etapa</div><h2 class="section-title">Lista de presentes</h2><p class="intro">Sua presença é o nosso maior presente. Reunimos algumas sugestões para quem deseja nos presentear. Escolha um item para reservar.</p>
 <div class="giftgrid">
 <div class="gift"><div class="gift-art" aria-hidden="true"><svg viewBox="0 0 100 100"><path d="M25 38h43v25a17 17 0 0 1-17 17H42a17 17 0 0 1-17-17z"/><path d="M68 45h8a10 10 0 0 1 0 20h-9M37 27c-5-6 5-8 0-14M51 27c-5-6 5-8 0-14"/><path d="M18 82h58"/></svg></div><div class="gift-content"><span class="gift-status">Disponível</span><h3>Cafeteira</h3><p>Para os cafés das manhãs juntos</p><button data-gift-id="cafeteira" onclick="openGift('cafeteira','Cafeteira')">Reservar presente</button></div></div>
@@ -1018,24 +1161,18 @@ const openEnvelopeButton=document.getElementById('openEnvelope');
 function openWeddingEnvelope(){
   if(!envelopeIntro || envelopeIntro.classList.contains('opening')) return;
   envelopeIntro.classList.add('opening');
-  openEnvelopeButton.disabled=true;
-  openEnvelopeButton.textContent='Revelando o convite…';
-
-  // A aba abre primeiro; só depois a carta desliza para fora do envelope.
-  window.setTimeout(()=>{
-    envelopeIntro.classList.add('letter-out');
-  },820);
-
-  // A carta se aproxima da câmera e a transição conduz ao convite principal.
-  window.setTimeout(()=>{
-    envelopeIntro.classList.add('letter-expand');
-  },2250);
-
+  if(openEnvelopeButton){
+    openEnvelopeButton.disabled=true;
+    openEnvelopeButton.innerHTML='As portas estão se abrindo…';
+  }
+  // As duas portas se abrem para fora, revelando a luz ao fundo.
   window.setTimeout(()=>{
     envelopeIntro.classList.add('is-gone');
+  },1750);
+  window.setTimeout(()=>{
     document.body.style.overflow='';
     envelopeIntro.setAttribute('aria-hidden','true');
-  },3550);
+  },2750);
 }
 if(openEnvelopeButton) openEnvelopeButton.addEventListener('click',openWeddingEnvelope);
 document.body.style.overflow='hidden';
