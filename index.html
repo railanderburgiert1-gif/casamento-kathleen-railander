@@ -955,6 +955,117 @@ footer strong{font-weight:500!important}
   }
 }
 
+
+/* Moldura dourada e botão HTML real da capa */
+.church-intro-full .church-art-wrap{
+  position:relative;
+  isolation:isolate;
+}
+.church-intro-full .church-art-wrap::before{
+  content:"";
+  position:absolute;
+  z-index:4;
+  inset:1.7%;
+  border:1px solid rgba(226,194,127,.96);
+  border-radius:2px;
+  box-shadow:
+    inset 0 0 0 3px rgba(16,43,89,.16),
+    inset 0 0 0 4px rgba(255,239,201,.38),
+    0 0 0 1px rgba(16,43,89,.18);
+  pointer-events:none;
+}
+.church-intro-full .church-art-wrap::after{
+  content:"♡";
+  position:absolute;
+  z-index:4;
+  left:50%;
+  bottom:1.65%;
+  transform:translateX(-50%);
+  display:grid;
+  place-items:center;
+  width:42px;
+  height:28px;
+  color:#e5c887;
+  font:26px/1 Georgia,serif;
+  text-shadow:0 1px 5px rgba(16,30,50,.55);
+  pointer-events:none;
+}
+.church-intro-full .church-art-piece{
+  filter:contrast(1.035) saturate(1.025);
+}
+.church-intro-full .church-art-hotspot{
+  z-index:6;
+  left:24%;
+  top:84.55%;
+  width:52%;
+  height:7.5%;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  gap:clamp(7px,1.4vw,14px);
+  padding:0 12px;
+  overflow:hidden;
+  border:1.5px solid #e8c982;
+  border-radius:999px;
+  color:#fffaf0;
+  background:linear-gradient(180deg,#294b7c 0%,#173765 48%,#0c2348 100%);
+  box-shadow:
+    inset 0 1px 0 rgba(255,255,255,.32),
+    inset 0 -2px 0 rgba(0,0,0,.2),
+    0 4px 12px rgba(8,20,38,.45),
+    0 0 0 2px rgba(174,137,72,.52);
+  font-family:'Cormorant Garamond',Georgia,serif;
+  font-size:clamp(12px,2.1vw,21px);
+  font-weight:600;
+  letter-spacing:.015em;
+  text-shadow:0 1px 2px rgba(0,0,0,.4);
+  cursor:pointer;
+  appearance:none;
+  -webkit-appearance:none;
+  -webkit-tap-highlight-color:transparent;
+  touch-action:manipulation;
+  transition:transform .18s ease,filter .2s ease,box-shadow .2s ease,background .2s ease;
+}
+.church-intro-full .church-art-hotspot::before{
+  content:"Entrar no Convite";
+  white-space:nowrap;
+}
+.church-intro-full .church-art-hotspot::after{
+  content:"›";
+  color:#f0d18d;
+  font:32px/.7 Georgia,serif;
+  margin-top:-3px;
+}
+.church-intro-full .church-art-hotspot:active{
+  transform:translateY(2px) scale(.965);
+  filter:brightness(.92);
+  box-shadow:inset 0 2px 5px rgba(0,0,0,.32),0 1px 4px rgba(8,20,38,.4);
+}
+.church-intro-full .church-art-hotspot:focus-visible{
+  outline:3px solid #fff1c9;
+  outline-offset:4px;
+}
+@media(hover:hover) and (pointer:fine){
+  .church-intro-full .church-art-hotspot:hover{
+    transform:translateY(-2px);
+    filter:brightness(1.12);
+    box-shadow:inset 0 1px 0 rgba(255,255,255,.4),0 7px 18px rgba(8,20,38,.5),0 0 0 2px rgba(226,194,127,.72);
+  }
+}
+@media(max-width:600px){
+  .church-intro-full .church-art-hotspot{
+    left:22%;
+    width:56%;
+    top:84.5%;
+    height:7.4%;
+    font-size:clamp(12px,3.5vw,17px);
+  }
+  .church-intro-full .church-art-wrap::after{bottom:1.55%}
+}
+@media(prefers-reduced-motion:reduce){
+  .church-intro-full .church-art-hotspot{transition:none!important}
+}
+
 </style>
 </head>
 <body>
