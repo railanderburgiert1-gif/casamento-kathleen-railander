@@ -3,5 +3,5 @@
 // Nunca coloque aqui a Secret key ou service_role key.
 window.WEDDING_SUPABASE_CONFIG = {
   url: "https://hnsijgmsoffrgosjqrvc.supabase.co",
-  publishableKey: ""
+  publishableKey: "sb_publishable_Sgl47eYjWq_TMvITM8UqMA_DOmJvjMA"
 };
