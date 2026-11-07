@@ -6,7 +6,7 @@
 <title>Lista de Presentes | Kathleen & Railander</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Bodoni+Moda:wght@400;500;600;700&family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Allura&family=Bodoni+Moda:wght@400;500;600;700&family=Cormorant+Garamond:wght@400;500;600;700&family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet">
 <style>
 :root{--navy:#172e59;--blue:#244b86;--gold:#b39358;--ivory:#f7f2e9;--ink:#29344c;--muted:#77766f}
 *{box-sizing:border-box}html{scroll-behavior:smooth}body{margin:0;background:var(--ivory);color:var(--ink);font-family:Montserrat, sans-serif}
@@ -788,6 +788,24 @@ body.gift-page .gift-page-cta{display:none!important}
   body.gift-page main>.gifts{padding:42px 16px 60px}
 }
 
+
+/* Acabamento compartilhado com o convite principal */
+body{font-family:'Manrope',Arial,sans-serif;font-size:15px;line-height:1.6}
+.section-title,.giftgrid .gift h3,.pix-copy>p,.pix-instructions{font-family:'Cormorant Garamond',Georgia,serif}
+.giftgrid .gift{border-radius:2px}
+.giftgrid .gift button,.pix-options button{min-height:44px;transition:background .2s,color .2s,transform .2s}
+.giftgrid .gift button:hover:not(:disabled),.pix-options button:hover{transform:translateY(-1px)}
+.pixbox{border-radius:2px}
+@media(max-width:720px){
+ section{padding:58px 18px}
+ .section-title{font-size:clamp(36px,10vw,44px);line-height:1.08}
+ .intro{font-size:19px;line-height:1.5}
+ .giftgrid{gap:12px}
+ .giftgrid .gift h3{font-size:23px;line-height:1.2}
+ .giftgrid .gift p{font-size:15px}
+ .pixbox{padding:21px 16px}
+ .pix-qr-frame{width:min(210px,68vw)}
+}
 </style>
 </head>
 <body class="gift-page">
