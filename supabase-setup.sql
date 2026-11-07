@@ -21,15 +21,12 @@ create table if not exists public.gift_catalog (
   description text not null default '',
   is_reserved boolean not null default false,
   active boolean not null default true,
+  photo_url text,
+  sort_order integer not null default 0,
   created_at timestamptz not null default now()
 );
 
-insert into public.gift_catalog (id, name, description)
-values
-  ('cafeteira', 'Cafeteira', 'Para os cafés das manhãs juntos'),
-  ('jogo-de-jantar', 'Jogo de jantar', 'Para receber família e amigos'),
-  ('jogo-de-panelas', 'Jogo de panelas', 'Para equipar nosso lar')
-on conflict (id) do nothing;
+-- A lista começa vazia. Os noivos cadastram os itens pelo painel administrativo.
 
 create table if not exists public.gift_reservations (
   id uuid primary key default gen_random_uuid(),
@@ -174,3 +171,30 @@ with check (public.is_wedding_admin());
 -- insert into private.admin_users (user_id)
 -- select id from auth.users where email = 'EMAIL_DOS_NOIVOS'
 -- on conflict (user_id) do nothing;
+
+
+-- Fotos dos presentes: leitura pública, gravação e exclusão somente por administradores.
+insert into storage.buckets (id,name,public,file_size_limit,allowed_mime_types)
+values ('gift-photos','gift-photos',true,5242880,array['image/jpeg','image/png','image/webp'])
+on conflict (id) do update set public=true,file_size_limit=5242880,allowed_mime_types=array['image/jpeg','image/png','image/webp'];
+
+drop policy if exists "Public can view gift photos" on storage.objects;
+create policy "Public can view gift photos" on storage.objects
+for select to anon, authenticated using (bucket_id='gift-photos');
+
+drop policy if exists "Admins upload gift photos" on storage.objects;
+create policy "Admins upload gift photos" on storage.objects
+for insert to authenticated with check (bucket_id='gift-photos' and public.is_wedding_admin());
+
+drop policy if exists "Admins update gift photos" on storage.objects;
+create policy "Admins update gift photos" on storage.objects
+for update to authenticated using (bucket_id='gift-photos' and public.is_wedding_admin())
+with check (bucket_id='gift-photos' and public.is_wedding_admin());
+
+drop policy if exists "Admins delete gift photos" on storage.objects;
+create policy "Admins delete gift photos" on storage.objects
+for delete to authenticated using (bucket_id='gift-photos' and public.is_wedding_admin());
+
+-- Para projetos que já tinham a tabela antes desta atualização:
+alter table public.gift_catalog add column if not exists photo_url text;
+alter table public.gift_catalog add column if not exists sort_order integer not null default 0;
