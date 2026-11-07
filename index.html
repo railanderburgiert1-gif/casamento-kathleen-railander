@@ -523,7 +523,10 @@ footer>*{position:relative;z-index:1}
 <h4 style="font:24px 'Cormorant Garamond';color:#172e59;margin:18px 0 8px">Confirmações de presença</h4><div id="guestList" style="font-size:12px;overflow:auto"></div>
 <h4 style="font:24px 'Cormorant Garamond';color:#172e59;margin:22px 0 8px">Presentes reservados</h4><div id="reservedList" style="font-size:12px;overflow:auto"></div>
 <h4 style="font:24px 'Cormorant Garamond';color:#172e59;margin:22px 0 8px">Cadastrar presente</h4>
-<div style="display:grid;grid-template-columns:1fr 1fr;gap:8px"><input id="newGiftName" placeholder="Nome do presente"><input id="newGiftDesc" placeholder="Descrição curta"></div><button class="button" style="margin-top:8px" onclick="addGift()">Adicionar à lista</button>
+<div style="display:grid;grid-template-columns:1fr 1fr;gap:8px"><input id="newGiftName" maxlength="80" placeholder="Nome do presente"><input id="newGiftDesc" maxlength="180" placeholder="Descrição curta"></div><button class="button" style="margin-top:8px" onclick="addGift()">Adicionar à lista</button>
+<h4 style="font:24px 'Cormorant Garamond';color:#172e59;margin:24px 0 8px">Gerenciar lista de presentes</h4>
+<p style="font-size:11px;color:#777;line-height:1.5;margin:0 0 10px">Edite os nomes e descrições ou retire itens da vitrine pública. O histórico de reservas será preservado.</p>
+<div id="giftCatalogAdmin" style="display:grid;gap:10px"></div>
 <p id="adminStatus" style="font-size:11px;color:#777;line-height:1.6;margin-top:18px">Dados centralizados. Apenas contas autorizadas podem consultar ou alterar as informações.</p>
 <button class="button outline" onclick="exportAdminData()" style="margin-top:8px">Exportar dados (JSON)</button> <button class="button outline" onclick="logoutAdmin()" style="margin-top:8px">Sair do painel</button>
 </div></div></div>
@@ -583,22 +586,36 @@ document.getElementById('rsvpForm').addEventListener('submit',async e=>{
 
 async function renderGiftAvailability(){
   if(!weddingDb)return;
-  const {data,error}=await weddingDb.from('gift_catalog').select('id,name,description,is_reserved').eq('active',true);
+  const {data,error}=await weddingDb.from('gift_catalog').select('id,name,description,is_reserved,active');
   if(error){console.warn('Não foi possível consultar os presentes:',error.message);return}
   const grid=document.querySelector('.giftgrid');
-  (data||[]).forEach(item=>{
-    let button=document.querySelector('[data-gift-id="'+CSS.escape(item.id)+'"]');
-    if(!button){
-      const card=document.createElement('div');card.className='gift';
-      const title=document.createElement('h3');title.textContent=item.name;
-      const desc=document.createElement('p');desc.textContent=item.description||'';
+  const activeItems=(data||[]).filter(item=>item.active);
+  // Oculta também os cartões iniciais quando os noivos retiram um item da vitrine.
+  grid.querySelectorAll('.gift').forEach(card=>{
+    const button=card.querySelector('[data-gift-id]');
+    if(button)card.hidden=true;
+  });
+  activeItems.forEach(item=>{
+    let button=grid.querySelector('[data-gift-id="'+CSS.escape(item.id)+'"]');
+    let card=button?button.closest('.gift'):null;
+    if(!card){
+      card=document.createElement('div');card.className='gift';
+      const img=document.createElement('img');img.alt='Presente da lista';img.src='';img.hidden=true;
+      const title=document.createElement('h3');
+      const desc=document.createElement('p');
       button=document.createElement('button');button.dataset.giftId=item.id;
       button.addEventListener('click',()=>openGift(item.id,item.name));
-      card.append(title,desc,button);grid.appendChild(card);
+      card.append(img,title,desc,button);grid.appendChild(card);
     }
+    card.hidden=false;
+    const title=card.querySelector('h3');
+    const desc=card.querySelector('p');
+    title.textContent=item.name;
+    if(desc)desc.textContent=item.description||'';
     button.textContent=item.is_reserved?'Presente reservado':'Quero presentear';
     button.disabled=!!item.is_reserved;
     button.setAttribute('aria-label',item.is_reserved?item.name+' já reservado':'Reservar '+item.name);
+    button.onclick=()=>openGift(item.id,item.name);
   });
 }
 async function confirmGift(){
@@ -628,6 +645,10 @@ async function confirmGift(){
 }
 function slugify(value){return value.normalize('NFD').replace(/[\u0300-\u036f]/g,'').toLowerCase().trim().replace(/[^a-z0-9]+/g,'-').replace(/^-|-$/g,'')}
 function showAdminError(message){document.getElementById('adminError').textContent=message}
+function setAdminStatus(message){
+  const status=document.getElementById('adminStatus');
+  if(status)status.textContent=message;
+}
 async function loginAdmin(){
   if(!weddingDb){showAdminError('A conexão com o banco ainda não foi configurada.');return}
   const email=document.getElementById('adminEmail').value.trim();
@@ -682,6 +703,7 @@ async function renderAdmin(){
       ['Aguardando confirmação','Confirmado','Cancelado'].map(s=>'<option '+(x.status===s?'selected':'')+'>'+s+'</option>').join('')+'</select></td></tr>').join('')+'</table>'
     :'Nenhum presente reservado.';
   document.getElementById('adminStatus').textContent='Dados atualizados em '+new Date().toLocaleString('pt-BR')+'.';
+  await renderGiftCatalogAdmin();
 }
 async function changeReservation(id,status){
   if(!weddingDb)return;
@@ -694,12 +716,87 @@ async function addGift(){
   const name=document.getElementById('newGiftName').value.trim();
   const description=document.getElementById('newGiftDesc').value.trim();
   const id=slugify(name);
-  if(name.length<2||!id){showAdminError('Informe um nome válido para o presente.');return}
+  if(name.length<2||name.length>80||!id){showAdminError('Informe um nome válido para o presente.');return}
+  if(description.length>180){showAdminError('A descrição deve ter no máximo 180 caracteres.');return}
   const {error}=await weddingDb.from('gift_catalog').insert({id,name,description});
-  if(error){showAdminError('Não foi possível cadastrar. Verifique se já existe um presente com esse nome.');return}
+  if(error){showAdminError('Não foi possível cadastrar. Verifique se já existe um presente com esse nome ou se ele está inativo na lista.');return}
   document.getElementById('newGiftName').value='';document.getElementById('newGiftDesc').value='';
-  showAdminError('Presente cadastrado.');
+  setAdminStatus('Presente cadastrado e publicado na lista.');
   await renderGiftAvailability();await renderAdmin();
+}
+async function renderGiftCatalogAdmin(){
+  const container=document.getElementById('giftCatalogAdmin');
+  if(!container||!weddingDb)return;
+  const {data,error}=await weddingDb.from('gift_catalog')
+    .select('id,name,description,is_reserved,active').order('name');
+  if(error){container.textContent='Não foi possível carregar o catálogo de presentes.';return}
+  container.replaceChildren();
+  if(!data||!data.length){container.textContent='Nenhum presente cadastrado.';return}
+  data.forEach(item=>{
+    const row=document.createElement('div');
+    row.style.cssText='border:1px solid #d8c9a5;background:#fffdfa;padding:12px;display:grid;gap:8px';
+    const heading=document.createElement('div');
+    heading.style.cssText='display:flex;justify-content:space-between;gap:10px;align-items:center;flex-wrap:wrap';
+    const title=document.createElement('strong');
+    title.textContent=item.name;
+    title.style.cssText="font:20px 'Cormorant Garamond';color:#102b59";
+    const status=document.createElement('span');
+    status.textContent=!item.active?'Fora da lista pública':item.is_reserved?'Reservado':'Disponível';
+    status.style.cssText='font-size:10px;letter-spacing:.08em;text-transform:uppercase;color:'+
+      (!item.active?'#777':item.is_reserved?'#8a5b25':'#356b50');
+    heading.append(title,status);
+    const fields=document.createElement('div');
+    fields.style.cssText='display:grid;grid-template-columns:1fr 1fr;gap:8px';
+    const name=document.createElement('input');
+    name.type='text';name.maxLength=80;name.value=item.name;name.setAttribute('aria-label','Nome do presente');
+    name.style.cssText='min-width:0;width:100%;padding:10px;border:1px solid #cbb27f;background:#fff;color:#17345f';
+    const description=document.createElement('input');
+    description.type='text';description.maxLength=180;description.value=item.description||'';
+    description.placeholder='Descrição curta';description.setAttribute('aria-label','Descrição do presente');
+    description.style.cssText=name.style.cssText;
+    fields.append(name,description);
+    const actions=document.createElement('div');
+    actions.style.cssText='display:flex;gap:8px;flex-wrap:wrap';
+    const save=document.createElement('button');
+    save.type='button';save.className='button';save.textContent='Salvar alterações';
+    save.style.cssText='padding:10px 14px';
+    save.addEventListener('click',()=>saveGift(item.id,name.value,description.value));
+    const toggle=document.createElement('button');
+    toggle.type='button';toggle.className='button outline';toggle.style.cssText='padding:10px 14px';
+    toggle.textContent=item.active?'Retirar da lista':'Reativar na lista';
+    toggle.addEventListener('click',()=>setGiftActive(item.id,!item.active));
+    actions.append(save,toggle);
+    row.append(heading,fields,actions);
+    container.append(row);
+  });
+}
+async function saveGift(id,name,description){
+  if(!weddingDb)return;
+  const cleanName=String(name||'').trim(),cleanDescription=String(description||'').trim();
+  if(cleanName.length<2||cleanName.length>80){setAdminStatus('O nome deve ter entre 2 e 80 caracteres.');return}
+  if(cleanDescription.length>180){setAdminStatus('A descrição deve ter no máximo 180 caracteres.');return}
+  const {error}=await weddingDb.from('gift_catalog').update({name:cleanName,description:cleanDescription}).eq('id',id);
+  if(error){setAdminStatus('Não foi possível salvar. Verifique se o nome já está cadastrado.');return}
+  setAdminStatus('Alterações salvas.');
+  await renderGiftAvailability();await renderGiftCatalogAdmin();
+}
+async function setGiftActive(id,active){
+  if(!weddingDb)return;
+  if(!active){
+    const {data,error}=await weddingDb.from('gift_reservations')
+      .select('id,status').eq('gift_id',id).neq('status','Cancelado').limit(1);
+    if(error){setAdminStatus('Não foi possível verificar as reservas deste presente.');return}
+    if(data&&data.length){
+      setAdminStatus('Este presente possui uma reserva ativa. Cancele a reserva antes de retirá-lo da lista.');
+      return;
+    }
+    if(!window.confirm('Retirar este presente da lista pública? O histórico de reservas será preservado.'))return;
+  }
+  const {error}=await weddingDb.from('gift_catalog')
+    .update({active:active,is_reserved:false}).eq('id',id);
+  if(error){setAdminStatus('Não foi possível atualizar a disponibilidade deste presente.');return}
+  setAdminStatus(active?'Presente reativado na lista pública.':'Presente retirado da lista pública. O histórico foi preservado.');
+  await renderGiftAvailability();await renderGiftCatalogAdmin();
 }
 async function exportAdminData(){
   if(!weddingDb)return;
