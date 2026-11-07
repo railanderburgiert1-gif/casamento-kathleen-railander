@@ -1070,25 +1070,67 @@ footer strong{font-weight:500!important}
   .church-intro-full .church-art-hotspot{transition:none!important}
 }
 
+
+
+/* Capa integrada como uma única arte; botão HTML transparente sobre a área clicável impressa */
+.church-intro-full .church-art-backdrop{
+  display:block!important;filter:blur(28px) brightness(.62) saturate(.82);
+}
+.church-intro-full .church-backdrop-piece{
+  width:100%!important;height:100%!important;flex:1 1 100%!important;object-fit:cover!important;
+}
+.church-intro-full .church-art-wrap{
+  display:block!important;flex:none!important;
+  width:min(100vw,69.93dvh)!important;
+  height:min(100dvh,142.99vw)!important;
+  aspect-ratio:1049 / 1500!important;
+  overflow:hidden;
+}
+.church-intro-full .church-art-piece{
+  display:block!important;width:100%!important;height:100%!important;flex:none!important;
+  object-fit:contain!important;
+}
+.church-intro-full .church-art-wrap::before,
+.church-intro-full .church-art-wrap::after{content:none!important;display:none!important}
+.church-intro-full .church-art-hotspot{
+  position:absolute!important;z-index:8!important;
+  left:18.5%!important;top:75.8%!important;width:63%!important;height:9%!important;
+  display:block!important;padding:0!important;margin:0!important;
+  border:0!important;border-radius:999px!important;
+  color:transparent!important;background:transparent!important;
+  box-shadow:none!important;font-size:0!important;
+  cursor:pointer!important;appearance:none!important;-webkit-appearance:none!important;
+  -webkit-tap-highlight-color:transparent;touch-action:manipulation;
+  transition:background .16s ease,transform .16s ease,filter .16s ease!important;
+}
+.church-intro-full .church-art-hotspot .sr-only{
+  position:absolute!important;width:1px!important;height:1px!important;padding:0!important;
+  margin:-1px!important;overflow:hidden!important;clip:rect(0,0,0,0)!important;
+  white-space:nowrap!important;border:0!important;
+}
+.church-intro-full .church-art-hotspot:active{
+  transform:scale(.97)!important;
+  background:rgba(255,255,255,.14)!important;
+  filter:brightness(.9)!important;
+}
+.church-intro-full .church-art-hotspot:focus-visible{
+  outline:3px solid #f0d18d!important;outline-offset:3px!important;
+  background:rgba(255,255,255,.12)!important;
+}
+@media(hover:hover) and (pointer:fine){
+  .church-intro-full .church-art-hotspot:hover{background:rgba(255,255,255,.08)!important}
+}
 </style>
 </head>
 <body>
 
 <div class="envelope-intro church-intro church-intro-full" id="envelopeIntro" role="dialog" aria-modal="true" aria-label="Convite ilustrado de casamento de Kathleen e Railander">
   <div class="church-art-backdrop" aria-hidden="true">
-    <img class="church-backdrop-piece" src="cover-art-01.webp" alt="">
-    <img class="church-backdrop-piece" src="cover-art-02.webp" alt="">
-    <img class="church-backdrop-piece" src="cover-art-03.webp" alt="">
-    <img class="church-backdrop-piece" src="cover-art-04.webp" alt="">
-    <img class="church-backdrop-piece" src="cover-art-05.webp" alt="">
+    <img class="church-backdrop-piece" src="CEFE2D98-662A-4419-AB2D-11897CD7C92D.png" alt="">
   </div>
   <div class="church-art-wrap">
-    <img class="church-art-piece" src="cover-art-01.webp" alt="Fachada completa da igreja ao entardecer, com portas azuis marcadas com as iniciais K e R, decoração dourada, os nomes Kathleen e Railander e a data 18 de dezembro de 2027." fetchpriority="high" decoding="async">
-    <img class="church-art-piece" src="cover-art-02.webp" alt="" aria-hidden="true" decoding="async">
-    <img class="church-art-piece" src="cover-art-03.webp" alt="" aria-hidden="true" decoding="async">
-    <img class="church-art-piece" src="cover-art-04.webp" alt="" aria-hidden="true" decoding="async">
-    <img class="church-art-piece" src="cover-art-05.webp" alt="" aria-hidden="true" decoding="async">
-    <button class="church-art-hotspot" id="openEnvelope" type="button" aria-label="Entrar no convite" title="Entrar no convite"><span>Entrar no Convite</span><span class="button-arrow" aria-hidden="true">›</span></button>
+    <img class="church-art-piece" src="CEFE2D98-662A-4419-AB2D-11897CD7C92D.png" alt="Convite ilustrado de Kathleen e Railander." fetchpriority="high" decoding="async">
+    <button class="church-art-hotspot" id="openEnvelope" type="button" aria-label="Entrar no convite" title="Entrar no convite"><span class="sr-only">Entrar no Convite</span></button>
   </div>
 </div>
 
