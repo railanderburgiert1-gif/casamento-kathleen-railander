@@ -781,6 +781,66 @@ footer strong{font-weight:500!important}
 .gift-page-cta .button{display:inline-flex;align-items:center;justify-content:center;min-width:220px}
 
 .church-video{width:min(100%,650px);margin:24px auto 0;border:1px solid #d8c9a5;padding:10px;background:#fffdfa;box-shadow:0 12px 30px rgba(16,43,89,.08)}.church-video video{display:block;width:100%;max-height:min(78vh,820px);aspect-ratio:9/16;object-fit:contain;background:#171717}.church-video figcaption{padding:10px 8px 2px;text-align:center;font:italic 17px 'Cormorant Garamond';color:#7a7468}@media(max-width:720px){.church-video{width:100%;margin-top:18px;padding:7px}.church-video video{max-height:72vh}}
+
+/* Refinamento da capa: preenchimento suave do espaço excedente em telas altas */
+.envelope-intro.church-intro-full{
+  background:#f7f2e9!important;
+}
+.church-intro-full .church-art-backdrop{
+  filter:blur(27px) brightness(.96) saturate(.92)!important;
+  opacity:.98!important;
+  transform:scale(1.10)!important;
+}
+.church-intro-full .church-art-backdrop:after{
+  background:
+    linear-gradient(90deg,rgba(16,43,89,.14),rgba(16,43,89,.025) 30%,rgba(16,43,89,.025) 70%,rgba(16,43,89,.14)),
+    linear-gradient(0deg,rgba(16,43,89,.08),rgba(16,43,89,0) 24%,rgba(16,43,89,0) 76%,rgba(16,43,89,.08))!important;
+}
+.church-intro-full .church-art-wrap{
+  max-width:100vw;
+  max-height:100dvh;
+  box-shadow:0 16px 48px rgba(8,20,36,.24),0 0 0 1px rgba(239,220,178,.82);
+}
+.church-intro-full .church-art-hotspot{
+  -webkit-tap-highlight-color:transparent;
+  touch-action:manipulation;
+}
+.church-intro-full .church-art-hotspot:active{
+  background:rgba(255,255,255,.12);
+}
+.church-intro-full.opening .church-art-wrap{
+  transform:scale(1.075)!important;
+  transform-origin:50% 55%!important;
+  opacity:0!important;
+  filter:brightness(1.10)!important;
+}
+@media(max-width:720px){
+  .envelope-intro.church-intro-full{
+    padding:0!important;
+    background:#f7f2e9!important;
+  }
+  .church-intro-full .church-art-backdrop{
+    filter:blur(22px) brightness(.98) saturate(.88)!important;
+    transform:scale(1.12)!important;
+  }
+  .church-intro-full .church-art-wrap{
+    width:min(100vw,78dvh)!important;
+    height:min(100dvh,128.205vw)!important;
+    max-width:100vw;
+    max-height:100dvh;
+    flex:none;
+  }
+}
+@media(max-height:560px) and (orientation:landscape){
+  .church-intro-full .church-art-wrap{
+    width:min(100vw,75dvh)!important;
+    height:min(100dvh,133.333vw)!important;
+  }
+}
+@media(prefers-reduced-motion:reduce){
+  .church-intro-full .church-art-wrap{transition:none!important}
+}
+
 </style>
 </head>
 <body>
