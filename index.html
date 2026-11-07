@@ -1128,6 +1128,17 @@ footer strong{font-weight:500!important}
 .church-intro-full .church-art-backdrop{
   display:none!important;
 }
+
+/* Área de toque ampliada para garantir o acionamento do botão no celular */
+.church-intro-full .church-art-wrap{position:relative!important;pointer-events:auto!important}
+.church-intro-full .church-art-hotspot{
+  position:absolute!important;z-index:30!important;
+  left:14%!important;top:72%!important;width:72%!important;height:22%!important;
+  display:block!important;opacity:0!important;pointer-events:auto!important;
+  padding:0!important;border:0!important;background:transparent!important;
+  cursor:pointer!important;touch-action:manipulation!important;
+}
+.church-intro-full .church-art-backdrop{pointer-events:none!important}
 </style>
 </head>
 <body>
@@ -1604,7 +1615,10 @@ function openWeddingEnvelope(){
     envelopeIntro.setAttribute('aria-hidden','true');
   },1800);
 }
-if(openEnvelopeButton) openEnvelopeButton.addEventListener('click',openWeddingEnvelope);
+if(openEnvelopeButton){
+  openEnvelopeButton.addEventListener('click',openWeddingEnvelope);
+  openEnvelopeButton.addEventListener('pointerup',openWeddingEnvelope);
+}
 document.body.classList.add('wedding-intro-active');
 document.body.style.overflow='hidden';
 
