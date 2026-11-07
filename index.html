@@ -6,7 +6,7 @@
 <title>Kathleen & Railander | 18.12.2027</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Bodoni+Moda:wght@400;500;600;700&family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Allura&family=Bodoni+Moda:wght@400;500;600;700&family=Cormorant+Garamond:wght@400;500;600;700&family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet>
 <style>
 :root{--navy:#172e59;--blue:#244b86;--gold:#b39358;--ivory:#f7f2e9;--ink:#29344c;--muted:#77766f}
 *{box-sizing:border-box}html{scroll-behavior:smooth}body{margin:0;background:var(--ivory);color:var(--ink);font-family:Montserrat, sans-serif}
@@ -1164,6 +1164,76 @@ body.site-entering footer{animation:weddingContentEnter .75s .35s both}
 .gallerygrid a{display:block;min-width:0;aspect-ratio:4/5;background:#fff}
 .gallerygrid img{width:100%;height:100%;aspect-ratio:4/5;object-fit:cover;object-position:center}
 @media(max-width:720px){.gallerygrid{grid-template-columns:repeat(2,minmax(0,1fr));gap:13px}.gallerygrid a{border-width:4px}}
+
+/* Refinamento geral: tipografia, respiro e leitura */
+body{font-family:'Manrope',Arial,sans-serif;font-size:15px;line-height:1.6}
+.section-title,.detail h3,.storytext,.invitation-copy,.location-line,.date-row{font-family:'Cormorant Garamond',Georgia,serif}
+section{scroll-margin-top:76px}
+.section-title{line-height:1.08;margin-bottom:14px}
+.intro{line-height:1.55}
+.hero-inner.invitation{padding-top:18px;padding-bottom:12px}
+.hero-church{margin-bottom:-2px}
+.cross-ornament{margin:0 0 5px}
+.blessing{display:block;margin:0 auto 5px}
+.invitation-copy{font-size:clamp(18px,2.1vw,22px);line-height:1.48}
+.invitation-second{margin-top:20px}
+.date-row{padding:16px 12px;border-top:1px solid #b18b4c;border-bottom:1px solid #b18b4c;background:rgba(255,253,248,.55)}
+.location-line{padding:14px 12px;border:1px solid #c7a76b;background:#fffdf8}
+.detailcards{gap:22px}
+.detail{box-shadow:0 7px 20px rgba(16,43,89,.045)}
+.detail .button{margin-top:8px}
+.form{gap:18px}
+.form label{display:block;line-height:1.5}
+.form input,.form select,.form textarea{border-radius:2px;min-height:46px}
+.form button{min-height:50px;font-weight:700;letter-spacing:.13em;border-radius:2px;transition:transform .2s,filter .2s}
+.form button:hover{filter:brightness(1.06);transform:translateY(-1px)}
+.gallerygrid{grid-auto-flow:row;align-items:stretch}
+.gallerygrid a{display:block;position:relative;aspect-ratio:4/5;background:#eee8dc;cursor:zoom-in}
+.gallerygrid img{width:100%;height:100%;aspect-ratio:4/5;object-fit:cover;object-position:center;transition:transform .45s ease,filter .3s}
+.gallerygrid a:hover img{transform:scale(1.035);filter:saturate(1.04)}
+.gallerygrid a:focus-visible{outline:3px solid #ad8744;outline-offset:4px}
+.gallerygrid a:last-child:nth-child(odd){grid-column:1/-1;width:min(50%,420px);justify-self:center}
+.gift-page-cta{padding:58px 22px;background:#f5efe4;border-top:1px solid #e0d2b7;text-align:center}
+.gift-page-cta-inner{max-width:680px;margin:auto}
+.gift-page-cta .section-title:after{display:none}
+.gift-page-cta .button{margin-top:8px}
+.site-reveal{opacity:0;transform:translateY(16px);transition:opacity .7s ease,transform .7s cubic-bezier(.2,.7,.2,1)}
+.site-reveal.is-visible{opacity:1;transform:none}
+.photo-lightbox{position:fixed;inset:0;z-index:1200;display:none;align-items:center;justify-content:center;padding:22px;background:rgba(8,18,35,.94);color:#fff}
+.photo-lightbox.is-open{display:flex}
+.photo-lightbox img{display:block;max-width:min(88vw,1200px);max-height:82vh;width:auto;height:auto;object-fit:contain;box-shadow:0 16px 55px #0006}
+.photo-lightbox-caption{position:absolute;left:70px;right:70px;bottom:18px;text-align:center;font:14px 'Manrope',sans-serif;color:#f6f1e8}
+.photo-lightbox button{position:absolute;display:grid;place-items:center;border:1px solid #ffffff66;background:#132b50cc;color:white;width:44px;height:44px;border-radius:50%;font:26px Arial;cursor:pointer}
+.photo-lightbox button:focus-visible{outline:2px solid #e3c98f;outline-offset:3px}
+.photo-lightbox-close{top:18px;right:18px}
+.photo-lightbox-prev{left:18px;top:50%;transform:translateY(-50%)}
+.photo-lightbox-next{right:18px;top:50%;transform:translateY(-50%)}
+@media(max-width:720px){
+ section{padding:58px 18px}
+ .section-title{font-size:clamp(36px,10vw,44px)}
+ .intro{font-size:19px;margin-bottom:26px}
+ .hero-inner.invitation{padding:17px 13px 10px}
+ .hero-church{height:clamp(170px,48vw,220px);width:min(340px,84vw)}
+ .cross-ornament{font-size:26px}
+ .blessing{font-size:10px;letter-spacing:.14em}
+ .invitation-copy{font-size:18px;line-height:1.42}
+ .invitation-second{margin-top:15px}
+ .date-row{font-size:22px;gap:12px;margin:17px auto 12px;padding:12px 5px}
+ .location-line{font-size:19px;padding:12px 8px;margin:9px 0 15px}
+ .detail{padding:24px 18px}
+ .gallerygrid{grid-template-columns:repeat(2,minmax(0,1fr));gap:13px}
+ .gallerygrid a{border-width:4px}
+ .gallerygrid a:last-child:nth-child(odd){width:100%;grid-column:1/-1;max-width:calc((100% - 13px)/2)}
+ .photo-lightbox{padding:12px}
+ .photo-lightbox img{max-width:94vw;max-height:76vh}
+ .photo-lightbox-caption{left:54px;right:54px;bottom:14px;font-size:12px}
+ .photo-lightbox button{width:40px;height:40px}
+ .photo-lightbox-prev{left:8px}.photo-lightbox-next{right:8px}.photo-lightbox-close{top:10px;right:10px}
+}
+@media(prefers-reduced-motion:reduce){
+ .site-reveal,.gallerygrid img{transition:none!important}
+ .site-reveal{opacity:1;transform:none}
+}
 </style>
 </head>
 <body>
@@ -1200,7 +1270,7 @@ body.site-entering footer{animation:weddingContentEnter .75s .35s both}
 </section>
 <section id="historia" class="story"><div class="wrap"><div class="section-kicker">Nossa caminhada</div><h2 class="section-title">Nossa história</h2><p class="intro">Cada encontro, cada escolha e cada lembrança nos trouxe até aqui. Agora queremos celebrar o próximo capítulo ao lado de pessoas especiais.</p><div class="storygrid"><img src="pedido-2.jpeg" alt="Momento especial do casal"><div class="storytext">Entre momentos simples e lembranças inesquecíveis, construímos uma história feita de companheirismo, fé e amor. Hoje, escolhemos continuar essa caminhada juntos, diante de Deus e das pessoas que fazem parte da nossa vida.<div class="ornament">✧ ❦ ✧</div><p style="text-align:center;color:#b39358;font-style:italic">Com carinho, Kathleen & Railander</p></div></div></div></section>
 <section><div class="wrap"><div class="section-kicker">Memórias que ficam</div><h2 class="section-title">Alguns dos nossos momentos</h2><div class="gallerygrid">
-<a href="casal-igreja-1.jpeg" target="_blank"><img src="casal-igreja-1.jpeg" alt="Casal na igreja"></a><a href="casal-igreja-2.jpeg" target="_blank"><img src="casal-igreja-2.jpeg" alt="Casal na igreja"></a><a href="pedido-1.jpeg" target="_blank"><img src="pedido-1.jpeg" alt="Pedido de casamento"></a><a href="pedido-3.jpeg" target="_blank"><img src="pedido-3.jpeg" alt="Pedido de casamento"></a><a href="pedido-4.jpeg" target="_blank"><img src="pedido-4.jpeg" alt="Momento do casal"></a><a href="pedido-5.jpeg" target="_blank"><img src="pedido-5.jpeg" alt="Momento do casal"></a><a href="gramado-1.jpeg" target="_blank"><img src="gramado-1.jpeg" alt="Viagem do casal a Gramado"></a><a href="nova-petropolis.jpeg" target="_blank"><img src="nova-petropolis.jpeg" alt="Viagem do casal a Nova Petrópolis"></a><a href="3fe81c00-6464-4c64-8613-488e7030d31a.jpeg" target="_blank" rel="noopener"><img src="3fe81c00-6464-4c64-8613-488e7030d31a.jpeg" alt="Mais um registro de Kathleen e Railander" loading="lazy" decoding="async"></a><a href="IMG_1071.jpeg" target="_blank" rel="noopener"><img src="IMG_1071.jpeg" alt="Fotografia de Kathleen e Railander" loading="lazy" decoding="async"></a><a href="IMG_3646.jpeg" target="_blank" rel="noopener"><img src="IMG_3646.jpeg" alt="Fotografia de Kathleen e Railander" loading="lazy" decoding="async"></a><a href="IMG_3985.jpeg" target="_blank" rel="noopener"><img src="IMG_3985.jpeg" alt="Fotografia de Kathleen e Railander" loading="lazy" decoding="async"></a></div></div></section>
+<a href="casal-igreja-1.jpeg" class="gallery-item" aria-label="Ampliar foto: Casal na igreja"><img src="casal-igreja-1.jpeg" alt="Casal na igreja" loading="lazy" decoding="async"></a><a href="casal-igreja-2.jpeg" class="gallery-item" aria-label="Ampliar foto: Casal na igreja"><img src="casal-igreja-2.jpeg" alt="Casal na igreja" loading="lazy" decoding="async"></a><a href="pedido-1.jpeg" class="gallery-item" aria-label="Ampliar foto: Pedido de casamento"><img src="pedido-1.jpeg" alt="Pedido de casamento" loading="lazy" decoding="async"></a><a href="pedido-3.jpeg" class="gallery-item" aria-label="Ampliar foto: Pedido de casamento"><img src="pedido-3.jpeg" alt="Pedido de casamento" loading="lazy" decoding="async"></a><a href="pedido-4.jpeg" class="gallery-item" aria-label="Ampliar foto: Momento do casal"><img src="pedido-4.jpeg" alt="Momento do casal" loading="lazy" decoding="async"></a><a href="pedido-5.jpeg" class="gallery-item" aria-label="Ampliar foto: Momento do casal"><img src="pedido-5.jpeg" alt="Momento do casal" loading="lazy" decoding="async"></a><a href="gramado-1.jpeg" class="gallery-item" aria-label="Ampliar foto: Viagem do casal a Gramado"><img src="gramado-1.jpeg" alt="Viagem do casal a Gramado" loading="lazy" decoding="async"></a><a href="nova-petropolis.jpeg" class="gallery-item" aria-label="Ampliar foto: Viagem do casal a Nova Petrópolis"><img src="nova-petropolis.jpeg" alt="Viagem do casal a Nova Petrópolis" loading="lazy" decoding="async"></a><a href="3fe81c00-6464-4c64-8613-488e7030d31a.jpeg" class="gallery-item" aria-label="Ampliar foto: Mais um registro de Kathleen e Railander"><img src="3fe81c00-6464-4c64-8613-488e7030d31a.jpeg" alt="Mais um registro de Kathleen e Railander" loading="lazy" decoding="async"></a><a href="IMG_1071.jpeg" class="gallery-item" aria-label="Ampliar foto: Fotografia de Kathleen e Railander"><img src="IMG_1071.jpeg" alt="Fotografia de Kathleen e Railander" loading="lazy" decoding="async"></a><a href="IMG_3646.jpeg" class="gallery-item" aria-label="Ampliar foto: Fotografia de Kathleen e Railander"><img src="IMG_3646.jpeg" alt="Fotografia de Kathleen e Railander" loading="lazy" decoding="async"></a><a href="IMG_3985.jpeg" class="gallery-item" aria-label="Ampliar foto: Fotografia de Kathleen e Railander"><img src="IMG_3985.jpeg" alt="Fotografia de Kathleen e Railander" loading="lazy" decoding="async"></a></div></div></section>
 <section class="details" id="cerimonia"><div class="wrap"><div class="section-kicker">Reserve esta data</div><h2 class="section-title">O nosso casamento</h2><p class="intro">Será uma alegria ter você conosco neste dia tão especial.</p><div class="detailcards"><div class="detail"><div class="symbol">◷</div><h3>Quando</h3><p>Sábado, 18 de dezembro de 2027<br>Às 16h</p></div><div class="detail"><div class="symbol">⌖</div><h3>Onde</h3><p>Igreja São Sebastião<br>Rua Toquinho, 539<br>Canoa Quebrada – Aracati, CE<br>CEP 62800-000</p><a class="button outline" target="_blank" rel="noopener" href="https://www.google.com/maps/dir/?api=1&destination=Igreja+de+S%C3%A3o+Sebasti%C3%A3o%2C+Rua+Toquinho%2C+539%2C+Canoa+Quebrada%2C+Aracati+-+CE">Traçar rota até a igreja</a></div></div><figure class="church-photo"><img src="temp_image_A2601429-6E15-4153-A27D-582162E420E7.webp" alt="Fachada da Capela São Sebastião em Canoa Quebrada, com escadaria central e fachada branca" loading="lazy" decoding="async"><figcaption>Capela de Canoa Quebrada · Fotografia enviada pelos noivos</figcaption></figure><figure class="church-video"><video controls playsinline preload="metadata" poster="temp_image_A2601429-6E15-4153-A27D-582162E420E7.webp"><source src="video-capela-sao-sebastiao-otimizado.mov" type="video/quicktime">Seu navegador não consegue reproduzir este vídeo. Atualize o navegador para assistir.</video><figcaption>Conheça em vídeo o local da nossa cerimônia</figcaption></figure><div class="map-panel"><div class="map-info"><div class="symbol">⌖</div><h3>Como chegar</h3><p>A igreja fica na Rua Toquinho, em Canoa Quebrada. Use o mapa ao lado para visualizar a localização e planejar seu trajeto.</p><p class="arrival-note">A cerimônia começa às 16h. Programe sua chegada com antecedência.</p><a class="button" target="_blank" rel="noopener" href="https://www.google.com/maps/dir/?api=1&destination=Igreja+de+S%C3%A3o+Sebasti%C3%A3o%2C+Rua+Toquinho%2C+539%2C+Canoa+Quebrada%2C+Aracati+-+CE">Abrir navegação no Google Maps</a></div><div class="map-frame"><iframe title="Mapa da Igreja São Sebastião em Canoa Quebrada" src="https://www.google.com/maps?q=Igreja+de+S%C3%A3o+Sebasti%C3%A3o%2C+Rua+Toquinho%2C+539%2C+Canoa+Quebrada%2C+Aracati+-+CE&output=embed" loading="lazy" referrerpolicy="no-referrer-when-downgrade" allowfullscreen></iframe></div></div></div></section>
 <section class="gift-page-cta">
   <div class="gift-page-cta-inner">
@@ -1218,6 +1288,12 @@ body.site-entering footer{animation:weddingContentEnter .75s .35s both}
 <a class="button outline" style="border-color:#d7bd88;color:white" href="https://wa.me/5588992638694" id="rsvpKathleen">WhatsApp da Kathleen</a>
 </div></div></section>
 </main><footer><strong>Kathleen & Railander</strong>18 de dezembro de 2027 · Canoa Quebrada – CE<div class="ornament">✧ ❦ ✧</div><p style="font:10px Montserrat;letter-spacing:.12em"><a href="#" onclick="openAdmin();return false" style="color:#9b865d;text-decoration:none">ÁREA DOS NOIVOS</a></p></footer>
+<div class="photo-lightbox" id="photoLightbox" role="dialog" aria-modal="true" aria-label="Galeria de fotos" aria-hidden="true">
+<button type="button" class="photo-lightbox-close" aria-label="Fechar">×</button>
+<button type="button" class="photo-lightbox-prev" aria-label="Foto anterior">‹</button>
+<img id="photoLightboxImage" alt="">
+<button type="button" class="photo-lightbox-next" aria-label="Próxima foto">›</button>
+<div class="photo-lightbox-caption" id="photoLightboxCaption"></div></div>
 <div class="modal" id="adminModal"><div class="modalbox" style="max-width:980px;text-align:left;max-height:90vh;overflow:auto">
 <button class="close" onclick="closeAdmin()">×</button>
 <div class="section-kicker">Acesso restrito</div><h3 style="text-align:center">Painel dos noivos</h3>
@@ -1681,6 +1757,34 @@ if(openEnvelopeButton){
     if(!attending)quantity.value='1';
   }
   attendance.addEventListener('change',updateQuantity);updateQuantity();
+})();
+
+
+/* Revelação discreta das seções conforme a rolagem */
+(function(){
+ if(!('IntersectionObserver' in window)||window.matchMedia('(prefers-reduced-motion: reduce)').matches)return;
+ const targets=[...document.querySelectorAll('main>section')];
+ targets.forEach(el=>el.classList.add('site-reveal'));
+ const observer=new IntersectionObserver(entries=>entries.forEach(entry=>{if(entry.isIntersecting){entry.target.classList.add('is-visible');observer.unobserve(entry.target)}}),{threshold:.08,rootMargin:'0px 0px -35px 0px'});
+ targets.forEach(el=>observer.observe(el));
+})();
+
+/* Galeria ampliada: teclado, setas e gesto horizontal no celular */
+(function(){
+ const grid=document.querySelector('.gallerygrid'),box=document.getElementById('photoLightbox');
+ if(!grid||!box)return;
+ const items=[...grid.querySelectorAll('a.gallery-item')],photo=document.getElementById('photoLightboxImage'),caption=document.getElementById('photoLightboxCaption');
+ const close=box.querySelector('.photo-lightbox-close'),prev=box.querySelector('.photo-lightbox-prev'),next=box.querySelector('.photo-lightbox-next');
+ let index=0,lastFocus=null,touchX=0;
+ function show(i){index=(i+items.length)%items.length;const img=items[index].querySelector('img');photo.src=img.currentSrc||img.src;photo.alt=img.alt;caption.textContent=(index+1)+' de '+items.length+' · '+img.alt}
+ function open(i){lastFocus=document.activeElement;show(i);box.classList.add('is-open');box.setAttribute('aria-hidden','false');document.body.style.overflow='hidden';close.focus()}
+ function dismiss(){box.classList.remove('is-open');box.setAttribute('aria-hidden','true');photo.removeAttribute('src');document.body.style.overflow='';if(lastFocus)lastFocus.focus()}
+ items.forEach((a,i)=>a.addEventListener('click',e=>{e.preventDefault();open(i)}));
+ close.addEventListener('click',dismiss);prev.addEventListener('click',()=>show(index-1));next.addEventListener('click',()=>show(index+1));
+ box.addEventListener('click',e=>{if(e.target===box)dismiss()});
+ document.addEventListener('keydown',e=>{if(!box.classList.contains('is-open'))return;if(e.key==='Escape')dismiss();if(e.key==='ArrowLeft')show(index-1);if(e.key==='ArrowRight')show(index+1)});
+ box.addEventListener('touchstart',e=>{touchX=e.changedTouches[0].screenX},{passive:true});
+ box.addEventListener('touchend',e=>{const dx=e.changedTouches[0].screenX-touchX;if(Math.abs(dx)>45)show(index+(dx<0?1:-1))},{passive:true});
 })();
 
 document.body.classList.add('wedding-intro-active');
