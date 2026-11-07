@@ -352,6 +352,98 @@ footer>*{position:relative;z-index:1}
   .envelope-intro.letter-expand .envelope-letter{transform:translate3d(0,-102%,24px) scale(3.25)}
 }
 
+
+/* Abertura baseada no vídeo de referência: envelope com laço, abas articuladas e carta floral */
+.envelope-intro{
+  background:
+    radial-gradient(ellipse at center,rgba(255,255,255,.78),rgba(248,242,231,.96)),
+    url('ornamento-tl.jpg') left top/170px auto no-repeat,
+    url('ornamento-tr.jpg') right top/170px auto no-repeat,
+    #f8f3e9;
+}
+.envelope-intro:before{inset:14px;border:1px solid #b69a6a;box-shadow:inset 0 0 0 5px #f8f3e9,inset 0 0 0 6px #e6d9c2}
+.envelope-kicker{font-size:20px;letter-spacing:.12em;text-transform:uppercase;color:#9b815d}
+.envelope-heading{font-family:'Cormorant Garamond',serif;font-size:clamp(32px,5vw,48px);font-style:italic;color:#17386b}
+.envelope-stage{
+  width:min(84vw,560px);height:clamp(270px,43vw,370px);
+  filter:drop-shadow(0 24px 26px rgba(33,43,60,.2));
+}
+.envelope-letter{
+  z-index:2;left:7%;right:7%;bottom:5%;height:91%;
+  padding:25px 24px 42px;
+  background:
+    url('ornamento-tl.jpg') left top/108px auto no-repeat,
+    url('ornamento-tr.jpg') right top/108px auto no-repeat,
+    url('ornamento-bl.jpg') left bottom/108px auto no-repeat,
+    url('ornamento-br.jpg') right bottom/108px auto no-repeat,
+    linear-gradient(145deg,#fffefa,#f8f2e8);
+  border:1px solid #d6c6a7;
+  box-shadow:0 5px 18px rgba(22,39,67,.12);
+  transform:translate3d(0,0,0) scale(1);
+  transition:transform 1.35s cubic-bezier(.2,.75,.18,1),box-shadow 1s ease,opacity .8s ease;
+}
+.envelope-letter:before{inset:12px;border:1px solid #d5c19b}
+.envelope-letter small{font-size:17px;color:#806a49}
+.envelope-letter strong{font-family:'Allura',cursive;font-size:clamp(42px,6vw,64px);color:#17386b}
+.envelope-letter span{font-size:10px;letter-spacing:.16em;color:#344d70}
+.envelope-shell{perspective:1400px}
+.envelope-back{
+  background:linear-gradient(145deg,#fffdf8,#e9dfd1);
+  border:1px solid #c9bba6;
+  box-shadow:inset 0 0 0 8px rgba(255,255,255,.28);
+}
+.envelope-left,.envelope-right,.envelope-bottom{
+  backface-visibility:hidden;
+  transition:transform 1.1s cubic-bezier(.2,.72,.18,1),filter .8s ease;
+}
+.envelope-left{background:linear-gradient(135deg,#fffdf8,#e8dfd2);transform-origin:left center}
+.envelope-right{background:linear-gradient(225deg,#fffdf8,#e8dfd2);transform-origin:right center}
+.envelope-bottom{background:linear-gradient(0deg,#e8dfd2,#fffdf8);transform-origin:center bottom}
+.envelope-flap{
+  height:62%;background:linear-gradient(180deg,#fffefa,#e9dfd2);
+  transform-origin:50% 0%;transition:transform 1.15s cubic-bezier(.18,.72,.2,1);
+}
+.envelope-seal{
+  width:42px;height:26px;border:0;border-radius:0;
+  background:linear-gradient(135deg,#d7d1c9,#f7f4ee 48%,#bcb4aa);
+  box-shadow:0 2px 5px #26334a35;
+  color:transparent;font-size:0;
+  transform:translate(-50%,-50%);
+}
+.envelope-seal:before,.envelope-seal:after{
+  content:"";position:absolute;top:1px;width:27px;height:23px;
+  border:3px solid #c8beb1;border-radius:70% 25% 70% 25%;
+  background:linear-gradient(135deg,#f7f4ee,#c8beb1);
+  box-shadow:inset 0 0 0 2px rgba(255,255,255,.45);
+}
+.envelope-seal:before{right:22px;transform:rotate(28deg)}
+.envelope-seal:after{left:22px;transform:scaleX(-1) rotate(28deg)}
+.envelope-intro.opening .envelope-flap{transform:rotateX(178deg)}
+.envelope-intro.opening .envelope-left{transform:rotateY(-24deg)}
+.envelope-intro.opening .envelope-right{transform:rotateY(24deg)}
+.envelope-intro.opening .envelope-bottom{transform:rotateX(18deg)}
+.envelope-intro.opening .envelope-seal{opacity:0;transform:translate(-50%,-50%) scale(.35) rotate(20deg)}
+.envelope-intro.letter-out .envelope-letter{
+  z-index:12;transform:translate3d(0,-106%,18px) scale(1.04);
+  box-shadow:0 24px 45px rgba(20,37,64,.22);
+}
+.envelope-intro.letter-expand .envelope-letter{
+  z-index:20;transform:translate3d(0,-99%,35px) scale(2.9);
+  opacity:0;transition:transform 1.25s cubic-bezier(.65,0,.25,1),opacity .9s ease .25s;
+}
+.envelope-open{border-radius:2px;background:#17386b;box-shadow:0 6px 18px #1a34501c}
+@media(max-width:600px){
+  .envelope-intro{padding:18px 12px 24px}
+  .envelope-intro:before{inset:7px}
+  .envelope-stage{width:min(88vw,470px);height:clamp(240px,68vw,310px)}
+  .envelope-letter{left:6%;right:6%;padding:18px 14px 30px}
+  .envelope-letter strong{font-size:43px}
+  .envelope-letter span{font-size:8px;letter-spacing:.1em}
+  .envelope-seal{transform:translate(-50%,-50%) scale(.85)}
+  .envelope-intro.letter-out .envelope-letter{transform:translate3d(0,-105%,14px) scale(1.02)}
+  .envelope-intro.letter-expand .envelope-letter{transform:translate3d(0,-98%,25px) scale(3.1)}
+}
+
 </style>
 </head>
 <body>
@@ -475,18 +567,18 @@ function openWeddingEnvelope(){
   // A aba abre primeiro; só depois a carta desliza para fora do envelope.
   window.setTimeout(()=>{
     envelopeIntro.classList.add('letter-out');
-  },680);
+  },820);
 
   // A carta se aproxima da câmera e a transição conduz ao convite principal.
   window.setTimeout(()=>{
     envelopeIntro.classList.add('letter-expand');
-  },1900);
+  },2250);
 
   window.setTimeout(()=>{
     envelopeIntro.classList.add('is-gone');
     document.body.style.overflow='';
     envelopeIntro.setAttribute('aria-hidden','true');
-  },2920);
+  },3550);
 }
 if(openEnvelopeButton) openEnvelopeButton.addEventListener('click',openWeddingEnvelope);
 document.body.style.overflow='hidden';
