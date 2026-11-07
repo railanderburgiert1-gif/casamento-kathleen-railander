@@ -922,6 +922,39 @@ footer strong{font-weight:500!important}
   .detail .button{margin-top:4px}
 }
 
+
+/* Reduz o vazio vertical dos cartões Quando e Onde */
+@media(max-width:720px){
+  .detailcards{
+    grid-auto-rows:min-content!important;
+    align-content:start!important;
+    align-items:start!important;
+    gap:14px!important;
+  }
+  .detailcards>.detail{
+    display:block!important;
+    height:auto!important;
+    min-height:0!important;
+    max-height:none!important;
+    align-self:start!important;
+    padding:18px 15px 20px!important;
+    margin:0!important;
+    box-sizing:border-box!important;
+  }
+  .detailcards>.detail .symbol{
+    margin:0 0 5px!important;
+    line-height:1.1!important;
+  }
+  .detailcards>.detail h3{
+    margin:5px 0 8px!important;
+    line-height:1.1!important;
+  }
+  .detailcards>.detail p{
+    margin:0 0 10px!important;
+    line-height:1.5!important;
+  }
+}
+
 </style>
 </head>
 <body>
