@@ -841,7 +841,7 @@ function formatAdminDate(value){
   const date=new Date(value);
   return Number.isNaN(date.getTime())?'—':date.toLocaleString('pt-BR');
 }
-async function changeReservationasync function changeReservation(id,status){
+async function changeReservation(id,status){
   if(!weddingDb)return;
   const {error}=await weddingDb.from('gift_reservations').update({status}).eq('id',id);
   if(error){showAdminError('Não foi possível atualizar a reserva.');return}
@@ -937,7 +937,8 @@ async function setGiftActive(id,active){
 function excelSafe(value){
   if(value===null||value===undefined)return '';
   const text=String(value);
-  return /^[\\s]*[=+@-]/.test(text)?"'"+text:text;
+  const first=text.trimStart().charAt(0);
+  return ['=','+','-','@'].includes(first)?"'"+text:text;
 }
 async function exportAdminExcel(){
   if(!weddingDb){setAdminStatus('Banco de dados não configurado.');return}
