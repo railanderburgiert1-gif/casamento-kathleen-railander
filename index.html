@@ -455,6 +455,67 @@ footer>*{position:relative;z-index:1}
 .gift-admin-form{display:grid;grid-template-columns:1fr 1fr;gap:8px}
 .gift-admin-form input{min-width:0;width:100%;padding:12px;border:1px solid #cbb27f;background:#fffdfa;color:#17345f}
 @media(max-width:600px){.admin-tab-btn{flex:1;padding:12px 8px;font-size:9px}.gift-admin-form{grid-template-columns:1fr}}
+
+/* Lista pública de presentes — linguagem visual do convite */
+.gifts{background:linear-gradient(180deg,#f8f3e9 0%,#f3ecdf 100%);position:relative}
+.gifts .section-kicker{color:#a17d3f}
+.gifts .intro{max-width:670px;margin-bottom:42px}
+.giftgrid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:20px;align-items:stretch}
+.giftgrid .gift{display:flex;flex-direction:column;min-width:0;padding:0;background:#fffdf8;border:1px solid #d8c7a4;box-shadow:0 9px 24px rgba(26,45,76,.055);transition:transform .22s ease,box-shadow .22s ease,border-color .22s ease;overflow:hidden}
+.giftgrid .gift:hover{transform:translateY(-4px);box-shadow:0 14px 30px rgba(26,45,76,.09);border-color:#b99a62}
+.giftgrid .gift[hidden]{display:none!important}
+.gift-art{height:152px;display:grid;place-items:center;position:relative;overflow:hidden;background:radial-gradient(circle at 50% 45%,#fffdf8 0%,#f4eddf 72%,#eee4d1 100%);border-bottom:1px solid #e5d9c2}
+.gift-art:before{content:"";position:absolute;width:112px;height:112px;border:1px solid #c5a975;border-radius:50%;opacity:.65}
+.gift-art:after{content:"✧";position:absolute;top:13px;right:16px;color:#b18b4c;font:18px 'Cormorant Garamond'}
+.gift-art svg{width:82px;height:82px;fill:none;stroke:#173b70;stroke-width:2;stroke-linecap:round;stroke-linejoin:round;position:relative;z-index:1}
+.gift-content{display:flex;flex:1;flex-direction:column;align-items:center;text-align:center;padding:18px 18px 20px}
+.gift-status{display:inline-block;margin-bottom:8px;padding:5px 10px;border:1px solid #d8c7a4;color:#92713b;font:9px Montserrat,Arial,sans-serif;letter-spacing:.16em;text-transform:uppercase}
+.giftgrid .gift.is-reserved .gift-status{border-color:#d8d2c5;color:#77766f;background:#f5f2ec}
+.giftgrid .gift h3{font:500 27px 'Cormorant Garamond';color:#102b59;margin:2px 0 5px}
+.giftgrid .gift p{font:17px/1.4 'Cormorant Garamond';color:#697080;margin:0 0 17px;min-height:25px}
+.giftgrid .gift button{width:100%;max-width:245px;margin-top:auto;padding:13px 15px;border:1px solid #b18b4c;background:transparent;color:#12366e;font:10px Montserrat,Arial,sans-serif;letter-spacing:.15em;text-transform:uppercase;cursor:pointer;transition:background .2s,color .2s,border-color .2s}
+.giftgrid .gift button:hover:not(:disabled){background:#12366e;color:#fff;border-color:#12366e}
+.giftgrid .gift button:disabled{background:#f3f0e9;border-color:#ddd5c5;color:#8a877f;cursor:not-allowed}
+.gift-empty{padding:22px;text-align:center;border:1px dashed #cbb27f;color:#6b6c72;font:18px 'Cormorant Garamond';background:#fffdf8}
+.pixbox{max-width:880px;margin:44px auto 0;padding:30px 34px;display:grid;grid-template-columns:minmax(0,1.25fr) minmax(230px,.75fr);gap:28px;align-items:center;text-align:left;background:#fffdf8;border:1px solid #cbb27f;box-shadow:0 9px 24px rgba(26,45,76,.045)}
+.pix-copy .section-kicker{text-align:left}
+.pix-copy .section-title{text-align:left;font-size:39px;margin:7px 0 10px}
+.pix-copy .section-title:after{display:none}
+.pix-copy>p{font:18px/1.45 'Cormorant Garamond';color:#5e687b;margin:0 0 20px}
+.pix-key{display:flex;flex-direction:column;align-items:flex-start;gap:5px;text-align:left;background:#f6f1e7;border:1px solid #e7dcc7;padding:12px 14px}
+.pix-key span{font:9px Montserrat,Arial,sans-serif;text-transform:uppercase;letter-spacing:.14em;color:#887248}
+.pix-key strong{font:15px Montserrat,Arial,sans-serif;letter-spacing:.04em;color:#17366a}
+.pix-options{justify-content:flex-start;margin:12px 0 0}
+.pix-options button{padding:11px 13px;background:transparent;border:1px solid #b18b4c;color:#17366a;font:9px Montserrat,Arial,sans-serif;letter-spacing:.1em;text-transform:uppercase}
+.pix-options button:hover{background:#12366e;color:#fff;border-color:#12366e}
+.pix-copy-msg{min-height:17px;margin:8px 0 0!important;font:11px Montserrat,Arial,sans-serif!important;color:#4c6d58!important}
+.pix-qr-side{display:flex;flex-direction:column;align-items:center;justify-content:center;padding:8px 0}
+.pix-qr-frame{width:min(220px,100%);margin:0 auto;padding:10px;background:#fff;border:1px solid #c7a76b;box-shadow:inset 0 0 0 4px #fbf7ef,inset 0 0 0 5px #e2d4b8}
+.pix-instructions{max-width:250px;margin:12px auto 0;text-align:center;font:16px/1.35 'Cormorant Garamond';color:#687184}
+@media(max-width:760px){
+  .giftgrid{grid-template-columns:repeat(2,minmax(0,1fr));gap:13px}
+  .gift-art{height:130px}
+  .gift-content{padding:15px 12px 16px}
+  .giftgrid .gift h3{font-size:24px}
+  .giftgrid .gift p{font-size:16px}
+  .pixbox{grid-template-columns:1fr;gap:18px;padding:24px 20px;margin-top:32px}
+  .pix-copy .section-title{font-size:34px}
+  .pix-copy .section-kicker{text-align:center}
+  .pix-copy .section-title{text-align:center}
+  .pix-copy>p{text-align:center}
+  .pix-key{align-items:center;text-align:center}
+  .pix-options{justify-content:center}
+}
+@media(max-width:430px){
+  .giftgrid{grid-template-columns:1fr;max-width:360px;margin:0 auto}
+  .gift-art{height:138px}
+  .gift-content{padding:16px 18px 18px}
+  .giftgrid .gift h3{font-size:26px}
+  .giftgrid .gift p{font-size:17px}
+  .pix-options{flex-direction:column}
+  .pix-options button{width:100%}
+}
+
 </style>
 </head>
 <body>
@@ -505,13 +566,21 @@ footer>*{position:relative;z-index:1}
 <section><div class="wrap"><div class="section-kicker">Memórias que ficam</div><h2 class="section-title">Alguns dos nossos momentos</h2><div class="gallerygrid">
 <a href="casal-igreja-1.jpeg" target="_blank"><img src="casal-igreja-1.jpeg" alt="Casal na igreja"></a><a href="casal-igreja-2.jpeg" target="_blank"><img src="casal-igreja-2.jpeg" alt="Casal na igreja"></a><a href="pedido-1.jpeg" target="_blank"><img src="pedido-1.jpeg" alt="Pedido de casamento"></a><a href="pedido-3.jpeg" target="_blank"><img src="pedido-3.jpeg" alt="Pedido de casamento"></a><a href="pedido-4.jpeg" target="_blank"><img src="pedido-4.jpeg" alt="Momento do casal"></a><a href="pedido-5.jpeg" target="_blank"><img src="pedido-5.jpeg" alt="Momento do casal"></a><a href="gramado-1.jpeg" target="_blank"><img src="gramado-1.jpeg" alt="Viagem do casal a Gramado"></a><a href="nova-petropolis.jpeg" target="_blank"><img src="nova-petropolis.jpeg" alt="Viagem do casal a Nova Petrópolis"></a></div></div></section>
 <section class="details" id="cerimonia"><div class="wrap"><div class="section-kicker">Reserve esta data</div><h2 class="section-title">O nosso casamento</h2><p class="intro">Será uma alegria ter você conosco neste dia tão especial.</p><div class="detailcards"><div class="detail"><div class="symbol">◷</div><h3>Quando</h3><p>Sábado, 18 de dezembro de 2027<br>Às 16h</p></div><div class="detail"><div class="symbol">⌖</div><h3>Onde</h3><p>Igreja São Sebastião<br>Canoa Quebrada – Aracati, CE</p><a class="button outline" target="_blank" href="https://www.google.com/maps/search/?api=1&query=Igreja+S%C3%A3o+Sebasti%C3%A3o+Canoa+Quebrada+CE">Abrir localização</a></div></div></div></section>
-<section class="gifts" id="presentes"><div class="wrap"><div class="section-kicker">Um carinho para nossa nova etapa</div><h2 class="section-title">Lista de presentes</h2><p class="intro">Sua presença é o nosso maior presente. Se desejar nos presentear, preparamos algumas sugestões com carinho.</p>
+<section class="gifts" id="presentes"><div class="wrap"><div class="section-kicker">Com carinho, para nossa nova etapa</div><h2 class="section-title">Lista de presentes</h2><p class="intro">Sua presença é o nosso maior presente. Reunimos algumas sugestões para quem deseja nos presentear. Escolha um item para reservar.</p>
 <div class="giftgrid">
-<div class="gift"><img src="https://images.unsplash.com/photo-1517668808822-9ebb02f2a0e6?auto=format&fit=crop&w=700&q=80" alt="Cafeteira"><h3>Cafeteira</h3><p>Para os cafés das manhãs juntos</p><button data-gift-id="cafeteira" onclick="openGift('cafeteira','Cafeteira')">Quero presentear</button></div>
-<div class="gift"><img src="https://images.unsplash.com/photo-1603199506016-b9a594b593c0?auto=format&fit=crop&w=700&q=80" alt="Jogo de jantar"><h3>Jogo de jantar</h3><p>Para receber família e amigos</p><button data-gift-id="jogo-de-jantar" onclick="openGift('jogo-de-jantar','Jogo de jantar')">Quero presentear</button></div>
-<div class="gift"><img src="https://images.unsplash.com/photo-1584990347449-a9d5a2a9e9f0?auto=format&fit=crop&w=700&q=80" alt="Panelas"><h3>Jogo de panelas</h3><p>Para equipar nosso lar</p><button data-gift-id="jogo-de-panelas" onclick="openGift('jogo-de-panelas','Jogo de panelas')">Quero presentear</button></div>
+<div class="gift"><div class="gift-art" aria-hidden="true"><svg viewBox="0 0 100 100"><path d="M25 38h43v25a17 17 0 0 1-17 17H42a17 17 0 0 1-17-17z"/><path d="M68 45h8a10 10 0 0 1 0 20h-9M37 27c-5-6 5-8 0-14M51 27c-5-6 5-8 0-14"/><path d="M18 82h58"/></svg></div><div class="gift-content"><span class="gift-status">Disponível</span><h3>Cafeteira</h3><p>Para os cafés das manhãs juntos</p><button data-gift-id="cafeteira" onclick="openGift('cafeteira','Cafeteira')">Reservar presente</button></div></div>
+<div class="gift"><div class="gift-art" aria-hidden="true"><svg viewBox="0 0 100 100"><circle cx="50" cy="52" r="28"/><circle cx="50" cy="52" r="20"/><path d="M17 25v27M12 25v11a5 5 0 0 0 10 0V25M17 52v30M81 25c-8 8-9 19-2 25h4v32M83 25v57"/><path d="M35 87h30"/></svg></div><div class="gift-content"><span class="gift-status">Disponível</span><h3>Jogo de jantar</h3><p>Para receber família e amigos</p><button data-gift-id="jogo-de-jantar" onclick="openGift('jogo-de-jantar','Jogo de jantar')">Reservar presente</button></div></div>
+<div class="gift"><div class="gift-art" aria-hidden="true"><svg viewBox="0 0 100 100"><path d="M25 43h50l-5 34H30zM20 43h60M37 35h26l-3-7H40zM45 27v-7h10v7M25 50H15v13h13M75 50h10v13H72"/><path d="M40 56v12M50 56v12M60 56v12"/></svg></div><div class="gift-content"><span class="gift-status">Disponível</span><h3>Jogo de panelas</h3><p>Para equipar nosso lar</p><button data-gift-id="jogo-de-panelas" onclick="openGift('jogo-de-panelas','Jogo de panelas')">Reservar presente</button></div></div>
 </div>
-<div class="pixbox"><div class="section-kicker">Se preferir</div><h2 class="section-title" style="font-size:36px">Presente via Pix</h2><p>Se desejar, você pode contribuir com qualquer valor para esta nova etapa da nossa vida.</p><div class="pix-qr-frame"><img src="pix-qr.svg" alt="QR Code Pix dos noivos" width="225" height="225" loading="lazy"></div><p class="pix-instructions">Abra o aplicativo do seu banco, escolha pagar com Pix e aponte a câmera para o QR Code acima.</p><div class="pix-key">Chave Pix dos noivos:<strong id="pixKey">03488193071</strong></div><div class="pix-options"><button type="button" onclick="copyPixKey()">Copiar chave Pix</button><button type="button" onclick="copyPixPayload()">Copiar Pix Copia e Cola</button></div><p id="pixCopyMsg" aria-live="polite" style="font-size:12px;margin-top:10px"></p></div>
+<div class="gift-empty" id="giftEmpty" hidden>No momento, não há presentes disponíveis na lista.</div>
+<div class="pixbox">
+  <div class="pix-copy"><div class="section-kicker">Outra forma de presentear</div><h2 class="section-title">Presente via Pix</h2><p>Se preferir, você pode contribuir com qualquer valor para esta nova etapa da nossa vida.</p>
+    <div class="pix-key"><span>Chave Pix dos noivos</span><strong id="pixKey">03488193071</strong></div>
+    <div class="pix-options"><button type="button" onclick="copyPixKey()">Copiar chave Pix</button><button type="button" onclick="copyPixPayload()">Copiar Pix Copia e Cola</button></div>
+    <p id="pixCopyMsg" aria-live="polite" class="pix-copy-msg"></p>
+  </div>
+  <div class="pix-qr-side"><div class="pix-qr-frame"><img src="pix-qr.svg" alt="QR Code Pix dos noivos" width="225" height="225" loading="lazy"></div><p class="pix-instructions">Abra o aplicativo do seu banco, escolha pagar com Pix e aponte a câmera para o QR Code.</p></div>
+</div>
 </div></section>
 <section class="rsvp" id="rsvp"><div class="wrap"><div class="section-kicker">Queremos celebrar com você</div><h2 class="section-title">Confirme sua presença</h2><p class="intro">Preencha seus dados para nos ajudar na organização deste dia.</p>
 <form class="form" id="rsvpForm"><label>Nome completo<input required name="nome" maxlength="120" placeholder="Seu nome"></label><label>Telefone / WhatsApp<input required name="telefone" maxlength="25" placeholder="(00) 00000-0000"></label><label>Você poderá comparecer?<select name="presenca"><option>Sim, estarei presente</option><option>Não poderei comparecer</option></select></label><label>Quantidade de pessoas<input type="number" min="1" max="10" value="1" name="quantidade"></label><label class="full">Mensagem aos noivos (opcional)<textarea name="mensagem" rows="3" maxlength="1000" placeholder="Deixe uma mensagem..."></textarea></label><button type="submit">Enviar confirmação</button></form><p id="rsvpFeedback" role="status" style="text-align:center;font-size:13px;color:#17345f;margin:14px auto;max-width:600px"></p>
@@ -610,33 +679,38 @@ async function renderGiftAvailability(){
   if(error){console.warn('Não foi possível consultar os presentes:',error.message);return}
   const grid=document.querySelector('.giftgrid');
   const activeItems=(data||[]).filter(item=>item.active);
-  // Oculta também os cartões iniciais quando os noivos retiram um item da vitrine.
   grid.querySelectorAll('.gift').forEach(card=>{
-    const button=card.querySelector('[data-gift-id]');
-    if(button)card.hidden=true;
+    if(card.querySelector('[data-gift-id]'))card.hidden=true;
   });
   activeItems.forEach(item=>{
     let button=grid.querySelector('[data-gift-id="'+CSS.escape(item.id)+'"]');
     let card=button?button.closest('.gift'):null;
     if(!card){
       card=document.createElement('div');card.className='gift';
-      const img=document.createElement('img');img.alt='Presente da lista';img.src='';img.hidden=true;
+      const art=document.createElement('div');art.className='gift-art';art.setAttribute('aria-hidden','true');
+      art.innerHTML='<svg viewBox="0 0 100 100"><path d="M50 16l8 22 22 8-22 8-8 22-8-22-22-8 22-8z"/><circle cx="50" cy="50" r="34"/></svg>';
+      const content=document.createElement('div');content.className='gift-content';
+      const status=document.createElement('span');status.className='gift-status';
       const title=document.createElement('h3');
       const desc=document.createElement('p');
-      button=document.createElement('button');button.dataset.giftId=item.id;
-      button.addEventListener('click',()=>openGift(item.id,item.name));
-      card.append(img,title,desc,button);grid.appendChild(card);
+      button=document.createElement('button');button.type='button';button.dataset.giftId=item.id;
+      content.append(status,title,desc,button);card.append(art,content);grid.appendChild(card);
     }
     card.hidden=false;
     const title=card.querySelector('h3');
-    const desc=card.querySelector('p');
+    const desc=card.querySelector('.gift-content p');
+    const status=card.querySelector('.gift-status');
     title.textContent=item.name;
     if(desc)desc.textContent=item.description||'';
-    button.textContent=item.is_reserved?'Presente reservado':'Quero presentear';
+    if(status)status.textContent=item.is_reserved?'Reservado':'Disponível';
+    card.classList.toggle('is-reserved',!!item.is_reserved);
+    button.textContent=item.is_reserved?'Já reservado':'Reservar presente';
     button.disabled=!!item.is_reserved;
     button.setAttribute('aria-label',item.is_reserved?item.name+' já reservado':'Reservar '+item.name);
     button.onclick=()=>openGift(item.id,item.name);
   });
+  const empty=document.getElementById('giftEmpty');
+  if(empty)empty.hidden=activeItems.length>0;
 }
 async function confirmGift(){
   const guestName=document.getElementById('giftGuest').value.trim();
