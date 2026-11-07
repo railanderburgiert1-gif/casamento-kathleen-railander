@@ -6,7 +6,7 @@
 <title>Kathleen & Railander | 18.12.2027</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600&family=Great+Vibes&family=Montserrat:wght@300;400;500;600&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Allura&family=DM+Sans:wght@400;500;600;700&family=Playfair+Display:wght@400;500;600&family=Cormorant+Garamond:wght@400;500;600&display=swap" rel="stylesheet">
 <style>
 :root{--navy:#172e59;--blue:#244b86;--gold:#b39358;--ivory:#f7f2e9;--ink:#29344c;--muted:#77766f}
 *{box-sizing:border-box}html{scroll-behavior:smooth}body{margin:0;background:var(--ivory);color:var(--ink);font-family:Montserrat, sans-serif}
@@ -207,6 +207,41 @@ transition:opacity .8s ease,visibility .8s ease}
 }
 @media(prefers-reduced-motion:reduce){
  .envelope-intro.letter-out .envelope-letter,.envelope-intro.letter-expand .envelope-letter{transition:none}
+}
+
+
+/* Tipografia refinada: leitura limpa, títulos clássicos e assinatura discreta */
+body{font-family:'DM Sans',sans-serif;font-size:15px;line-height:1.65;letter-spacing:.005em}
+.brand{font-family:'Allura',cursive;font-size:37px;font-weight:400;letter-spacing:0}
+.links,.eyebrow,.section-kicker,.button,.form label,.form button{font-family:'DM Sans',sans-serif}
+.links a{font-weight:500;letter-spacing:.13em}
+h1,.envelope-heading,.envelope-letter strong,footer strong{font-family:'Allura',cursive;font-weight:400}
+h1{font-size:clamp(68px,8vw,104px);line-height:1.05;letter-spacing:0}
+.section-title,.detail h3,.gift h3,.modalbox h3{font-family:'Playfair Display',serif;font-weight:400;letter-spacing:-.025em}
+.section-title{font-size:clamp(36px,4.5vw,49px);line-height:1.2}
+.intro,.storytext,.hero p,.invitation-copy,.location-line,.date-row{font-family:'Cormorant Garamond',serif}
+.intro{font-size:22px;line-height:1.55}
+.storytext{font-size:22px;line-height:1.7}
+.invitation-copy{font-size:21px;line-height:1.48}
+.date-row{font-size:25px}
+.location-line{font-size:22px;line-height:1.45}
+.envelope-kicker,.envelope-instructions,.envelope-letter small{font-family:'Cormorant Garamond',serif}
+.envelope-heading{font-size:clamp(38px,5vw,52px);line-height:1.15}
+.envelope-letter strong{font-size:clamp(42px,6vw,58px);line-height:1}
+.envelope-letter span{font-family:'DM Sans',sans-serif;letter-spacing:.12em}
+.detail h3,.gift h3{font-size:27px}
+.form input,.form select,.form textarea{font-family:'DM Sans',sans-serif}
+footer{font-family:'Cormorant Garamond',serif;font-size:19px}
+footer strong{font-size:42px}
+@media(max-width:720px){
+ .brand{font-size:30px}
+ .links a{letter-spacing:.07em}
+ h1{font-size:clamp(58px,12vw,78px)}
+ .section-title{font-size:38px}
+ .intro{font-size:20px}
+ .invitation-copy{font-size:19px}
+ .storytext{font-size:20px}
+ .envelope-heading{font-size:38px}
 }
 
 </style>
