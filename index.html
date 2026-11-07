@@ -28,11 +28,14 @@ footer{text-align:center;padding:45px 20px;color:#6c6b65;font:italic 20px 'Cormo
 :root{--navy:#102b59;--blue:#174b91;--gold:#ad8744;--ivory:#fbf7ef;--ink:#172b4d}
 body{background:#fbf7ef url('ornamento-tl.jpg') left top/150px auto no-repeat;color:var(--ink)}
 body:before{content:"";position:fixed;z-index:19;pointer-events:none;inset:9px;border:1px solid #b18b4c}
-body:after{content:"";position:fixed;z-index:19;pointer-events:none;inset:0;background:
+body{position:relative}
+body:after{content:"";position:absolute;z-index:0;pointer-events:none;inset:0;background:
 url('ornamento-tl.jpg') left top/132px auto no-repeat,
 url('ornamento-tr.jpg') right top/132px auto no-repeat,
 url('ornamento-bl.jpg') left bottom/132px auto no-repeat,
 url('ornamento-br.jpg') right bottom/132px auto no-repeat}
+body>.topbar,body>main,body>footer{position:relative;z-index:1}
+body>.envelope-intro,body>.modal{z-index:1000}
 .topbar{background:rgba(251,247,239,.96);border-bottom:1px solid #c6a76b;box-shadow:0 2px 12px #243b5b0b}
 .nav{max-width:1160px;padding:15px 30px}.brand{font-size:32px;color:#12366e}
 .links{color:#17366a}.links a{font-size:10px}
