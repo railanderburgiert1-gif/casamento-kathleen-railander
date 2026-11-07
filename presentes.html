@@ -1,0 +1,1248 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="theme-color" content="#f7f2e9">
+<title>Lista de Presentes | Kathleen & Railander</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Bodoni+Moda:wght@400;500;600;700&family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<style>
+:root{--navy:#172e59;--blue:#244b86;--gold:#b39358;--ivory:#f7f2e9;--ink:#29344c;--muted:#77766f}
+*{box-sizing:border-box}html{scroll-behavior:smooth}body{margin:0;background:var(--ivory);color:var(--ink);font-family:Montserrat, sans-serif}
+a{color:inherit}.topbar{position:sticky;top:0;z-index:10;background:rgba(247,242,233,.94);backdrop-filter:blur(12px);border-bottom:1px solid #d9cba9}
+.nav{max-width:1120px;margin:auto;padding:13px 22px;display:flex;align-items:center;justify-content:space-between}.brand{font-family:'Great Vibes';font-size:30px;color:var(--navy);text-decoration:none}.links{display:flex;gap:22px;font-size:11px;letter-spacing:.12em;text-transform:uppercase}.links a{text-decoration:none}.links a:hover{color:var(--gold)}
+.hero{min-height:88vh;display:grid;place-items:center;text-align:center;padding:64px 20px;position:relative;overflow:hidden;background:linear-gradient(#f7f2e9d9,#f7f2e9e8),url('casal-igreja-1.jpeg') center 37%/cover}
+.hero:before{content:"";position:absolute;inset:18px;border:1px solid #b3935870;pointer-events:none}.hero-inner{position:relative;max-width:780px}.eyebrow{font-size:11px;letter-spacing:.32em;text-transform:uppercase;color:var(--gold)}h1{font:clamp(62px,10vw,112px)/.95 'Great Vibes';font-weight:400;color:var(--navy);margin:24px 0 16px}.amp{color:var(--gold)}.date{font:500 20px 'Cormorant Garamond';letter-spacing:.22em;color:var(--navy)}.hero p{font:italic 19px 'Cormorant Garamond';color:#555;margin:20px auto 30px}.button{display:inline-block;background:var(--navy);color:white;text-decoration:none;padding:14px 24px;border:1px solid var(--navy);font-size:10px;letter-spacing:.16em;text-transform:uppercase;cursor:pointer}.button.outline{background:transparent;color:var(--navy)}section{padding:82px 22px}.wrap{max-width:1050px;margin:auto}.section-kicker{text-align:center;color:var(--gold);font-size:10px;letter-spacing:.28em;text-transform:uppercase}.section-title{text-align:center;font:500 48px 'Cormorant Garamond';color:var(--navy);margin:10px 0 18px}.intro{text-align:center;max-width:680px;margin:0 auto 35px;font:20px/1.55 'Cormorant Garamond';color:#596071}
+.countdown{display:flex;justify-content:center;gap:clamp(14px,4vw,44px);margin:36px 0}.countdown div{text-align:center;min-width:65px}.countdown strong{display:block;font:500 42px 'Cormorant Garamond';color:var(--navy)}.countdown span{font-size:9px;letter-spacing:.15em;color:var(--gold);text-transform:uppercase}
+.story{background:#fffdfa}.storygrid{display:grid;grid-template-columns:1fr 1fr;gap:42px;align-items:center}.storygrid img{width:100%;height:520px;object-fit:cover}.storytext{font:21px/1.65 'Cormorant Garamond';color:#51596a}.ornament{text-align:center;color:var(--gold);font-size:24px;margin:18px}
+.gallerygrid{display:grid;grid-template-columns:repeat(3,1fr);gap:13px}.gallerygrid img{width:100%;height:360px;object-fit:cover;display:block;transition:transform .35s}.gallerygrid a{overflow:hidden}.gallerygrid a:hover img{transform:scale(1.04)}
+.details{background:#fffdfa}.detailcards{display:grid;grid-template-columns:repeat(2,1fr);gap:18px;margin-top:34px}.detail{border:1px solid #d8c9a5;padding:30px;text-align:center}.detail h3{font:28px 'Cormorant Garamond';color:var(--navy);margin:12px}.detail p{font-size:13px;line-height:1.8;color:#666}.detail .symbol{font-size:25px;color:var(--gold)}.church-photo{margin:34px 0 0;border:1px solid #d8c9a5;padding:10px;background:#fffdfa;box-shadow:0 12px 30px rgba(16,43,89,.08)}.church-photo img{display:block;width:100%;height:clamp(270px,46vw,510px);object-fit:cover;object-position:center 52%}.church-photo figcaption{padding:10px 8px 2px;text-align:right;font-size:10px;letter-spacing:.035em;color:#7a7468}.church-photo figcaption a{color:#806333;text-decoration:underline;text-underline-offset:2px}
+.map-panel{display:grid;grid-template-columns:.78fr 1.35fr;margin-top:24px;border:1px solid #d8c9a5;background:#fbf7ef;align-items:stretch}.map-info{padding:30px;display:flex;flex-direction:column;align-items:flex-start;justify-content:center}.map-info .symbol{font-size:28px;color:var(--gold)}.map-info h3{font:30px 'Cormorant Garamond';color:var(--navy);margin:10px 0}.map-info p{font-size:13px;line-height:1.8;color:#626775;margin:5px 0 14px}.map-info .arrival-note{font-family:'Cormorant Garamond';font-size:18px;color:var(--navy)}.map-info .button{margin-top:8px}.map-frame{min-height:340px}.map-frame iframe{display:block;width:100%;height:100%;min-height:340px;border:0}
+.gifts{background:#f2ecdf}.giftgrid{display:grid;grid-template-columns:repeat(3,1fr);gap:18px}.gift{background:#fffdfa;border:1px solid #e1d7c3;padding:12px}.gift img{width:100%;height:180px;object-fit:cover;background:#eee}.gift h3{font:24px 'Cormorant Garamond';color:var(--navy);margin:12px 4px 4px}.gift p{font-size:12px;color:#777;margin:0 4px 12px}.gift button{width:100%;border:1px solid var(--gold);background:transparent;color:var(--navy);padding:11px;text-transform:uppercase;letter-spacing:.1em;font-size:10px;cursor:pointer}.pixbox{margin:30px auto 0;max-width:700px;background:#fffdfa;border:1px solid #d8c9a5;padding:28px;text-align:center}.pixbox p{font-size:13px;line-height:1.7;color:#666}.pix-options{display:flex;gap:10px;justify-content:center;flex-wrap:wrap;margin:15px 0}.pix-options button{padding:10px 17px;background:white;border:1px solid var(--gold);color:var(--navy);cursor:pointer}.pix-key{font-size:12px;background:#f4efe5;padding:12px;word-break:break-all}.pix-qr-frame{width:min(250px,72vw);aspect-ratio:1;margin:20px auto;padding:12px;background:#fff;border:1px solid #b18b4c;box-shadow:inset 0 0 0 5px #fbf7ef,inset 0 0 0 6px #e2d4b8}.pix-qr-frame img{display:block;width:100%;height:100%;image-rendering:pixelated}.pix-instructions{max-width:430px;margin:10px auto 16px;font:17px/1.45 'Cormorant Garamond';color:#48566d}
+.rsvp{background:var(--navy);color:#fff}.rsvp .section-title{color:#fff}.rsvp .section-kicker{color:#d7bd88}.rsvp .intro{color:#e1e5ed}.form{max-width:620px;margin:auto;display:grid;grid-template-columns:1fr 1fr;gap:14px}.form label{font-size:10px;letter-spacing:.1em;text-transform:uppercase}.form input,.form select,.form textarea{width:100%;padding:13px;border:1px solid #ffffff55;background:#ffffff12;color:white;margin-top:7px;font:13px Montserrat}.form select option{color:#222}.form .full{grid-column:1/-1}.form button{grid-column:1/-1;background:var(--gold);border:0;padding:15px;color:#fff;letter-spacing:.15em;text-transform:uppercase;cursor:pointer}
+footer{text-align:center;padding:45px 20px;color:#6c6b65;font:italic 20px 'Cormorant Garamond'}footer strong{display:block;color:var(--navy);font:34px 'Great Vibes';font-weight:400}
+.modal{position:fixed;inset:0;background:#1119;display:none;place-items:center;z-index:30;padding:20px}.modal.open{display:grid}.modalbox{background:var(--ivory);padding:28px;max-width:450px;width:100%;text-align:center;border:1px solid var(--gold)}.modalbox h3{font:32px 'Cormorant Garamond';color:var(--navy)}.modalbox input{width:100%;padding:12px;margin:7px 0;border:1px solid #cdbd99;background:white}.close{float:right;border:0;background:none;font-size:22px;cursor:pointer}
+@media(max-width:720px){.links{gap:10px;font-size:8px;letter-spacing:.06em}.brand{font-size:25px}.nav{padding:10px 14px}.hero{min-height:78vh}.storygrid{grid-template-columns:1fr;gap:20px}.storygrid img{height:390px}.gallerygrid{grid-template-columns:repeat(2,1fr)}.gallerygrid img{height:240px}.detailcards{grid-template-columns:1fr}.map-panel{grid-template-columns:1fr}.map-info{padding:24px}.map-frame,.map-frame iframe{min-height:280px}.giftgrid{grid-template-columns:repeat(2,1fr)}.gift img{height:140px}.form{grid-template-columns:1fr}.form .full{grid-column:auto}.countdown strong{font-size:34px}}
+
+/* Direção visual inspirada diretamente no convite: papel, azulejos, azul e dourado */
+:root{--navy:#102b59;--blue:#174b91;--gold:#ad8744;--ivory:#fbf7ef;--ink:#172b4d}
+body{background:#fbf7ef url('ornamento-tl.jpg') left top/150px auto no-repeat;color:var(--ink)}
+body:before{content:"";position:fixed;z-index:19;pointer-events:none;inset:9px;border:1px solid #b18b4c}
+body{position:relative}
+body:after{content:"";position:absolute;z-index:0;pointer-events:none;inset:0 0 auto;height:240px;background:
+url('ornamento-tl.jpg') left top/132px auto no-repeat,
+url('ornamento-tr.jpg') right top/132px auto no-repeat}
+footer{position:relative;z-index:1;overflow:visible;min-height:190px;padding-bottom:90px}
+footer:before,footer:after{content:"";position:absolute;bottom:0;width:132px;height:132px;background-size:contain;background-repeat:no-repeat;pointer-events:none;z-index:0}
+footer:before{left:0;background-image:url('ornamento-bl.jpg')}
+footer:after{right:0;background-image:url('ornamento-br.jpg')}
+footer>*{position:relative;z-index:1}
+body>.topbar,body>main,body>footer{position:relative;z-index:1}
+body>.envelope-intro,body>.modal{z-index:1000}
+.topbar{background:rgba(251,247,239,.96);border-bottom:1px solid #c6a76b;box-shadow:0 2px 12px #243b5b0b}
+.nav{max-width:1160px;padding:15px 30px}.brand{font-size:32px;color:#12366e}
+.links{color:#17366a}.links a{font-size:10px}
+.hero{min-height:92vh;padding:75px 25px 55px;background:linear-gradient(180deg,#fbf7efdd,#fbf7efed),url('casal-igreja-1.jpeg') center 40%/cover}
+.hero:before{inset:30px;border:1px solid #b18b4c;border-radius:42px 42px 24px 24px}
+.hero:after{content:"✦";position:absolute;top:35px;left:50%;transform:translateX(-50%);font-size:27px;color:var(--gold)}
+.hero-inner{max-width:820px}
+.hero-church{display:block;width:min(390px,78vw);height:230px;object-fit:cover;object-position:center 42%;mix-blend-mode:multiply;margin:0 auto 15px;filter:saturate(.9)}
+.eyebrow{font-family:'Cormorant Garamond';font-size:14px;letter-spacing:.24em;color:#17366a}
+h1{font-size:clamp(66px,10vw,116px);color:#102b59;margin:14px 0 18px}
+.date{font-size:25px;letter-spacing:.16em;color:#102b59}
+.hero p{font-size:23px;color:#263957}
+.button{background:#12366e;border-color:#12366e;border-radius:2px}
+.button.outline{color:#12366e;border-color:#b18b4c}
+section{padding:88px 26px}
+.section-kicker{font-family:'Cormorant Garamond';font-size:14px;letter-spacing:.24em;color:#a17d3f}
+.section-title{font-size:54px;color:#102b59}
+.section-title:after{content:"✧  ─────  ❦  ─────  ✧";display:block;font:18px 'Cormorant Garamond';letter-spacing:.08em;color:#b18b4c;margin-top:9px}
+.intro{font-size:22px;color:#3c4b64}
+.story,.details{background:rgba(255,253,249,.88);border-top:1px solid #e7dcc6;border-bottom:1px solid #e7dcc6}
+.storygrid img{border:7px solid #fff;border-bottom-width:18px;box-shadow:0 8px 25px #162d5018}
+.storytext{font-size:23px;color:#253958}
+.gallerygrid{gap:17px}.gallerygrid a{border:5px solid #fff;box-shadow:0 4px 15px #162d5015}
+.detail{background:#fffdfa;border:1px solid #c7a76b;outline:1px solid #e6d9bf;outline-offset:4px}
+.detail h3,.gift h3{color:#102b59}
+.gifts{background:#f5efe4;border-top:1px solid #e0d2b7}
+.gift{border:1px solid #cbb27f;box-shadow:0 4px 14px #172e5910}
+.gift button,.pix-options button{border-color:#b18b4c;color:#17366a}
+.pixbox{border:1px solid #b18b4c;box-shadow:inset 0 0 0 5px #fbf7ef,inset 0 0 0 6px #e2d4b8}
+.rsvp{background:#f9f5ed;color:#17345f;border-top:1px solid #d9c79f;border-bottom:1px solid #d9c79f}
+.rsvp .section-title{color:#102b59}.rsvp .section-kicker{color:#a17d3f}.rsvp .intro{color:#3c4b64}
+.form label{color:#17345f}.form input,.form select,.form textarea{background:#fffdfa;color:#17345f;border:1px solid #cbb27f}
+.form input::placeholder,.form textarea::placeholder{color:#8a8a83}
+.form button{background:#12366e;color:white}
+footer{background:#fbf7ef;color:#5c6270;border-top:1px solid #d7c59d}
+footer strong{color:#102b59}
+.modalbox{border:1px solid #b18b4c;box-shadow:inset 0 0 0 5px #fbf7ef,inset 0 0 0 6px #e2d4b8}
+@media(max-width:720px){
+ body:before{inset:5px}
+ body:after{background-size:76px auto,76px auto,76px auto,76px auto}
+ .nav{padding:10px 18px}.links{gap:9px;font-size:7px}.brand{font-size:25px}
+ .hero{min-height:84vh;padding:65px 16px 45px}.hero:before{inset:15px}
+ .hero-church{height:175px;width:min(300px,75vw)}
+ .date{font-size:19px;letter-spacing:.1em}
+ section{padding:68px 20px}.section-title{font-size:43px}
+ .section-title:after{font-size:14px}
+}
+
+
+/* Abertura redesenhada como um convite impresso */
+.hero{min-height:100vh;padding:38px 24px 48px;background:
+linear-gradient(#fbf7efc9,#fbf7efda),
+url('ornamento-tl.jpg') left top/175px auto no-repeat,
+url('ornamento-tr.jpg') right top/175px auto no-repeat,
+url('ornamento-bl.jpg') left bottom/175px auto no-repeat,
+url('ornamento-br.jpg') right bottom/175px auto no-repeat,
+#fbf7ef}
+.hero:before{inset:18px 4.5%;border:1px solid #b18b4c;border-radius:48px 48px 34px 34px}
+.hero:after{content:none}
+.hero-inner.invitation{max-width:820px;width:min(100%,820px);padding:28px 48px 18px;border-left:1px solid #d5c39e;border-right:1px solid #d5c39e;position:relative}
+.invitation-top,.invitation-bottom{color:#1b4c8d;font-size:27px;line-height:1;margin:0 auto 12px}
+.invitation-bottom{margin:18px auto 0}
+.hero-church{width:min(470px,82vw);height:300px;object-fit:contain;object-position:center;margin:0 auto 0;mix-blend-mode:multiply;filter:saturate(.96);display:block}
+.cross-ornament{font-size:30px;color:#17366a;margin:-5px 0 8px}
+.blessing{font-size:11px;letter-spacing:.22em}
+h1{font-size:clamp(58px,8vw,98px);margin:18px 0 12px;white-space:normal}
+.gold-divider{color:#b18b4c;letter-spacing:.12em;margin:8px 0 15px;font-size:15px}
+.invitation-copy{max-width:640px;margin:0 auto 12px;font:20px/1.35 'Cormorant Garamond';color:#1d2f4e}
+.invitation-second{margin-top:14px}
+.date-row{display:flex;justify-content:center;align-items:center;gap:28px;margin:24px auto 16px;color:#102b59;font:500 27px 'Cormorant Garamond';letter-spacing:.04em}
+.date-row i{height:38px;border-left:1px solid #b18b4c}
+.location-line{font:500 22px/1.45 'Cormorant Garamond';letter-spacing:.08em;color:#102b59;margin:10px 0 20px}
+.location-line em{font-size:18px;letter-spacing:.06em}
+.invitation .button{margin:0 auto 5px}
+.invitation .countdown{margin:20px 0 0}
+.invitation .countdown strong{font-size:32px}
+.invitation .countdown span{font-size:8px}
+@media(max-width:720px){
+ .hero{min-height:100vh;padding:30px 12px 38px;background-size:110px auto,110px auto,110px auto,110px auto,auto}
+ .hero:before{inset:12px 3%}
+ .hero-inner.invitation{padding:24px 18px 14px;width:100%}
+ .hero-church{height:220px;width:min(360px,84vw)}
+ h1{font-size:clamp(52px,12vw,76px);margin:12px 0}
+ .invitation-copy{font-size:17px;line-height:1.3}
+ .date-row{font-size:22px;gap:14px;margin:18px auto 12px}
+ .date-row i{height:30px}
+ .location-line{font-size:19px}
+ .location-line em{font-size:16px}
+ .invitation .countdown{gap:12px;margin-top:16px}
+ .invitation .countdown strong{font-size:28px}
+}
+
+
+/* Abertura em formato de envelope */
+.envelope-intro{position:fixed;inset:0;z-index:1000;display:flex;flex-direction:column;align-items:center;justify-content:center;overflow:hidden;padding:28px 18px 34px;background:
+linear-gradient(135deg,rgba(251,247,239,.94),rgba(245,237,221,.97)),
+url('ornamento-tl.jpg') left top/150px auto no-repeat,
+url('ornamento-tr.jpg') right top/150px auto no-repeat,#f8f3e9;
+transition:opacity .8s ease,visibility .8s ease}
+.envelope-intro:before{content:"";position:absolute;inset:12px;border:1px solid #b18b4c;pointer-events:none}
+.envelope-intro:after{content:"";position:absolute;inset:0;pointer-events:none;background:url('ornamento-bl.jpg') left bottom/125px auto no-repeat,url('ornamento-br.jpg') right bottom/125px auto no-repeat}
+.envelope-intro.is-gone{opacity:0;visibility:hidden;pointer-events:none}
+.envelope-kicker{position:relative;z-index:2;margin:0 0 9px;color:#9a7942;font:italic 22px 'Cormorant Garamond';letter-spacing:.04em;text-align:center}
+.envelope-heading{position:relative;z-index:2;margin:0 0 24px;color:#102b59;font:clamp(36px,6vw,54px) 'Great Vibes';font-weight:400;text-align:center}
+.envelope-stage{position:relative;z-index:2;width:min( min(86vw,590px), calc(100vw - 44px));height:clamp(250px,42vw,370px);perspective:1400px;filter:drop-shadow(0 22px 28px rgba(24,43,75,.16))}
+.envelope-letter{position:absolute;z-index:2;left:8%;right:8%;bottom:7%;height:88%;display:flex;flex-direction:column;align-items:center;justify-content:center;text-align:center;padding:22px 18px 40px;background:linear-gradient(145deg,#fffdf8,#f2eadb);border:1px solid #d4c095;box-shadow:0 4px 16px #1b315018;transform:translateY(0);transition:transform 1.15s cubic-bezier(.2,.75,.25,1);color:#17366a}
+.envelope-letter:before{content:"";position:absolute;inset:9px;border:1px solid #d7c59f;pointer-events:none}
+.envelope-letter small{font:italic 17px 'Cormorant Garamond';color:#9a7942}
+.envelope-letter strong{font:clamp(34px,6vw,55px) 'Great Vibes';font-weight:400;margin:9px 0;color:#102b59}
+.envelope-letter span{font:11px Montserrat;letter-spacing:.22em;text-transform:uppercase}
+.envelope-shell{position:absolute;inset:0;overflow:visible}
+.envelope-back{position:absolute;z-index:1;inset:0;background:#e9dfca;border:1px solid #b99a62}
+.envelope-left,.envelope-right,.envelope-bottom{position:absolute;inset:0}
+.envelope-left{z-index:4;background:linear-gradient(135deg,#f4eddf,#e5d8bd);clip-path:polygon(0 0,52% 54%,0 100%);border-left:1px solid #b99a62}
+.envelope-right{z-index:4;background:linear-gradient(225deg,#f4eddf,#e5d8bd);clip-path:polygon(100% 0,48% 54%,100% 100%)}
+.envelope-bottom{z-index:4;background:linear-gradient(0deg,#e8dcc4,#f4eddf);clip-path:polygon(0 100%,50% 43%,100% 100%)}
+.envelope-flap{position:absolute;z-index:5;left:0;right:0;top:0;height:58%;background:linear-gradient(180deg,#f8f2e6,#e8dcc5);clip-path:polygon(0 0,100% 0,50% 100%);transform-origin:top center;transform:rotateX(0);transition:transform .85s ease;backface-visibility:visible;filter:drop-shadow(0 2px 2px rgba(25,42,69,.12))}
+.envelope-seal{position:absolute;z-index:7;left:50%;top:51%;transform:translate(-50%,-50%);width:72px;height:72px;border-radius:50%;border:2px solid #d2b578;background:radial-gradient(circle at 35% 30%,#31558a,#102b59 72%);box-shadow:0 3px 9px #182d4b55,inset 0 0 0 4px #173d70;color:#f8edcf;font:25px 'Great Vibes';cursor:pointer;transition:opacity .3s,transform .3s}
+.envelope-seal:after{content:"✦";position:absolute;inset:6px;border:1px solid #d2b578;border-radius:50%;display:grid;place-items:center;font:12px 'Cormorant Garamond';color:#e4ce9d}
+.envelope-instructions{position:relative;z-index:2;margin:24px 0 13px;color:#4e5c73;font:italic 19px 'Cormorant Garamond';text-align:center}
+.envelope-open{position:relative;z-index:2;min-width:190px;padding:15px 27px;border:1px solid #b18b4c;background:#102b59;color:#fffaf0;font:10px Montserrat;letter-spacing:.2em;text-transform:uppercase;cursor:pointer;transition:background .2s,transform .2s}
+.envelope-open:hover{background:#1b477f;transform:translateY(-2px)}
+.envelope-intro.opening .envelope-flap{transform:rotateX(180deg)}
+.envelope-intro.opening .envelope-seal{opacity:0;transform:translate(-50%,-50%) scale(.55)}
+.envelope-intro.opening .envelope-letter{transform:translateY(-58%)}
+.envelope-intro.opening .envelope-stage{filter:drop-shadow(0 25px 30px rgba(24,43,75,.13))}
+@media(max-width:600px){
+ .envelope-intro{padding:22px 12px 28px}
+ .envelope-intro:before{inset:7px}
+ .envelope-stage{width:min(88vw,470px);height:clamp(230px,66vw,300px)}
+ .envelope-letter{left:7%;right:7%;padding:16px 12px 30px}
+ .envelope-letter strong{font-size:39px}
+ .envelope-seal{width:62px;height:62px;font-size:22px}
+ .envelope-instructions{font-size:17px;margin:20px 0 12px}
+}
+@media(prefers-reduced-motion:reduce){
+ .envelope-intro,.envelope-flap,.envelope-letter,.envelope-seal{transition:none}
+}
+
+
+/* Movimento em três tempos: abrir a aba, retirar a carta e aproximá-la da tela */
+.envelope-stage{perspective:1800px;transform-style:preserve-3d}
+.envelope-shell{transform-style:preserve-3d}
+.envelope-flap{transform-origin:50% 0%;transition:transform 1s cubic-bezier(.22,.72,.18,1);backface-visibility:hidden}
+.envelope-letter{
+  z-index:2;
+  transform:translate3d(0,0,0) scale(1);
+  transform-origin:50% 85%;
+  transition:transform 1.05s cubic-bezier(.2,.78,.22,1),box-shadow .8s ease;
+  will-change:transform;
+}
+.envelope-intro.opening .envelope-flap{transform:rotateX(180deg)}
+.envelope-intro.letter-out .envelope-letter{
+  z-index:8;
+  transform:translate3d(0,-112%,0) scale(1.04);
+  box-shadow:0 22px 45px #1b315033;
+}
+.envelope-intro.letter-expand .envelope-letter{
+  z-index:20;
+  transform:translate3d(0,-105%,0) scale(2.65);
+  opacity:0;
+  transition:transform 1.05s cubic-bezier(.65,0,.25,1),opacity .8s ease .18s;
+}
+.envelope-intro.is-gone{transition:opacity .9s ease,visibility .9s ease}
+.envelope-open:disabled{opacity:.75;cursor:default;transform:none}
+@media(max-width:600px){
+ .envelope-intro.letter-out .envelope-letter{transform:translate3d(0,-112%,0) scale(1.02)}
+ .envelope-intro.letter-expand .envelope-letter{transform:translate3d(0,-105%,0) scale(3.5)}
+}
+@media(prefers-reduced-motion:reduce){
+ .envelope-intro.letter-out .envelope-letter,.envelope-intro.letter-expand .envelope-letter{transition:none}
+}
+
+
+/* Tipografia refinada: leitura limpa, títulos clássicos e assinatura discreta */
+body{font-family:'DM Sans',sans-serif;font-size:15px;line-height:1.65;letter-spacing:.005em}
+.brand{font-family:'Allura',cursive;font-size:37px;font-weight:400;letter-spacing:0}
+.links,.eyebrow,.section-kicker,.button,.form label,.form button{font-family:'DM Sans',sans-serif}
+.links a{font-weight:500;letter-spacing:.13em}
+h1,.envelope-heading,.envelope-letter strong,footer strong{font-family:'Allura',cursive;font-weight:400}
+h1{font-size:clamp(68px,8vw,104px);line-height:1.05;letter-spacing:0}
+.section-title,.detail h3,.gift h3,.modalbox h3{font-family:'Playfair Display',serif;font-weight:400;letter-spacing:-.025em}
+.section-title{font-size:clamp(36px,4.5vw,49px);line-height:1.2}
+.intro,.storytext,.hero p,.invitation-copy,.location-line,.date-row{font-family:'Cormorant Garamond',serif}
+.intro{font-size:22px;line-height:1.55}
+.storytext{font-size:22px;line-height:1.7}
+.invitation-copy{font-size:21px;line-height:1.48}
+.date-row{font-size:25px}
+.location-line{font-size:22px;line-height:1.45}
+.envelope-kicker,.envelope-instructions,.envelope-letter small{font-family:'Cormorant Garamond',serif}
+.envelope-heading{font-size:clamp(38px,5vw,52px);line-height:1.15}
+.envelope-letter strong{font-size:clamp(42px,6vw,58px);line-height:1}
+.envelope-letter span{font-family:'DM Sans',sans-serif;letter-spacing:.12em}
+.detail h3,.gift h3{font-size:27px}
+.form input,.form select,.form textarea{font-family:'DM Sans',sans-serif}
+footer{font-family:'Cormorant Garamond',serif;font-size:19px}
+footer strong{font-size:42px}
+@media(max-width:720px){
+ .brand{font-size:30px}
+ .links a{letter-spacing:.07em}
+ h1{font-size:clamp(58px,12vw,78px)}
+ .section-title{font-size:38px}
+ .intro{font-size:20px}
+ .invitation-copy{font-size:19px}
+ .storytext{font-size:20px}
+ .envelope-heading{font-size:38px}
+}
+
+
+/* Data, horário e local como informações centrais do convite */
+.date-row{
+  width:min(100%,560px);margin:25px auto 16px;padding:17px 22px;
+  border-top:1px solid #b18b4c;border-bottom:1px solid #b18b4c;
+  background:linear-gradient(90deg,rgba(177,139,76,.07),rgba(255,255,255,.62),rgba(177,139,76,.07));
+  color:#102b59;font-family:'Playfair Display',serif;font-size:27px;
+  box-shadow:0 5px 18px rgba(16,43,89,.06)
+}
+.date-row span{display:inline-flex;align-items:center;gap:8px}
+.date-row i{border-color:#b18b4c}
+.location-line{
+  width:min(100%,560px);margin:14px auto 23px;padding:17px 20px;
+  border:1px solid #c7a76b;background:#fffdf8;
+  box-shadow:inset 0 0 0 4px #fffdf8,inset 0 0 0 5px #eadfc9;
+  font-family:'DM Sans',sans-serif;font-size:16px;font-weight:600;
+  letter-spacing:.13em;line-height:1.8;color:#102b59
+}
+.location-line em{display:inline-block;margin-top:3px;font-family:'Cormorant Garamond',serif;font-size:20px;font-weight:500;letter-spacing:.04em;color:#876a37}
+.detailcards .detail:first-child,.detailcards .detail:nth-child(2){border:1px solid #b18b4c;background:#fffdf8;box-shadow:inset 0 0 0 4px #fffdf8,inset 0 0 0 5px #eadfc9}
+.detail h3{font-family:'Playfair Display',serif}
+.detail p{font-size:15px;line-height:1.9;color:#263957}
+@media(max-width:720px){
+ .date-row{gap:12px;padding:14px 10px;font-size:22px}
+ .location-line{padding:14px 12px;font-size:14px;letter-spacing:.08em}
+ .location-line em{font-size:18px}
+ footer{padding-bottom:78px}
+ footer:before,footer:after{width:78px;height:78px}
+}
+
+
+
+/* Ajustes finais: moldura acompanha o documento e os ornamentos não ficam presos à tela */
+body:before{
+  position:absolute;
+  inset:9px;
+  z-index:0;
+}
+body:after{
+  position:absolute;
+  pointer-events:none;
+}
+footer{
+  position:relative !important;
+  overflow:hidden;
+  isolation:isolate;
+}
+footer:before,footer:after{
+  position:absolute !important;
+  top:auto !important;
+  bottom:0 !important;
+  z-index:0;
+  pointer-events:none;
+  transform:none !important;
+}
+footer>*{position:relative;z-index:1}
+
+/* Envelope com abertura mais orgânica e transições contínuas */
+.envelope-intro{
+  perspective:1800px;
+  transform:translateZ(0);
+  transition:opacity 1s cubic-bezier(.22,.61,.36,1),visibility 1s;
+}
+.envelope-stage{
+  transform-style:preserve-3d;
+  perspective:1800px;
+}
+.envelope-shell{
+  transform-style:preserve-3d;
+}
+.envelope-flap{
+  transform-origin:50% 0%;
+  transition:transform 1.15s cubic-bezier(.2,.75,.2,1);
+  backface-visibility:hidden;
+}
+.envelope-letter{
+  backface-visibility:hidden;
+  transition:transform 1.2s cubic-bezier(.2,.72,.18,1),box-shadow .9s ease,opacity .9s ease;
+}
+.envelope-intro.opening .envelope-flap{
+  transform:rotateX(180deg);
+}
+.envelope-intro.letter-out .envelope-letter{
+  transform:translate3d(0,-108%,12px) scale(1.035);
+}
+.envelope-intro.letter-expand .envelope-letter{
+  transform:translate3d(0,-104%,30px) scale(2.55);
+  opacity:0;
+  transition:transform 1.15s cubic-bezier(.65,0,.25,1),opacity .85s ease .22s;
+}
+.envelope-seal{
+  transition:opacity .45s ease,transform .55s cubic-bezier(.2,.7,.2,1);
+}
+.envelope-intro.opening .envelope-seal{
+  opacity:0;
+  transform:translate(-50%,-50%) scale(.65) rotate(-18deg);
+}
+.envelope-open:disabled{opacity:.7;cursor:default}
+@media(max-width:600px){
+  body:before{inset:5px}
+  footer:before,footer:after{width:78px;height:78px}
+  .envelope-intro.letter-out .envelope-letter{transform:translate3d(0,-108%,10px) scale(1.02)}
+  .envelope-intro.letter-expand .envelope-letter{transform:translate3d(0,-102%,24px) scale(3.25)}
+}
+
+
+/* Abertura baseada no vídeo de referência: envelope com laço, abas articuladas e carta floral */
+.envelope-intro{
+  background:
+    radial-gradient(ellipse at center,rgba(255,255,255,.78),rgba(248,242,231,.96)),
+    url('ornamento-tl.jpg') left top/170px auto no-repeat,
+    url('ornamento-tr.jpg') right top/170px auto no-repeat,
+    #f8f3e9;
+}
+.envelope-intro:before{inset:14px;border:1px solid #b69a6a;box-shadow:inset 0 0 0 5px #f8f3e9,inset 0 0 0 6px #e6d9c2}
+.envelope-kicker{font-size:20px;letter-spacing:.12em;text-transform:uppercase;color:#9b815d}
+.envelope-heading{font-family:'Cormorant Garamond',serif;font-size:clamp(32px,5vw,48px);font-style:italic;color:#17386b}
+.envelope-stage{
+  width:min(84vw,560px);height:clamp(270px,43vw,370px);
+  filter:drop-shadow(0 24px 26px rgba(33,43,60,.2));
+}
+.envelope-letter{
+  z-index:2;left:7%;right:7%;bottom:5%;height:91%;
+  padding:25px 24px 42px;
+  background:
+    url('ornamento-tl.jpg') left top/108px auto no-repeat,
+    url('ornamento-tr.jpg') right top/108px auto no-repeat,
+    url('ornamento-bl.jpg') left bottom/108px auto no-repeat,
+    url('ornamento-br.jpg') right bottom/108px auto no-repeat,
+    linear-gradient(145deg,#fffefa,#f8f2e8);
+  border:1px solid #d6c6a7;
+  box-shadow:0 5px 18px rgba(22,39,67,.12);
+  transform:translate3d(0,0,0) scale(1);
+  transition:transform 1.35s cubic-bezier(.2,.75,.18,1),box-shadow 1s ease,opacity .8s ease;
+}
+.envelope-letter:before{inset:12px;border:1px solid #d5c19b}
+.envelope-letter small{font-size:17px;color:#806a49}
+.envelope-letter strong{font-family:'Allura',cursive;font-size:clamp(42px,6vw,64px);color:#17386b}
+.envelope-letter span{font-size:10px;letter-spacing:.16em;color:#344d70}
+.envelope-shell{perspective:1400px}
+.envelope-back{
+  background:linear-gradient(145deg,#fffdf8,#e9dfd1);
+  border:1px solid #c9bba6;
+  box-shadow:inset 0 0 0 8px rgba(255,255,255,.28);
+}
+.envelope-left,.envelope-right,.envelope-bottom{
+  backface-visibility:hidden;
+  transition:transform 1.1s cubic-bezier(.2,.72,.18,1),filter .8s ease;
+}
+.envelope-left{background:linear-gradient(135deg,#fffdf8,#e8dfd2);transform-origin:left center}
+.envelope-right{background:linear-gradient(225deg,#fffdf8,#e8dfd2);transform-origin:right center}
+.envelope-bottom{background:linear-gradient(0deg,#e8dfd2,#fffdf8);transform-origin:center bottom}
+.envelope-flap{
+  height:62%;background:linear-gradient(180deg,#fffefa,#e9dfd2);
+  transform-origin:50% 0%;transition:transform 1.15s cubic-bezier(.18,.72,.2,1);
+}
+.envelope-seal{
+  width:42px;height:26px;border:0;border-radius:0;
+  background:linear-gradient(135deg,#d7d1c9,#f7f4ee 48%,#bcb4aa);
+  box-shadow:0 2px 5px #26334a35;
+  color:transparent;font-size:0;
+  transform:translate(-50%,-50%);
+}
+.envelope-seal:before,.envelope-seal:after{
+  content:"";position:absolute;top:1px;width:27px;height:23px;
+  border:3px solid #c8beb1;border-radius:70% 25% 70% 25%;
+  background:linear-gradient(135deg,#f7f4ee,#c8beb1);
+  box-shadow:inset 0 0 0 2px rgba(255,255,255,.45);
+}
+.envelope-seal:before{right:22px;transform:rotate(28deg)}
+.envelope-seal:after{left:22px;transform:scaleX(-1) rotate(28deg)}
+.envelope-intro.opening .envelope-flap{transform:rotateX(178deg)}
+.envelope-intro.opening .envelope-left{transform:rotateY(-24deg)}
+.envelope-intro.opening .envelope-right{transform:rotateY(24deg)}
+.envelope-intro.opening .envelope-bottom{transform:rotateX(18deg)}
+.envelope-intro.opening .envelope-seal{opacity:0;transform:translate(-50%,-50%) scale(.35) rotate(20deg)}
+.envelope-intro.letter-out .envelope-letter{
+  z-index:12;transform:translate3d(0,-106%,18px) scale(1.04);
+  box-shadow:0 24px 45px rgba(20,37,64,.22);
+}
+.envelope-intro.letter-expand .envelope-letter{
+  z-index:20;transform:translate3d(0,-99%,35px) scale(2.9);
+  opacity:0;transition:transform 1.25s cubic-bezier(.65,0,.25,1),opacity .9s ease .25s;
+}
+.envelope-open{border-radius:2px;background:#17386b;box-shadow:0 6px 18px #1a34501c}
+@media(max-width:600px){
+  .envelope-intro{padding:18px 12px 24px}
+  .envelope-intro:before{inset:7px}
+  .envelope-stage{width:min(88vw,470px);height:clamp(240px,68vw,310px)}
+  .envelope-letter{left:6%;right:6%;padding:18px 14px 30px}
+  .envelope-letter strong{font-size:43px}
+  .envelope-letter span{font-size:8px;letter-spacing:.1em}
+  .envelope-seal{transform:translate(-50%,-50%) scale(.85)}
+  .envelope-intro.letter-out .envelope-letter{transform:translate3d(0,-105%,14px) scale(1.02)}
+  .envelope-intro.letter-expand .envelope-letter{transform:translate3d(0,-98%,25px) scale(3.1)}
+}
+
+
+/* Indicadores e tabelas do painel */
+.admin-summary-grid{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:8px;margin:15px 0}
+.admin-summary-card{background:#f1ebdf;padding:14px 10px;text-align:center;border:1px solid #e5d9c2;min-width:0}
+.admin-summary-card strong{display:block;font:500 30px 'Cormorant Garamond';color:#102b59}
+.admin-summary-card span{display:block;margin-top:3px;font:9px Montserrat,Arial,sans-serif;line-height:1.4;letter-spacing:.07em;text-transform:uppercase;color:#6b6e79}
+.admin-panel-heading{display:flex;justify-content:space-between;align-items:center;gap:12px;flex-wrap:wrap;margin-top:18px}
+.admin-panel-heading h4{font:24px 'Cormorant Garamond';color:#172e59;margin:0}
+.admin-panel-heading .button{padding:12px 16px}
+.admin-panel-hint{font:14px 'Cormorant Garamond';color:#777;margin:7px 0 12px}
+.admin-data-table{width:100%;border-collapse:collapse;min-width:650px;background:#fffdfa}
+.admin-data-table th{background:#f1ebdf;color:#17345f;text-align:left;font:10px Montserrat,Arial,sans-serif;letter-spacing:.06em;text-transform:uppercase;padding:11px 9px;border-bottom:1px solid #d8c9a5}
+.admin-data-table td{padding:10px 9px;border-bottom:1px solid #e8e0d2;color:#49556a;font-size:11px;vertical-align:top}
+.admin-data-table tr:last-child td{border-bottom:0}
+.admin-data-table .cell-center{text-align:center}
+.admin-data-table select{max-width:190px;padding:7px;border:1px solid #cbb27f;background:#fffdfa;color:#17345f}
+.admin-footer-actions{display:flex;gap:8px;flex-wrap:wrap}
+@media(max-width:650px){.admin-summary-grid{grid-template-columns:repeat(2,minmax(0,1fr))}.admin-summary-card strong{font-size:27px}.admin-panel-heading{align-items:stretch}.admin-panel-heading .button{width:100%;text-align:center}.admin-data-table{min-width:720px}}
+/* Abas do painel administrativo */
+.admin-tabs{display:flex;gap:8px;border-bottom:1px solid #d8c9a5;margin:18px 0 12px;padding-bottom:8px}
+.admin-tab-btn{appearance:none;border:1px solid #cbb27f;background:#fffdfa;color:#17366a;padding:11px 22px;font:10px Montserrat,Arial,sans-serif;letter-spacing:.13em;text-transform:uppercase;cursor:pointer;transition:background .2s,color .2s}
+.admin-tab-btn[aria-selected="true"]{background:#12366e;border-color:#12366e;color:#fff}
+.admin-tab-btn:focus-visible{outline:2px solid #ad8744;outline-offset:2px}
+.admin-tab-panel{padding:2px 0}
+.admin-tab-panel[hidden]{display:none!important}
+.gift-admin-form{display:grid;grid-template-columns:1fr 1fr;gap:8px}
+.gift-admin-form input{min-width:0;width:100%;padding:12px;border:1px solid #cbb27f;background:#fffdfa;color:#17345f}
+@media(max-width:600px){.admin-tab-btn{flex:1;padding:12px 8px;font-size:9px}.gift-admin-form{grid-template-columns:1fr}}
+
+/* Lista pública de presentes — linguagem visual do convite */
+.gifts{background:linear-gradient(180deg,#f8f3e9 0%,#f3ecdf 100%);position:relative}
+.gifts .section-kicker{color:#a17d3f}
+.gifts .intro{max-width:670px;margin-bottom:42px}
+.giftgrid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:20px;align-items:stretch}
+.giftgrid .gift{display:flex;flex-direction:column;min-width:0;padding:0;background:#fffdf8;border:1px solid #d8c7a4;box-shadow:0 9px 24px rgba(26,45,76,.055);transition:transform .22s ease,box-shadow .22s ease,border-color .22s ease;overflow:hidden}
+.giftgrid .gift:hover{transform:translateY(-4px);box-shadow:0 14px 30px rgba(26,45,76,.09);border-color:#b99a62}
+.giftgrid .gift[hidden]{display:none!important}
+.gift-art{height:152px;display:grid;place-items:center;position:relative;overflow:hidden;background:radial-gradient(circle at 50% 45%,#fffdf8 0%,#f4eddf 72%,#eee4d1 100%);border-bottom:1px solid #e5d9c2}
+.gift-art:before{content:"";position:absolute;width:112px;height:112px;border:1px solid #c5a975;border-radius:50%;opacity:.65}
+.gift-art:after{content:"✧";position:absolute;top:13px;right:16px;color:#b18b4c;font:18px 'Cormorant Garamond'}
+.gift-art svg{width:82px;height:82px;fill:none;stroke:#173b70;stroke-width:2;stroke-linecap:round;stroke-linejoin:round;position:relative;z-index:1}
+.gift-content{display:flex;flex:1;flex-direction:column;align-items:center;text-align:center;padding:18px 18px 20px}
+.gift-status{display:inline-block;margin-bottom:8px;padding:5px 10px;border:1px solid #d8c7a4;color:#92713b;font:9px Montserrat,Arial,sans-serif;letter-spacing:.16em;text-transform:uppercase}
+.giftgrid .gift.is-reserved .gift-status{border-color:#d8d2c5;color:#77766f;background:#f5f2ec}
+.giftgrid .gift h3{font:500 27px 'Cormorant Garamond';color:#102b59;margin:2px 0 5px}
+.giftgrid .gift p{font:17px/1.4 'Cormorant Garamond';color:#697080;margin:0 0 17px;min-height:25px}
+.giftgrid .gift button{width:100%;max-width:245px;margin-top:auto;padding:13px 15px;border:1px solid #b18b4c;background:transparent;color:#12366e;font:10px Montserrat,Arial,sans-serif;letter-spacing:.15em;text-transform:uppercase;cursor:pointer;transition:background .2s,color .2s,border-color .2s}
+.giftgrid .gift button:hover:not(:disabled){background:#12366e;color:#fff;border-color:#12366e}
+.giftgrid .gift button:disabled{background:#f3f0e9;border-color:#ddd5c5;color:#8a877f;cursor:not-allowed}
+.gift-empty{padding:22px;text-align:center;border:1px dashed #cbb27f;color:#6b6c72;font:18px 'Cormorant Garamond';background:#fffdf8}
+.pixbox{max-width:880px;margin:44px auto 0;padding:30px 34px;display:grid;grid-template-columns:minmax(0,1.25fr) minmax(230px,.75fr);gap:28px;align-items:center;text-align:left;background:#fffdf8;border:1px solid #cbb27f;box-shadow:0 9px 24px rgba(26,45,76,.045)}
+.pix-copy .section-kicker{text-align:left}
+.pix-copy .section-title{text-align:left;font-size:39px;margin:7px 0 10px}
+.pix-copy .section-title:after{display:none}
+.pix-copy>p{font:18px/1.45 'Cormorant Garamond';color:#5e687b;margin:0 0 20px}
+.pix-key{display:flex;flex-direction:column;align-items:flex-start;gap:5px;text-align:left;background:#f6f1e7;border:1px solid #e7dcc7;padding:12px 14px}
+.pix-key span{font:9px Montserrat,Arial,sans-serif;text-transform:uppercase;letter-spacing:.14em;color:#887248}
+.pix-key strong{font:15px Montserrat,Arial,sans-serif;letter-spacing:.04em;color:#17366a}
+.pix-options{justify-content:flex-start;margin:12px 0 0}
+.pix-options button{padding:11px 13px;background:transparent;border:1px solid #b18b4c;color:#17366a;font:9px Montserrat,Arial,sans-serif;letter-spacing:.1em;text-transform:uppercase}
+.pix-options button:hover{background:#12366e;color:#fff;border-color:#12366e}
+.pix-copy-msg{min-height:17px;margin:8px 0 0!important;font:11px Montserrat,Arial,sans-serif!important;color:#4c6d58!important}
+.pix-qr-side{display:flex;flex-direction:column;align-items:center;justify-content:center;padding:8px 0}
+.pix-qr-frame{width:min(220px,100%);margin:0 auto;padding:10px;background:#fff;border:1px solid #c7a76b;box-shadow:inset 0 0 0 4px #fbf7ef,inset 0 0 0 5px #e2d4b8}
+.pix-instructions{max-width:250px;margin:12px auto 0;text-align:center;font:16px/1.35 'Cormorant Garamond';color:#687184}
+@media(max-width:760px){
+  .giftgrid{grid-template-columns:repeat(2,minmax(0,1fr));gap:13px}
+  .gift-art{height:130px}
+  .gift-content{padding:15px 12px 16px}
+  .giftgrid .gift h3{font-size:24px}
+  .giftgrid .gift p{font-size:16px}
+  .pixbox{grid-template-columns:1fr;gap:18px;padding:24px 20px;margin-top:32px}
+  .pix-copy .section-title{font-size:34px}
+  .pix-copy .section-kicker{text-align:center}
+  .pix-copy .section-title{text-align:center}
+  .pix-copy>p{text-align:center}
+  .pix-key{align-items:center;text-align:center}
+  .pix-options{justify-content:center}
+}
+@media(max-width:430px){
+  .giftgrid{grid-template-columns:1fr;max-width:360px;margin:0 auto}
+  .gift-art{height:138px}
+  .gift-content{padding:16px 18px 18px}
+  .giftgrid .gift h3{font-size:26px}
+  .giftgrid .gift p{font-size:17px}
+  .pix-options{flex-direction:column}
+  .pix-options button{width:100%}
+}
+
+
+/* Entrada da cerimônia: portas duplas com as iniciais K e R */
+.envelope-intro.church-intro{
+  isolation:isolate;
+  gap:0;
+  padding:clamp(26px,5vh,54px) 20px 34px;
+  background:
+    radial-gradient(ellipse at 50% 43%,rgba(255,255,255,.96) 0%,rgba(251,247,239,.95) 54%,rgba(239,229,209,.98) 100%),
+    url('ornamento-tl.jpg') left top/150px auto no-repeat,
+    url('ornamento-tr.jpg') right top/150px auto no-repeat,
+    #fbf7ef;
+}
+.church-intro-frame{
+  position:absolute;inset:14px;border:1px solid #b18b4c;pointer-events:none;z-index:-1;
+  box-shadow:inset 0 0 0 5px rgba(251,247,239,.8),inset 0 0 0 6px #e7dac0;
+}
+.church-intro-frame:before,.church-intro-frame:after{
+  content:"✦";position:absolute;left:50%;transform:translateX(-50%);color:#ad8744;font:20px 'Cormorant Garamond';
+  background:#fbf7ef;padding:0 14px;
+}
+.church-intro-frame:before{top:-12px}.church-intro-frame:after{bottom:-12px}
+.church-intro-heading{position:relative;z-index:2;text-align:center;margin:0 0 clamp(18px,3vh,30px)}
+.church-intro-kicker{display:block;color:#9b7942;font:italic 17px 'Cormorant Garamond';letter-spacing:.13em}
+.church-intro-heading h2{margin:6px 0 5px;color:#102b59;font:clamp(39px,6vw,61px) 'Allura',cursive;font-weight:400}
+.church-intro-heading h2 i{font-style:normal;color:#ad8744}
+.church-intro-heading p{margin:0;color:#536078;font:500 11px Montserrat,Arial,sans-serif;letter-spacing:.2em;text-transform:uppercase}
+.church-intro-heading p span{color:#ad8744;padding:0 7px}
+.church-doorway{
+  position:relative;isolation:isolate;width:min(86vw,590px);height:clamp(300px,48vh,420px);
+  perspective:1600px;transform-style:preserve-3d;
+  border:10px solid #d4bd8e;border-bottom-width:13px;border-radius:320px 320px 8px 8px;
+  padding:10px 9px 8px;background:linear-gradient(180deg,#102344,#07172e);
+  box-shadow:0 22px 48px rgba(20,37,64,.2),inset 0 0 0 2px #f7efdc,inset 0 0 0 5px #8b6d3e;
+}
+.church-doorway:before{
+  content:"";position:absolute;inset:-19px -19px -18px;border:2px solid #b18b4c;border-radius:340px 340px 14px 14px;
+  box-shadow:0 0 0 5px rgba(251,247,239,.95);pointer-events:none;z-index:5;
+}
+.church-doorway:after{
+  content:"";position:absolute;z-index:-1;inset:0;border-radius:300px 300px 0 0;
+  background:radial-gradient(ellipse at 50% 54%,#fff8df 0%,#f0d69b 23%,#b18b4c 48%,#17365f 78%);
+  opacity:.08;transition:opacity 1.4s ease,filter 1.4s ease;filter:blur(7px);
+}
+.door-light{
+  position:absolute;inset:7% 8% 0;z-index:0;border-radius:260px 260px 0 0;
+  background:radial-gradient(ellipse at 50% 42%,rgba(255,250,226,.98),rgba(240,214,157,.8) 28%,rgba(173,135,68,.22) 58%,transparent 76%);
+  opacity:.08;transition:opacity 1.4s ease;
+}
+.door-cross{
+  position:absolute;z-index:1;top:10%;left:50%;transform:translateX(-50%);
+  font:clamp(32px,5vw,48px) 'Cormorant Garamond';color:#f7e7bd;
+  text-shadow:0 0 24px rgba(255,246,214,.8);opacity:.85;
+}
+.church-door{
+  position:absolute;z-index:3;top:10px;bottom:8px;width:50%;
+  display:flex;flex-direction:column;align-items:center;justify-content:center;
+  transform-style:preserve-3d;backface-visibility:hidden;
+  background:
+    linear-gradient(90deg,rgba(255,255,255,.09),transparent 18%,rgba(0,0,0,.12) 50%,transparent 86%,rgba(255,255,255,.05)),
+    repeating-linear-gradient(90deg,transparent 0,transparent 28px,rgba(4,15,34,.12) 29px,rgba(4,15,34,.12) 31px),
+    linear-gradient(135deg,#31568b 0%,#183b70 42%,#102b59 100%);
+  border:1px solid #d0b77f;
+  box-shadow:inset 0 0 0 5px rgba(8,24,48,.55),inset 0 0 0 7px #b18b4c,0 0 18px rgba(0,0,0,.25);
+  transition:transform 1.65s cubic-bezier(.2,.76,.18,1),box-shadow 1.2s ease;
+  overflow:hidden;
+}
+.door-left{left:9px;transform-origin:left center;border-radius:240px 0 0 0}
+.door-right{right:9px;transform-origin:right center;border-radius:0 240px 0 0}
+.church-door:before{
+  content:"";position:absolute;inset:24px 20px;border:1px solid rgba(222,193,133,.9);
+  box-shadow:inset 0 0 0 5px rgba(7,24,49,.22),inset 0 0 0 6px rgba(222,193,133,.52);
+  pointer-events:none;
+}
+.church-door:after{
+  content:"";position:absolute;inset:43px 38px;border:1px solid rgba(222,193,133,.58);
+  box-shadow:0 0 0 4px rgba(7,24,49,.17);pointer-events:none;
+}
+.door-monogram{
+  z-index:1;margin-top:16px;color:#e5c98d;font:clamp(66px,9vw,104px) 'Allura',cursive;
+  text-shadow:0 2px 8px rgba(0,0,0,.25);line-height:1;
+}
+.door-ornament{position:absolute;top:19%;z-index:1;color:#e5c98d;font:24px 'Cormorant Garamond'}
+.door-laurel{position:absolute;bottom:19%;z-index:1;color:#d9bd82;font:32px 'Cormorant Garamond';opacity:.95}
+.door-handle{
+  position:absolute;top:55%;width:13px;height:34px;border-radius:8px;
+  background:linear-gradient(90deg,#80602e,#f3d99e 38%,#b18b4c 70%,#684d27);
+  box-shadow:0 1px 4px #07172eaa,0 0 0 2px rgba(7,23,46,.25);
+}
+.door-left .door-handle{right:15px}.door-right .door-handle{left:15px}
+.envelope-intro.church-intro.opening .door-left{transform:rotateY(-108deg);box-shadow:inset 0 0 0 5px rgba(8,24,48,.55),inset 0 0 0 7px #b18b4c,-8px 0 22px rgba(0,0,0,.14)}
+.envelope-intro.church-intro.opening .door-right{transform:rotateY(108deg);box-shadow:inset 0 0 0 5px rgba(8,24,48,.55),inset 0 0 0 7px #b18b4c,8px 0 22px rgba(0,0,0,.14)}
+.envelope-intro.church-intro.opening .church-doorway:after,
+.envelope-intro.church-intro.opening .door-light{opacity:1;filter:blur(0)}
+.church-intro-footer{position:relative;z-index:2;text-align:center;margin-top:clamp(21px,4vh,34px)}
+.church-intro-footer p{margin:0 0 14px;color:#687184;font:italic 19px 'Cormorant Garamond'}
+.church-intro .envelope-open{
+  min-width:220px;padding:16px 25px;border:1px solid #b18b4c;border-radius:2px;
+  background:linear-gradient(135deg,#173b70,#102b59);box-shadow:0 7px 18px rgba(16,43,89,.16);
+  color:#fffaf0;font:10px Montserrat,Arial,sans-serif;letter-spacing:.18em;text-transform:uppercase;
+}
+.church-intro .envelope-open span{color:#e6cc92;margin-left:12px;font-size:15px}
+.church-intro.is-gone{opacity:0;visibility:hidden;pointer-events:none}
+.church-photo img{object-position:center 52%}
+@media(max-width:600px){
+  .envelope-intro.church-intro{padding:30px 15px 32px}
+  .church-intro-frame{inset:8px}
+  .church-intro-frame:before,.church-intro-frame:after{font-size:16px}
+  .church-intro-heading{margin-bottom:20px}
+  .church-intro-heading h2{font-size:43px}
+  .church-intro-heading p{font-size:9px;letter-spacing:.13em}
+  .church-doorway{width:min(88vw,410px);height:clamp(285px,42vh,350px);border-width:8px 8px 10px;padding:8px 7px 7px}
+  .church-doorway:before{inset:-14px -14px -14px}
+  .church-door{top:8px;bottom:7px}
+  .door-left{left:7px}.door-right{right:7px}
+  .church-door:before{inset:18px 12px}
+  .church-door:after{inset:33px 23px}
+  .door-monogram{font-size:72px}
+  .door-ornament{font-size:18px;top:20%}
+  .door-laurel{font-size:24px;bottom:20%}
+  .door-handle{height:27px;width:10px}
+  .door-left .door-handle{right:11px}.door-right .door-handle{left:11px}
+  .church-intro-footer{margin-top:22px}
+  .church-intro-footer p{font-size:17px}
+  .church-intro .envelope-open{min-width:200px;padding:14px 20px}
+}
+@media(max-height:760px) and (min-width:601px){
+  .envelope-intro.church-intro{padding-top:18px;padding-bottom:20px}
+  .church-intro-heading{margin-bottom:14px}
+  .church-intro-heading h2{font-size:44px}
+  .church-doorway{height:clamp(250px,43vh,330px)}
+  .church-intro-footer{margin-top:14px}
+}
+@media(prefers-reduced-motion:reduce){
+  .church-door,.door-light,.church-doorway:after{transition:none!important}
+}
+
+
+/* Tela inicial: arte completa da capela, sem recortes ou portas isoladas */
+.envelope-intro.church-intro-full{
+  position:fixed!important;inset:0!important;width:100vw!important;height:100vh!important;height:100dvh!important;
+  z-index:2147483000!important;isolation:isolate;
+  display:flex;align-items:center;justify-content:center;gap:0;
+  padding:0!important;overflow:hidden;
+  background:#162b49!important;
+  transition:opacity .9s cubic-bezier(.22,.61,.36,1),visibility .9s;
+}
+.envelope-intro.church-intro-full:before,.envelope-intro.church-intro-full:after{
+  content:none!important;display:none!important;background:none!important;
+}
+body.wedding-intro-active{overflow:hidden!important}
+body.wedding-intro-active > :not(#envelopeIntro){visibility:hidden!important}
+.church-intro-full .church-art-backdrop{
+  position:absolute;z-index:0;inset:-5%;display:flex;flex-direction:column;overflow:hidden;
+  filter:blur(30px) brightness(.62) saturate(.82);transform:scale(1.12);
+  opacity:.9;pointer-events:none;
+}
+.church-intro-full .church-backdrop-piece{
+  display:block;width:100%;height:20%;flex:0 0 20%;object-fit:fill;margin:0;padding:0;border:0;
+}
+.church-intro-full .church-art-backdrop:after{
+  content:"";position:absolute;inset:0;
+  background:linear-gradient(90deg,rgba(13,31,57,.48),rgba(13,31,57,.08) 36%,rgba(13,31,57,.08) 64%,rgba(13,31,57,.48)),
+             linear-gradient(0deg,rgba(12,28,49,.24),rgba(12,28,49,.04) 28%,rgba(12,28,49,.04) 72%,rgba(12,28,49,.24));
+}
+.church-intro-full .church-art-wrap{
+  position:relative;z-index:1;display:flex;flex-direction:column;flex:none;
+  width:min(100vw,78dvh);height:min(100dvh,128.205vw);aspect-ratio:3/4;
+  overflow:hidden;background:#f6eddb;
+  box-shadow:0 22px 65px rgba(8,20,36,.42),0 0 0 1px rgba(239,220,178,.7);
+  transform:translateZ(0) scale(1);
+  transition:transform 1.15s cubic-bezier(.2,.72,.18,1),opacity .95s ease,filter 1s ease;
+}
+.church-intro-full .church-art-piece{
+  display:block;width:100%;height:20%;flex:0 0 20%;
+  object-fit:fill;margin:0;padding:0;border:0;
+}
+.church-intro-full .church-art-hotspot{
+  position:absolute;z-index:5;left:24%;top:84.7%;width:52%;height:7.2%;
+  margin:0;padding:0;border:0;border-radius:40px;
+  color:transparent;background:transparent;box-shadow:none;
+  cursor:pointer;appearance:none;-webkit-appearance:none;
+}
+.church-intro-full .church-art-hotspot:focus{outline:none}
+.church-intro-full .church-art-hotspot:focus-visible{
+  outline:3px solid #e3c78f;outline-offset:3px;
+  background:rgba(255,255,255,.08);
+}
+
+/* Transição limpa: aproximação suave da arte completa, sem deformar a fachada */
+.church-intro-full.opening .church-art-wrap{
+  transform:scale(1.13);
+  transform-origin:50% 57%;
+  opacity:.04;
+  filter:brightness(1.08);
+}
+@media(max-height:560px) and (orientation:landscape){
+  .church-intro-full .church-art-wrap{width:min(100vw,78dvh);height:min(100dvh,128.205vw)}
+}
+@media(prefers-reduced-motion:reduce){
+  .church-intro-full,.church-intro-full .church-art-wrap{transition:none!important}
+}
+
+/* Remover os ornamentos dos dois cantos inferiores: visual mais limpo */
+footer:before,footer:after{
+  content:none!important;
+  display:none!important;
+  background-image:none!important;
+}
+.hero{
+  background:
+    linear-gradient(#fbf7efc9,#fbf7efda),
+    url('ornamento-tl.jpg') left top/175px auto no-repeat,
+    url('ornamento-tr.jpg') right top/175px auto no-repeat,
+    #fbf7ef!important;
+}
+
+
+/* Tipografia atualizada: Bodoni Moda nos títulos e Manrope nos textos */
+html,body{font-family:'Manrope',sans-serif!important;font-synthesis:none;text-rendering:optimizeLegibility}
+body,button,input,select,textarea,.links,.button,.section-kicker,.eyebrow,.gift-status,.pix-instructions{
+  font-family:'Manrope',sans-serif!important;
+}
+h1,h2,h3,h4,h5,h6,.brand,.section-title,.detail h3,.gift h3,.countdown strong,.date,footer strong{
+  font-family:'Bodoni Moda',serif!important;font-weight:500;letter-spacing:-.025em;
+}
+h1{letter-spacing:-.04em!important;font-weight:500!important}
+.brand{letter-spacing:-.035em!important}
+.hero p,.intro,.storytext,.invitation-copy,.location-line,.date-row,.arrival-note{
+  font-family:'Manrope',sans-serif!important;font-style:normal!important;
+  line-height:1.8;letter-spacing:0;
+}
+.date{letter-spacing:.1em!important}
+.section-title{line-height:1.16!important}
+footer{font-family:'Manrope',sans-serif!important}
+footer strong{font-weight:500!important}
+
+/* Página independente da lista de presentes */
+body.gift-page{background:#fbf7ef url('ornamento-tl.jpg') left top/150px auto no-repeat}
+body.gift-page main{min-height:68vh}
+body.gift-page main>*:not(.gifts){display:none!important}
+body.gift-page main>.gifts{
+  display:block!important;min-height:68vh;padding:64px 22px 82px;
+  background:linear-gradient(180deg,#fbf7ef 0%,#f3ecdf 100%);
+}
+body.gift-page .gifts .wrap{max-width:1120px}
+body.gift-page .gifts .section-title{font-size:clamp(38px,5vw,52px)!important}
+body.gift-page .gifts .intro{font-size:15px!important;max-width:700px}
+body.gift-page footer{display:block}
+body.gift-page .links a[aria-current="page"]{color:#ad8744}
+body.gift-page .gift-page-cta{display:none!important}
+@media(max-width:720px){
+  body.gift-page main>.gifts{padding:42px 16px 60px}
+}
+
+</style>
+</head>
+<body class="gift-page">
+
+<header class="topbar"><nav class="nav"><a class="brand" href="index.html">Kathleen & Railander</a><div class="links"><a href="index.html#historia">História</a><a href="index.html#cerimonia">Cerimônia</a><a href="presentes.html" aria-current="page">Presentes</a><a href="index.html#rsvp">Presença</a></div></nav></header>
+<main>
+<section class="hero">
+<div class="hero-inner invitation">
+  <div class="invitation-top">✦</div>
+  <div class="eyebrow">Convite de matrimônio</div>
+  <img class="hero-church" src="igreja-convite.jpg" alt="Ilustração em aquarela da Igreja São Sebastião">
+  <div class="cross-ornament">✝</div>
+  <div class="eyebrow blessing">Com a bênção de Deus e de nossas famílias</div>
+  <h1>Kathleen <span class="amp">&</span> Railander</h1>
+  <div class="gold-divider">───── ❖ ─────</div>
+  <p class="invitation-copy">O matrimônio é um sacramento instituído por Deus, sinal de Seu amor fiel por nós. Escolhemos caminhar juntos na fé, no amor e na construção de uma vida em comunhão.</p>
+  <p class="invitation-copy invitation-second">Com o coração cheio de alegria, convidamos você para testemunhar e partilhar conosco este passo tão especial.</p>
+  <div class="date-row"><span>▦ &nbsp;18/12/2027</span><i></i><span>◷ &nbsp;16:00</span></div>
+  <div class="location-line">⌖ &nbsp; IGREJA SÃO SEBASTIÃO<br><em>Canoa Quebrada – CE</em></div>
+  <a class="button" href="#cerimonia">Ver detalhes do casamento</a>
+  <div class="countdown" id="countdown"><div><strong>---</strong><span>Dias</span></div><div><strong>--</strong><span>Horas</span></div><div><strong>--</strong><span>Minutos</span></div><div><strong>--</strong><span>Segundos</span></div></div>
+  <div class="invitation-bottom">✦</div>
+</div>
+</section>
+<section id="historia" class="story"><div class="wrap"><div class="section-kicker">Nossa caminhada</div><h2 class="section-title">Nossa história</h2><p class="intro">Cada encontro, cada escolha e cada lembrança nos trouxe até aqui. Agora queremos celebrar o próximo capítulo ao lado de pessoas especiais.</p><div class="storygrid"><img src="pedido-2.jpeg" alt="Momento especial do casal"><div class="storytext">Entre momentos simples e lembranças inesquecíveis, construímos uma história feita de companheirismo, fé e amor. Hoje, escolhemos continuar essa caminhada juntos, diante de Deus e das pessoas que fazem parte da nossa vida.<div class="ornament">✧ ❦ ✧</div><p style="text-align:center;color:#b39358;font-style:italic">Com carinho, Kathleen & Railander</p></div></div></div></section>
+<section><div class="wrap"><div class="section-kicker">Memórias que ficam</div><h2 class="section-title">Alguns dos nossos momentos</h2><div class="gallerygrid">
+<a href="casal-igreja-1.jpeg" target="_blank"><img src="casal-igreja-1.jpeg" alt="Casal na igreja"></a><a href="casal-igreja-2.jpeg" target="_blank"><img src="casal-igreja-2.jpeg" alt="Casal na igreja"></a><a href="pedido-1.jpeg" target="_blank"><img src="pedido-1.jpeg" alt="Pedido de casamento"></a><a href="pedido-3.jpeg" target="_blank"><img src="pedido-3.jpeg" alt="Pedido de casamento"></a><a href="pedido-4.jpeg" target="_blank"><img src="pedido-4.jpeg" alt="Momento do casal"></a><a href="pedido-5.jpeg" target="_blank"><img src="pedido-5.jpeg" alt="Momento do casal"></a><a href="gramado-1.jpeg" target="_blank"><img src="gramado-1.jpeg" alt="Viagem do casal a Gramado"></a><a href="nova-petropolis.jpeg" target="_blank"><img src="nova-petropolis.jpeg" alt="Viagem do casal a Nova Petrópolis"></a></div></div></section>
+<section class="details" id="cerimonia"><div class="wrap"><div class="section-kicker">Reserve esta data</div><h2 class="section-title">O nosso casamento</h2><p class="intro">Será uma alegria ter você conosco neste dia tão especial.</p><div class="detailcards"><div class="detail"><div class="symbol">◷</div><h3>Quando</h3><p>Sábado, 18 de dezembro de 2027<br>Às 16h</p></div><div class="detail"><div class="symbol">⌖</div><h3>Onde</h3><p>Igreja São Sebastião<br>Rua Toquinho, 539<br>Canoa Quebrada – Aracati, CE<br>CEP 62800-000</p><a class="button outline" target="_blank" rel="noopener" href="https://www.google.com/maps/dir/?api=1&destination=Igreja+de+S%C3%A3o+Sebasti%C3%A3o%2C+Rua+Toquinho%2C+539%2C+Canoa+Quebrada%2C+Aracati+-+CE">Traçar rota até a igreja</a></div></div><figure class="church-photo"><img src="capela-canoa-quebrada-site.webp" alt="Fachada original da capela de Canoa Quebrada, com portas azuis e escadaria" loading="lazy" decoding="async"><figcaption>Capela de Canoa Quebrada · Fotografia enviada pelos noivos</figcaption></figure><div class="map-panel"><div class="map-info"><div class="symbol">⌖</div><h3>Como chegar</h3><p>A igreja fica na Rua Toquinho, em Canoa Quebrada. Use o mapa ao lado para visualizar a localização e planejar seu trajeto.</p><p class="arrival-note">A cerimônia começa às 16h. Programe sua chegada com antecedência.</p><a class="button" target="_blank" rel="noopener" href="https://www.google.com/maps/dir/?api=1&destination=Igreja+de+S%C3%A3o+Sebasti%C3%A3o%2C+Rua+Toquinho%2C+539%2C+Canoa+Quebrada%2C+Aracati+-+CE">Abrir navegação no Google Maps</a></div><div class="map-frame"><iframe title="Mapa da Igreja São Sebastião em Canoa Quebrada" src="https://www.google.com/maps?q=Igreja+de+S%C3%A3o+Sebasti%C3%A3o%2C+Rua+Toquinho%2C+539%2C+Canoa+Quebrada%2C+Aracati+-+CE&output=embed" loading="lazy" referrerpolicy="no-referrer-when-downgrade" allowfullscreen></iframe></div></div></div></section>
+<section class="gifts" id="presentes"><div class="wrap"><div class="section-kicker">Com carinho, para nossa nova etapa</div><h2 class="section-title">Lista de presentes</h2><p class="intro">Sua presença é o nosso maior presente. Reunimos algumas sugestões para quem deseja nos presentear. Escolha um item para reservar.</p>
+<div class="giftgrid">
+<div class="gift"><div class="gift-art" aria-hidden="true"><svg viewBox="0 0 100 100"><path d="M25 38h43v25a17 17 0 0 1-17 17H42a17 17 0 0 1-17-17z"/><path d="M68 45h8a10 10 0 0 1 0 20h-9M37 27c-5-6 5-8 0-14M51 27c-5-6 5-8 0-14"/><path d="M18 82h58"/></svg></div><div class="gift-content"><span class="gift-status">Disponível</span><h3>Cafeteira</h3><p>Para os cafés das manhãs juntos</p><button data-gift-id="cafeteira" onclick="openGift('cafeteira','Cafeteira')">Reservar presente</button></div></div>
+<div class="gift"><div class="gift-art" aria-hidden="true"><svg viewBox="0 0 100 100"><circle cx="50" cy="52" r="28"/><circle cx="50" cy="52" r="20"/><path d="M17 25v27M12 25v11a5 5 0 0 0 10 0V25M17 52v30M81 25c-8 8-9 19-2 25h4v32M83 25v57"/><path d="M35 87h30"/></svg></div><div class="gift-content"><span class="gift-status">Disponível</span><h3>Jogo de jantar</h3><p>Para receber família e amigos</p><button data-gift-id="jogo-de-jantar" onclick="openGift('jogo-de-jantar','Jogo de jantar')">Reservar presente</button></div></div>
+<div class="gift"><div class="gift-art" aria-hidden="true"><svg viewBox="0 0 100 100"><path d="M25 43h50l-5 34H30zM20 43h60M37 35h26l-3-7H40zM45 27v-7h10v7M25 50H15v13h13M75 50h10v13H72"/><path d="M40 56v12M50 56v12M60 56v12"/></svg></div><div class="gift-content"><span class="gift-status">Disponível</span><h3>Jogo de panelas</h3><p>Para equipar nosso lar</p><button data-gift-id="jogo-de-panelas" onclick="openGift('jogo-de-panelas','Jogo de panelas')">Reservar presente</button></div></div>
+</div>
+<div class="gift-empty" id="giftEmpty" hidden>No momento, não há presentes disponíveis na lista.</div>
+<div class="pixbox">
+  <div class="pix-copy"><div class="section-kicker">Outra forma de presentear</div><h2 class="section-title">Presente via Pix</h2><p>Se preferir, você pode contribuir com qualquer valor para esta nova etapa da nossa vida.</p>
+    <div class="pix-key"><span>Chave Pix dos noivos</span><strong id="pixKey">03488193071</strong></div>
+    <div class="pix-options"><button type="button" onclick="copyPixKey()">Copiar chave Pix</button><button type="button" onclick="copyPixPayload()">Copiar Pix Copia e Cola</button></div>
+    <p id="pixCopyMsg" aria-live="polite" class="pix-copy-msg"></p>
+  </div>
+  <div class="pix-qr-side"><div class="pix-qr-frame"><img src="pix-qr.svg" alt="QR Code Pix dos noivos" width="225" height="225" loading="lazy"></div><p class="pix-instructions">Abra o aplicativo do seu banco, escolha pagar com Pix e aponte a câmera para o QR Code.</p></div>
+</div>
+</div></section>
+<section class="rsvp" id="rsvp"><div class="wrap"><div class="section-kicker">Queremos celebrar com você</div><h2 class="section-title">Confirme sua presença</h2><p class="intro">Preencha seus dados para nos ajudar na organização deste dia.</p>
+<form class="form" id="rsvpForm"><label>Nome completo<input required name="nome" maxlength="120" placeholder="Seu nome"></label><label>Telefone / WhatsApp<input required name="telefone" maxlength="25" placeholder="(00) 00000-0000"></label><label>Você poderá comparecer?<select name="presenca"><option>Sim, estarei presente</option><option>Não poderei comparecer</option></select></label><label>Quantidade de pessoas<input type="number" min="1" max="10" value="1" name="quantidade"></label><label class="full">Mensagem aos noivos (opcional)<textarea name="mensagem" rows="3" maxlength="1000" placeholder="Deixe uma mensagem..."></textarea></label><button type="submit">Enviar confirmação</button></form><p id="rsvpFeedback" role="status" style="text-align:center;font-size:13px;color:#17345f;margin:14px auto;max-width:600px"></p>
+<p style="text-align:center;font-size:11px;color:#dce2ef;margin-top:18px">Escolha para qual dos noivos deseja enviar sua confirmação.</p>
+<div style="display:flex;gap:10px;justify-content:center;flex-wrap:wrap;margin-top:12px">
+<a class="button outline" style="border-color:#d7bd88;color:white" href="https://wa.me/5566999084016" id="rsvpRailander">WhatsApp do Railander</a>
+<a class="button outline" style="border-color:#d7bd88;color:white" href="https://wa.me/5588992638694" id="rsvpKathleen">WhatsApp da Kathleen</a>
+</div></div></section>
+</main><footer><strong>Kathleen & Railander</strong>18 de dezembro de 2027 · Canoa Quebrada – CE<div class="ornament">✧ ❦ ✧</div><p style="font:10px Montserrat;letter-spacing:.12em"><a href="#" onclick="openAdmin();return false" style="color:#9b865d;text-decoration:none">ÁREA DOS NOIVOS</a></p></footer>
+<div class="modal" id="adminModal"><div class="modalbox" style="max-width:980px;text-align:left;max-height:90vh;overflow:auto">
+<button class="close" onclick="closeAdmin()">×</button>
+<div class="section-kicker">Acesso restrito</div><h3 style="text-align:center">Painel dos noivos</h3>
+<div id="adminLogin"><p style="font-size:12px;color:#666;text-align:center">Entre com o e-mail e a senha cadastrados para os noivos.</p><input id="adminEmail" type="email" autocomplete="username" placeholder="E-mail"><input id="adminPassword" type="password" autocomplete="current-password" placeholder="Senha"><button class="button" style="width:100%" onclick="loginAdmin()">Entrar</button><p id="adminError" role="status" style="color:#9b3434;font-size:11px"></p></div>
+<div id="adminContent" style="display:none">
+<div class="admin-summary-grid">
+<div class="admin-summary-card"><strong id="statGuests">0</strong><span>Respostas recebidas</span></div>
+<div class="admin-summary-card"><strong id="statYes">0</strong><span>Pessoas confirmadas</span></div>
+<div class="admin-summary-card"><strong id="statNo">0</strong><span>Pessoas que não irão</span></div>
+<div class="admin-summary-card"><strong id="statGifts">0</strong><span>Presentes reservados</span></div>
+</div>
+<div class="admin-tabs" role="tablist" aria-label="Seções do painel dos noivos">
+<button type="button" class="admin-tab-btn" id="tabRsvp" role="tab" aria-selected="true" aria-controls="adminTabRsvp" onclick="setAdminTab('rsvp')">Confirmações</button>
+<button type="button" class="admin-tab-btn" id="tabGifts" role="tab" aria-selected="false" aria-controls="adminTabGifts" onclick="setAdminTab('gifts')">Presentes</button>
+</div>
+<div class="admin-tab-panel" id="adminTabRsvp" role="tabpanel" aria-labelledby="tabRsvp">
+<div class="admin-panel-heading"><h4>Confirmações de presença</h4><button class="button" type="button" onclick="exportAdminExcel()">Exportar Excel (.xlsx)</button></div>
+<p class="admin-panel-hint">A quantidade considera o convidado e seus acompanhantes.</p>
+<div id="guestList" style="font-size:12px;overflow:auto"></div>
+</div>
+<div class="admin-tab-panel" id="adminTabGifts" role="tabpanel" aria-labelledby="tabGifts" hidden>
+<h4 style="font:24px 'Cormorant Garamond';color:#172e59;margin:18px 0 8px">Presentes reservados</h4>
+<div id="reservedList" style="font-size:12px;overflow:auto"></div>
+<h4 style="font:24px 'Cormorant Garamond';color:#172e59;margin:26px 0 8px">Cadastrar presente</h4>
+<div class="gift-admin-form"><input id="newGiftName" maxlength="80" placeholder="Nome do presente"><input id="newGiftDesc" maxlength="180" placeholder="Descrição curta"></div>
+<button class="button" style="margin-top:8px" onclick="addGift()">Adicionar à lista</button>
+<h4 style="font:24px 'Cormorant Garamond';color:#172e59;margin:26px 0 8px">Gerenciar lista de presentes</h4>
+<p style="font-size:11px;color:#777;line-height:1.5;margin:0 0 10px">Edite os nomes e descrições ou retire itens da vitrine pública. O histórico de reservas será preservado.</p>
+<div id="giftCatalogAdmin" style="display:grid;gap:10px"></div>
+<button class="button outline" type="button" onclick="exportAdminExcel()" style="margin-top:14px">Exportar relatório completo (.xlsx)</button>
+</div>
+<p id="adminStatus" role="status" style="font-size:11px;color:#777;line-height:1.6;margin-top:18px">Dados centralizados. Apenas contas autorizadas podem consultar ou alterar as informações.</p>
+<div class="admin-footer-actions"><button class="button outline" onclick="exportAdminData()" style="margin-top:8px">Exportar cópia JSON</button><button class="button outline" onclick="logoutAdmin()" style="margin-top:8px">Sair do painel</button></div>
+</div></div></div>
+<div class="modal" id="giftModal"><div class="modalbox"><button class="close" onclick="closeGift()">×</button><div class="section-kicker">Lista de presentes</div><h3 id="giftName">Escolha seu presente</h3><p>Informe seu nome para reservar este presente. A disponibilidade é atualizada para todos os convidados.</p><input id="giftGuest" maxlength="120" placeholder="Seu nome"><button class="button" onclick="confirmGift()">Confirmar reserva</button>
+<div id="giftContacts" style="display:none;gap:8px;justify-content:center;flex-wrap:wrap;margin-top:12px">
+<a class="button outline" id="giftRailander" href="#" target="_blank">Avisar Railander</a>
+<a class="button outline" id="giftKathleen" href="#" target="_blank">Avisar Kathleen</a>
+</div><p id="giftMsg" style="font-size:11px;color:#777"></p></div></div>
+<script src="https://cdn.jsdelivr.net/npm/xlsx@0.18.5/dist/xlsx.full.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+<script src="supabase-config.js"></script>
+<script>
+const target=new Date('2027-12-18T16:00:00-03:00');
+function tick(){let ms=Math.max(0,target-new Date());let vals=[Math.floor(ms/86400000),Math.floor(ms/3600000)%24,Math.floor(ms/60000)%60,Math.floor(ms/1000)%60];let labels=['Dias','Horas','Minutos','Segundos'];document.getElementById('countdown').innerHTML=vals.map((v,i)=>`<div><strong>${String(v).padStart(2,'0')}</strong><span>${labels[i]}</span></div>`).join('')}
+tick();setInterval(tick,1000);
+function copyPixKey(){const key='03488193071';if(navigator.clipboard&&window.isSecureContext){navigator.clipboard.writeText(key).then(()=>{document.getElementById('pixCopyMsg').textContent='Chave Pix copiada.'}).catch(()=>{document.getElementById('pixCopyMsg').textContent='Não foi possível copiar automaticamente. Selecione a chave acima.'})}else{const field=document.createElement('textarea');field.value=key;field.style.position='fixed';field.style.opacity='0';document.body.appendChild(field);field.select();try{document.execCommand('copy');document.getElementById('pixCopyMsg').textContent='Chave Pix copiada.'}catch(e){document.getElementById('pixCopyMsg').textContent='Selecione a chave acima para copiar.'}field.remove()}}
+function copyPixPayload(){const payload='00020126330014BR.GOV.BCB.PIX0111034881930715204000053039865802BR5925Railander Delgado Burgier6009SAO PAULO62140510jLruLUfAvv6304F3F3';const msg=document.getElementById('pixCopyMsg');const fallback=()=>{const field=document.createElement('textarea');field.value=payload;field.style.position='fixed';field.style.opacity='0';document.body.appendChild(field);field.select();try{document.execCommand('copy');msg.textContent='Código Pix Copia e Cola copiado.'}catch(e){msg.textContent='Não foi possível copiar. Tente novamente pelo navegador.'}field.remove()};if(navigator.clipboard&&window.isSecureContext){navigator.clipboard.writeText(payload).then(()=>{msg.textContent='Código Pix Copia e Cola copiado.'}).catch(fallback)}else{fallback()}}
+
+const weddingConfig=window.WEDDING_SUPABASE_CONFIG||{};
+const weddingDb=window.supabase&&weddingConfig.url&&weddingConfig.publishableKey
+  ? window.supabase.createClient(weddingConfig.url,weddingConfig.publishableKey)
+  : null;
+
+let selectedGift={id:'',name:''};
+function openGift(id,name){selectedGift={id:id,name:name};document.getElementById('giftName').textContent=name;document.getElementById('giftMsg').textContent='';document.getElementById('giftContacts').style.display='none';document.getElementById('giftModal').classList.add('open')}
+function closeGift(){document.getElementById('giftModal').classList.remove('open')}
+function closeAdmin(){document.getElementById('adminModal').classList.remove('open')}
+function openAdmin(){document.getElementById('adminModal').classList.add('open');document.getElementById('adminError').textContent='';restoreAdminSession()}
+function escapeHtml(v){return String(v??'').replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]))}
+function setRsvpWhatsAppLinks(guest){
+  const msg=['Olá! Quero confirmar minha presença no casamento de Kathleen e Railander.','',
+    'Nome: '+guest.nome,'Telefone: '+guest.telefone,'Presença: '+guest.presenca,
+    'Quantidade: '+guest.quantidade,'Mensagem: '+(guest.mensagem||'—')].join('\n');
+  const encoded=encodeURIComponent(msg);
+  document.getElementById('rsvpRailander').href='https://wa.me/5566999084016?text='+encoded;
+  document.getElementById('rsvpKathleen').href='https://wa.me/5588992638694?text='+encoded;
+}
+document.getElementById('rsvpForm').addEventListener('submit',async e=>{
+  e.preventDefault();
+  const form=e.currentTarget,button=form.querySelector('button[type="submit"]');
+  const f=new FormData(form);
+  const guest={nome:String(f.get('nome')||'').trim(),telefone:String(f.get('telefone')||'').trim(),
+    presenca:String(f.get('presenca')||''),quantidade:Number(f.get('quantidade')||1),mensagem:String(f.get('mensagem')||'').trim()};
+  const feedback=document.getElementById('rsvpFeedback');
+  setRsvpWhatsAppLinks(guest);
+  if(!weddingDb){
+    feedback.textContent='O formulário online está em configuração. Para confirmar agora, use um dos botões de WhatsApp abaixo.';
+    document.getElementById('rsvpRailander').scrollIntoView({behavior:'smooth',block:'center'});
+    return;
+  }
+  button.disabled=true;button.textContent='Enviando…';feedback.textContent='';
+  const {error}=await weddingDb.from('rsvps').insert(guest);
+  button.disabled=false;button.textContent='Enviar confirmação';
+  if(error){feedback.textContent='Não foi possível registrar agora. Tente novamente ou envie sua confirmação pelo WhatsApp.';return}
+  feedback.textContent='Confirmação registrada. Obrigado por responder!';
+  form.reset();
+});
+
+async function renderGiftAvailability(){
+  if(!weddingDb)return;
+  const {data,error}=await weddingDb.from('gift_catalog').select('id,name,description,is_reserved,active');
+  if(error){console.warn('Não foi possível consultar os presentes:',error.message);return}
+  const grid=document.querySelector('.giftgrid');
+  const activeItems=(data||[]).filter(item=>item.active);
+  grid.querySelectorAll('.gift').forEach(card=>{
+    if(card.querySelector('[data-gift-id]'))card.hidden=true;
+  });
+  activeItems.forEach(item=>{
+    let button=grid.querySelector('[data-gift-id="'+CSS.escape(item.id)+'"]');
+    let card=button?button.closest('.gift'):null;
+    if(!card){
+      card=document.createElement('div');card.className='gift';
+      const art=document.createElement('div');art.className='gift-art';art.setAttribute('aria-hidden','true');
+      art.innerHTML='<svg viewBox="0 0 100 100"><path d="M50 16l8 22 22 8-22 8-8 22-8-22-22-8 22-8z"/><circle cx="50" cy="50" r="34"/></svg>';
+      const content=document.createElement('div');content.className='gift-content';
+      const status=document.createElement('span');status.className='gift-status';
+      const title=document.createElement('h3');
+      const desc=document.createElement('p');
+      button=document.createElement('button');button.type='button';button.dataset.giftId=item.id;
+      content.append(status,title,desc,button);card.append(art,content);grid.appendChild(card);
+    }
+    card.hidden=false;
+    const title=card.querySelector('h3');
+    const desc=card.querySelector('.gift-content p');
+    const status=card.querySelector('.gift-status');
+    title.textContent=item.name;
+    if(desc)desc.textContent=item.description||'';
+    if(status)status.textContent=item.is_reserved?'Reservado':'Disponível';
+    card.classList.toggle('is-reserved',!!item.is_reserved);
+    button.textContent=item.is_reserved?'Já reservado':'Reservar presente';
+    button.disabled=!!item.is_reserved;
+    button.setAttribute('aria-label',item.is_reserved?item.name+' já reservado':'Reservar '+item.name);
+    button.onclick=()=>openGift(item.id,item.name);
+  });
+  const empty=document.getElementById('giftEmpty');
+  if(empty)empty.hidden=activeItems.length>0;
+}
+async function confirmGift(){
+  const guestName=document.getElementById('giftGuest').value.trim();
+  const msg=document.getElementById('giftMsg');
+  if(guestName.length<2){msg.textContent='Informe seu nome para continuar.';return}
+  const text=encodeURIComponent('Olá! Sou '+guestName+' e gostaria de presentear vocês com: '+selectedGift.name+'.');
+  document.getElementById('giftRailander').href='https://wa.me/5566999084016?text='+text;
+  document.getElementById('giftKathleen').href='https://wa.me/5588992638694?text='+text;
+  if(!weddingDb){
+    document.getElementById('giftContacts').style.display='flex';
+    msg.textContent='A reserva online está em configuração. Avise os noivos pelo WhatsApp para verificar a disponibilidade.';
+    return;
+  }
+  const button=document.querySelector('#giftModal button.button');
+  button.disabled=true;button.textContent='Registrando…';
+  const {error}=await weddingDb.rpc('reserve_wedding_gift',{p_gift_id:selectedGift.id,p_guest_name:guestName});
+  button.disabled=false;button.textContent='Confirmar reserva';
+  if(error){
+    msg.textContent=error.message.includes('PRESENTE_INDISPONIVEL')?'Este presente já foi reservado. Escolha outro item.':'Não foi possível registrar a reserva. Tente novamente.';
+    await renderGiftAvailability();
+    return;
+  }
+  document.getElementById('giftContacts').style.display='flex';
+  msg.textContent='Presente reservado. Avise um dos noivos pelo WhatsApp para combinar os detalhes.';
+  await renderGiftAvailability();
+}
+function slugify(value){return value.normalize('NFD').replace(/[\u0300-\u036f]/g,'').toLowerCase().trim().replace(/[^a-z0-9]+/g,'-').replace(/^-|-$/g,'')}
+function showAdminError(message){document.getElementById('adminError').textContent=message}
+function setAdminTab(tab){
+  const gifts=tab==='gifts';
+  const rsvpPanel=document.getElementById('adminTabRsvp');
+  const giftsPanel=document.getElementById('adminTabGifts');
+  const rsvpButton=document.getElementById('tabRsvp');
+  const giftsButton=document.getElementById('tabGifts');
+  if(!rsvpPanel||!giftsPanel||!rsvpButton||!giftsButton)return;
+  rsvpPanel.hidden=gifts;
+  giftsPanel.hidden=!gifts;
+  rsvpButton.setAttribute('aria-selected',String(!gifts));
+  giftsButton.setAttribute('aria-selected',String(gifts));
+}
+function setAdminStatus(message){
+  const status=document.getElementById('adminStatus');
+  if(status)status.textContent=message;
+}
+async function loginAdmin(){
+  if(!weddingDb){showAdminError('A conexão com o banco ainda não foi configurada.');return}
+  const email=document.getElementById('adminEmail').value.trim();
+  const password=document.getElementById('adminPassword').value;
+  const {error}=await weddingDb.auth.signInWithPassword({email,password});
+  if(error){showAdminError('E-mail ou senha não reconhecidos.');return}
+  const {data,error:isAdminError}=await weddingDb.rpc('is_wedding_admin');
+  if(isAdminError||data!==true){await weddingDb.auth.signOut();showAdminError('Esta conta ainda não está autorizada para o painel.');return}
+  document.getElementById('adminLogin').style.display='none';
+  document.getElementById('adminContent').style.display='block';
+  await renderAdmin();
+}
+async function restoreAdminSession(){
+  if(!weddingDb)return;
+  const {data}=await weddingDb.auth.getSession();
+  if(!data.session)return;
+  const {data:isAdmin}=await weddingDb.rpc('is_wedding_admin');
+  if(isAdmin===true){
+    document.getElementById('adminLogin').style.display='none';
+    document.getElementById('adminContent').style.display='block';
+    await renderAdmin();
+  }
+}
+async function logoutAdmin(){
+  if(weddingDb)await weddingDb.auth.signOut();
+  document.getElementById('adminContent').style.display='none';
+  document.getElementById('adminLogin').style.display='block';
+  document.getElementById('adminPassword').value='';
+  showAdminError('Sessão encerrada.');
+}
+async function renderAdmin(){
+  if(!weddingDb){document.getElementById('adminStatus').textContent='Configure a conexão do banco para visualizar os registros.';return}
+  const [guestResult,giftResult]=await Promise.all([
+    weddingDb.from('rsvps').select('id,nome,telefone,presenca,quantidade,mensagem,created_at').order('created_at',{ascending:false}),
+    weddingDb.from('gift_reservations').select('id,gift_name,guest_name,status,created_at').order('created_at',{ascending:false})
+  ]);
+  if(guestResult.error||giftResult.error){
+    document.getElementById('adminStatus').textContent='Não foi possível carregar os dados. Verifique a autorização desta conta.';
+    return;
+  }
+  const guests=guestResult.data||[],reservations=giftResult.data||[];
+  const yes=guests.filter(x=>x.presenca==='Sim, estarei presente');
+  const no=guests.filter(x=>x.presenca==='Não poderei comparecer');
+  document.getElementById('statGuests').textContent=guests.length;
+  document.getElementById('statYes').textContent=yes.reduce((sum,x)=>sum+Number(x.quantidade||0),0);
+  document.getElementById('statNo').textContent=no.reduce((sum,x)=>sum+Number(x.quantidade||0),0);
+  document.getElementById('statGifts').textContent=reservations.filter(x=>x.status!=='Cancelado').length;
+  document.getElementById('guestList').innerHTML=guests.length
+    ?'<table class="admin-data-table"><thead><tr><th>Nome</th><th>Presença</th><th>Pessoas</th><th>Telefone</th><th>Mensagem</th><th>Recebido em</th></tr></thead><tbody>'+
+      guests.map(x=>'<tr><td>'+escapeHtml(x.nome)+'</td><td>'+escapeHtml(x.presenca)+'</td><td class="cell-center">'+escapeHtml(x.quantidade)+'</td><td>'+escapeHtml(x.telefone)+'</td><td>'+escapeHtml(x.mensagem||'—')+'</td><td>'+escapeHtml(formatAdminDate(x.created_at))+'</td></tr>').join('')+'</tbody></table>'
+    :'Nenhuma resposta registrada.';
+  document.getElementById('reservedList').innerHTML=reservations.length
+    ?'<table class="admin-data-table"><thead><tr><th>Presente</th><th>Convidado</th><th>Status</th><th>Data</th></tr></thead><tbody>'+
+      reservations.map(x=>`<tr><td>${escapeHtml(x.gift_name)}</td><td>${escapeHtml(x.guest_name)}</td><td><select onchange="changeReservation('${escapeHtml(x.id)}',this.value)">${['Aguardando confirmação','Confirmado','Cancelado'].map(s=>'<option '+(x.status===s?'selected':'')+'>'+s+'</option>').join('')}</select></td><td>${escapeHtml(formatAdminDate(x.created_at))}</td></tr>`).join('')+'</tbody></table>'
+    :'Nenhum presente reservado.';
+  document.getElementById('adminStatus').textContent='Dados atualizados em '+new Date().toLocaleString('pt-BR')+'.';
+  await renderGiftCatalogAdmin();
+}
+function formatAdminDate(value){
+  if(!value)return '—';
+  const date=new Date(value);
+  return Number.isNaN(date.getTime())?'—':date.toLocaleString('pt-BR');
+}
+async function changeReservation(id,status){
+  if(!weddingDb)return;
+  const {error}=await weddingDb.from('gift_reservations').update({status}).eq('id',id);
+  if(error){showAdminError('Não foi possível atualizar a reserva.');return}
+  await renderAdmin();await renderGiftAvailability();
+}
+async function addGift(){
+  if(!weddingDb){showAdminError('Configure o banco para cadastrar presentes.');return}
+  const name=document.getElementById('newGiftName').value.trim();
+  const description=document.getElementById('newGiftDesc').value.trim();
+  const id=slugify(name);
+  if(name.length<2||name.length>80||!id){showAdminError('Informe um nome válido para o presente.');return}
+  if(description.length>180){showAdminError('A descrição deve ter no máximo 180 caracteres.');return}
+  const {error}=await weddingDb.from('gift_catalog').insert({id,name,description});
+  if(error){showAdminError('Não foi possível cadastrar. Verifique se já existe um presente com esse nome ou se ele está inativo na lista.');return}
+  document.getElementById('newGiftName').value='';document.getElementById('newGiftDesc').value='';
+  setAdminStatus('Presente cadastrado e publicado na lista.');
+  await renderGiftAvailability();await renderAdmin();
+}
+async function renderGiftCatalogAdmin(){
+  const container=document.getElementById('giftCatalogAdmin');
+  if(!container||!weddingDb)return;
+  const {data,error}=await weddingDb.from('gift_catalog')
+    .select('id,name,description,is_reserved,active').order('name');
+  if(error){container.textContent='Não foi possível carregar o catálogo de presentes.';return}
+  container.replaceChildren();
+  if(!data||!data.length){container.textContent='Nenhum presente cadastrado.';return}
+  data.forEach(item=>{
+    const row=document.createElement('div');
+    row.style.cssText='border:1px solid #d8c9a5;background:#fffdfa;padding:12px;display:grid;gap:8px';
+    const heading=document.createElement('div');
+    heading.style.cssText='display:flex;justify-content:space-between;gap:10px;align-items:center;flex-wrap:wrap';
+    const title=document.createElement('strong');
+    title.textContent=item.name;
+    title.style.cssText="font:20px 'Cormorant Garamond';color:#102b59";
+    const status=document.createElement('span');
+    status.textContent=!item.active?'Fora da lista pública':item.is_reserved?'Reservado':'Disponível';
+    status.style.cssText='font-size:10px;letter-spacing:.08em;text-transform:uppercase;color:'+
+      (!item.active?'#777':item.is_reserved?'#8a5b25':'#356b50');
+    heading.append(title,status);
+    const fields=document.createElement('div');
+    fields.style.cssText='display:grid;grid-template-columns:1fr 1fr;gap:8px';
+    const name=document.createElement('input');
+    name.type='text';name.maxLength=80;name.value=item.name;name.setAttribute('aria-label','Nome do presente');
+    name.style.cssText='min-width:0;width:100%;padding:10px;border:1px solid #cbb27f;background:#fff;color:#17345f';
+    const description=document.createElement('input');
+    description.type='text';description.maxLength=180;description.value=item.description||'';
+    description.placeholder='Descrição curta';description.setAttribute('aria-label','Descrição do presente');
+    description.style.cssText=name.style.cssText;
+    fields.append(name,description);
+    const actions=document.createElement('div');
+    actions.style.cssText='display:flex;gap:8px;flex-wrap:wrap';
+    const save=document.createElement('button');
+    save.type='button';save.className='button';save.textContent='Salvar alterações';
+    save.style.cssText='padding:10px 14px';
+    save.addEventListener('click',()=>saveGift(item.id,name.value,description.value));
+    const toggle=document.createElement('button');
+    toggle.type='button';toggle.className='button outline';toggle.style.cssText='padding:10px 14px';
+    toggle.textContent=item.active?'Retirar da lista':'Reativar na lista';
+    toggle.addEventListener('click',()=>setGiftActive(item.id,!item.active));
+    actions.append(save,toggle);
+    row.append(heading,fields,actions);
+    container.append(row);
+  });
+}
+async function saveGift(id,name,description){
+  if(!weddingDb)return;
+  const cleanName=String(name||'').trim(),cleanDescription=String(description||'').trim();
+  if(cleanName.length<2||cleanName.length>80){setAdminStatus('O nome deve ter entre 2 e 80 caracteres.');return}
+  if(cleanDescription.length>180){setAdminStatus('A descrição deve ter no máximo 180 caracteres.');return}
+  const {error}=await weddingDb.from('gift_catalog').update({name:cleanName,description:cleanDescription}).eq('id',id);
+  if(error){setAdminStatus('Não foi possível salvar. Verifique se o nome já está cadastrado.');return}
+  setAdminStatus('Alterações salvas.');
+  await renderGiftAvailability();await renderGiftCatalogAdmin();
+}
+async function setGiftActive(id,active){
+  if(!weddingDb)return;
+  if(!active){
+    const {data,error}=await weddingDb.from('gift_reservations')
+      .select('id,status').eq('gift_id',id).neq('status','Cancelado').limit(1);
+    if(error){setAdminStatus('Não foi possível verificar as reservas deste presente.');return}
+    if(data&&data.length){
+      setAdminStatus('Este presente possui uma reserva ativa. Cancele a reserva antes de retirá-lo da lista.');
+      return;
+    }
+    if(!window.confirm('Retirar este presente da lista pública? O histórico de reservas será preservado.'))return;
+  }
+  const {error}=await weddingDb.from('gift_catalog')
+    .update({active:active,is_reserved:false}).eq('id',id);
+  if(error){setAdminStatus('Não foi possível atualizar a disponibilidade deste presente.');return}
+  setAdminStatus(active?'Presente reativado na lista pública.':'Presente retirado da lista pública. O histórico foi preservado.');
+  await renderGiftAvailability();await renderGiftCatalogAdmin();
+}
+function excelSafe(value){
+  if(value===null||value===undefined)return '';
+  const text=String(value);
+  const first=text.trimStart().charAt(0);
+  return ['=','+','-','@'].includes(first)?"'"+text:text;
+}
+async function exportAdminExcel(){
+  if(!weddingDb){setAdminStatus('Banco de dados não configurado.');return}
+  if(!window.XLSX){setAdminStatus('O módulo de Excel não carregou. Atualize a página e tente novamente.');return}
+  setAdminStatus('Preparando relatório Excel…');
+  const [g,r,cat]=await Promise.all([
+    weddingDb.from('rsvps').select('nome,telefone,presenca,quantidade,mensagem,created_at').order('created_at',{ascending:false}),
+    weddingDb.from('gift_reservations').select('gift_name,guest_name,status,created_at').order('created_at',{ascending:false}),
+    weddingDb.from('gift_catalog').select('name,description,active,is_reserved').order('name')
+  ]);
+  if(g.error||r.error||cat.error){setAdminStatus('Não foi possível gerar o relatório. Verifique a conexão e tente novamente.');return}
+  const guests=g.data||[],reservations=r.data||[],catalog=cat.data||[];
+  const yes=guests.filter(x=>x.presenca==='Sim, estarei presente');
+  const no=guests.filter(x=>x.presenca==='Não poderei comparecer');
+  const activeReservations=reservations.filter(x=>x.status!=='Cancelado');
+  const peopleYes=yes.reduce((sum,x)=>sum+Number(x.quantidade||0),0);
+  const peopleNo=no.reduce((sum,x)=>sum+Number(x.quantidade||0),0);
+  const wb=XLSX.utils.book_new();
+  const summary=[
+    ['CASAMENTO KATHLEEN & RAILANDER'],
+    ['Relatório gerado em',new Date().toLocaleString('pt-BR')],
+    [],
+    ['Indicador','Quantidade'],
+    ['Respostas recebidas',guests.length],
+    ['Respostas positivas',yes.length],
+    ['Pessoas confirmadas (inclui acompanhantes)',peopleYes],
+    ['Respostas negativas',no.length],
+    ['Pessoas que não irão',peopleNo],
+    ['Presentes com reserva ativa',activeReservations.length],
+    ['Total de presentes cadastrados',catalog.length],
+    ['Presentes ativos na vitrine',catalog.filter(x=>x.active).length]
+  ];
+  const confirmed=[
+    ['Nome','Telefone','Quantidade de pessoas','Mensagem','Data da resposta'],
+    ...yes.map(x=>[excelSafe(x.nome),excelSafe(x.telefone),Number(x.quantidade||0),excelSafe(x.mensagem),formatAdminDate(x.created_at)])
+  ];
+  const declined=[
+    ['Nome','Telefone','Quantidade de pessoas','Mensagem','Data da resposta'],
+    ...no.map(x=>[excelSafe(x.nome),excelSafe(x.telefone),Number(x.quantidade||0),excelSafe(x.mensagem),formatAdminDate(x.created_at)])
+  ];
+  const gifts=[
+    ['Presente','Convidado','Status','Data da reserva'],
+    ...reservations.map(x=>[excelSafe(x.gift_name),excelSafe(x.guest_name),excelSafe(x.status),formatAdminDate(x.created_at)])
+  ];
+  const giftCatalog=[
+    ['Presente','Descrição','Na vitrine pública','Disponibilidade'],
+    ...catalog.map(x=>[excelSafe(x.name),excelSafe(x.description),x.active?'Sim':'Não',x.is_reserved?'Reservado':'Disponível'])
+  ];
+  const addSheet=(name,rows,widths)=>{
+    const sheet=XLSX.utils.aoa_to_sheet(rows);
+    sheet['!cols']=widths.map(w=>({wch:w}));
+    XLSX.utils.book_append_sheet(wb,sheet,name);
+  };
+  addSheet('Resumo',summary,[43,24]);
+  addSheet('Confirmados',confirmed,[30,20,20,48,22]);
+  addSheet('Não comparecem',declined,[30,20,20,48,22]);
+  addSheet('Reservas',gifts,[30,28,27,22]);
+  addSheet('Lista de presentes',giftCatalog,[30,42,20,20]);
+  XLSX.writeFile(wb,'casamento-kathleen-railander-relatorio.xlsx');
+  setAdminStatus('Relatório Excel gerado com '+guests.length+' respostas e '+activeReservations.length+' reservas ativas.');
+}
+async function exportAdminData(){
+  if(!weddingDb)return;
+  const [g,r]=await Promise.all([
+    weddingDb.from('rsvps').select('*').order('created_at',{ascending:false}),
+    weddingDb.from('gift_reservations').select('*').order('created_at',{ascending:false})
+  ]);
+  if(g.error||r.error){showAdminError('Não foi possível exportar os dados.');return}
+  const blob=new Blob([JSON.stringify({confirmacoes:g.data||[],reservas:r.data||[]},null,2)],{type:'application/json'});
+  const a=document.createElement('a');const url=URL.createObjectURL(blob);a.href=url;a.download='casamento-kathleen-railander-dados.json';a.click();URL.revokeObjectURL(url);
+}
+renderGiftAvailability();
+
+</script></body></html>
