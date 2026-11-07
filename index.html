@@ -673,16 +673,36 @@ footer>*{position:relative;z-index:1}
 
 /* Tela inicial: arte completa da capela, sem recortes ou portas isoladas */
 .envelope-intro.church-intro-full{
+  position:fixed!important;inset:0!important;width:100vw!important;height:100vh!important;height:100dvh!important;
+  z-index:2147483000!important;isolation:isolate;
   display:flex;align-items:center;justify-content:center;gap:0;
-  padding:0;overflow:hidden;
-  background:radial-gradient(ellipse at center,#fffdf8 0%,#f4ecdd 72%,#e7dac1 100%);
+  padding:0!important;overflow:hidden;
+  background:#162b49!important;
   transition:opacity .9s cubic-bezier(.22,.61,.36,1),visibility .9s;
 }
+.envelope-intro.church-intro-full:before,.envelope-intro.church-intro-full:after{
+  content:none!important;display:none!important;background:none!important;
+}
+body.wedding-intro-active{overflow:hidden!important}
+body.wedding-intro-active > :not(#envelopeIntro){visibility:hidden!important}
+.church-intro-full .church-art-backdrop{
+  position:absolute;z-index:0;inset:-5%;display:flex;flex-direction:column;overflow:hidden;
+  filter:blur(30px) brightness(.62) saturate(.82);transform:scale(1.12);
+  opacity:.9;pointer-events:none;
+}
+.church-intro-full .church-backdrop-piece{
+  display:block;width:100%;height:20%;flex:0 0 20%;object-fit:fill;margin:0;padding:0;border:0;
+}
+.church-intro-full .church-art-backdrop:after{
+  content:"";position:absolute;inset:0;
+  background:linear-gradient(90deg,rgba(13,31,57,.48),rgba(13,31,57,.08) 36%,rgba(13,31,57,.08) 64%,rgba(13,31,57,.48)),
+             linear-gradient(0deg,rgba(12,28,49,.24),rgba(12,28,49,.04) 28%,rgba(12,28,49,.04) 72%,rgba(12,28,49,.24));
+}
 .church-intro-full .church-art-wrap{
-  position:relative;display:flex;flex-direction:column;flex:none;
-  width:min(100vw,75dvh);height:min(100dvh,133.333vw);aspect-ratio:3/4;
+  position:relative;z-index:1;display:flex;flex-direction:column;flex:none;
+  width:min(100vw,78dvh);height:min(100dvh,128.205vw);aspect-ratio:3/4;
   overflow:hidden;background:#f6eddb;
-  box-shadow:0 22px 65px rgba(25,39,62,.22);
+  box-shadow:0 22px 65px rgba(8,20,36,.42),0 0 0 1px rgba(239,220,178,.7);
   transform:translateZ(0) scale(1);
   transition:transform 1.15s cubic-bezier(.2,.72,.18,1),opacity .95s ease,filter 1s ease;
 }
@@ -707,7 +727,7 @@ footer>*{position:relative;z-index:1}
 }
 .church-intro-full.is-gone{opacity:0;visibility:hidden;pointer-events:none}
 @media(max-height:560px) and (orientation:landscape){
-  .church-intro-full .church-art-wrap{width:min(100vw,75dvh);height:min(100dvh,133.333vw)}
+  .church-intro-full .church-art-wrap{width:min(100vw,78dvh);height:min(100dvh,128.205vw)}
 }
 @media(prefers-reduced-motion:reduce){
   .church-intro-full,.church-intro-full .church-art-wrap{transition:none!important}
@@ -718,6 +738,13 @@ footer>*{position:relative;z-index:1}
 <body>
 
 <div class="envelope-intro church-intro church-intro-full" id="envelopeIntro" role="dialog" aria-modal="true" aria-label="Convite ilustrado de casamento de Kathleen e Railander">
+  <div class="church-art-backdrop" aria-hidden="true">
+    <img class="church-backdrop-piece" src="cover-art-01.webp" alt="">
+    <img class="church-backdrop-piece" src="cover-art-02.webp" alt="">
+    <img class="church-backdrop-piece" src="cover-art-03.webp" alt="">
+    <img class="church-backdrop-piece" src="cover-art-04.webp" alt="">
+    <img class="church-backdrop-piece" src="cover-art-05.webp" alt="">
+  </div>
   <div class="church-art-wrap">
     <img class="church-art-piece" src="cover-art-01.webp" alt="Fachada completa da igreja ao entardecer, com portas azuis marcadas com as iniciais K e R, decoração dourada, os nomes Kathleen e Railander e a data 18 de dezembro de 2027." fetchpriority="high" decoding="async">
     <img class="church-art-piece" src="cover-art-02.webp" alt="" aria-hidden="true" decoding="async">
@@ -1190,11 +1217,13 @@ function openWeddingEnvelope(){
   // A arte completa se aproxima suavemente, conduzindo o olhar até as portas.
   window.setTimeout(()=>envelopeIntro.classList.add('is-gone'),900);
   window.setTimeout(()=>{
+    document.body.classList.remove('wedding-intro-active');
     document.body.style.overflow='';
     envelopeIntro.setAttribute('aria-hidden','true');
   },1900);
 }
 if(openEnvelopeButton) openEnvelopeButton.addEventListener('click',openWeddingEnvelope);
+document.body.classList.add('wedding-intro-active');
 document.body.style.overflow='hidden';
 
 </script></body></html>
