@@ -496,14 +496,14 @@ footer>*{position:relative;z-index:1}
 <section class="details" id="cerimonia"><div class="wrap"><div class="section-kicker">Reserve esta data</div><h2 class="section-title">O nosso casamento</h2><p class="intro">Será uma alegria ter você conosco neste dia tão especial.</p><div class="detailcards"><div class="detail"><div class="symbol">◷</div><h3>Quando</h3><p>Sábado, 18 de dezembro de 2027<br>Às 16h</p></div><div class="detail"><div class="symbol">⌖</div><h3>Onde</h3><p>Igreja São Sebastião<br>Canoa Quebrada – Aracati, CE</p><a class="button outline" target="_blank" href="https://www.google.com/maps/search/?api=1&query=Igreja+S%C3%A3o+Sebasti%C3%A3o+Canoa+Quebrada+CE">Abrir localização</a></div></div></div></section>
 <section class="gifts" id="presentes"><div class="wrap"><div class="section-kicker">Um carinho para nossa nova etapa</div><h2 class="section-title">Lista de presentes</h2><p class="intro">Sua presença é o nosso maior presente. Se desejar nos presentear, preparamos algumas sugestões com carinho.</p>
 <div class="giftgrid">
-<div class="gift"><img src="https://images.unsplash.com/photo-1517668808822-9ebb02f2a0e6?auto=format&fit=crop&w=700&q=80" alt="Cafeteira"><h3>Cafeteira</h3><p>Para os cafés das manhãs juntos</p><button onclick="openGift('Cafeteira')">Quero presentear</button></div>
-<div class="gift"><img src="https://images.unsplash.com/photo-1603199506016-b9a594b593c0?auto=format&fit=crop&w=700&q=80" alt="Jogo de jantar"><h3>Jogo de jantar</h3><p>Para receber família e amigos</p><button onclick="openGift('Jogo de jantar')">Quero presentear</button></div>
-<div class="gift"><img src="https://images.unsplash.com/photo-1584990347449-a9d5a2a9e9f0?auto=format&fit=crop&w=700&q=80" alt="Panelas"><h3>Jogo de panelas</h3><p>Para equipar nosso lar</p><button onclick="openGift('Jogo de panelas')">Quero presentear</button></div>
+<div class="gift"><img src="https://images.unsplash.com/photo-1517668808822-9ebb02f2a0e6?auto=format&fit=crop&w=700&q=80" alt="Cafeteira"><h3>Cafeteira</h3><p>Para os cafés das manhãs juntos</p><button data-gift-id="cafeteira" onclick="openGift('cafeteira','Cafeteira')">Quero presentear</button></div>
+<div class="gift"><img src="https://images.unsplash.com/photo-1603199506016-b9a594b593c0?auto=format&fit=crop&w=700&q=80" alt="Jogo de jantar"><h3>Jogo de jantar</h3><p>Para receber família e amigos</p><button data-gift-id="jogo-de-jantar" onclick="openGift('jogo-de-jantar','Jogo de jantar')">Quero presentear</button></div>
+<div class="gift"><img src="https://images.unsplash.com/photo-1584990347449-a9d5a2a9e9f0?auto=format&fit=crop&w=700&q=80" alt="Panelas"><h3>Jogo de panelas</h3><p>Para equipar nosso lar</p><button data-gift-id="jogo-de-panelas" onclick="openGift('jogo-de-panelas','Jogo de panelas')">Quero presentear</button></div>
 </div>
 <div class="pixbox"><div class="section-kicker">Se preferir</div><h2 class="section-title" style="font-size:36px">Presente via Pix</h2><p>Se desejar, você pode contribuir com qualquer valor para esta nova etapa da nossa vida.</p><div class="pix-qr-frame"><img src="pix-qr.svg" alt="QR Code Pix dos noivos" width="225" height="225" loading="lazy"></div><p class="pix-instructions">Abra o aplicativo do seu banco, escolha pagar com Pix e aponte a câmera para o QR Code acima.</p><div class="pix-key">Chave Pix dos noivos:<strong id="pixKey">03488193071</strong></div><div class="pix-options"><button type="button" onclick="copyPixKey()">Copiar chave Pix</button><button type="button" onclick="copyPixPayload()">Copiar Pix Copia e Cola</button></div><p id="pixCopyMsg" aria-live="polite" style="font-size:12px;margin-top:10px"></p></div>
 </div></section>
 <section class="rsvp" id="rsvp"><div class="wrap"><div class="section-kicker">Queremos celebrar com você</div><h2 class="section-title">Confirme sua presença</h2><p class="intro">Preencha seus dados para nos ajudar na organização deste dia.</p>
-<form class="form" id="rsvpForm"><label>Nome completo<input required name="nome" placeholder="Seu nome"></label><label>Telefone / WhatsApp<input required name="telefone" placeholder="(00) 00000-0000"></label><label>Você poderá comparecer?<select name="presenca"><option>Sim, estarei presente</option><option>Não poderei comparecer</option></select></label><label>Quantidade de pessoas<input type="number" min="1" max="10" value="1" name="quantidade"></label><label class="full">Mensagem aos noivos (opcional)<textarea name="mensagem" rows="3" placeholder="Deixe uma mensagem..."></textarea></label><button type="submit">Preparar confirmação</button></form>
+<form class="form" id="rsvpForm"><label>Nome completo<input required name="nome" maxlength="120" placeholder="Seu nome"></label><label>Telefone / WhatsApp<input required name="telefone" maxlength="25" placeholder="(00) 00000-0000"></label><label>Você poderá comparecer?<select name="presenca"><option>Sim, estarei presente</option><option>Não poderei comparecer</option></select></label><label>Quantidade de pessoas<input type="number" min="1" max="10" value="1" name="quantidade"></label><label class="full">Mensagem aos noivos (opcional)<textarea name="mensagem" rows="3" maxlength="1000" placeholder="Deixe uma mensagem..."></textarea></label><button type="submit">Enviar confirmação</button></form><p id="rsvpFeedback" role="status" style="text-align:center;font-size:13px;color:#17345f;margin:14px auto;max-width:600px"></p>
 <p style="text-align:center;font-size:11px;color:#dce2ef;margin-top:18px">Escolha para qual dos noivos deseja enviar sua confirmação.</p>
 <div style="display:flex;gap:10px;justify-content:center;flex-wrap:wrap;margin-top:12px">
 <a class="button outline" style="border-color:#d7bd88;color:white" href="https://wa.me/5566999084016" id="rsvpRailander">WhatsApp do Railander</a>
@@ -513,7 +513,7 @@ footer>*{position:relative;z-index:1}
 <div class="modal" id="adminModal"><div class="modalbox" style="max-width:850px;text-align:left;max-height:90vh;overflow:auto">
 <button class="close" onclick="closeAdmin()">×</button>
 <div class="section-kicker">Acesso restrito</div><h3 style="text-align:center">Painel dos noivos</h3>
-<div id="adminLogin"><p style="font-size:12px;color:#666;text-align:center">Digite o PIN de acesso para abrir o painel neste dispositivo.</p><input id="adminPin" type="password" placeholder="PIN de acesso"><button class="button" style="width:100%" onclick="loginAdmin()">Entrar</button><p id="adminError" style="color:#9b3434;font-size:11px"></p></div>
+<div id="adminLogin"><p style="font-size:12px;color:#666;text-align:center">Entre com o e-mail e a senha cadastrados para os noivos.</p><input id="adminEmail" type="email" autocomplete="username" placeholder="E-mail"><input id="adminPassword" type="password" autocomplete="current-password" placeholder="Senha"><button class="button" style="width:100%" onclick="loginAdmin()">Entrar</button><p id="adminError" role="status" style="color:#9b3434;font-size:11px"></p></div>
 <div id="adminContent" style="display:none">
 <div style="display:grid;grid-template-columns:repeat(3,1fr);gap:8px;margin:15px 0">
 <div style="background:#f1ebdf;padding:12px;text-align:center"><strong id="statGuests">0</strong><div style="font-size:10px">Respostas RSVP</div></div>
@@ -524,14 +524,16 @@ footer>*{position:relative;z-index:1}
 <h4 style="font:24px 'Cormorant Garamond';color:#172e59;margin:22px 0 8px">Presentes reservados</h4><div id="reservedList" style="font-size:12px;overflow:auto"></div>
 <h4 style="font:24px 'Cormorant Garamond';color:#172e59;margin:22px 0 8px">Cadastrar presente</h4>
 <div style="display:grid;grid-template-columns:1fr 1fr;gap:8px"><input id="newGiftName" placeholder="Nome do presente"><input id="newGiftDesc" placeholder="Descrição curta"></div><button class="button" style="margin-top:8px" onclick="addGift()">Adicionar à lista</button>
-<p style="font-size:10px;color:#777;line-height:1.6;margin-top:18px">Os dados deste painel ficam armazenados somente neste navegador. Para compartilhar entre celulares e computadores, exigir login seguro e evitar reservas duplicadas, será necessário conectar um banco de dados e um serviço de autenticação antes da publicação.</p>
-<button class="button outline" onclick="exportAdminData()" style="margin-top:8px">Exportar dados (JSON)</button>
+<p id="adminStatus" style="font-size:11px;color:#777;line-height:1.6;margin-top:18px">Dados centralizados. Apenas contas autorizadas podem consultar ou alterar as informações.</p>
+<button class="button outline" onclick="exportAdminData()" style="margin-top:8px">Exportar dados (JSON)</button> <button class="button outline" onclick="logoutAdmin()" style="margin-top:8px">Sair do painel</button>
 </div></div></div>
-<div class="modal" id="giftModal"><div class="modalbox"><button class="close" onclick="closeGift()">×</button><div class="section-kicker">Lista de presentes</div><h3 id="giftName">Escolha seu presente</h3><p>Informe seu nome. A reserva será encaminhada aos noivos quando o canal de contato for configurado.</p><input id="giftGuest" placeholder="Seu nome"><button class="button" onclick="confirmGift()">Preparar mensagem</button>
+<div class="modal" id="giftModal"><div class="modalbox"><button class="close" onclick="closeGift()">×</button><div class="section-kicker">Lista de presentes</div><h3 id="giftName">Escolha seu presente</h3><p>Informe seu nome para reservar este presente. A disponibilidade é atualizada para todos os convidados.</p><input id="giftGuest" maxlength="120" placeholder="Seu nome"><button class="button" onclick="confirmGift()">Confirmar reserva</button>
 <div id="giftContacts" style="display:none;gap:8px;justify-content:center;flex-wrap:wrap;margin-top:12px">
 <a class="button outline" id="giftRailander" href="#" target="_blank">Avisar Railander</a>
 <a class="button outline" id="giftKathleen" href="#" target="_blank">Avisar Kathleen</a>
 </div><p id="giftMsg" style="font-size:11px;color:#777"></p></div></div>
+<script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+<script src="supabase-config.js"></script>
 <script>
 const target=new Date('2027-12-18T16:00:00-03:00');
 function tick(){let ms=Math.max(0,target-new Date());let vals=[Math.floor(ms/86400000),Math.floor(ms/3600000)%24,Math.floor(ms/60000)%60,Math.floor(ms/1000)%60];let labels=['Dias','Horas','Minutos','Segundos'];document.getElementById('countdown').innerHTML=vals.map((v,i)=>`<div><strong>${String(v).padStart(2,'0')}</strong><span>${labels[i]}</span></div>`).join('')}
@@ -539,25 +541,177 @@ tick();setInterval(tick,1000);
 function copyPixKey(){const key='03488193071';if(navigator.clipboard&&window.isSecureContext){navigator.clipboard.writeText(key).then(()=>{document.getElementById('pixCopyMsg').textContent='Chave Pix copiada.'}).catch(()=>{document.getElementById('pixCopyMsg').textContent='Não foi possível copiar automaticamente. Selecione a chave acima.'})}else{const field=document.createElement('textarea');field.value=key;field.style.position='fixed';field.style.opacity='0';document.body.appendChild(field);field.select();try{document.execCommand('copy');document.getElementById('pixCopyMsg').textContent='Chave Pix copiada.'}catch(e){document.getElementById('pixCopyMsg').textContent='Selecione a chave acima para copiar.'}field.remove()}}
 function copyPixPayload(){const payload='00020126330014BR.GOV.BCB.PIX0111034881930715204000053039865802BR5925Railander Delgado Burgier6009SAO PAULO62140510jLruLUfAvv6304F3F3';const msg=document.getElementById('pixCopyMsg');const fallback=()=>{const field=document.createElement('textarea');field.value=payload;field.style.position='fixed';field.style.opacity='0';document.body.appendChild(field);field.select();try{document.execCommand('copy');msg.textContent='Código Pix Copia e Cola copiado.'}catch(e){msg.textContent='Não foi possível copiar. Tente novamente pelo navegador.'}field.remove()};if(navigator.clipboard&&window.isSecureContext){navigator.clipboard.writeText(payload).then(()=>{msg.textContent='Código Pix Copia e Cola copiado.'}).catch(fallback)}else{fallback()}}
 
-let selectedGift='';
-function openGift(n){selectedGift=n;document.getElementById('giftName').textContent=n;document.getElementById('giftMsg').textContent='';document.getElementById('giftModal').classList.add('open')}
-function closeGift(){document.getElementById('giftModal').classList.remove('open')}
-function getStore(k,def=[]){try{return JSON.parse(localStorage.getItem('kr_'+k))||def}catch(e){return def}}
-function setStore(k,v){localStorage.setItem('kr_'+k,JSON.stringify(v))}
-function confirmGift(){let n=document.getElementById('giftGuest').value.trim();if(!n){document.getElementById('giftMsg').textContent='Informe seu nome para continuar.';return}let reservations=getStore('reservations');reservations.push({gift:selectedGift,guest:n,date:new Date().toISOString(),status:'Aguardando confirmação'});setStore('reservations',reservations);let msg=encodeURIComponent(`Olá! Sou ${n} e gostaria de presentear vocês com: ${selectedGift}. Podem confirmar a disponibilidade?`);document.getElementById('giftRailander').href='https://wa.me/5566999084016?text='+msg;document.getElementById('giftKathleen').href='https://wa.me/5588992638694?text='+msg;document.getElementById('giftContacts').style.display='flex';document.getElementById('giftMsg').textContent='Pedido registrado neste dispositivo. Escolha para qual dos noivos enviar a mensagem; a reserva só será confirmada após a resposta.'}
-document.getElementById('rsvpForm').addEventListener('submit',e=>{e.preventDefault();let f=new FormData(e.target);let guest={name:f.get('nome'),phone:f.get('telefone'),attendance:f.get('presenca'),quantity:f.get('quantidade'),message:f.get('mensagem')||'',date:new Date().toISOString()};let guests=getStore('guests');guests.push(guest);setStore('guests',guests);let msg=`Olá! Quero confirmar minha presença no casamento de Kathleen e Railander.\n\nNome: ${guest.name}\nTelefone: ${guest.phone}\nPresença: ${guest.attendance}\nQuantidade: ${guest.quantity}\nMensagem: ${guest.message||'—'}`;let encoded=encodeURIComponent(msg);document.getElementById('rsvpRailander').href='https://wa.me/5566999084016?text='+encoded;document.getElementById('rsvpKathleen').href='https://wa.me/5588992638694?text='+encoded;document.getElementById('rsvpRailander').scrollIntoView({behavior:'smooth',block:'center'});});
+const weddingConfig=window.WEDDING_SUPABASE_CONFIG||{};
+const weddingDb=window.supabase&&weddingConfig.url&&weddingConfig.publishableKey
+  ? window.supabase.createClient(weddingConfig.url,weddingConfig.publishableKey)
+  : null;
 
-const ADMIN_PIN='18122027'; // PIN provisório para demonstração; substituir por autenticação segura no backend.
-function openAdmin(){document.getElementById('adminModal').classList.add('open')}
+let selectedGift={id:'',name:''};
+function openGift(id,name){selectedGift={id:id,name:name};document.getElementById('giftName').textContent=name;document.getElementById('giftMsg').textContent='';document.getElementById('giftContacts').style.display='none';document.getElementById('giftModal').classList.add('open')}
+function closeGift(){document.getElementById('giftModal').classList.remove('open')}
 function closeAdmin(){document.getElementById('adminModal').classList.remove('open')}
-function loginAdmin(){if(document.getElementById('adminPin').value!==ADMIN_PIN){document.getElementById('adminError').textContent='PIN incorreto.';return}document.getElementById('adminLogin').style.display='none';document.getElementById('adminContent').style.display='block';renderAdmin()}
-function renderAdmin(){let gs=getStore('guests'),rs=getStore('reservations');document.getElementById('statGuests').textContent=gs.length;document.getElementById('statYes').textContent=gs.filter(x=>x.attendance==='Sim, estarei presente').length;document.getElementById('statGifts').textContent=rs.length;
-document.getElementById('guestList').innerHTML=gs.length?'<table style="width:100%;border-collapse:collapse"><tr><th align="left">Nome</th><th align="left">Presença</th><th>Qtd.</th><th>Telefone</th></tr>'+gs.map(x=>`<tr><td style="padding:7px;border-bottom:1px solid #ddd">${escapeHtml(x.name)}</td><td>${escapeHtml(x.attendance)}</td><td align="center">${escapeHtml(x.quantity)}</td><td>${escapeHtml(x.phone)}</td></tr>`).join('')+'</table>':'Nenhuma resposta registrada neste navegador.';
-document.getElementById('reservedList').innerHTML=rs.length?'<table style="width:100%;border-collapse:collapse"><tr><th align="left">Presente</th><th align="left">Convidado</th><th align="left">Status</th></tr>'+rs.map((x,i)=>`<tr><td style="padding:7px;border-bottom:1px solid #ddd">${escapeHtml(x.gift)}</td><td>${escapeHtml(x.guest)}</td><td><select onchange="changeReservation(${i},this.value)"><option ${x.status==='Aguardando confirmação'?'selected':''}>Aguardando confirmação</option><option ${x.status==='Confirmado'?'selected':''}>Confirmado</option><option ${x.status==='Cancelado'?'selected':''}>Cancelado</option></select></td></tr>`).join('')+'</table>':'Nenhum presente solicitado neste navegador.'}
+function openAdmin(){document.getElementById('adminModal').classList.add('open');document.getElementById('adminError').textContent='';restoreAdminSession()}
 function escapeHtml(v){return String(v??'').replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]))}
-function changeReservation(i,s){let r=getStore('reservations');r[i].status=s;setStore('reservations',r);renderAdmin()}
-function addGift(){let n=document.getElementById('newGiftName').value.trim(),d=document.getElementById('newGiftDesc').value.trim();if(!n)return alert('Informe o nome do presente.');let list=getStore('giftCatalog');list.push({name:n,description:d});setStore('giftCatalog',list);document.getElementById('newGiftName').value='';document.getElementById('newGiftDesc').value='';alert('Presente cadastrado no catálogo local. Para aparecer na vitrine, será necessário conectar o catálogo à seção pública.')}
-function exportAdminData(){let data={guests:getStore('guests'),reservations:getStore('reservations'),giftCatalog:getStore('giftCatalog')};let blob=new Blob([JSON.stringify(data,null,2)],{type:'application/json'});let a=document.createElement('a');a.href=URL.createObjectURL(blob);a.download='dados-casamento-kathleen-railander.json';a.click();URL.revokeObjectURL(a.href)}
+function setRsvpWhatsAppLinks(guest){
+  const msg=['Olá! Quero confirmar minha presença no casamento de Kathleen e Railander.','',
+    'Nome: '+guest.nome,'Telefone: '+guest.telefone,'Presença: '+guest.presenca,
+    'Quantidade: '+guest.quantidade,'Mensagem: '+(guest.mensagem||'—')].join('\n');
+  const encoded=encodeURIComponent(msg);
+  document.getElementById('rsvpRailander').href='https://wa.me/5566999084016?text='+encoded;
+  document.getElementById('rsvpKathleen').href='https://wa.me/5588992638694?text='+encoded;
+}
+document.getElementById('rsvpForm').addEventListener('submit',async e=>{
+  e.preventDefault();
+  const form=e.currentTarget,button=form.querySelector('button[type="submit"]');
+  const f=new FormData(form);
+  const guest={nome:String(f.get('nome')||'').trim(),telefone:String(f.get('telefone')||'').trim(),
+    presenca:String(f.get('presenca')||''),quantidade:Number(f.get('quantidade')||1),mensagem:String(f.get('mensagem')||'').trim()};
+  const feedback=document.getElementById('rsvpFeedback');
+  setRsvpWhatsAppLinks(guest);
+  if(!weddingDb){
+    feedback.textContent='O formulário online está em configuração. Para confirmar agora, use um dos botões de WhatsApp abaixo.';
+    document.getElementById('rsvpRailander').scrollIntoView({behavior:'smooth',block:'center'});
+    return;
+  }
+  button.disabled=true;button.textContent='Enviando…';feedback.textContent='';
+  const {error}=await weddingDb.from('rsvps').insert(guest);
+  button.disabled=false;button.textContent='Enviar confirmação';
+  if(error){feedback.textContent='Não foi possível registrar agora. Tente novamente ou envie sua confirmação pelo WhatsApp.';return}
+  feedback.textContent='Confirmação registrada. Obrigado por responder!';
+  form.reset();
+});
+
+async function renderGiftAvailability(){
+  if(!weddingDb)return;
+  const {data,error}=await weddingDb.from('gift_catalog').select('id,name,description,is_reserved').eq('active',true);
+  if(error){console.warn('Não foi possível consultar os presentes:',error.message);return}
+  const grid=document.querySelector('.giftgrid');
+  (data||[]).forEach(item=>{
+    let button=document.querySelector('[data-gift-id="'+CSS.escape(item.id)+'"]');
+    if(!button){
+      const card=document.createElement('div');card.className='gift';
+      const title=document.createElement('h3');title.textContent=item.name;
+      const desc=document.createElement('p');desc.textContent=item.description||'';
+      button=document.createElement('button');button.dataset.giftId=item.id;
+      button.addEventListener('click',()=>openGift(item.id,item.name));
+      card.append(title,desc,button);grid.appendChild(card);
+    }
+    button.textContent=item.is_reserved?'Presente reservado':'Quero presentear';
+    button.disabled=!!item.is_reserved;
+    button.setAttribute('aria-label',item.is_reserved?item.name+' já reservado':'Reservar '+item.name);
+  });
+}
+async function confirmGift(){
+  const guestName=document.getElementById('giftGuest').value.trim();
+  const msg=document.getElementById('giftMsg');
+  if(guestName.length<2){msg.textContent='Informe seu nome para continuar.';return}
+  const text=encodeURIComponent('Olá! Sou '+guestName+' e gostaria de presentear vocês com: '+selectedGift.name+'.');
+  document.getElementById('giftRailander').href='https://wa.me/5566999084016?text='+text;
+  document.getElementById('giftKathleen').href='https://wa.me/5588992638694?text='+text;
+  if(!weddingDb){
+    document.getElementById('giftContacts').style.display='flex';
+    msg.textContent='A reserva online está em configuração. Avise os noivos pelo WhatsApp para verificar a disponibilidade.';
+    return;
+  }
+  const button=document.querySelector('#giftModal button.button');
+  button.disabled=true;button.textContent='Registrando…';
+  const {error}=await weddingDb.rpc('reserve_wedding_gift',{p_gift_id:selectedGift.id,p_guest_name:guestName});
+  button.disabled=false;button.textContent='Confirmar reserva';
+  if(error){
+    msg.textContent=error.message.includes('PRESENTE_INDISPONIVEL')?'Este presente já foi reservado. Escolha outro item.':'Não foi possível registrar a reserva. Tente novamente.';
+    await renderGiftAvailability();
+    return;
+  }
+  document.getElementById('giftContacts').style.display='flex';
+  msg.textContent='Presente reservado. Avise um dos noivos pelo WhatsApp para combinar os detalhes.';
+  await renderGiftAvailability();
+}
+function slugify(value){return value.normalize('NFD').replace(/[\u0300-\u036f]/g,'').toLowerCase().trim().replace(/[^a-z0-9]+/g,'-').replace(/^-|-$/g,'')}
+function showAdminError(message){document.getElementById('adminError').textContent=message}
+async function loginAdmin(){
+  if(!weddingDb){showAdminError('A conexão com o banco ainda não foi configurada.');return}
+  const email=document.getElementById('adminEmail').value.trim();
+  const password=document.getElementById('adminPassword').value;
+  const {error}=await weddingDb.auth.signInWithPassword({email,password});
+  if(error){showAdminError('E-mail ou senha não reconhecidos.');return}
+  const {data,isAdminError}=await weddingDb.rpc('is_wedding_admin');
+  if(isAdminError||data!==true){await weddingDb.auth.signOut();showAdminError('Esta conta ainda não está autorizada para o painel.');return}
+  document.getElementById('adminLogin').style.display='none';
+  document.getElementById('adminContent').style.display='block';
+  await renderAdmin();
+}
+async function restoreAdminSession(){
+  if(!weddingDb)return;
+  const {data}=await weddingDb.auth.getSession();
+  if(!data.session)return;
+  const {data:isAdmin}=await weddingDb.rpc('is_wedding_admin');
+  if(isAdmin===true){
+    document.getElementById('adminLogin').style.display='none';
+    document.getElementById('adminContent').style.display='block';
+    await renderAdmin();
+  }
+}
+async function logoutAdmin(){
+  if(weddingDb)await weddingDb.auth.signOut();
+  document.getElementById('adminContent').style.display='none';
+  document.getElementById('adminLogin').style.display='block';
+  document.getElementById('adminPassword').value='';
+  showAdminError('Sessão encerrada.');
+}
+async function renderAdmin(){
+  if(!weddingDb){document.getElementById('adminStatus').textContent='Configure a conexão do banco para visualizar os registros.';return}
+  const [guestResult,giftResult]=await Promise.all([
+    weddingDb.from('rsvps').select('id,nome,telefone,presenca,quantidade,mensagem,created_at').order('created_at',{ascending:false}),
+    weddingDb.from('gift_reservations').select('id,gift_name,guest_name,status,created_at').order('created_at',{ascending:false})
+  ]);
+  if(guestResult.error||giftResult.error){
+    document.getElementById('adminStatus').textContent='Não foi possível carregar os dados. Verifique a autorização desta conta.';
+    return;
+  }
+  const guests=guestResult.data||[],reservations=giftResult.data||[];
+  document.getElementById('statGuests').textContent=guests.length;
+  document.getElementById('statYes').textContent=guests.filter(x=>x.presenca==='Sim, estarei presente').reduce((sum,x)=>sum+Number(x.quantidade||0),0);
+  document.getElementById('statGifts').textContent=reservations.filter(x=>x.status!=='Cancelado').length;
+  document.getElementById('guestList').innerHTML=guests.length
+    ?'<table style="width:100%;border-collapse:collapse"><tr><th align="left">Nome</th><th align="left">Presença</th><th>Qtd.</th><th>Telefone</th></tr>'+
+      guests.map(x=>'<tr><td style="padding:7px;border-bottom:1px solid #ddd">'+escapeHtml(x.nome)+'</td><td>'+escapeHtml(x.presenca)+'</td><td align="center">'+escapeHtml(x.quantidade)+'</td><td>'+escapeHtml(x.telefone)+'</td></tr>').join('')+'</table>'
+    :'Nenhuma resposta registrada.';
+  document.getElementById('reservedList').innerHTML=reservations.length
+    ?'<table style="width:100%;border-collapse:collapse"><tr><th align="left">Presente</th><th align="left">Convidado</th><th align="left">Status</th></tr>'+
+      reservations.map(x=>'<tr><td style="padding:7px;border-bottom:1px solid #ddd">'+escapeHtml(x.gift_name)+'</td><td>'+escapeHtml(x.guest_name)+'</td><td><select onchange="changeReservation(\''+x.id+'\',this.value)">'+
+      ['Aguardando confirmação','Confirmado','Cancelado'].map(s=>'<option '+(x.status===s?'selected':'')+'>'+s+'</option>').join('')+'</select></td></tr>').join('')+'</table>'
+    :'Nenhum presente reservado.';
+  document.getElementById('adminStatus').textContent='Dados atualizados em '+new Date().toLocaleString('pt-BR')+'.';
+}
+async function changeReservation(id,status){
+  if(!weddingDb)return;
+  const {error}=await weddingDb.from('gift_reservations').update({status}).eq('id',id);
+  if(error){showAdminError('Não foi possível atualizar a reserva.');return}
+  await renderAdmin();await renderGiftAvailability();
+}
+async function addGift(){
+  if(!weddingDb){showAdminError('Configure o banco para cadastrar presentes.');return}
+  const name=document.getElementById('newGiftName').value.trim();
+  const description=document.getElementById('newGiftDesc').value.trim();
+  const id=slugify(name);
+  if(name.length<2||!id){showAdminError('Informe um nome válido para o presente.');return}
+  const {error}=await weddingDb.from('gift_catalog').insert({id,name,description});
+  if(error){showAdminError('Não foi possível cadastrar. Verifique se já existe um presente com esse nome.');return}
+  document.getElementById('newGiftName').value='';document.getElementById('newGiftDesc').value='';
+  showAdminError('Presente cadastrado.');
+  await renderGiftAvailability();await renderAdmin();
+}
+async function exportAdminData(){
+  if(!weddingDb)return;
+  const [g,r]=await Promise.all([
+    weddingDb.from('rsvps').select('*').order('created_at',{ascending:false}),
+    weddingDb.from('gift_reservations').select('*').order('created_at',{ascending:false})
+  ]);
+  if(g.error||r.error){showAdminError('Não foi possível exportar os dados.');return}
+  const blob=new Blob([JSON.stringify({confirmacoes:g.data||[],reservas:r.data||[]},null,2)],{type:'application/json'});
+  const a=document.createElement('a');const url=URL.createObjectURL(blob);a.href=url;a.download='casamento-kathleen-railander-dados.json';a.click();URL.revokeObjectURL(url);
+}
+renderGiftAvailability();
 
 const envelopeIntro=document.getElementById('envelopeIntro');
 const openEnvelopeButton=document.getElementById('openEnvelope');
