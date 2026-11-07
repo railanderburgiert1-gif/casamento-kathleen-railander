@@ -979,7 +979,10 @@ async function renderGiftAvailability(){
     }
     card.hidden=false;
     const photo=card.querySelector('.gift-photo');
-    if(photo){photo.hidden=!item.photo_url;if(item.photo_url){photo.src=item.photo_url;photo.alt='Foto de '+item.name}else photo.removeAttribute('src')}
+    const hasPhoto=!!(item.photo_url&&item.photo_url.trim());
+    if(photo){photo.hidden=!hasPhoto;if(hasPhoto){photo.src=item.photo_url;photo.alt='Foto de '+item.name}else{photo.removeAttribute('src');photo.alt=''}}
+    const art=card.querySelector('.gift-art');
+    if(art)art.hidden=hasPhoto;
     const title=card.querySelector('h3');
     const desc=card.querySelector('.gift-content p');
     const status=card.querySelector('.gift-status');
@@ -1328,14 +1331,30 @@ async function exportAdminExcel(){
   setAdminStatus('Relatório Excel gerado com '+guests.length+' respostas e '+activeReservations.length+' reservas ativas.');
 }
 async function exportAdminData(){
-  if(!weddingDb)return;
-  const [g,r]=await Promise.all([
+  if(!weddingDb){setAdminStatus('Banco de dados não configurado.');return}
+  setAdminStatus('Preparando cópia de segurança…');
+  const [g,r,cat]=await Promise.all([
     weddingDb.from('rsvps').select('*').order('created_at',{ascending:false}),
-    weddingDb.from('gift_reservations').select('*').order('created_at',{ascending:false})
+    weddingDb.from('gift_reservations').select('*').order('created_at',{ascending:false}),
+    weddingDb.from('gift_catalog').select('*').order('sort_order',{ascending:true}).order('name')
   ]);
-  if(g.error||r.error){showAdminError('Não foi possível exportar os dados.');return}
-  const blob=new Blob([JSON.stringify({confirmacoes:g.data||[],reservas:r.data||[]},null,2)],{type:'application/json'});
-  const a=document.createElement('a');const url=URL.createObjectURL(blob);a.href=url;a.download='casamento-kathleen-railander-dados.json';a.click();URL.revokeObjectURL(url);
+  if(g.error||r.error||cat.error){setAdminStatus('Não foi possível exportar todos os dados. Verifique sua autorização e tente novamente.');return}
+  const backup={
+    sistema:'Kathleen & Railander',
+    gerado_em:new Date().toISOString(),
+    observacao:'As fotos permanecem no Supabase Storage; photo_url contém o endereço público de cada imagem.',
+    confirmacoes:g.data||[],
+    reservas:r.data||[],
+    catalogo_presentes:cat.data||[]
+  };
+  const blob=new Blob([JSON.stringify(backup,null,2)],{type:'application/json'});
+  const a=document.createElement('a');
+  const url=URL.createObjectURL(blob);
+  a.href=url;
+  a.download='casamento-kathleen-railander-backup.json';
+  a.click();
+  setTimeout(()=>URL.revokeObjectURL(url),1000);
+  setAdminStatus('Cópia de segurança exportada: '+backup.confirmacoes.length+' confirmações, '+backup.reservas.length+' reservas e '+backup.catalogo_presentes.length+' presentes. As imagens continuam armazenadas no Supabase.');
 }
 renderGiftAvailability();
 
