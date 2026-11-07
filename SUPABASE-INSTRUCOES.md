@@ -46,6 +46,12 @@ window.WEDDING_SUPABASE_CONFIG = {
 
 **Nunca coloque no navegador a Secret key nem a antiga `service_role` key.** A chave publicável só pode ser usada junto com as regras RLS e os privilégios mínimos do banco. O arquivo SQL deste projeto configura essas regras. Consulte também a documentação oficial: https://supabase.com/docs/guides/database/secure-data e https://supabase.com/docs/guides/database/postgres/row-level-security.
 
+## 5. Atualizar um projeto que já está em uso
+
+Se o banco já foi criado com a versão anterior do SQL, abra **SQL Editor** e execute todo o arquivo `supabase-gifts-migration.sql`. Ele adiciona `photo_url` e `sort_order`, cria o bucket público de leitura `gift-photos` e restringe envio, alteração e exclusão de arquivos às contas autorizadas dos noivos. Não execute novamente o script inicial para atualizar um banco em uso.
+
+Depois, entre na área dos noivos, abra **Presentes**, cadastre um item de teste, envie uma imagem JPG/PNG/WebP de até 5 MB e mova o item para cima ou para baixo. Confira a imagem na página pública e exclua o item de teste pelo banco, se necessário. O catálogo permanece vazio até os noivos cadastrarem itens.
+
 ## O que passa a funcionar
 
 - Confirmações de presença gravadas em uma base única, consultável pelos noivos em qualquer dispositivo.
