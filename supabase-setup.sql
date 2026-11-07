@@ -127,7 +127,7 @@ revoke all on public.rsvps from public, anon, authenticated;
 revoke all on public.gift_catalog from public, anon, authenticated;
 revoke all on public.gift_reservations from public, anon, authenticated;
 
-grant insert on public.rsvps to anon;
+grant insert on public.rsvps to anon, authenticated;
 grant select, update, delete on public.rsvps to authenticated;
 
 grant select on public.gift_catalog to anon;
