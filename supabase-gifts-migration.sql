@@ -30,3 +30,31 @@ with check (bucket_id='gift-photos' and public.is_wedding_admin());
 drop policy if exists "Admins delete gift photos" on storage.objects;
 create policy "Admins delete gift photos" on storage.objects
 for delete to authenticated using (bucket_id='gift-photos' and public.is_wedding_admin());
+
+-- Mantém o indicador do presente reservado coerente com todo o histórico.
+-- Evita liberar um presente se ainda existir outra reserva não cancelada.
+create or replace function public.sync_gift_reserved_flag()
+returns trigger
+language plpgsql
+security definer
+set search_path = public, pg_temp
+as $$
+begin
+  if new.status is distinct from old.status then
+    update public.gift_catalog
+       set is_reserved = (
+         new.status <> 'Cancelado'
+         or exists (
+           select 1
+           from public.gift_reservations r
+           where r.gift_id = new.gift_id
+             and r.id <> new.id
+             and r.status <> 'Cancelado'
+         )
+       )
+     where id = new.gift_id;
+    new.updated_at = now();
+  end if;
+  return new;
+end;
+$$;
