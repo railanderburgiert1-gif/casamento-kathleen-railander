@@ -956,7 +956,7 @@ document.getElementById('rsvpForm').addEventListener('submit',async e=>{
 
 async function renderGiftAvailability(){
   if(!weddingDb)return;
-  const {data,error}=await weddingDb.from('gift_catalog').select('*');
+  const {data,error}=await weddingDb.from('gift_catalog').select('*').order('sort_order',{ascending:true}).order('name');
   if(error){console.warn('Não foi possível consultar os presentes:',error.message);return}
   const grid=document.querySelector('.giftgrid');
   const activeItems=(data||[]).filter(item=>item.active);
