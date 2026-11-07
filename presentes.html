@@ -806,6 +806,17 @@ body{font-family:'Manrope',Arial,sans-serif;font-size:15px;line-height:1.6}
  .pixbox{padding:21px 16px}
  .pix-qr-frame{width:min(210px,68vw)}
 }
+
+.gift-admin-photo{grid-template-columns:104px minmax(0,1fr);padding:10px;background:#f8f4ec;border:1px solid #e4d7bf}
+.gift-admin-photo img{width:104px;height:104px;object-fit:contain;border-radius:2px}
+.gift-photo-actions{display:flex;gap:7px;flex-wrap:wrap;margin-top:7px}
+.gift-photo-actions button,.gift-order-actions button{border:1px solid #b18b4c;background:#fffdfa;color:#17366a;padding:8px 11px;font-size:11px;cursor:pointer}
+.gift-order-actions{display:flex;gap:6px;align-items:center;flex-wrap:wrap}
+.gift-order-actions button:disabled{opacity:.35;cursor:not-allowed}
+.gift-order-label{font-size:11px;color:#766b58;margin-right:auto}
+.gift-admin-photo small{display:block;color:#777;margin-top:5px;line-height:1.45}
+@media(max-width:520px){.gift-admin-photo{grid-template-columns:84px minmax(0,1fr)}.gift-admin-photo img{width:84px;height:84px}}
+
 </style>
 </head>
 <body class="gift-page">
@@ -1103,7 +1114,9 @@ async function addGift(){
   const id=slugify(name);
   if(name.length<2||name.length>80||!id){showAdminError('Informe um nome válido para o presente.');return}
   if(description.length>180){showAdminError('A descrição deve ter no máximo 180 caracteres.');return}
-  const {error}=await weddingDb.from('gift_catalog').insert({id,name,description});
+  const {data:orderRows}=await weddingDb.from('gift_catalog').select('sort_order').order('sort_order',{ascending:false}).limit(1);
+  const nextOrder=(orderRows&&orderRows[0]&&Number.isFinite(Number(orderRows[0].sort_order)))?Number(orderRows[0].sort_order)+1:1;
+  const {error}=await weddingDb.from('gift_catalog').insert({id,name,description,sort_order:nextOrder});
   if(error){showAdminError('Não foi possível cadastrar. Verifique se já existe um presente com esse nome ou se ele está inativo na lista.');return}
   document.getElementById('newGiftName').value='';document.getElementById('newGiftDesc').value='';
   setAdminStatus('Presente cadastrado e publicado na lista.');
@@ -1113,13 +1126,13 @@ async function renderGiftCatalogAdmin(){
   const container=document.getElementById('giftCatalogAdmin');
   if(!container||!weddingDb)return;
   const {data,error}=await weddingDb.from('gift_catalog')
-    .select('*').order('name');
+    .select('*').order('sort_order',{ascending:true}).order('name');
   if(error){container.textContent='Não foi possível carregar o catálogo de presentes.';return}
   container.replaceChildren();
   if(!data||!data.length){container.textContent='Nenhum presente cadastrado. Use o formulário acima para adicionar o primeiro item quando a lista estiver definida.';return}
-  data.forEach(item=>{
+  data.forEach((item,index)=>{
     const row=document.createElement('div');
-    row.style.cssText='border:1px solid #d8c9a5;background:#fffdfa;padding:12px;display:grid;gap:8px';
+    row.style.cssText='border:1px solid #d8c9a5;background:#fffdfa;padding:12px;display:grid;gap:9px';
     const heading=document.createElement('div');
     heading.style.cssText='display:flex;justify-content:space-between;gap:10px;align-items:center;flex-wrap:wrap';
     const title=document.createElement('strong');
@@ -1127,8 +1140,7 @@ async function renderGiftCatalogAdmin(){
     title.style.cssText="font:20px 'Cormorant Garamond';color:#102b59";
     const status=document.createElement('span');
     status.textContent=!item.active?'Fora da lista pública':item.is_reserved?'Reservado':'Disponível';
-    status.style.cssText='font-size:10px;letter-spacing:.08em;text-transform:uppercase;color:'+
-      (!item.active?'#777':item.is_reserved?'#8a5b25':'#356b50');
+    status.style.cssText='font-size:10px;letter-spacing:.08em;text-transform:uppercase;color:'+(!item.active?'#777':item.is_reserved?'#8a5b25':'#356b50');
     heading.append(title,status);
     const fields=document.createElement('div');
     fields.style.cssText='display:grid;grid-template-columns:1fr 1fr;gap:8px';
@@ -1140,26 +1152,45 @@ async function renderGiftCatalogAdmin(){
     description.placeholder='Descrição curta';description.setAttribute('aria-label','Descrição do presente');
     description.style.cssText=name.style.cssText;
     fields.append(name,description);
+
     const photoArea=document.createElement('div');photoArea.className='gift-admin-photo';
     const preview=document.createElement('img');preview.alt=item.photo_url?'Foto atual de '+item.name:'Prévia da foto';
     preview.src=item.photo_url||'data:image/svg+xml,%3Csvg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22%3E%3Crect width=%22100%22 height=%22100%22 fill=%22%23eee8dc%22/%3E%3Cpath d=%22M50 20v60M20 50h60%22 stroke=%22%23b39358%22 stroke-width=%223%22/%3E%3C/svg%3E';
     const photoControls=document.createElement('div');
     const photoInput=document.createElement('input');photoInput.type='file';photoInput.accept='image/jpeg,image/png,image/webp';photoInput.setAttribute('aria-label','Escolher foto do presente');
-    const photoHint=document.createElement('small');photoHint.textContent='JPG, PNG ou WebP · até 5 MB';
-    photoControls.append(photoInput,photoHint);photoArea.append(preview,photoControls);
-    photoInput.addEventListener('change',async()=>{const file=photoInput.files&&photoInput.files[0];if(!file)return;if(!['image/jpeg','image/png','image/webp'].includes(file.type)||file.size>5*1024*1024){setAdminStatus('Escolha JPG, PNG ou WebP de até 5 MB.');photoInput.value='';return}preview.src=URL.createObjectURL(file);await uploadGiftPhoto(item.id,file)});
-    const actions=document.createElement('div');
-    actions.style.cssText='display:flex;gap:8px;flex-wrap:wrap';
-    const save=document.createElement('button');
-    save.type='button';save.className='button';save.textContent='Salvar alterações';
-    save.style.cssText='padding:10px 14px';
+    const photoHint=document.createElement('small');photoHint.textContent='Escolha uma foto JPG, PNG ou WebP. Máximo de 5 MB.';
+    const photoActions=document.createElement('div');photoActions.className='gift-photo-actions';
+    const uploadButton=document.createElement('button');uploadButton.type='button';uploadButton.textContent='Enviar foto';uploadButton.disabled=true;
+    const removePhoto=document.createElement('button');removePhoto.type='button';removePhoto.textContent='Remover foto';removePhoto.disabled=!item.photo_url;
+    let selectedFile=null;
+    photoInput.addEventListener('change',()=>{
+      const file=photoInput.files&&photoInput.files[0];if(!file)return;
+      if(!['image/jpeg','image/png','image/webp'].includes(file.type)||file.size>5*1024*1024){
+        setAdminStatus('Escolha JPG, PNG ou WebP de até 5 MB.');photoInput.value='';selectedFile=null;uploadButton.disabled=true;return;
+      }
+      selectedFile=file;preview.src=URL.createObjectURL(file);preview.alt='Prévia da nova foto de '+item.name;uploadButton.disabled=false;
+      setAdminStatus('Prévia pronta. Toque em “Enviar foto” para salvar.');
+    });
+    uploadButton.addEventListener('click',async()=>{if(!selectedFile)return;uploadButton.disabled=true;await uploadGiftPhoto(item.id,selectedFile);});
+    removePhoto.addEventListener('click',()=>removeGiftPhoto(item.id));
+    photoActions.append(uploadButton,removePhoto);
+    photoControls.append(photoInput,photoHint,photoActions);photoArea.append(preview,photoControls);
+
+    const actions=document.createElement('div');actions.style.cssText='display:flex;gap:8px;flex-wrap:wrap';
+    const save=document.createElement('button');save.type='button';save.className='button';save.textContent='Salvar alterações';save.style.cssText='padding:10px 14px';
     save.addEventListener('click',()=>saveGift(item.id,name.value,description.value));
-    const toggle=document.createElement('button');
-    toggle.type='button';toggle.className='button outline';toggle.style.cssText='padding:10px 14px';
-    toggle.textContent=item.active?'Retirar da lista':'Reativar na lista';
-    toggle.addEventListener('click',()=>setGiftActive(item.id,!item.active));
+    const toggle=document.createElement('button');toggle.type='button';toggle.className='button outline';toggle.style.cssText='padding:10px 14px';
+    toggle.textContent=item.active?'Retirar da lista':'Reativar na lista';toggle.addEventListener('click',()=>setGiftActive(item.id,!item.active));
     actions.append(save,toggle);
-    row.append(heading,fields,photoArea,actions);container.appendChild(row);
+
+    const ordering=document.createElement('div');ordering.className='gift-order-actions';
+    const orderLabel=document.createElement('span');orderLabel.className='gift-order-label';orderLabel.textContent='Posição na lista: '+(index+1);
+    const up=document.createElement('button');up.type='button';up.textContent='↑ Subir';up.disabled=index===0;up.setAttribute('aria-label','Mover '+item.name+' para cima');
+    up.addEventListener('click',()=>moveGift(item.id,-1));
+    const down=document.createElement('button');down.type='button';down.textContent='↓ Descer';down.disabled=index===data.length-1;down.setAttribute('aria-label','Mover '+item.name+' para baixo');
+    down.addEventListener('click',()=>moveGift(item.id,1));
+    ordering.append(orderLabel,up,down);
+    row.append(heading,fields,photoArea,actions,ordering);container.appendChild(row);
   });
 }
 async function uploadGiftPhoto(id,file){
@@ -1168,12 +1199,39 @@ async function uploadGiftPhoto(id,file){
   const ext=file.type==='image/png'?'png':file.type==='image/webp'?'webp':'jpg';
   const path=id+'/'+Date.now()+'.'+ext;
   const {error:uploadError}=await weddingDb.storage.from('gift-photos').upload(path,file,{upsert:true,contentType:file.type,cacheControl:'3600'});
-  if(uploadError){setAdminStatus('Não foi possível enviar. Verifique se o bucket gift-photos existe e permite upload para administradores.');return}
+  if(uploadError){setAdminStatus('Falha no envio: '+uploadError.message+'. Confira o bucket e as permissões de administrador.');await renderGiftCatalogAdmin();return}
   const {data}=weddingDb.storage.from('gift-photos').getPublicUrl(path);
   const {error}=await weddingDb.from('gift_catalog').update({photo_url:data.publicUrl}).eq('id',id);
-  if(error){setAdminStatus('Foto enviada, mas não foi associada. Verifique se a coluna photo_url existe em gift_catalog.');return}
+  if(error){setAdminStatus('Foto enviada, mas não associada ao presente: '+error.message);return}
   setAdminStatus('Foto salva e publicada na lista.');
   await renderGiftAvailability();await renderGiftCatalogAdmin();
+}
+async function removeGiftPhoto(id){
+  if(!weddingDb||!window.confirm('Remover a foto deste presente?'))return;
+  const {data,error:readError}=await weddingDb.from('gift_catalog').select('photo_url').eq('id',id).single();
+  if(readError){setAdminStatus('Não foi possível localizar a foto.');return}
+  const url=data&&data.photo_url;
+  if(url){
+    const marker='/storage/v1/object/public/gift-photos/';
+    const pos=url.indexOf(marker);
+    if(pos>=0){const path=decodeURIComponent(url.slice(pos+marker.length).split('?')[0]);const {error}=await weddingDb.storage.from('gift-photos').remove([path]);if(error){setAdminStatus('Não foi possível remover o arquivo: '+error.message);return}}
+  }
+  const {error}=await weddingDb.from('gift_catalog').update({photo_url:null}).eq('id',id);
+  if(error){setAdminStatus('Não foi possível desvincular a foto: '+error.message);return}
+  setAdminStatus('Foto removida.');await renderGiftAvailability();await renderGiftCatalogAdmin();
+}
+async function moveGift(id,direction){
+  if(!weddingDb)return;
+  const {data,error}=await weddingDb.from('gift_catalog').select('id,sort_order').order('sort_order',{ascending:true}).order('name');
+  if(error||!data){setAdminStatus('Não foi possível carregar a ordem dos presentes.');return}
+  const index=data.findIndex(x=>x.id===id),other=data[index+direction];
+  if(index<0||!other)return;
+  const first=Number(data[index].sort_order)||0,second=Number(other.sort_order)||0;
+  const {error:updateError}=await weddingDb.from('gift_catalog').update({sort_order:second}).eq('id',id);
+  if(updateError){setAdminStatus('Não foi possível alterar a posição: '+updateError.message);return}
+  const {error:swapError}=await weddingDb.from('gift_catalog').update({sort_order:first}).eq('id',other.id);
+  if(swapError){await weddingDb.from('gift_catalog').update({sort_order:first}).eq('id',id);setAdminStatus('Não foi possível concluir a troca de posição.');return}
+  setAdminStatus('Ordem atualizada.');await renderGiftAvailability();await renderGiftCatalogAdmin();
 }
 async function saveGift(id,name,description){
   if(!weddingDb)return;
