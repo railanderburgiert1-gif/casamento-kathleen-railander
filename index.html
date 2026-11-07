@@ -143,12 +143,12 @@ transition:opacity .8s ease,visibility .8s ease}
 .envelope-letter small{font:italic 17px 'Cormorant Garamond';color:#9a7942}
 .envelope-letter strong{font:clamp(34px,6vw,55px) 'Great Vibes';font-weight:400;margin:9px 0;color:#102b59}
 .envelope-letter span{font:11px Montserrat;letter-spacing:.22em;text-transform:uppercase}
-.envelope-shell{position:absolute;inset:0;z-index:3;overflow:visible}
-.envelope-back{position:absolute;inset:0;background:#e9dfca;border:1px solid #b99a62}
+.envelope-shell{position:absolute;inset:0;overflow:visible}
+.envelope-back{position:absolute;z-index:1;inset:0;background:#e9dfca;border:1px solid #b99a62}
 .envelope-left,.envelope-right,.envelope-bottom{position:absolute;inset:0}
-.envelope-left{background:linear-gradient(135deg,#f4eddf,#e5d8bd);clip-path:polygon(0 0,52% 54%,0 100%);border-left:1px solid #b99a62}
-.envelope-right{background:linear-gradient(225deg,#f4eddf,#e5d8bd);clip-path:polygon(100% 0,48% 54%,100% 100%)}
-.envelope-bottom{background:linear-gradient(0deg,#e8dcc4,#f4eddf);clip-path:polygon(0 100%,50% 43%,100% 100%)}
+.envelope-left{z-index:4;background:linear-gradient(135deg,#f4eddf,#e5d8bd);clip-path:polygon(0 0,52% 54%,0 100%);border-left:1px solid #b99a62}
+.envelope-right{z-index:4;background:linear-gradient(225deg,#f4eddf,#e5d8bd);clip-path:polygon(100% 0,48% 54%,100% 100%)}
+.envelope-bottom{z-index:4;background:linear-gradient(0deg,#e8dcc4,#f4eddf);clip-path:polygon(0 100%,50% 43%,100% 100%)}
 .envelope-flap{position:absolute;z-index:5;left:0;right:0;top:0;height:58%;background:linear-gradient(180deg,#f8f2e6,#e8dcc5);clip-path:polygon(0 0,100% 0,50% 100%);transform-origin:top center;transform:rotateX(0);transition:transform .85s ease;backface-visibility:visible;filter:drop-shadow(0 2px 2px rgba(25,42,69,.12))}
 .envelope-seal{position:absolute;z-index:7;left:50%;top:51%;transform:translate(-50%,-50%);width:72px;height:72px;border-radius:50%;border:2px solid #d2b578;background:radial-gradient(circle at 35% 30%,#31558a,#102b59 72%);box-shadow:0 3px 9px #182d4b55,inset 0 0 0 4px #173d70;color:#f8edcf;font:25px 'Great Vibes';cursor:pointer;transition:opacity .3s,transform .3s}
 .envelope-seal:after{content:"✦";position:absolute;inset:6px;border:1px solid #d2b578;border-radius:50%;display:grid;place-items:center;font:12px 'Cormorant Garamond';color:#e4ce9d}
