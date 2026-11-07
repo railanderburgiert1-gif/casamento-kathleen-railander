@@ -1385,13 +1385,15 @@ function openWeddingEnvelope(){
   if(!envelopeIntro || envelopeIntro.classList.contains('opening')) return;
   envelopeIntro.classList.add('opening');
   if(openEnvelopeButton) openEnvelopeButton.disabled=true;
-  // A arte completa se aproxima suavemente, sem recortes nem deformações.
-  window.setTimeout(()=>envelopeIntro.classList.add('is-gone'),900);
+  // A página aparece por baixo enquanto a capa desaparece, sem intervalo em branco.
   window.setTimeout(()=>{
     document.body.classList.remove('wedding-intro-active');
     document.body.style.overflow='';
+    envelopeIntro.classList.add('is-gone');
+  },900);
+  window.setTimeout(()=>{
     envelopeIntro.setAttribute('aria-hidden','true');
-  },1900);
+  },1800);
 }
 if(openEnvelopeButton) openEnvelopeButton.addEventListener('click',openWeddingEnvelope);
 document.body.classList.add('wedding-intro-active');
