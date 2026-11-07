@@ -733,6 +733,20 @@ body.wedding-intro-active > :not(#envelopeIntro){visibility:hidden!important}
   .church-intro-full,.church-intro-full .church-art-wrap{transition:none!important}
 }
 
+/* Remover os ornamentos dos dois cantos inferiores: visual mais limpo */
+footer:before,footer:after{
+  content:none!important;
+  display:none!important;
+  background-image:none!important;
+}
+.hero{
+  background:
+    linear-gradient(#fbf7efc9,#fbf7efda),
+    url('ornamento-tl.jpg') left top/175px auto no-repeat,
+    url('ornamento-tr.jpg') right top/175px auto no-repeat,
+    #fbf7ef!important;
+}
+
 </style>
 </head>
 <body>
