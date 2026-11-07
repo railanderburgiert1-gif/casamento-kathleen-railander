@@ -444,6 +444,17 @@ footer>*{position:relative;z-index:1}
   .envelope-intro.letter-expand .envelope-letter{transform:translate3d(0,-98%,25px) scale(3.1)}
 }
 
+
+/* Abas do painel administrativo */
+.admin-tabs{display:flex;gap:8px;border-bottom:1px solid #d8c9a5;margin:18px 0 12px;padding-bottom:8px}
+.admin-tab-btn{appearance:none;border:1px solid #cbb27f;background:#fffdfa;color:#17366a;padding:11px 22px;font:10px Montserrat,Arial,sans-serif;letter-spacing:.13em;text-transform:uppercase;cursor:pointer;transition:background .2s,color .2s}
+.admin-tab-btn[aria-selected="true"]{background:#12366e;border-color:#12366e;color:#fff}
+.admin-tab-btn:focus-visible{outline:2px solid #ad8744;outline-offset:2px}
+.admin-tab-panel{padding:2px 0}
+.admin-tab-panel[hidden]{display:none!important}
+.gift-admin-form{display:grid;grid-template-columns:1fr 1fr;gap:8px}
+.gift-admin-form input{min-width:0;width:100%;padding:12px;border:1px solid #cbb27f;background:#fffdfa;color:#17345f}
+@media(max-width:600px){.admin-tab-btn{flex:1;padding:12px 8px;font-size:9px}.gift-admin-form{grid-template-columns:1fr}}
 </style>
 </head>
 <body>
@@ -520,13 +531,24 @@ footer>*{position:relative;z-index:1}
 <div style="background:#f1ebdf;padding:12px;text-align:center"><strong id="statYes">0</strong><div style="font-size:10px">Confirmados</div></div>
 <div style="background:#f1ebdf;padding:12px;text-align:center"><strong id="statGifts">0</strong><div style="font-size:10px">Presentes reservados</div></div>
 </div>
-<h4 style="font:24px 'Cormorant Garamond';color:#172e59;margin:18px 0 8px">Confirmações de presença</h4><div id="guestList" style="font-size:12px;overflow:auto"></div>
-<h4 style="font:24px 'Cormorant Garamond';color:#172e59;margin:22px 0 8px">Presentes reservados</h4><div id="reservedList" style="font-size:12px;overflow:auto"></div>
-<h4 style="font:24px 'Cormorant Garamond';color:#172e59;margin:22px 0 8px">Cadastrar presente</h4>
-<div style="display:grid;grid-template-columns:1fr 1fr;gap:8px"><input id="newGiftName" maxlength="80" placeholder="Nome do presente"><input id="newGiftDesc" maxlength="180" placeholder="Descrição curta"></div><button class="button" style="margin-top:8px" onclick="addGift()">Adicionar à lista</button>
-<h4 style="font:24px 'Cormorant Garamond';color:#172e59;margin:24px 0 8px">Gerenciar lista de presentes</h4>
+<div class="admin-tabs" role="tablist" aria-label="Seções do painel dos noivos">
+<button type="button" class="admin-tab-btn" id="tabRsvp" role="tab" aria-selected="true" aria-controls="adminTabRsvp" onclick="setAdminTab('rsvp')">Confirmações</button>
+<button type="button" class="admin-tab-btn" id="tabGifts" role="tab" aria-selected="false" aria-controls="adminTabGifts" onclick="setAdminTab('gifts')">Presentes</button>
+</div>
+<section class="admin-tab-panel" id="adminTabRsvp" role="tabpanel" aria-labelledby="tabRsvp">
+<h4 style="font:24px 'Cormorant Garamond';color:#172e59;margin:18px 0 8px">Confirmações de presença</h4>
+<div id="guestList" style="font-size:12px;overflow:auto"></div>
+</section>
+<section class="admin-tab-panel" id="adminTabGifts" role="tabpanel" aria-labelledby="tabGifts" hidden>
+<h4 style="font:24px 'Cormorant Garamond';color:#172e59;margin:18px 0 8px">Presentes reservados</h4>
+<div id="reservedList" style="font-size:12px;overflow:auto"></div>
+<h4 style="font:24px 'Cormorant Garamond';color:#172e59;margin:26px 0 8px">Cadastrar presente</h4>
+<div class="gift-admin-form"><input id="newGiftName" maxlength="80" placeholder="Nome do presente"><input id="newGiftDesc" maxlength="180" placeholder="Descrição curta"></div>
+<button class="button" style="margin-top:8px" onclick="addGift()">Adicionar à lista</button>
+<h4 style="font:24px 'Cormorant Garamond';color:#172e59;margin:26px 0 8px">Gerenciar lista de presentes</h4>
 <p style="font-size:11px;color:#777;line-height:1.5;margin:0 0 10px">Edite os nomes e descrições ou retire itens da vitrine pública. O histórico de reservas será preservado.</p>
 <div id="giftCatalogAdmin" style="display:grid;gap:10px"></div>
+</section>
 <p id="adminStatus" style="font-size:11px;color:#777;line-height:1.6;margin-top:18px">Dados centralizados. Apenas contas autorizadas podem consultar ou alterar as informações.</p>
 <button class="button outline" onclick="exportAdminData()" style="margin-top:8px">Exportar dados (JSON)</button> <button class="button outline" onclick="logoutAdmin()" style="margin-top:8px">Sair do painel</button>
 </div></div></div>
@@ -645,6 +667,18 @@ async function confirmGift(){
 }
 function slugify(value){return value.normalize('NFD').replace(/[\u0300-\u036f]/g,'').toLowerCase().trim().replace(/[^a-z0-9]+/g,'-').replace(/^-|-$/g,'')}
 function showAdminError(message){document.getElementById('adminError').textContent=message}
+function setAdminTab(tab){
+  const gifts=tab==='gifts';
+  const rsvpPanel=document.getElementById('adminTabRsvp');
+  const giftsPanel=document.getElementById('adminTabGifts');
+  const rsvpButton=document.getElementById('tabRsvp');
+  const giftsButton=document.getElementById('tabGifts');
+  if(!rsvpPanel||!giftsPanel||!rsvpButton||!giftsButton)return;
+  rsvpPanel.hidden=gifts;
+  giftsPanel.hidden=!gifts;
+  rsvpButton.setAttribute('aria-selected',String(!gifts));
+  giftsButton.setAttribute('aria-selected',String(gifts));
+}
 function setAdminStatus(message){
   const status=document.getElementById('adminStatus');
   if(status)status.textContent=message;
