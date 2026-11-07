@@ -634,7 +634,7 @@ async function loginAdmin(){
   const password=document.getElementById('adminPassword').value;
   const {error}=await weddingDb.auth.signInWithPassword({email,password});
   if(error){showAdminError('E-mail ou senha não reconhecidos.');return}
-  const {data,isAdminError}=await weddingDb.rpc('is_wedding_admin');
+  const {data,error:isAdminError}=await weddingDb.rpc('is_wedding_admin');
   if(isAdminError||data!==true){await weddingDb.auth.signOut();showAdminError('Esta conta ainda não está autorizada para o painel.');return}
   document.getElementById('adminLogin').style.display='none';
   document.getElementById('adminContent').style.display='block';
