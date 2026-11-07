@@ -48,7 +48,7 @@ window.WEDDING_SUPABASE_CONFIG = {
 
 ## 5. Atualizar um projeto que já está em uso
 
-Se o banco já foi criado com a versão anterior do SQL, abra **SQL Editor** e execute todo o arquivo `supabase-gifts-migration.sql`. Ele adiciona `photo_url` e `sort_order`, cria o bucket público de leitura `gift-photos` e restringe envio, alteração e exclusão de arquivos às contas autorizadas dos noivos. Não execute novamente o script inicial para atualizar um banco em uso.
+Se o banco já foi criado com a versão anterior do SQL, abra **SQL Editor** e execute todo o arquivo `supabase-gifts-migration.sql`. Ele adiciona `photo_url` e `sort_order`, cria o bucket público de leitura `gift-photos`, restringe envio, alteração e exclusão de arquivos às contas autorizadas e atualiza a sincronização para não liberar um presente se ainda existir outra reserva ativa. A migração é incremental e pode ser reaplicada. Não execute novamente o script inicial para atualizar um banco em uso.
 
 Depois, entre na área dos noivos, abra **Presentes**, cadastre um item de teste, envie uma imagem JPG/PNG/WebP de até 5 MB e mova o item para cima ou para baixo. Confira a imagem na página pública e exclua o item de teste pelo banco, se necessário. O catálogo permanece vazio até os noivos cadastrarem itens.
 
@@ -58,6 +58,6 @@ Depois, entre na área dos noivos, abra **Presentes**, cadastre um item de teste
 - Contagem de confirmações e total de convidados confirmados, considerando acompanhantes.
 - Reserva atômica dos presentes: quando alguém reserva um item, ele aparece como reservado para os demais.
 - Painel com acesso por e-mail e senha, limitado aos usuários cadastrados na tabela privada de administradores.
-- Exportação dos registros para JSON.
+- Exportação de confirmações, reservas e catálogo de presentes em JSON. O arquivo inclui os endereços das fotos; os arquivos de imagem continuam armazenados no Supabase Storage e não são incorporados ao JSON.
 
 Até que a URL e a Publishable key sejam configuradas, o site informa que o formulário online está em configuração e oferece os botões de WhatsApp como alternativa. Nenhuma confirmação é apresentada como salva na nuvem antes da conexão estar ativa.
