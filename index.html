@@ -1139,6 +1139,25 @@ footer strong{font-weight:500!important}
   cursor:pointer!important;touch-action:manipulation!important;
 }
 .church-intro-full .church-art-backdrop{pointer-events:none!important}
+
+/* Experiência de entrada após abrir a capa */
+@keyframes weddingContentEnter{from{opacity:0;transform:translateY(18px)}to{opacity:1;transform:translateY(0)}}
+body.site-entering .topbar{animation:weddingContentEnter .7s .05s both}
+body.site-entering main>section{animation:weddingContentEnter .75s both}
+body.site-entering main>section:nth-child(2){animation-delay:.12s}
+body.site-entering main>section:nth-child(3){animation-delay:.2s}
+body.site-entering main>section:nth-child(4){animation-delay:.28s}
+body.site-entering footer{animation:weddingContentEnter .75s .35s both}
+@media(prefers-reduced-motion:reduce){body.site-entering .topbar,body.site-entering main>section,body.site-entering footer{animation:none!important}}
+/* Contagem regressiva */
+.countdown{display:flex;justify-content:center;gap:clamp(8px,2vw,18px);margin:24px auto 8px;flex-wrap:wrap}
+.countdown>div{min-width:65px;padding:10px 12px;border:1px solid rgba(179,147,88,.42);border-radius:12px;background:rgba(255,255,255,.58)}
+.countdown strong{display:block;color:#17345f;font:600 clamp(23px,5vw,34px) 'Cormorant Garamond',Georgia,serif;font-variant-numeric:tabular-nums}
+.countdown span{display:block;margin-top:3px;color:#8c7449;font:10px Montserrat,Arial,sans-serif;letter-spacing:.1em;text-transform:uppercase}
+/* Confirmação: quantidade só aparece quando a pessoa confirma presença */
+#rsvpForm label:has(input[name="quantidade"]){transition:opacity .2s ease}
+#rsvpForm .rsvp-hidden{display:none!important}
+#rsvpFeedback{min-height:1.4em;line-height:1.5}
 </style>
 </head>
 <body>
@@ -1608,8 +1627,10 @@ function openWeddingEnvelope(){
   // A página aparece por baixo enquanto a capa desaparece, sem intervalo em branco.
   window.setTimeout(()=>{
     document.body.classList.remove('wedding-intro-active');
+    document.body.classList.add('site-entering');
     document.body.style.overflow='';
     envelopeIntro.classList.add('is-gone');
+    window.setTimeout(()=>document.body.classList.remove('site-entering'),1800);
   },900);
   window.setTimeout(()=>{
     envelopeIntro.setAttribute('aria-hidden','true');
@@ -1619,6 +1640,43 @@ if(openEnvelopeButton){
   openEnvelopeButton.addEventListener('click',openWeddingEnvelope);
   openEnvelopeButton.addEventListener('pointerup',openWeddingEnvelope);
 }
+
+/* Atualização automática da contagem até o início da cerimônia (horário de Brasília) */
+(function(){
+  const countdown=document.getElementById('countdown');
+  if(!countdown)return;
+  const target=new Date('2027-12-18T16:00:00-03:00').getTime();
+  const units=countdown.querySelectorAll('strong');
+  function updateCountdown(){
+    const remaining=target-Date.now();
+    if(remaining<=0){
+      countdown.innerHTML='<p style="color:#17345f;font-family:Cormorant Garamond,serif">Chegou o grande dia!</p>';
+      return;
+    }
+    const days=Math.floor(remaining/86400000);
+    const hours=Math.floor((remaining%86400000)/3600000);
+    const minutes=Math.floor((remaining%3600000)/60000);
+    const seconds=Math.floor((remaining%60000)/1000);
+    [days,hours,minutes,seconds].forEach((v,i)=>{if(units[i])units[i].textContent=String(v).padStart(2,'0')});
+  }
+  updateCountdown();window.setInterval(updateCountdown,1000);
+})();
+/* Ajusta a quantidade de convidados conforme a resposta */
+(function(){
+  const form=document.getElementById('rsvpForm');
+  if(!form)return;
+  const attendance=form.elements.presenca;
+  const quantity=form.elements.quantidade;
+  const label=quantity.closest('label');
+  function updateQuantity(){
+    const attending=attendance.value==='Sim, estarei presente';
+    label.classList.toggle('rsvp-hidden',!attending);
+    quantity.required=attending;
+    if(!attending)quantity.value='1';
+  }
+  attendance.addEventListener('change',updateQuantity);updateQuantity();
+})();
+
 document.body.classList.add('wedding-intro-active');
 document.body.style.overflow='hidden';
 
