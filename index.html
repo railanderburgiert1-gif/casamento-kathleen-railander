@@ -722,42 +722,13 @@ body.wedding-intro-active > :not(#envelopeIntro){visibility:hidden!important}
   background:rgba(255,255,255,.08);
 }
 
-/* Folhas das portas reconstruídas a partir da própria arte para abrir fisicamente */
-.church-intro-full .church-door-reveal{
-  position:absolute;z-index:2;left:26%;top:39%;width:48%;height:43%;
-  border:2px solid rgba(223,190,126,.92);
-  border-radius:48% 48% 3px 3px / 19% 19% 3px 3px;
-  background:radial-gradient(ellipse at 50% 22%,#fff9df 0%,#f4dca8 28%,#d9ac64 62%,#b17d3e 100%);
-  box-shadow:inset 0 0 0 5px rgba(255,248,220,.58),inset 0 0 22px rgba(128,75,27,.22),0 0 18px rgba(16,33,58,.2);
-  transition:filter 1.4s ease,box-shadow 1.4s ease;
-}
-.church-intro-full .church-door-leaf{
-  position:absolute;z-index:3;top:39%;width:24%;height:43%;
-  overflow:hidden;transform-style:preserve-3d;backface-visibility:hidden;
-  transition:transform 1.65s cubic-bezier(.2,.76,.18,1),filter 1.2s ease;
-  box-shadow:inset 0 0 0 1px rgba(227,198,143,.85),inset 0 0 0 5px rgba(10,27,49,.2),0 5px 13px rgba(6,18,34,.24);
-}
-.church-intro-full .church-door-leaf-left{left:26%;transform-origin:left center}
-.church-intro-full .church-door-leaf-right{left:50%;transform-origin:right center}
-.church-intro-full .church-door-leaf-stack{
-  position:absolute;left:-108.333333%;top:-90.697674%;
-  display:flex;flex-direction:column;width:416.666667%;height:232.55814%;
-}
-.church-intro-full .church-door-leaf-stack .church-art-piece{
-  display:block;width:100%;height:20%;flex:0 0 20%;max-width:none;
-  object-fit:fill;margin:0;padding:0;border:0;
-}
-.church-intro-full.opening .church-door-leaf-left{transform:rotateY(-112deg);filter:brightness(.82)}
-.church-intro-full.opening .church-door-leaf-right{transform:rotateY(112deg);filter:brightness(.82)}
-.church-intro-full.opening .church-door-reveal{
-  filter:brightness(1.17);
-  box-shadow:inset 0 0 0 5px rgba(255,248,220,.72),inset 0 0 30px rgba(128,75,27,.12),0 0 42px rgba(255,225,160,.75);
-}
+/* Transição limpa: aproximação suave da arte completa, sem deformar a fachada */
 .church-intro-full.opening .church-art-wrap{
-  transform:scale(1.035);transform-origin:50% 55%;
+  transform:scale(1.13);
+  transform-origin:50% 57%;
+  opacity:.04;
+  filter:brightness(1.08);
 }
-
-.church-intro-full.is-gone{opacity:0;visibility:hidden;pointer-events:none}
 @media(max-height:560px) and (orientation:landscape){
   .church-intro-full .church-art-wrap{width:min(100vw,78dvh);height:min(100dvh,128.205vw)}
 }
@@ -797,25 +768,6 @@ footer:before,footer:after{
     <img class="church-art-piece" src="cover-art-03.webp" alt="" aria-hidden="true" decoding="async">
     <img class="church-art-piece" src="cover-art-04.webp" alt="" aria-hidden="true" decoding="async">
     <img class="church-art-piece" src="cover-art-05.webp" alt="" aria-hidden="true" decoding="async">
-    <div class="church-door-reveal" aria-hidden="true"></div>
-    <div class="church-door-leaf church-door-leaf-left" aria-hidden="true">
-      <div class="church-door-leaf-stack">
-        <img class="church-art-piece" src="cover-art-01.webp" alt="">
-        <img class="church-art-piece" src="cover-art-02.webp" alt="">
-        <img class="church-art-piece" src="cover-art-03.webp" alt="">
-        <img class="church-art-piece" src="cover-art-04.webp" alt="">
-        <img class="church-art-piece" src="cover-art-05.webp" alt="">
-      </div>
-    </div>
-    <div class="church-door-leaf church-door-leaf-right" aria-hidden="true">
-      <div class="church-door-leaf-stack">
-        <img class="church-art-piece" src="cover-art-01.webp" alt="">
-        <img class="church-art-piece" src="cover-art-02.webp" alt="">
-        <img class="church-art-piece" src="cover-art-03.webp" alt="">
-        <img class="church-art-piece" src="cover-art-04.webp" alt="">
-        <img class="church-art-piece" src="cover-art-05.webp" alt="">
-      </div>
-    </div>
     <button class="church-art-hotspot" id="openEnvelope" type="button" aria-label="Entrar no convite" title="Entrar no convite"></button>
   </div>
 </div>
@@ -1279,13 +1231,13 @@ function openWeddingEnvelope(){
   if(!envelopeIntro || envelopeIntro.classList.contains('opening')) return;
   envelopeIntro.classList.add('opening');
   if(openEnvelopeButton) openEnvelopeButton.disabled=true;
-  // Primeiro as folhas K/R se abrem; em seguida a transição revela o convite.
-  window.setTimeout(()=>envelopeIntro.classList.add('is-gone'),1750);
+  // A arte completa se aproxima suavemente, sem recortes nem deformações.
+  window.setTimeout(()=>envelopeIntro.classList.add('is-gone'),900);
   window.setTimeout(()=>{
     document.body.classList.remove('wedding-intro-active');
     document.body.style.overflow='';
     envelopeIntro.setAttribute('aria-hidden','true');
-  },2650);
+  },1900);
 }
 if(openEnvelopeButton) openEnvelopeButton.addEventListener('click',openWeddingEnvelope);
 document.body.classList.add('wedding-intro-active');
