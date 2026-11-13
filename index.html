@@ -1234,6 +1234,17 @@ section{scroll-margin-top:76px}
  .site-reveal,.gallerygrid img{transition:none!important}
  .site-reveal{opacity:1;transform:none}
 }
+
+/* Cartão principal de acesso ao conteúdo do casamento */
+.access-card{display:flex;align-items:center;gap:16px;width:min(100%,430px);margin:25px auto 12px;padding:17px 20px;text-align:left;text-decoration:none;background:linear-gradient(135deg,#102b59,#183e78);border:1px solid #c5a66a;box-shadow:0 10px 28px #102b5930;color:#fff;transition:transform .2s,box-shadow .2s}
+.access-card:hover{transform:translateY(-3px);box-shadow:0 14px 32px #102b5940}
+.access-card-icon{display:grid;place-items:center;width:42px;height:42px;flex:0 0 42px;border:1px solid #d6bd88;border-radius:50%;color:#e2c98e;font-size:20px}
+.access-card-copy{display:flex;flex-direction:column;gap:5px;flex:1}
+.access-card-copy strong{font:600 15px Montserrat,sans-serif;letter-spacing:.02em}
+.access-card-copy small{font:11px/1.5 Montserrat,sans-serif;color:#e4e9f1}
+.access-card-arrow{font-size:23px;color:#e2c98e}
+@media(max-width:520px){.access-card{padding:14px 15px;gap:12px}.access-card-copy strong{font-size:13px}.access-card-copy small{font-size:10px}}
+
 </style>
 </head>
 <body>
@@ -1254,7 +1265,7 @@ section{scroll-margin-top:76px}
 <div class="hero-inner invitation">
   <div class="invitation-top">✦</div>
   <div class="eyebrow">Convite de matrimônio</div>
-  <img class="hero-church" src="igreja-convite.jpg" alt="Ilustração em aquarela da Igreja São Sebastião">
+  <img class="hero-church" src="assets/igreja-monograma-rk.webp" alt="Entrada da igreja com portas azul-marinho e monograma RK em dourado">
   <div class="cross-ornament">✝</div>
   <div class="eyebrow blessing">Com a bênção de Deus e de nossas famílias</div>
   <h1>Kathleen <span class="amp">&</span> Railander</h1>
@@ -1263,7 +1274,7 @@ section{scroll-margin-top:76px}
   <p class="invitation-copy invitation-second">Com o coração cheio de alegria, convidamos você para testemunhar e partilhar conosco este passo tão especial.</p>
   <div class="date-row"><span>▦ &nbsp;18/12/2027</span><i></i><span>◷ &nbsp;16:00</span></div>
   <div class="location-line">⌖ &nbsp; IGREJA SÃO SEBASTIÃO<br><em>Canoa Quebrada – CE</em></div>
-  <a class="button" href="#cerimonia">Ver detalhes do casamento</a>
+  <a class="access-card" href="#cerimonia"><span class="access-card-icon">✦</span><span class="access-card-copy"><strong>Acessar página do casamento</strong><small>Detalhes da cerimônia, nossa história, presentes e confirmação de presença</small></span><span class="access-card-arrow">→</span></a>
   <div class="countdown" id="countdown"><div><strong>---</strong><span>Dias</span></div><div><strong>--</strong><span>Horas</span></div><div><strong>--</strong><span>Minutos</span></div><div><strong>--</strong><span>Segundos</span></div></div>
   <div class="invitation-bottom">✦</div>
 </div>
