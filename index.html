@@ -1968,6 +1968,25 @@ footer strong{font-family:'Allura',cursive!important;font-size:42px!important}
   #adminModal .admin-footer-actions .button{width:100%!important}
 }
 
+
+/* Aviso simples para alteração de presença após confirmação */
+.rsvp-change-note{
+ max-width:560px;margin:24px auto 0;padding:15px 16px;
+ border-top:1px solid #d9c9a8;text-align:center;
+}
+.rsvp-change-note p{
+ margin:0 0 10px;color:#536176;font:13px/1.55 'Manrope',Arial,sans-serif;
+}
+.rsvp-change-note p strong{color:#173d70;font-weight:700}
+.rsvp-cancel-link{
+ display:inline-flex;align-items:center;justify-content:center;
+ min-height:40px;padding:9px 16px;border:1px solid #b69a68;
+ border-radius:8px;background:#fffdf8;color:#173d70;
+ font:600 11px 'Manrope',Arial,sans-serif;text-decoration:none;
+}
+.rsvp-cancel-link:hover{background:#f4eee3}
+@media(max-width:520px){.rsvp-change-note{margin-top:18px;padding:13px 8px}.rsvp-cancel-link{width:100%;max-width:320px}}
+
 </style>
 </head>
 <body>
@@ -2049,6 +2068,11 @@ footer strong{font-family:'Allura',cursive!important;font-size:42px!important}
 <div style="display:flex;gap:10px;justify-content:center;flex-wrap:wrap;margin-top:12px">
 <a class="button outline" style="border-color:#d7bd88;color:white" href="https://wa.me/5566999084016" id="rsvpRailander">WhatsApp do Railander</a>
 <a class="button outline" style="border-color:#d7bd88;color:white" href="https://wa.me/5588992638694" id="rsvpKathleen">WhatsApp da Kathleen</a>
+</div>
+<div class="rsvp-change-note">
+  <p><strong>Já confirmou presença e seus planos mudaram?</strong><br>
+  Avise os noivos pelo WhatsApp.</p>
+  <a class="rsvp-cancel-link" href="https://wa.me/5566999084016?text=Ol%C3%A1%2C%20j%C3%A1%20confirmei%20presen%C3%A7a%20no%20casamento%2C%20mas%20n%C3%A3o%20poderei%20comparecer.%20Meu%20nome%20%C3%A9%3A%20" target="_blank" rel="noopener">Avisar que não poderei ir</a>
 </div></div></section>
 </main><footer><strong>Kathleen & Railander</strong>18 de dezembro de 2027 · Canoa Quebrada – CE<div class="ornament">✧ ❦ ✧</div><p style="font:10px Montserrat;letter-spacing:.12em"><a href="#" onclick="openAdmin();return false" style="color:#9b865d;text-decoration:none">ÁREA DOS NOIVOS</a></p></footer>
 <div class="photo-lightbox" id="photoLightbox" role="dialog" aria-modal="true" aria-label="Galeria de fotos" aria-hidden="true">
