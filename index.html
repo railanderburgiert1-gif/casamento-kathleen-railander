@@ -1415,6 +1415,40 @@ footer strong{font-family:'Allura',cursive!important;font-size:42px!important}
  .azulejo-cover{width:min(92vw,500px,67.5dvh)!important;height:auto!important}
 }
 
+
+/* Três atalhos principais acima da contagem */
+.quick-actions{
+ display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:11px;
+ width:min(100%,560px);margin:24px auto 15px;
+}
+.quick-action{
+ position:relative;display:flex;min-width:0;min-height:105px;
+ flex-direction:column;align-items:center;justify-content:center;gap:5px;
+ padding:12px 8px;text-align:center;text-decoration:none;
+ color:#173d70;background:
+ linear-gradient(rgba(255,253,248,.93),rgba(255,253,248,.93)),
+ url('assets/azulejo-pattern.svg') center/52px 52px;
+ border:1px solid #315f91;outline:1px solid rgba(182,154,104,.8);outline-offset:2px;
+ box-shadow:0 5px 13px rgba(23,61,112,.08);
+ transition:transform .2s ease,box-shadow .2s ease,background-color .2s ease;
+}
+.quick-action:before{
+ content:"";position:absolute;inset:4px;border:1px solid rgba(182,154,104,.55);pointer-events:none;
+}
+.quick-action:hover{transform:translateY(-3px);box-shadow:0 9px 20px rgba(23,61,112,.15)}
+.quick-action:focus-visible{outline:3px solid #b69a68;outline-offset:4px}
+.quick-action-icon{font:24px/1 'Cormorant Garamond',serif;color:#315f91}
+.quick-action-label{font:700 11px/1.2 'Manrope',sans-serif;letter-spacing:.035em;color:#173d70}
+.quick-action small{font:10px/1.25 'Cormorant Garamond',serif;color:#66778d}
+#cerimonia{scroll-margin-top:90px}
+@media(max-width:520px){
+ .quick-actions{gap:8px;margin:20px auto 12px}
+ .quick-action{min-height:92px;padding:10px 5px}
+ .quick-action-icon{font-size:21px}
+ .quick-action-label{font-size:9px;letter-spacing:0}
+ .quick-action small{font-size:9px}
+}
+
 </style>
 </head>
 <body>
@@ -1439,7 +1473,7 @@ footer strong{font-family:'Allura',cursive!important;font-size:42px!important}
 
 <header class="topbar"><nav class="nav"><a class="brand" href="#">Kathleen & Railander</a><div class="links"><a href="#historia">História</a><a href="#cerimonia">Cerimônia</a><a href="presentes.html">Presentes</a><a href="#rsvp">Presença</a></div></nav></header>
 <main>
-<section class="hero">
+<section class="hero" id="inicio">
 <div class="hero-inner invitation">
   <div class="invitation-top">✦</div>
   <div class="eyebrow">Convite de matrimônio</div>
@@ -1452,7 +1486,23 @@ footer strong{font-family:'Allura',cursive!important;font-size:42px!important}
   <p class="invitation-copy invitation-second">Com o coração cheio de alegria, convidamos você para testemunhar e partilhar conosco este passo tão especial.</p>
   <div class="date-row"><span>▦ &nbsp;18/12/2027</span><i></i><span>◷ &nbsp;16:00</span></div>
   <div class="location-line">⌖ &nbsp; IGREJA SÃO SEBASTIÃO<br><em>Canoa Quebrada – CE</em></div>
-  <a class="access-card" href="#cerimonia"><span class="access-card-icon">✦</span><span class="access-card-copy"><strong>Acessar página do casamento</strong><small>Detalhes da cerimônia, nossa história, presentes e confirmação de presença</small></span><span class="access-card-arrow">→</span></a>
+  <nav class="quick-actions" aria-label="Acessos rápidos do casamento">
+    <a class="quick-action" href="#cerimonia" aria-label="Ver local do casamento">
+      <span class="quick-action-icon">⌖</span>
+      <span class="quick-action-label">Local do casamento</span>
+      <small>Endereço e mapa</small>
+    </a>
+    <a class="quick-action" href="#inicio" aria-label="Voltar ao convite">
+      <span class="quick-action-icon">✉</span>
+      <span class="quick-action-label">Convite</span>
+      <small>Ver convite</small>
+    </a>
+    <a class="quick-action" href="presentes.html" aria-label="Acessar lista de presentes">
+      <span class="quick-action-icon">✧</span>
+      <span class="quick-action-label">Presentes</span>
+      <small>Lista de presentes</small>
+    </a>
+  </nav>
   <div class="countdown" id="countdown"><div><strong>---</strong><span>Dias</span></div><div><strong>--</strong><span>Horas</span></div><div><strong>--</strong><span>Minutos</span></div><div><strong>--</strong><span>Segundos</span></div></div>
   <div class="invitation-bottom">✦</div>
 </div>
