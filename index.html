@@ -1673,6 +1673,57 @@ footer strong{font-family:'Allura',cursive!important;font-size:42px!important}
  border-radius:9px!important;
 }
 
+
+/* RSVP compacto: formulário mais objetivo e com hierarquia clara */
+.rsvp{padding:clamp(28px,4vw,48px) 0!important}
+.rsvp .wrap{max-width:760px!important}
+.rsvp .section-kicker{margin-bottom:5px!important;font-size:10px!important;letter-spacing:.16em!important}
+.rsvp .section-title{margin:0 auto 8px!important;font-size:clamp(32px,5vw,46px)!important;line-height:1.08!important}
+.rsvp .intro{max-width:520px!important;margin:0 auto 20px!important;font-size:15px!important;line-height:1.45!important}
+.rsvp .form{max-width:650px!important;gap:10px 14px!important}
+.rsvp .form label{display:block!important;font-size:9px!important;letter-spacing:.11em!important;line-height:1.25!important;color:#24466f!important}
+.rsvp .form input,.rsvp .form select,.rsvp .form textarea{
+ box-sizing:border-box!important;min-height:42px!important;margin-top:5px!important;
+ padding:9px 11px!important;border:1px solid #9eb1c7!important;border-radius:5px!important;
+ background:#fffdf8!important;color:#173d70!important;font:14px 'Manrope',sans-serif!important;
+}
+.rsvp .form textarea{min-height:64px!important;resize:vertical!important}
+.rsvp .form input::placeholder,.rsvp .form textarea::placeholder{color:#8b929b!important}
+.rsvp .form button{
+ min-height:46px!important;padding:11px 18px!important;margin-top:2px!important;
+ border:1px solid #b69a68!important;border-radius:8px!important;
+ background:#173d70!important;color:#fff!important;font:600 11px 'Manrope',sans-serif!important;
+ letter-spacing:.14em!important;box-shadow:0 3px 0 #b69a68!important;
+}
+#rsvpFeedback{margin:8px auto!important;min-height:0!important;color:#173d70!important}
+.rsvp .wrap>p[style*="Escolha para qual"]{
+ max-width:520px!important;margin:15px auto 8px!important;
+ color:#24466f!important;font:12px/1.4 'Manrope',sans-serif!important;
+}
+#rsvpRailander,#rsvpKathleen{
+ min-height:42px!important;padding:10px 14px!important;border:1px solid #7893b2!important;
+ border-radius:7px!important;background:#e8f0f8!important;color:#173d70!important;
+ font:600 10px 'Manrope',sans-serif!important;letter-spacing:.09em!important;
+}
+.rsvp .wrap>div:has(>#rsvpRailander){
+ gap:9px!important;margin-top:8px!important;
+}
+@media(max-width:520px){
+ .rsvp{padding:24px 0 28px!important}
+ .rsvp .wrap{padding-left:18px!important;padding-right:18px!important}
+ .rsvp .section-title{font-size:34px!important}
+ .rsvp .intro{font-size:14px!important;margin-bottom:15px!important}
+ .rsvp .form{grid-template-columns:1fr 1fr!important;gap:9px 10px!important}
+ .rsvp .form label:nth-child(1),.rsvp .form label:nth-child(2),
+ .rsvp .form label.full,.rsvp .form button{grid-column:1/-1!important}
+ .rsvp .form label{font-size:8.5px!important}
+ .rsvp .form input,.rsvp .form select{min-height:39px!important;padding:8px 9px!important;font-size:13px!important}
+ .rsvp .form textarea{min-height:58px!important}
+ .rsvp .form button{min-height:44px!important}
+ #rsvpRailander,#rsvpKathleen{flex:1 1 100%!important;text-align:center!important;font-size:9px!important}
+ .rsvp .wrap>div:has(>#rsvpRailander){flex-direction:column!important;align-items:stretch!important}
+}
+
 </style>
 </head>
 <body>
