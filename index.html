@@ -2167,10 +2167,14 @@ footer strong{font-family:'Allura',cursive!important;font-size:42px!important}
   transition:color .2s ease,transform .2s ease;
 }
 .church-location-link .location-line-icon{
-  display:inline-grid;place-items:center;vertical-align:middle;
-  width:27px;height:27px;margin-right:8px;border:1px solid #b4945b;
-  border-radius:50%;font:20px/1 'Manrope',sans-serif;color:#183b70;
-  background:#fbf7ef;
+  display:inline-flex;align-items:center;justify-content:center;
+  vertical-align:middle;flex:0 0 27px;width:27px;height:27px;
+  margin:0 8px 0 0;padding:0;border:1px solid #b4945b;
+  border-radius:50%;background:#fbf7ef;line-height:0;
+}
+.church-location-link .location-line-icon svg{
+  display:block;width:16px;height:16px;margin:0;fill:none;
+  stroke:#183b70;stroke-width:1.7;stroke-linecap:round;stroke-linejoin:round;
 }
 .church-location-link:hover,.church-location-link:focus-visible{
   color:#a17d3f!important;text-decoration:underline!important;
@@ -2211,7 +2215,7 @@ footer strong{font-family:'Allura',cursive!important;font-size:42px!important}
   <p class="invitation-copy">O matrimônio é um sacramento instituído por Deus, sinal de Seu amor fiel por nós. Escolhemos caminhar juntos na fé, no amor e na construção de uma vida em comunhão.</p>
   <p class="invitation-copy invitation-second">Com o coração cheio de alegria, convidamos você para testemunhar e partilhar conosco este passo tão especial.</p>
   <div class="date-row"><span>▦ &nbsp;18/12/2027</span><i></i><span>◷ &nbsp;16:00</span></div>
-  <a class="location-line church-location-link" href="#fotos-igreja" aria-label="Ver fotos e vídeo da Igreja São Sebastião"><span class="location-line-icon" aria-hidden="true">⌖</span><span>IGREJA SÃO SEBASTIÃO</span><br><em>Canoa Quebrada – CE</em></a>
+  <a class="location-line church-location-link" href="#fotos-igreja" aria-label="Ver fotos e vídeo da Igreja São Sebastião"><span class="location-line-icon" aria-hidden="true"><svg viewBox="0 0 24 24" focusable="false"><path d="M12 21s7-6.4 7-12a7 7 0 1 0-14 0c0 5.6 7 12 7 12Z"/><circle cx="12" cy="9" r="2.5"/></svg></span><span>IGREJA SÃO SEBASTIÃO</span><br><em>Canoa Quebrada – CE</em></a>
   <nav class="quick-actions" aria-label="Acessos rápidos do casamento">
     <a class="quick-action" href="#cerimonia" aria-label="Ver local do casamento">
       <span class="quick-action-icon">⌖</span>
