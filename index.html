@@ -2192,7 +2192,7 @@ document.getElementById('rsvpForm').addEventListener('submit',async e=>{
  form.addEventListener('submit',async e=>{
   e.preventDefault();matches.hidden=true;matches.innerHTML='';found=[];
   const nome=nameInput.value.trim(),telefone=phoneInput.value.trim();
-  if(nome.length<3||telefone.replace(/\\D/g,'').length<8){message('Informe o nome completo e o telefone usado na confirmação.');return}
+  if(nome.length<3||telefone.replace(/\D/g,'').length<8){message('Informe o nome completo e o telefone usado na confirmação.');return}
   if(!weddingDb){message('A consulta online está indisponível no momento. Fale com os noivos pelo WhatsApp.');return}
   searchButton.disabled=true;searchButton.textContent='Localizando…';message('');
   const {data,error}=await weddingDb.rpc('find_rsvp_for_cancellation',{p_nome:nome,p_telefone:telefone});
