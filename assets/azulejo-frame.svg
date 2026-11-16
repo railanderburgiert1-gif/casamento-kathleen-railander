@@ -28,8 +28,6 @@
 <path d="M110 104 C145 70 190 69 220 99 M490 104 C455 70 410 69 380 99 M110 696 C145 730 190 731 220 701 M490 696 C455 730 410 731 380 701" fill="none" stroke="#6f8fb4" stroke-width="2"/>
 <use href="#rosette" x="112" y="112"/><use href="#rosette" x="488" y="112"/>
 <use href="#rosette" x="112" y="688"/><use href="#rosette" x="488" y="688"/>
-<g transform="translate(300 130)"><use href="#shell"/></g>
-<g transform="translate(300 670) scale(1 -1)"><use href="#shell"/></g>
 <g fill="none" stroke="#7898bb" stroke-width="2" stroke-linecap="round">
  <path d="M92 220 C125 190 145 196 155 224 C164 246 184 251 203 230 C214 215 210 201 197 194 M508 220 C475 190 455 196 445 224 C436 246 416 251 397 230 C386 215 390 201 403 194"/>
  <path d="M92 580 C125 610 145 604 155 576 C164 554 184 549 203 570 C214 585 210 599 197 606 M508 580 C475 610 455 604 445 576 C436 554 416 549 397 570 C386 585 390 599 403 606"/>
