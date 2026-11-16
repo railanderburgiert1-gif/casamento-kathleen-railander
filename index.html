@@ -1969,25 +1969,25 @@ footer strong{font-family:'Allura',cursive!important;font-size:42px!important}
 }
 
 
-/* Aviso simples para alteração de presença após confirmação */
-.rsvp-change-note{
- max-width:560px;margin:24px auto 0;padding:15px 16px;
- border-top:1px solid #d9c9a8;text-align:center;
-}
-.rsvp-change-note p{
- margin:0 0 10px;color:#536176;font:13px/1.55 'Manrope',Arial,sans-serif;
-}
-.rsvp-change-note p strong{color:#173d70;font-weight:700}
-.rsvp-cancel-link{
- display:inline-flex;align-items:center;justify-content:center;
- min-height:46px;padding:11px 18px;border:1px solid #b69a68;
- border-radius:8px;background:#fffdf8;color:#173d70;
- font:700 12px 'Manrope',Arial,sans-serif;text-decoration:none;
- -webkit-tap-highlight-color:transparent;touch-action:manipulation;
-}
-.rsvp-cancel-link:hover{background:#f4eee3}
-@media(max-width:720px){.rsvp-change-note{margin-top:18px;padding:14px 8px}.rsvp-cancel-link{width:100%;max-width:360px;min-height:50px;font-size:13px}}
 
+/* Consulta e cancelamento de presença */
+.rsvp-change-note{max-width:560px;margin:26px auto 0;padding:20px 18px;border:1px solid #d9c9a8;border-radius:12px;background:#fffdf8;text-align:left}
+.rsvp-change-note h3{margin:0 0 6px;text-align:center;color:#173d70;font:600 25px 'Cormorant Garamond',Georgia,serif}
+.rsvp-change-note>p{margin:0 0 15px;text-align:center;color:#536176;font:13px/1.55 'Manrope',Arial,sans-serif}
+.rsvp-lookup-form{display:grid;gap:11px}
+.rsvp-lookup-form label{display:block;color:#17345f;font:600 11px 'Manrope',Arial,sans-serif;letter-spacing:.02em;text-transform:none}
+.rsvp-lookup-form input{display:block;width:100%;min-height:46px;margin-top:6px;padding:11px 12px;border:1px solid #cbb27f;border-radius:7px;background:#fff;color:#17345f;font:14px 'Manrope',Arial,sans-serif}
+.rsvp-lookup-form button,.rsvp-cancel-confirm{width:100%;min-height:48px;border:0;border-radius:7px;background:#173d70;color:#fff;font:700 12px 'Manrope',Arial,sans-serif;cursor:pointer}
+.rsvp-lookup-form button:disabled,.rsvp-cancel-confirm:disabled{opacity:.6;cursor:wait}
+.rsvp-cancel-feedback{min-height:1.4em;margin:10px 0 0!important;text-align:center;color:#173d70;font:12px/1.5 'Manrope',Arial,sans-serif}
+.rsvp-cancel-matches{margin-top:12px;padding:12px;border:1px solid #e3d6bd;border-radius:8px;background:#fbf7ef}
+.rsvp-match-heading{margin:0 0 8px;color:#173d70;font:700 12px 'Manrope',Arial,sans-serif}
+.rsvp-match-option{display:flex;align-items:center;gap:10px;padding:10px 4px;color:#17345f;cursor:pointer}
+.rsvp-match-option input{width:18px;height:18px;accent-color:#173d70}
+.rsvp-match-option span{display:grid;gap:2px}
+.rsvp-match-option small{color:#667085;font:11px 'Manrope',Arial,sans-serif}
+.rsvp-cancel-confirm{margin-top:10px;background:#9b3e3e}
+@media(max-width:720px){.rsvp-change-note{margin:20px 0 0;padding:17px 13px}.rsvp-change-note h3{font-size:23px}.rsvp-lookup-form input{font-size:16px}.rsvp-lookup-form button,.rsvp-cancel-confirm{min-height:50px;font-size:13px}}
 </style>
 </head>
 <body>
@@ -2070,10 +2070,16 @@ footer strong{font-family:'Allura',cursive!important;font-size:42px!important}
 <a class="button outline" style="border-color:#d7bd88;color:white" href="https://wa.me/5566999084016" id="rsvpRailander">WhatsApp do Railander</a>
 <a class="button outline" style="border-color:#d7bd88;color:white" href="https://wa.me/5588992638694" id="rsvpKathleen">WhatsApp da Kathleen</a>
 </div>
-<div class="rsvp-change-note">
-  <p><strong>Já confirmou presença e seus planos mudaram?</strong><br>
-  Avise os noivos pelo WhatsApp.</p>
-  <a class="rsvp-cancel-link" href="https://wa.me/5566999084016?text=Ol%C3%A1%2C%20j%C3%A1%20confirmei%20presen%C3%A7a%20no%20casamento%2C%20mas%20n%C3%A3o%20poderei%20comparecer.%20Meu%20nome%20%C3%A9%3A%20" target="_self">Avisar que não poderei ir</a>
+<div class="rsvp-change-note" id="rsvpCancelArea">
+  <h3>Já confirmou presença?</h3>
+  <p>Se seus planos mudaram, localize sua confirmação para solicitar o cancelamento.</p>
+  <form id="rsvpLookupForm" class="rsvp-lookup-form">
+    <label>Nome completo<input id="cancelGuestName" autocomplete="name" maxlength="120" required placeholder="Digite seu nome como informou na confirmação"></label>
+    <label>Telefone cadastrado<input id="cancelGuestPhone" autocomplete="tel" inputmode="tel" maxlength="25" required placeholder="(00) 00000-0000"></label>
+    <button type="submit" id="rsvpLookupButton">Localizar minha confirmação</button>
+  </form>
+  <p id="rsvpCancelFeedback" class="rsvp-cancel-feedback" role="status" aria-live="polite"></p>
+  <div id="rsvpCancelMatches" class="rsvp-cancel-matches" hidden></div>
 </div></div></section>
 </main><footer><strong>Kathleen & Railander</strong>18 de dezembro de 2027 · Canoa Quebrada – CE<div class="ornament">✧ ❦ ✧</div><p style="font:10px Montserrat;letter-spacing:.12em"><a href="#" onclick="openAdmin();return false" style="color:#9b865d;text-decoration:none">ÁREA DOS NOIVOS</a></p></footer>
 <div class="photo-lightbox" id="photoLightbox" role="dialog" aria-modal="true" aria-label="Galeria de fotos" aria-hidden="true">
@@ -2090,7 +2096,7 @@ footer strong{font-family:'Allura',cursive!important;font-size:42px!important}
 <div class="admin-summary-grid">
 <div class="admin-summary-card"><strong id="statGuests">0</strong><span>Respostas recebidas</span></div>
 <div class="admin-summary-card"><strong id="statYes">0</strong><span>Pessoas confirmadas</span></div>
-<div class="admin-summary-card"><strong id="statNo">0</strong><span>Pessoas que não irão</span></div>
+<div class="admin-summary-card"><strong id="statNo">0</strong><span>Não irão / cancelaram</span></div>
 <div class="admin-summary-card"><strong id="statGifts">0</strong><span>Presentes reservados</span></div>
 </div>
 <div class="admin-tabs" role="tablist" aria-label="Seções do painel dos noivos">
@@ -2170,6 +2176,54 @@ document.getElementById('rsvpForm').addEventListener('submit',async e=>{
   feedback.textContent='Confirmação registrada. Obrigado por responder!';
   form.reset();
 });
+
+
+/* Busca protegida e cancelamento de RSVP: nome + telefone cadastrado */
+(function(){
+ const form=document.getElementById('rsvpLookupForm');
+ if(!form)return;
+ const nameInput=document.getElementById('cancelGuestName');
+ const phoneInput=document.getElementById('cancelGuestPhone');
+ const feedback=document.getElementById('rsvpCancelFeedback');
+ const matches=document.getElementById('rsvpCancelMatches');
+ const searchButton=document.getElementById('rsvpLookupButton');
+ let found=[];
+ function message(text){feedback.textContent=text}
+ form.addEventListener('submit',async e=>{
+  e.preventDefault();matches.hidden=true;matches.innerHTML='';found=[];
+  const nome=nameInput.value.trim(),telefone=phoneInput.value.trim();
+  if(nome.length<3||telefone.replace(/\\D/g,'').length<8){message('Informe o nome completo e o telefone usado na confirmação.');return}
+  if(!weddingDb){message('A consulta online está indisponível no momento. Fale com os noivos pelo WhatsApp.');return}
+  searchButton.disabled=true;searchButton.textContent='Localizando…';message('');
+  const {data,error}=await weddingDb.rpc('find_rsvp_for_cancellation',{p_nome:nome,p_telefone:telefone});
+  searchButton.disabled=false;searchButton.textContent='Localizar minha confirmação';
+  if(error){console.error(error);message('Não foi possível consultar agora. Tente novamente mais tarde.');return}
+  found=Array.isArray(data)?data:(data?[data]:[]);
+  if(!found.length){message('Não encontramos uma confirmação ativa com esses dados. Confira o nome e o telefone.');return}
+  matches.hidden=false;
+  matches.innerHTML='<p class="rsvp-match-heading">Confirmação localizada</p>'+found.map((item,index)=>
+   '<label class="rsvp-match-option"><input type="radio" name="rsvpMatch" value="'+index+'" '+(index===0?'checked':'')+'><span><strong>'+escapeHtml(item.nome)+'</strong><small>'+Number(item.quantidade||1)+' pessoa(s) · Presença confirmada</small></span></label>'
+  ).join('')+'<button type="button" class="rsvp-cancel-confirm" id="confirmRsvpCancellation">Cancelar presença</button>';
+  document.getElementById('confirmRsvpCancellation').addEventListener('click',async()=>{
+   const selected=form.querySelector('input[name="rsvpMatch"]:checked');
+   if(!selected)return;
+   const item=found[Number(selected.value)];
+   if(!window.confirm('Confirma que deseja cancelar a presença de '+item.nome+'?'))return;
+   const cancelButton=document.getElementById('confirmRsvpCancellation');
+   cancelButton.disabled=true;cancelButton.textContent='Cancelando…';
+   const {data:cancelled,error:cancelError}=await weddingDb.rpc('cancel_rsvp_attendance',{
+    p_rsvp_id:item.id,p_nome:nome,p_telefone:telefone
+   });
+   if(cancelError||cancelled!==true){
+    cancelButton.disabled=false;cancelButton.textContent='Cancelar presença';
+    message('Não foi possível cancelar. A confirmação pode já ter sido alterada. Atualize a consulta e tente novamente.');return;
+   }
+   matches.hidden=true;matches.innerHTML='';
+   message('Presença cancelada. Os noivos receberão a atualização no painel. Obrigado por avisar.');
+   form.reset();found=[];
+  });
+ });
+})();
 
 async function renderGiftAvailability(){
   if(!weddingDb)return;
@@ -2287,7 +2341,7 @@ async function logoutAdmin(){
 async function renderAdmin(){
   if(!weddingDb){document.getElementById('adminStatus').textContent='Configure a conexão do banco para visualizar os registros.';return}
   const [guestResult,giftResult]=await Promise.all([
-    weddingDb.from('rsvps').select('id,nome,telefone,presenca,quantidade,mensagem,created_at').order('created_at',{ascending:false}),
+    weddingDb.from('rsvps').select('id,nome,telefone,presenca,quantidade,mensagem,status,created_at').order('created_at',{ascending:false}),
     weddingDb.from('gift_reservations').select('id,gift_name,guest_name,status,created_at').order('created_at',{ascending:false})
   ]);
   if(guestResult.error||giftResult.error){
@@ -2295,15 +2349,17 @@ async function renderAdmin(){
     return;
   }
   const guests=guestResult.data||[],reservations=giftResult.data||[];
-  const yes=guests.filter(x=>x.presenca==='Sim, estarei presente');
-  const no=guests.filter(x=>x.presenca==='Não poderei comparecer');
+  const activeGuests=guests.filter(x=>x.status!=='Cancelada');
+  const yes=activeGuests.filter(x=>x.presenca==='Sim, estarei presente');
+  const no=activeGuests.filter(x=>x.presenca==='Não poderei comparecer');
+  const cancelled=guests.filter(x=>x.status==='Cancelada');
   document.getElementById('statGuests').textContent=guests.length;
   document.getElementById('statYes').textContent=yes.reduce((sum,x)=>sum+Number(x.quantidade||0),0);
-  document.getElementById('statNo').textContent=no.reduce((sum,x)=>sum+Number(x.quantidade||0),0);
+  document.getElementById('statNo').textContent=no.reduce((sum,x)=>sum+Number(x.quantidade||0),0)+cancelled.reduce((sum,x)=>sum+Number(x.quantidade||0),0);
   document.getElementById('statGifts').textContent=reservations.filter(x=>x.status!=='Cancelado').length;
   document.getElementById('guestList').innerHTML=guests.length
-    ?'<table class="admin-data-table"><thead><tr><th>Nome</th><th>Presença</th><th>Pessoas</th><th>Telefone</th><th>Mensagem</th><th>Recebido em</th></tr></thead><tbody>'+
-      guests.map(x=>'<tr><td>'+escapeHtml(x.nome)+'</td><td>'+escapeHtml(x.presenca)+'</td><td class="cell-center">'+escapeHtml(x.quantidade)+'</td><td>'+escapeHtml(x.telefone)+'</td><td>'+escapeHtml(x.mensagem||'—')+'</td><td>'+escapeHtml(formatAdminDate(x.created_at))+'</td></tr>').join('')+'</tbody></table>'
+    ?'<table class="admin-data-table"><thead><tr><th>Nome</th><th>Presença</th><th>Status</th><th>Pessoas</th><th>Telefone</th><th>Mensagem</th><th>Recebido em</th></tr></thead><tbody>'+
+      guests.map(x=>'<tr><td>'+escapeHtml(x.nome)+'</td><td>'+escapeHtml(x.presenca)+'</td><td>'+escapeHtml(x.status||'Ativa')+'</td><td class="cell-center">'+escapeHtml(x.quantidade)+'</td><td>'+escapeHtml(x.telefone)+'</td><td>'+escapeHtml(x.mensagem||'—')+'</td><td>'+escapeHtml(formatAdminDate(x.created_at))+'</td></tr>').join('')+'</tbody></table>'
     :'Nenhuma resposta registrada.';
   document.getElementById('reservedList').innerHTML=reservations.length
     ?'<table class="admin-data-table"><thead><tr><th>Presente</th><th>Convidado</th><th>Status</th><th>Data</th></tr></thead><tbody>'+
@@ -2421,14 +2477,16 @@ async function exportAdminExcel(){
   if(!window.XLSX){setAdminStatus('O módulo de Excel não carregou. Atualize a página e tente novamente.');return}
   setAdminStatus('Preparando relatório Excel…');
   const [g,r,cat]=await Promise.all([
-    weddingDb.from('rsvps').select('nome,telefone,presenca,quantidade,mensagem,created_at').order('created_at',{ascending:false}),
+    weddingDb.from('rsvps').select('nome,telefone,presenca,quantidade,mensagem,status,created_at').order('created_at',{ascending:false}),
     weddingDb.from('gift_reservations').select('gift_name,guest_name,status,created_at').order('created_at',{ascending:false}),
     weddingDb.from('gift_catalog').select('name,description,active,is_reserved').order('name')
   ]);
   if(g.error||r.error||cat.error){setAdminStatus('Não foi possível gerar o relatório. Verifique a conexão e tente novamente.');return}
   const guests=g.data||[],reservations=r.data||[],catalog=cat.data||[];
-  const yes=guests.filter(x=>x.presenca==='Sim, estarei presente');
-  const no=guests.filter(x=>x.presenca==='Não poderei comparecer');
+  const activeGuests=guests.filter(x=>x.status!=='Cancelada');
+  const yes=activeGuests.filter(x=>x.presenca==='Sim, estarei presente');
+  const no=activeGuests.filter(x=>x.presenca==='Não poderei comparecer');
+  const cancelled=guests.filter(x=>x.status==='Cancelada');
   const activeReservations=reservations.filter(x=>x.status!=='Cancelado');
   const peopleYes=yes.reduce((sum,x)=>sum+Number(x.quantidade||0),0);
   const peopleNo=no.reduce((sum,x)=>sum+Number(x.quantidade||0),0);
@@ -2443,17 +2501,19 @@ async function exportAdminExcel(){
     ['Pessoas confirmadas (inclui acompanhantes)',peopleYes],
     ['Respostas negativas',no.length],
     ['Pessoas que não irão',peopleNo],
+    ['Respostas canceladas',cancelled.length],
     ['Presentes com reserva ativa',activeReservations.length],
     ['Total de presentes cadastrados',catalog.length],
     ['Presentes ativos na vitrine',catalog.filter(x=>x.active).length]
   ];
   const confirmed=[
-    ['Nome','Telefone','Quantidade de pessoas','Mensagem','Data da resposta'],
-    ...yes.map(x=>[excelSafe(x.nome),excelSafe(x.telefone),Number(x.quantidade||0),excelSafe(x.mensagem),formatAdminDate(x.created_at)])
+    ['Nome','Telefone','Quantidade de pessoas','Mensagem','Status','Data da resposta'],
+    ...yes.map(x=>[excelSafe(x.nome),excelSafe(x.telefone),Number(x.quantidade||0),excelSafe(x.mensagem),excelSafe(x.status||'Ativa'),formatAdminDate(x.created_at)])
   ];
   const declined=[
-    ['Nome','Telefone','Quantidade de pessoas','Mensagem','Data da resposta'],
-    ...no.map(x=>[excelSafe(x.nome),excelSafe(x.telefone),Number(x.quantidade||0),excelSafe(x.mensagem),formatAdminDate(x.created_at)])
+    ['Nome','Telefone','Quantidade de pessoas','Mensagem','Status','Data da resposta'],
+    ...no.map(x=>[excelSafe(x.nome),excelSafe(x.telefone),Number(x.quantidade||0),excelSafe(x.mensagem),excelSafe(x.status||'Ativa'),formatAdminDate(x.created_at)]),
+    ...cancelled.map(x=>[excelSafe(x.nome),excelSafe(x.telefone),Number(x.quantidade||0),excelSafe(x.mensagem),'Cancelada',formatAdminDate(x.created_at)])
   ];
   const gifts=[
     ['Presente','Convidado','Status','Data da reserva'],
@@ -2469,8 +2529,8 @@ async function exportAdminExcel(){
     XLSX.utils.book_append_sheet(wb,sheet,name);
   };
   addSheet('Resumo',summary,[43,24]);
-  addSheet('Confirmados',confirmed,[30,20,20,48,22]);
-  addSheet('Não comparecem',declined,[30,20,20,48,22]);
+  addSheet('Confirmados',confirmed,[30,20,20,48,18,22]);
+  addSheet('Não comparecem',declined,[30,20,20,48,18,22]);
   addSheet('Reservas',gifts,[30,28,27,22]);
   addSheet('Lista de presentes',giftCatalog,[30,42,20,20]);
   XLSX.writeFile(wb,'casamento-kathleen-railander-relatorio.xlsx');
