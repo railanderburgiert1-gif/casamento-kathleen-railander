@@ -2159,6 +2159,25 @@ footer strong{font-family:'Allura',cursive!important;font-size:42px!important}
 .detail-card-link .detail-card-hint[href]{text-decoration:none!important;border-bottom:1px solid rgba(180,148,91,.55);padding-bottom:3px}
 #fotos-igreja{scroll-margin-top:100px}
 
+
+/* O nome da igreja funciona como atalho para a foto e o vídeo */
+.church-location-link{
+  display:block;width:fit-content;max-width:100%;margin:10px auto 20px;
+  color:#102b59!important;text-decoration:none!important;cursor:pointer;
+  transition:color .2s ease,transform .2s ease;
+}
+.church-location-link .location-line-icon{
+  display:inline-grid;place-items:center;vertical-align:middle;
+  width:27px;height:27px;margin-right:8px;border:1px solid #b4945b;
+  border-radius:50%;font:20px/1 'Manrope',sans-serif;color:#183b70;
+  background:#fbf7ef;
+}
+.church-location-link:hover,.church-location-link:focus-visible{
+  color:#a17d3f!important;text-decoration:underline!important;
+  text-decoration-color:#b4945b!important;text-underline-offset:4px;
+}
+.church-location-link em{display:inline-block;margin-top:2px}
+
 </style>
 </head>
 <body>
@@ -2192,7 +2211,7 @@ footer strong{font-family:'Allura',cursive!important;font-size:42px!important}
   <p class="invitation-copy">O matrimônio é um sacramento instituído por Deus, sinal de Seu amor fiel por nós. Escolhemos caminhar juntos na fé, no amor e na construção de uma vida em comunhão.</p>
   <p class="invitation-copy invitation-second">Com o coração cheio de alegria, convidamos você para testemunhar e partilhar conosco este passo tão especial.</p>
   <div class="date-row"><span>▦ &nbsp;18/12/2027</span><i></i><span>◷ &nbsp;16:00</span></div>
-  <div class="location-line">⌖ &nbsp; IGREJA SÃO SEBASTIÃO<br><em>Canoa Quebrada – CE</em></div>
+  <a class="location-line church-location-link" href="#fotos-igreja" aria-label="Ver fotos e vídeo da Igreja São Sebastião"><span class="location-line-icon" aria-hidden="true">⌖</span><span>IGREJA SÃO SEBASTIÃO</span><br><em>Canoa Quebrada – CE</em></a>
   <nav class="quick-actions" aria-label="Acessos rápidos do casamento">
     <a class="quick-action" href="#cerimonia" aria-label="Ver local do casamento">
       <span class="quick-action-icon">⌖</span>
