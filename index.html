@@ -2292,8 +2292,19 @@ renderGiftAvailability();
 
 const envelopeIntro=document.getElementById('envelopeIntro');
 const openEnvelopeButton=document.getElementById('openEnvelope');
+function resetWeddingScrollToTop(){
+  // Evita que o navegador restaure uma posição antiga ao voltar a abrir o convite.
+  window.scrollTo({top:0,left:0,behavior:'instant'});
+  document.documentElement.scrollTop=0;
+  document.body.scrollTop=0;
+}
+if('scrollRestoration' in history) history.scrollRestoration='manual';
+window.addEventListener('pageshow',()=>{
+  if(!location.hash) resetWeddingScrollToTop();
+});
 function openWeddingEnvelope(){
   if(!envelopeIntro || envelopeIntro.classList.contains('opening')) return;
+  resetWeddingScrollToTop();
   envelopeIntro.classList.add('opening');
   if(openEnvelopeButton) openEnvelopeButton.disabled=true;
   // A página aparece por baixo enquanto a capa desaparece, sem intervalo em branco.
@@ -2302,6 +2313,9 @@ function openWeddingEnvelope(){
     document.body.classList.add('site-entering');
     document.body.style.overflow='';
     envelopeIntro.classList.add('is-gone');
+    // Reposiciona após a transição da capa para neutralizar a restauração do Safari/iOS.
+    requestAnimationFrame(()=>requestAnimationFrame(resetWeddingScrollToTop));
+    window.setTimeout(resetWeddingScrollToTop,120);
     window.setTimeout(()=>document.body.classList.remove('site-entering'),1800);
   },900);
   window.setTimeout(()=>{
