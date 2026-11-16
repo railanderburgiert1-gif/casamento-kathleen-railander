@@ -1478,6 +1478,91 @@ footer strong{font-family:'Allura',cursive!important;font-size:42px!important}
  .envelope-intro.church-intro-full .azulejo-cover-content{inset:11% 14% 9%!important}
 }
 
+
+/* Acabamento final da capa — alinhamento, foto integral e respiro tipográfico */
+#envelopeIntro .azulejo-cover-content{
+ inset:12.5% 13.5% 10%!important;
+ gap:0!important;
+}
+#envelopeIntro .azulejo-cover-kicker{
+ position:relative!important;
+ z-index:2!important;
+ margin:0 0 13px!important;
+ padding:0 8px!important;
+ line-height:1.5!important;
+ letter-spacing:.18em!important;
+}
+#envelopeIntro .azulejo-cover-photo{
+ display:block!important;
+ box-sizing:border-box!important;
+ flex:0 0 auto!important;
+ width:clamp(158px,48%,210px)!important;
+ height:clamp(205px,29dvh,270px)!important;
+ min-height:0!important;
+ max-height:none!important;
+ aspect-ratio:3/4!important;
+ margin:0 auto 14px!important;
+ padding:5px!important;
+ background:#f7f3e9!important;
+ border:1px solid #b69a68!important;
+ box-shadow:0 5px 17px rgba(20,48,83,.13)!important;
+}
+#envelopeIntro .azulejo-cover-photo img{
+ display:block!important;
+ width:100%!important;
+ height:100%!important;
+ object-fit:contain!important;
+ object-position:center center!important;
+ background:#f7f3e9!important;
+}
+#envelopeIntro .azulejo-cover-blessing{
+ margin:0 0 5px!important;
+ font-size:clamp(13px,3.4vw,16px)!important;
+ line-height:1.35!important;
+}
+#envelopeIntro .azulejo-cover-names{
+ margin:3px 0 9px!important;
+ font-size:clamp(30px,7.2vw,40px)!important;
+ line-height:1.08!important;
+ letter-spacing:-.035em!important;
+}
+#envelopeIntro .azulejo-cover-date{
+ margin:4px 0 6px!important;
+ padding:8px 0!important;
+ font-size:10px!important;
+ letter-spacing:.14em!important;
+}
+#envelopeIntro .azulejo-cover-place{
+ font-size:13px!important;
+ line-height:1.45!important;
+}
+#envelopeIntro .azulejo-open{
+ margin:12px auto 0!important;
+ min-height:46px!important;
+ padding:12px 22px!important;
+ border-radius:0!important;
+}
+@media(max-width:520px){
+ #envelopeIntro .azulejo-cover-content{inset:12% 12.5% 9%!important}
+ #envelopeIntro .azulejo-cover-kicker{margin-bottom:10px!important;font-size:10px!important}
+ #envelopeIntro .azulejo-cover-photo{
+  width:clamp(150px,48%,190px)!important;
+  height:clamp(190px,27dvh,225px)!important;
+  margin-bottom:11px!important;
+ }
+ #envelopeIntro .azulejo-cover-blessing{font-size:13px!important}
+ #envelopeIntro .azulejo-cover-names{font-size:clamp(28px,7vw,35px)!important;margin-bottom:7px!important}
+ #envelopeIntro .azulejo-cover-date{font-size:9px!important;padding:7px 0!important}
+ #envelopeIntro .azulejo-cover-place{font-size:12px!important}
+ #envelopeIntro .azulejo-open{margin-top:9px!important;min-height:43px!important}
+}
+@media(max-height:700px){
+ #envelopeIntro .azulejo-cover-content{inset:10% 13% 8%!important}
+ #envelopeIntro .azulejo-cover-photo{height:clamp(160px,25dvh,205px)!important}
+ #envelopeIntro .azulejo-cover-kicker{margin-bottom:7px!important}
+ #envelopeIntro .azulejo-cover-open{margin-top:7px!important}
+}
+
 </style>
 </head>
 <body>
@@ -1487,7 +1572,7 @@ footer strong{font-family:'Allura',cursive!important;font-size:42px!important}
   <div class="church-art-wrap azulejo-cover">
     <div class="azulejo-cover-content">
       <div class="azulejo-cover-kicker">Convite de matrimônio</div>
-      <div class="azulejo-cover-rule">✦ &nbsp; ❧ &nbsp; ✦</div>
+      
       <figure class="azulejo-cover-photo">
         <img src="assets/IMG_5377.jpeg" alt="Porta de madeira ornamentada com o monograma RK">
       </figure>
