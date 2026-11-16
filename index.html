@@ -1401,6 +1401,20 @@ footer strong{font-family:'Allura',cursive!important;font-size:42px!important}
  .azulejo-open{margin-top:6px;padding:8px 16px}
 }
 
+
+/* Mantém a moldura 3:4 sem deformar em telas altas ou estreitas */
+.azulejo-cover{
+ width:min(92vw,500px,67.5dvh)!important;
+ height:auto!important;
+ aspect-ratio:3/4!important;
+}
+@media(max-width:520px){
+ .azulejo-cover{width:min(94vw,440px,67.5dvh)!important;height:auto!important}
+}
+@media(max-height:650px){
+ .azulejo-cover{width:min(92vw,500px,67.5dvh)!important;height:auto!important}
+}
+
 </style>
 </head>
 <body>
