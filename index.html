@@ -2024,6 +2024,44 @@ footer strong{font-family:'Allura',cursive!important;font-size:42px!important}
   }
 }
 
+
+/* A arte enviada já contém o convite completo: usar como peça única, sem repetir textos ou molduras */
+#envelopeIntro.azulejo-intro .church-art-wrap.azulejo-cover{
+  display:block!important;position:relative!important;flex:none!important;
+  width:min(92vw,440px,58dvh)!important;height:auto!important;
+  aspect-ratio:auto!important;max-width:92vw!important;max-height:88dvh!important;
+  min-width:0!important;min-height:0!important;overflow:visible!important;
+  padding:0!important;background:transparent!important;border:0!important;
+  box-shadow:none!important;
+}
+#envelopeIntro .azulejo-cover-content{
+  position:static!important;inset:auto!important;width:100%!important;height:auto!important;
+  display:flex!important;flex-direction:column!important;align-items:center!important;
+  justify-content:center!important;gap:0!important;
+}
+#envelopeIntro .azulejo-cover-photo{
+  display:block!important;box-sizing:border-box!important;width:100%!important;
+  height:auto!important;min-height:0!important;max-height:78dvh!important;
+  aspect-ratio:3/4!important;margin:0!important;padding:0!important;
+  overflow:hidden!important;border:1px solid rgba(182,154,104,.85)!important;
+  border-radius:16px!important;background:#f7f3e9!important;
+  box-shadow:0 12px 34px rgba(18,45,82,.25)!important;
+}
+#envelopeIntro .azulejo-cover-photo img{
+  display:block!important;width:100%!important;height:100%!important;
+  object-fit:contain!important;object-position:center!important;
+  border-radius:15px!important;background:#f7f3e9!important;
+}
+#envelopeIntro .azulejo-open{
+  margin:12px auto 0!important;min-height:46px!important;
+  padding:12px 24px!important;border-radius:8px!important;
+}
+@media(max-width:520px) and (max-height:650px){
+  #envelopeIntro.azulejo-intro .church-art-wrap.azulejo-cover{width:min(88vw,52dvh)!important}
+  #envelopeIntro .azulejo-cover-photo{max-height:74dvh!important}
+  #envelopeIntro .azulejo-open{margin-top:8px!important;min-height:42px!important}
+}
+
 </style>
 </head>
 <body>
@@ -2032,15 +2070,9 @@ footer strong{font-family:'Allura',cursive!important;font-size:42px!important}
   <div class="church-art-backdrop azulejo-backdrop" aria-hidden="true"></div>
   <div class="church-art-wrap azulejo-cover">
     <div class="azulejo-cover-content">
-      <div class="azulejo-cover-kicker">Convite de matrimônio</div>
-      
       <figure class="azulejo-cover-photo">
-        <img src="convite-cover-alta.jpg" alt="Convite de matrimônio de Kathleen e Railander em azul e dourado">
+        <img src="convite-cover-alta.jpg" alt="Convite completo de casamento de Kathleen e Railander em azul e dourado">
       </figure>
-      <p class="azulejo-cover-blessing">Com a bênção de Deus e de nossas famílias</p>
-      <h1 class="azulejo-cover-names">Kathleen <span>&</span> Railander</h1>
-      <div class="azulejo-cover-date">18 de dezembro de 2027</div>
-      <div class="azulejo-cover-place">16 horas · Igreja São Sebastião<br>Canoa Quebrada — Ceará</div>
       <button class="azulejo-open" id="openEnvelope" type="button">Entrar no convite <span>↗</span></button>
     </div>
   </div>
