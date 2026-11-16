@@ -1245,17 +1245,181 @@ section{scroll-margin-top:76px}
 .access-card-arrow{font-size:23px;color:#e2c98e}
 @media(max-width:520px){.access-card{padding:14px 15px;gap:12px}.access-card-copy strong{font-size:13px}.access-card-copy small{font-size:10px}}
 
+
+/* Identidade visual: azulejaria portuguesa barroca e papel de convite */
+:root{
+ --navy:#173d70;--blue:#24558f;--cobalt:#315f9b;--gold:#b69a68;
+ --ivory:#fbf8f0;--ink:#243752;--muted:#69768a;
+}
+html,body{font-family:'Manrope',sans-serif!important;background-color:var(--ivory)}
+body{
+ background-image:linear-gradient(rgba(251,248,240,.94),rgba(251,248,240,.94)),url('assets/azulejo-pattern.svg')!important;
+ background-size:auto,150px 150px!important;
+}
+body:before{border:1px solid rgba(36,85,143,.58)!important;outline:4px solid rgba(182,154,104,.13);outline-offset:3px}
+.topbar{background:rgba(251,248,240,.97)!important;border-bottom:2px solid #244f88!important;box-shadow:0 3px 15px rgba(23,61,112,.08)!important}
+.brand{font-family:'Allura',cursive!important;font-size:36px!important;color:#173d70!important}
+.links{font-family:'Manrope',sans-serif!important;color:#244b7b!important;letter-spacing:.12em!important}
+.hero{
+ background:linear-gradient(rgba(251,248,240,.93),rgba(251,248,240,.95)),url('assets/azulejo-pattern.svg') center/180px repeat!important;
+}
+.hero:before{inset:24px 4%!important;border:2px solid #244f88!important;outline:1px solid #b69a68;outline-offset:5px;border-radius:0!important}
+.hero-inner.invitation{
+ padding:32px clamp(18px,4vw,52px) 24px!important;
+ background:rgba(255,253,248,.88);
+ border:1px solid #b69a68;
+ outline:1px solid rgba(36,79,136,.6);
+ outline-offset:5px;
+ box-shadow:0 14px 36px rgba(22,54,94,.08);
+}
+.invitation-top,.invitation-bottom{color:#24558f!important;font-family:'Cormorant Garamond',serif!important}
+.eyebrow,.section-kicker{font-family:'Manrope',sans-serif!important;color:#315f91!important;letter-spacing:.20em!important}
+h1,.section-title,.detail h3,.gift h3,.map-info h3,footer strong{
+ font-family:'Bodoni Moda','Cormorant Garamond',serif!important;color:#173d70!important;
+}
+h1{font-weight:500!important;letter-spacing:-.035em}
+.hero-church{
+ border:7px solid #fff!important;outline:1px solid #b69a68;outline-offset:3px;
+ box-shadow:0 8px 22px rgba(23,61,112,.13)!important;
+}
+.gold-divider,.cross-ornament,.ornament{color:#b69a68!important}
+.button{background:#173d70!important;border:1px solid #173d70!important;letter-spacing:.14em!important}
+.button.outline{background:transparent!important;color:#173d70!important}
+section{position:relative}
+section:not(.hero){border-top:1px solid rgba(36,85,143,.19);border-bottom:1px solid rgba(182,154,104,.25)}
+.story,.details{background:rgba(255,253,248,.96)!important}
+.storygrid img,.gallerygrid a{
+ border:7px solid #fff!important;outline:1px solid #b69a68;outline-offset:2px;
+ box-shadow:0 7px 20px rgba(23,61,112,.12)!important;
+}
+.gallerygrid{gap:20px!important}
+.detail{
+ position:relative;background:#fffdf8!important;border:1px solid #315f91!important;
+ outline:1px solid #b69a68;outline-offset:4px;margin:4px;
+}
+.detail:before,.gift:before{
+ content:"✦";position:absolute;top:7px;left:10px;color:#315f91;font-size:13px;
+}
+.gifts{background:rgba(235,241,247,.72)!important}
+.gift{position:relative;border:1px solid #315f91!important;background:#fffdf8!important;box-shadow:0 6px 18px rgba(23,61,112,.08)!important}
+.gift img{border:4px solid #f8f5ee}
+.pixbox,.map-panel,.church-photo{
+ border:1px solid #315f91!important;outline:1px solid #b69a68;outline-offset:4px;
+ background:#fffdf8!important;box-shadow:0 9px 24px rgba(23,61,112,.07)!important;
+}
+.map-panel{margin:30px 4px 4px!important}
+.rsvp{background:rgba(235,241,247,.84)!important;border-block:1px solid #315f91!important;color:#173d70!important}
+.rsvp .section-title{color:#173d70!important}.rsvp .section-kicker{color:#315f91!important}
+.rsvp .intro{color:#435875!important}
+.form label{color:#173d70!important}
+.form input,.form select,.form textarea{border:1px solid #8aa2bd!important;background:#fffdf8!important;color:#173d70!important}
+.form button{background:#173d70!important}
+footer{background:rgba(251,248,240,.96)!important;border-top:2px solid #315f91!important}
+footer strong{font-family:'Allura',cursive!important;font-size:42px!important}
+.modalbox{background:#fbf8f0!important;border:1px solid #315f91!important;outline:1px solid #b69a68;outline-offset:4px}
+@media(max-width:720px){
+ .brand{font-size:30px!important}
+ .hero:before{inset:16px 3%!important}
+ .hero-inner.invitation{padding:24px 16px 18px!important}
+ .detail{margin:4px 3px}
+ .gallerygrid{gap:13px!important}
+}
+
+/* Capa em azulejo: cartão de abertura clicável, com foto, nomes e dados em HTML */
+.azulejo-intro{
+ background:linear-gradient(135deg,#e9eff5,#f9f6ee 48%,#e8eef4)!important;
+}
+.azulejo-intro:before{border:1px solid rgba(36,79,136,.62)!important}
+.azulejo-intro:after{content:"";position:absolute;inset:0;background:url('assets/azulejo-pattern.svg') repeat;background-size:150px 150px;opacity:.18;pointer-events:none}
+.azulejo-backdrop{
+ position:absolute!important;inset:-5%!important;display:block!important;
+ background:url('assets/azulejo-pattern.svg') repeat!important;background-size:160px 160px!important;
+ filter:blur(1px)!important;opacity:.32!important;transform:scale(1.08)!important;
+}
+.azulejo-cover{
+ display:block!important;position:relative!important;z-index:2!important;
+ width:min(92vw,500px)!important;height:min(91dvh,790px)!important;
+ aspect-ratio:3/4!important;flex:none!important;overflow:hidden!important;
+ background:url('assets/azulejo-frame.svg') center/100% 100% no-repeat,#fbf8f0!important;
+ box-shadow:0 22px 65px rgba(18,45,82,.24),0 0 0 1px rgba(182,154,104,.65)!important;
+ padding:0!important;
+}
+.azulejo-cover-content{
+ position:absolute;inset:12% 15% 10%;display:flex;flex-direction:column;
+ align-items:center;justify-content:flex-start;text-align:center;color:#173d70;
+}
+.azulejo-cover-kicker{
+ font:600 clamp(9px,2.4vw,12px) 'Manrope',sans-serif;letter-spacing:.22em;text-transform:uppercase;
+ color:#315f91;margin:0 0 4px;
+}
+.azulejo-cover-rule{font:22px 'Cormorant Garamond';color:#b69a68;margin:2px 0 10px}
+.azulejo-cover-photo{
+ width:min(100%,250px);height:34%;min-height:130px;max-height:235px;
+ margin:0 0 10px;padding:5px;background:#fff;border:1px solid #b69a68;
+ box-shadow:0 5px 16px rgba(20,48,83,.15);overflow:hidden;
+}
+.azulejo-cover-photo img{width:100%;height:100%;display:block;object-fit:cover;object-position:center 48%}
+.azulejo-cover-blessing{
+ margin:7px 0 3px;color:#315f91;font:italic 15px 'Cormorant Garamond',serif;
+}
+.azulejo-cover-names{
+ margin:3px 0 5px!important;font:500 clamp(29px,7vw,43px)/1.05 'Bodoni Moda',serif!important;
+ letter-spacing:-.045em!important;color:#173d70!important;white-space:normal!important;
+}
+.azulejo-cover-names span{color:#b69a68;font-style:italic}
+.azulejo-cover-date{
+ margin:8px 0 4px;padding:7px 0;width:100%;border-top:1px solid #b69a68;border-bottom:1px solid #b69a68;
+ font:600 10px 'Manrope',sans-serif;letter-spacing:.12em;text-transform:uppercase;color:#244f88;
+}
+.azulejo-cover-place{font:12px/1.5 'Cormorant Garamond',serif;color:#405775;letter-spacing:.035em}
+.azulejo-open{
+ margin:12px 0 0;padding:12px 22px;border:1px solid #244f88;background:#173d70;
+ color:#fffaf0;font:600 9px 'Manrope',sans-serif;letter-spacing:.19em;text-transform:uppercase;
+ cursor:pointer;box-shadow:0 3px 0 #b69a68;transition:transform .2s,background .2s;
+}
+.azulejo-open span{margin-left:8px;color:#e7d5ad}
+.azulejo-open:hover{background:#24558f;transform:translateY(-1px)}
+.azulejo-open:focus-visible{outline:3px solid #b69a68;outline-offset:4px}
+@media(max-width:520px){
+ .azulejo-cover{width:min(94vw,440px)!important;height:min(90dvh,720px)!important}
+ .azulejo-cover-content{inset:11% 14% 9%}
+ .azulejo-cover-photo{height:31%;min-height:112px;max-height:190px}
+ .azulejo-cover-blessing{font-size:13px}
+ .azulejo-cover-names{font-size:clamp(27px,7vw,36px)!important}
+ .azulejo-cover-date{font-size:9px}
+ .azulejo-cover-place{font-size:11px}
+ .azulejo-open{margin-top:9px;padding:10px 18px}
+}
+@media(max-height:650px){
+ .azulejo-cover{height:94dvh!important;width:auto!important}
+ .azulejo-cover-content{inset:9% 14% 7%}
+ .azulejo-cover-photo{height:26%;min-height:80px;max-height:145px;margin-bottom:6px}
+ .azulejo-cover-blessing{margin-top:3px;font-size:12px}
+ .azulejo-cover-names{font-size:29px!important}
+ .azulejo-cover-date{margin:4px 0;font-size:8px;padding:5px 0}
+ .azulejo-cover-place{font-size:10px}
+ .azulejo-open{margin-top:6px;padding:8px 16px}
+}
+
 </style>
 </head>
 <body>
 
-<div class="envelope-intro church-intro church-intro-full" id="envelopeIntro" role="dialog" aria-modal="true" aria-label="Convite ilustrado de casamento de Kathleen e Railander">
-  <div class="church-art-backdrop" aria-hidden="true">
-    <img class="church-backdrop-piece" src="assets/IMG_5377.jpeg" alt="">
-  </div>
-  <div class="church-art-wrap">
-    <img class="church-art-piece" src="assets/IMG_5377.jpeg" alt="Convite ilustrado de Kathleen e Railander." fetchpriority="high" decoding="async">
-    <button class="church-art-hotspot" id="openEnvelope" type="button" aria-label="Entrar no convite" title="Entrar no convite"><span class="sr-only">Entrar no Convite</span></button>
+<div class="envelope-intro church-intro church-intro-full azulejo-intro" id="envelopeIntro" role="dialog" aria-modal="true" aria-label="Convite de casamento de Kathleen e Railander">
+  <div class="church-art-backdrop azulejo-backdrop" aria-hidden="true"></div>
+  <div class="church-art-wrap azulejo-cover">
+    <div class="azulejo-cover-content">
+      <div class="azulejo-cover-kicker">Convite de matrimônio</div>
+      <div class="azulejo-cover-rule">✦ &nbsp; ❧ &nbsp; ✦</div>
+      <figure class="azulejo-cover-photo">
+        <img src="assets/IMG_5377.jpeg" alt="Porta de madeira ornamentada com o monograma RK">
+      </figure>
+      <p class="azulejo-cover-blessing">Com a bênção de Deus e de nossas famílias</p>
+      <h1 class="azulejo-cover-names">Kathleen <span>&</span> Railander</h1>
+      <div class="azulejo-cover-date">18 de dezembro de 2027</div>
+      <div class="azulejo-cover-place">16 horas · Igreja São Sebastião<br>Canoa Quebrada — Ceará</div>
+      <button class="azulejo-open" id="openEnvelope" type="button">Entrar no convite <span>↗</span></button>
+    </div>
   </div>
 </div>
 
