@@ -1449,6 +1449,35 @@ footer strong{font-family:'Allura',cursive!important;font-size:42px!important}
  .quick-action small{font-size:9px}
 }
 
+
+/* Correção do conflito de dimensões entre a antiga capa e o novo cartão azulejado */
+.envelope-intro.church-intro-full .church-art-wrap.azulejo-cover{
+ display:block!important;
+ position:relative!important;
+ flex:none!important;
+ width:min(92vw,500px,67.5dvh)!important;
+ height:auto!important;
+ aspect-ratio:3 / 4!important;
+ min-width:0!important;
+ min-height:0!important;
+ max-width:92vw!important;
+ max-height:none!important;
+ overflow:hidden!important;
+}
+.envelope-intro.church-intro-full .azulejo-cover-content{
+ position:absolute!important;
+ inset:12% 15% 10%!important;
+ width:auto!important;
+ height:auto!important;
+ display:flex!important;
+}
+@media(max-width:520px){
+ .envelope-intro.church-intro-full .church-art-wrap.azulejo-cover{
+  width:min(94vw,440px,67.5dvh)!important;
+ }
+ .envelope-intro.church-intro-full .azulejo-cover-content{inset:11% 14% 9%!important}
+}
+
 </style>
 </head>
 <body>
