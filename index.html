@@ -1813,6 +1813,41 @@ footer strong{font-family:'Allura',cursive!important;font-size:42px!important}
 })();
 #rsvp{scroll-margin-top:100px}
 
+
+/* Refinamento responsivo da página de cerimônia e localização */
+@media(max-width:720px){
+  .details{padding:34px 14px 42px!important}
+  .details .wrap{width:100%;max-width:100%}
+  .details .section-kicker{font-size:10px;letter-spacing:.18em;margin-bottom:8px}
+  .details .section-title{font-size:clamp(34px,9vw,44px)!important;line-height:1.02;margin:0 0 12px}
+  .details>.wrap>.intro{font-size:15px;line-height:1.55;margin:0 auto 22px;max-width:34ch}
+  .detailcards{grid-template-columns:repeat(2,minmax(0,1fr))!important;gap:10px!important;margin-top:18px!important}
+  .detailcards>.detail{min-width:0;margin:0!important;padding:18px 10px!important;outline-offset:2px}
+  .detailcards>.detail .symbol{font-size:20px!important;margin-bottom:4px}
+  .detailcards>.detail h3{font-size:27px!important;line-height:1.05;margin:5px 0 8px!important}
+  .detailcards>.detail p{font-size:12px!important;line-height:1.55!important;margin:0!important;overflow-wrap:anywhere}
+  .detailcards>.detail .button{display:none!important}
+  .church-photo{margin:22px 2px 0!important;padding:7px!important}
+  .church-photo img{height:clamp(210px,62vw,310px)!important;object-fit:cover;object-position:center 52%}
+  .church-video{margin:16px 2px 0!important;padding:7px!important}
+  .church-video video{max-height:52vh!important}
+  .map-panel{grid-template-columns:1fr!important;margin:18px 2px 2px!important;gap:0}
+  .map-info{padding:20px 18px 18px!important;align-items:center!important;text-align:center}
+  .map-info .symbol{font-size:22px!important}
+  .map-info h3{font-size:29px!important;margin:4px 0 7px!important}
+  .map-info p{font-size:12px!important;line-height:1.55!important;margin:3px 0 8px!important;max-width:42ch}
+  .map-info .arrival-note{font-size:16px!important;line-height:1.35!important}
+  .map-info .button{width:100%;max-width:320px;margin-top:8px!important;padding:13px 12px!important;font-size:10px!important}
+  .map-frame,.map-frame iframe{height:250px!important;min-height:250px!important}
+}
+@media(max-width:380px){
+  .detailcards{gap:8px!important}
+  .detailcards>.detail{padding:15px 7px!important}
+  .detailcards>.detail h3{font-size:24px!important}
+  .detailcards>.detail p{font-size:11px!important}
+  .map-frame,.map-frame iframe{height:220px!important;min-height:220px!important}
+}
+
 </style>
 </head>
 <body>
