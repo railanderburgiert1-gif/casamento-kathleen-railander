@@ -2132,6 +2132,27 @@ footer strong{font-family:'Allura',cursive!important;font-size:42px!important}
   .detail-card-link{min-height:195px;padding:12px 6px!important}
 }
 
+
+/* Ícones vetoriais refinados para os cards Quando e Onde */
+.detail-card-link .detail-icon{
+  width:52px!important;height:52px!important;display:grid!important;
+  place-items:center!important;margin:0 auto 9px!important;
+  border:1px solid rgba(184,154,101,.65)!important;border-radius:50%!important;
+  background:linear-gradient(145deg,#fffefa,#f4eee2)!important;
+  box-shadow:0 3px 9px rgba(16,43,89,.07),inset 0 0 0 3px rgba(255,255,255,.8)!important;
+  color:#183b70!important;
+}
+.detail-card-link .detail-icon svg{
+  display:block;width:29px;height:29px;fill:none;
+  stroke:#183b70;stroke-width:2.2;stroke-linecap:round;stroke-linejoin:round;
+}
+.detail-card-link .detail-icon-time svg path{stroke:#b4945b}
+.detail-card-link .detail-icon-place svg circle{fill:#b4945b;stroke:#b4945b}
+@media(max-width:650px){
+  .detail-card-link .detail-icon{width:44px!important;height:44px!important;margin-bottom:7px!important}
+  .detail-card-link .detail-icon svg{width:25px;height:25px}
+}
+
 </style>
 </head>
 <body>
@@ -2192,12 +2213,12 @@ footer strong{font-family:'Allura',cursive!important;font-size:42px!important}
 <a href="casal-igreja-1.jpeg" class="gallery-item" aria-label="Ampliar foto: Casal na igreja"><img src="casal-igreja-1.jpeg" alt="Casal na igreja" loading="lazy" decoding="async"></a><a href="casal-igreja-2.jpeg" class="gallery-item" aria-label="Ampliar foto: Casal na igreja"><img src="casal-igreja-2.jpeg" alt="Casal na igreja" loading="lazy" decoding="async"></a><a href="pedido-1.jpeg" class="gallery-item" aria-label="Ampliar foto: Pedido de casamento"><img src="pedido-1.jpeg" alt="Pedido de casamento" loading="lazy" decoding="async"></a><a href="pedido-3.jpeg" class="gallery-item" aria-label="Ampliar foto: Pedido de casamento"><img src="pedido-3.jpeg" alt="Pedido de casamento" loading="lazy" decoding="async"></a><a href="pedido-4.jpeg" class="gallery-item" aria-label="Ampliar foto: Momento do casal"><img src="pedido-4.jpeg" alt="Momento do casal" loading="lazy" decoding="async"></a><a href="pedido-5.jpeg" class="gallery-item" aria-label="Ampliar foto: Momento do casal"><img src="pedido-5.jpeg" alt="Momento do casal" loading="lazy" decoding="async"></a><a href="gramado-1.jpeg" class="gallery-item" aria-label="Ampliar foto: Viagem do casal a Gramado"><img src="gramado-1.jpeg" alt="Viagem do casal a Gramado" loading="lazy" decoding="async"></a><a href="nova-petropolis.jpeg" class="gallery-item" aria-label="Ampliar foto: Viagem do casal a Nova Petrópolis"><img src="nova-petropolis.jpeg" alt="Viagem do casal a Nova Petrópolis" loading="lazy" decoding="async"></a><a href="3fe81c00-6464-4c64-8613-488e7030d31a.jpeg" class="gallery-item" aria-label="Ampliar foto: Mais um registro de Kathleen e Railander"><img src="3fe81c00-6464-4c64-8613-488e7030d31a.jpeg" alt="Mais um registro de Kathleen e Railander" loading="lazy" decoding="async"></a><a href="IMG_1071.jpeg" class="gallery-item" aria-label="Ampliar foto: Fotografia de Kathleen e Railander"><img src="IMG_1071.jpeg" alt="Fotografia de Kathleen e Railander" loading="lazy" decoding="async"></a><a href="IMG_3646.jpeg" class="gallery-item" aria-label="Ampliar foto: Fotografia de Kathleen e Railander"><img src="IMG_3646.jpeg" alt="Fotografia de Kathleen e Railander" loading="lazy" decoding="async"></a><a href="IMG_3985.jpeg" class="gallery-item" aria-label="Ampliar foto: Fotografia de Kathleen e Railander"><img src="IMG_3985.jpeg" alt="Fotografia de Kathleen e Railander" loading="lazy" decoding="async"></a></div></div></section>
 <section class="details" id="cerimonia"><div class="wrap"><div class="section-kicker">Reserve esta data</div><h2 class="section-title">O nosso casamento</h2><p class="intro">Será uma alegria ter você conosco neste dia tão especial.</p><div class="detailcards">
 <a class="detail detail-card-link" href="#countdown" aria-label="Voltar à contagem regressiva do casamento">
-  <div class="symbol">◷</div><h3>Quando</h3>
+  <div class="symbol detail-icon detail-icon-time" aria-hidden="true"><svg viewBox="0 0 48 48" focusable="false"><circle cx="24" cy="24" r="17.5"/><path d="M24 13v11l8 5"/></svg></div><h3>Quando</h3>
   <p>Sábado, 18 de dezembro de 2027<br>Às 16h</p>
   <span class="detail-card-hint">Ver contagem regressiva ↗</span>
 </a>
 <a class="detail detail-card-link" href="#mapa-igreja" aria-label="Ver localização da Igreja São Sebastião no mapa">
-  <div class="symbol">⌖</div><h3>Onde</h3>
+  <div class="symbol detail-icon detail-icon-place" aria-hidden="true"><svg viewBox="0 0 48 48" focusable="false"><path d="M24 41s14-13.2 14-24a14 14 0 1 0-28 0c0 10.8 14 24 14 24Z"/><circle cx="24" cy="17" r="5"/></svg></div><h3>Onde</h3>
   <p>Igreja São Sebastião<br>Canoa Quebrada · Aracati, CE</p>
   <span class="detail-card-hint">Ver localização ↗</span>
 </a>
