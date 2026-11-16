@@ -1988,6 +1988,42 @@ footer strong{font-family:'Allura',cursive!important;font-size:42px!important}
 .rsvp-match-option small{color:#667085;font:11px 'Manrope',Arial,sans-serif}
 .rsvp-cancel-confirm{margin-top:10px;background:#9b3e3e}
 @media(max-width:720px){.rsvp-change-note{margin:20px 0 0;padding:17px 13px}.rsvp-change-note h3{font-size:23px}.rsvp-lookup-form input{font-size:16px}.rsvp-lookup-form button,.rsvp-cancel-confirm{min-height:50px;font-size:13px}}
+
+/* Capa ampliada para ocupar melhor a tela dos celulares */
+@media(max-width:520px) and (min-height:650px){
+  #envelopeIntro .church-art-wrap.azulejo-cover{
+    width:96vw!important;
+    max-width:500px!important;
+    aspect-ratio:0.62!important;
+    height:auto!important;
+    max-height:84dvh!important;
+  }
+  #envelopeIntro .azulejo-cover-content{
+    inset:9.5% 12% 7.5%!important;
+  }
+  #envelopeIntro .azulejo-cover-kicker{
+    margin-bottom:clamp(7px,1.5dvh,13px)!important;
+    font-size:clamp(10px,2.7vw,12px)!important;
+  }
+  #envelopeIntro .azulejo-cover-photo{
+    width:clamp(155px,49%,205px)!important;
+    height:clamp(185px,26dvh,235px)!important;
+    margin-bottom:clamp(8px,1.4dvh,13px)!important;
+  }
+  #envelopeIntro .azulejo-cover-blessing{font-size:clamp(13px,3.5vw,16px)!important}
+  #envelopeIntro .azulejo-cover-names{font-size:clamp(30px,8vw,40px)!important}
+  #envelopeIntro .azulejo-cover-date{font-size:10px!important;padding:8px 0!important}
+  #envelopeIntro .azulejo-cover-place{font-size:clamp(12px,3.3vw,14px)!important}
+  #envelopeIntro .azulejo-open{margin-top:10px!important;min-height:46px!important;padding:12px 22px!important}
+}
+@media(max-width:520px) and (max-height:649px){
+  #envelopeIntro .church-art-wrap.azulejo-cover{
+    width:min(94vw,440px,82dvh)!important;
+    aspect-ratio:0.68!important;
+    height:auto!important;
+  }
+}
+
 </style>
 </head>
 <body>
