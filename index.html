@@ -2205,7 +2205,7 @@ document.getElementById('rsvpForm').addEventListener('submit',async e=>{
    '<label class="rsvp-match-option"><input type="radio" name="rsvpMatch" value="'+index+'" '+(index===0?'checked':'')+'><span><strong>'+escapeHtml(item.nome)+'</strong><small>'+Number(item.quantidade||1)+' pessoa(s) · Presença confirmada</small></span></label>'
   ).join('')+'<button type="button" class="rsvp-cancel-confirm" id="confirmRsvpCancellation">Cancelar presença</button>';
   document.getElementById('confirmRsvpCancellation').addEventListener('click',async()=>{
-   const selected=form.querySelector('input[name="rsvpMatch"]:checked');
+   const selected=matches.querySelector('input[name="rsvpMatch"]:checked');
    if(!selected)return;
    const item=found[Number(selected.value)];
    if(!window.confirm('Confirma que deseja cancelar a presença de '+item.nome+'?'))return;
@@ -2215,8 +2215,9 @@ document.getElementById('rsvpForm').addEventListener('submit',async e=>{
     p_rsvp_id:item.id,p_nome:nome,p_telefone:telefone
    });
    if(cancelError||cancelled!==true){
+    console.error('Falha ao cancelar RSVP:',cancelError||'A função não confirmou a atualização.');
     cancelButton.disabled=false;cancelButton.textContent='Cancelar presença';
-    message('Não foi possível cancelar. A confirmação pode já ter sido alterada. Atualize a consulta e tente novamente.');return;
+    message(cancelError?'Não foi possível concluir o cancelamento. Verifique sua conexão e tente novamente.':'A confirmação não foi alterada. Atualize a pesquisa e tente novamente.');return;
    }
    matches.hidden=true;matches.innerHTML='';
    message('Presença cancelada. Os noivos receberão a atualização no painel. Obrigado por avisar.');
