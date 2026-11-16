@@ -1563,6 +1563,31 @@ footer strong{font-family:'Allura',cursive!important;font-size:42px!important}
  #envelopeIntro .azulejo-cover-open{margin-top:7px!important}
 }
 
+
+/* Título de abertura inspirado no painel editorial do convite */
+.hero-wedding-heading{
+ max-width:900px;margin:4px auto 24px;padding:0 12px;text-align:center;
+}
+.hero-wedding-heading h2{
+ margin:0;color:#173d70;font-family:'Bodoni Moda','Cormorant Garamond',serif;
+ font-size:clamp(34px,5.5vw,58px);font-weight:500;line-height:1.08;letter-spacing:-.025em;
+}
+.hero-wedding-ornament{
+ margin:13px auto 18px;color:#b69a68;font:22px/1 'Cormorant Garamond',serif;
+ letter-spacing:.08em;white-space:nowrap;
+}
+.hero-wedding-heading p{
+ max-width:760px;margin:0 auto;color:#3d4c67;
+ font-family:'Manrope',sans-serif;font-size:clamp(17px,2.2vw,25px);
+ line-height:1.5;font-weight:400;
+}
+@media(max-width:520px){
+ .hero-wedding-heading{margin:0 auto 18px;padding:0 5px}
+ .hero-wedding-heading h2{font-size:clamp(32px,9vw,42px)}
+ .hero-wedding-ornament{font-size:17px;margin:10px auto 12px}
+ .hero-wedding-heading p{font-size:17px;line-height:1.45}
+}
+
 </style>
 </head>
 <body>
@@ -1590,6 +1615,11 @@ footer strong{font-family:'Allura',cursive!important;font-size:42px!important}
 <section class="hero" id="inicio">
 <div class="hero-inner invitation">
   <div class="invitation-top">✦</div>
+  <div class="hero-wedding-heading">
+    <h2>O nosso casamento</h2>
+    <div class="hero-wedding-ornament" aria-hidden="true">✧ ───── ❧ ───── ✧</div>
+    <p>Será uma alegria ter você conosco neste dia tão especial.</p>
+  </div>
   <div class="eyebrow">Convite de matrimônio</div>
   <img class="hero-church" src="assets/igreja-monograma-rk.webp" alt="Entrada da igreja com portas azul-marinho e monograma RK em dourado">
   <div class="cross-ornament">✝</div>
