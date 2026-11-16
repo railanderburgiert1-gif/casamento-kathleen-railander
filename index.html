@@ -1611,6 +1611,34 @@ footer strong{font-family:'Allura',cursive!important;font-size:42px!important}
  box-shadow:0 8px 22px rgba(23,61,112,.13)!important;
 }
 
+
+/* Fundo azulejado ocupa toda a tela da abertura, inclusive as áreas fora do cartão */
+#envelopeIntro.azulejo-intro{
+ background-color:#f7f4ec!important;
+ background-image:url('assets/azulejo-pattern.svg')!important;
+ background-repeat:repeat!important;
+ background-position:center center!important;
+ background-size:clamp(112px,18vw,170px) auto!important;
+}
+#envelopeIntro.azulejo-intro .azulejo-backdrop{
+ inset:-2%!important;
+ background-image:url('assets/azulejo-pattern.svg')!important;
+ background-repeat:repeat!important;
+ background-position:center center!important;
+ background-size:clamp(112px,18vw,170px) auto!important;
+ filter:none!important;
+ opacity:.96!important;
+ transform:none!important;
+}
+#envelopeIntro.azulejo-intro:after{
+ content:""!important;display:block!important;position:absolute!important;inset:0!important;
+ background:linear-gradient(rgba(251,248,240,.12),rgba(251,248,240,.12)),
+ url('assets/azulejo-pattern.svg') repeat!important;
+ background-size:auto,clamp(112px,18vw,170px) auto!important;
+ opacity:.34!important;pointer-events:none!important;z-index:1!important;
+}
+#envelopeIntro.azulejo-intro .azulejo-cover{z-index:3!important}
+
 </style>
 </head>
 <body>
