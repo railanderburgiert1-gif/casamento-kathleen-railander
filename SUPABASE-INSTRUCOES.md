@@ -52,6 +52,18 @@ Se o banco já foi criado com a versão anterior do SQL, abra **SQL Editor** e e
 
 Depois, entre na área dos noivos, abra **Presentes**, cadastre um item de teste, envie uma imagem JPG/PNG/WebP de até 5 MB e mova o item para cima ou para baixo. Confira a imagem na página pública e exclua o item de teste pelo banco, se necessário. O catálogo permanece vazio até os noivos cadastrarem itens.
 
+## 6. Busca e cancelamento de confirmação de presença
+
+Para permitir que um convidado localize e cancele a própria confirmação:
+
+1. Abra o arquivo `supabase-rsvp-cancellation-migration.sql` deste repositório.
+2. Copie todo o conteúdo e execute no **SQL Editor** do mesmo projeto Supabase.
+3. A migração adiciona o status `Ativa/Cancelada` e duas funções protegidas para localizar e cancelar uma confirmação.
+4. O convidado precisa informar o nome completo e o mesmo telefone cadastrado. O site não publica nem lista os nomes dos convidados.
+5. Após o cancelamento, o registro é preservado com status `Cancelada` e aparece assim no painel dos noivos.
+
+Não execute novamente o script inicial `supabase-setup.sql` em um banco já utilizado. Esta migração é incremental.
+
 ## O que passa a funcionar
 
 - Confirmações de presença gravadas em uma base única, consultável pelos noivos em qualquer dispositivo.
