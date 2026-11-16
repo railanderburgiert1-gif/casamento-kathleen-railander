@@ -1724,6 +1724,29 @@ footer strong{font-family:'Allura',cursive!important;font-size:42px!important}
  .rsvp .wrap>div:has(>#rsvpRailander){flex-direction:column!important;align-items:stretch!important}
 }
 
+
+/* Cartões de acesso em marfim e dourado: alternativa mais quente e clássica */
+.quick-action{
+ color:#173d70!important;
+ background:linear-gradient(145deg,#fffdf8 0%,#f5efe3 100%)!important;
+ border:1px solid #b69a68!important;
+ outline:1px solid rgba(182,154,104,.34)!important;
+ box-shadow:0 3px 10px rgba(78,61,35,.07),inset 0 0 0 1px rgba(255,255,255,.8)!important;
+}
+.quick-action:before{border:1px solid rgba(182,154,104,.38)!important}
+.quick-action:hover{
+ background:linear-gradient(145deg,#fffefa 0%,#eee4d2 100%)!important;
+ box-shadow:0 7px 16px rgba(78,61,35,.12)!important;
+}
+.quick-action-icon{color:#9b7a43!important}
+.quick-action-label{color:#173d70!important}
+.quick-action small{color:#786b58!important}
+@media(max-width:520px){
+ .quick-action{min-height:96px!important;padding:10px 5px!important}
+ .quick-action-label{font-size:10px!important;line-height:1.25!important}
+ .quick-action small{font-size:9px!important}
+}
+
 </style>
 </head>
 <body>
@@ -1772,10 +1795,10 @@ footer strong{font-family:'Allura',cursive!important;font-size:42px!important}
       <span class="quick-action-label">Local do casamento</span>
       <small>Endereço e mapa</small>
     </a>
-    <a class="quick-action" href="#inicio" aria-label="Voltar ao convite">
-      <span class="quick-action-icon">✉</span>
-      <span class="quick-action-label">Convite</span>
-      <small>Ver convite</small>
+    <a class="quick-action" href="#rsvp" aria-label="Confirmar presença no casamento">
+      <span class="quick-action-icon">✓</span>
+      <span class="quick-action-label">Confirmar presença</span>
+      <small>Enviar confirmação</small>
     </a>
     <a class="quick-action" href="presentes.html" aria-label="Acessar lista de presentes">
       <span class="quick-action-icon">✧</span>
