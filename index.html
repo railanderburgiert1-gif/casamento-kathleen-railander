@@ -1588,6 +1588,29 @@ footer strong{font-family:'Allura',cursive!important;font-size:42px!important}
  .hero-wedding-heading p{font-size:17px;line-height:1.45}
 }
 
+
+/* Símbolo da cruz desenhado em CSS para evitar emoji colorido do sistema */
+.hero .cross-ornament{
+ width:30px!important;height:38px!important;position:relative!important;
+ margin:8px auto 15px!important;font-size:0!important;line-height:0!important;
+ color:#315f91!important;
+}
+.hero .cross-ornament span{
+ position:absolute;left:13px;top:2px;width:4px;height:34px;
+ background:linear-gradient(180deg,#315f91,#b69a68);
+ border-radius:1px;
+}
+.hero .cross-ornament span:after{
+ content:"";position:absolute;left:-8px;top:9px;width:20px;height:4px;
+ background:linear-gradient(90deg,#315f91,#b69a68);border-radius:1px;
+}
+.hero .hero-church{
+ width:min(390px,78vw)!important;height:230px!important;
+ object-fit:cover!important;object-position:center 42%!important;
+ border:7px solid #fff!important;outline:1px solid #b69a68;outline-offset:3px;
+ box-shadow:0 8px 22px rgba(23,61,112,.13)!important;
+}
+
 </style>
 </head>
 <body>
@@ -1621,8 +1644,8 @@ footer strong{font-family:'Allura',cursive!important;font-size:42px!important}
     <p>Será uma alegria ter você conosco neste dia tão especial.</p>
   </div>
   <div class="eyebrow">Convite de matrimônio</div>
-  <img class="hero-church" src="assets/igreja-monograma-rk.webp" alt="Entrada da igreja com portas azul-marinho e monograma RK em dourado">
-  <div class="cross-ornament">✝</div>
+  <img class="hero-church" src="assets/Entrada%20da%20Igreja%20Dourada%20com%20Monograma%20RK.png" alt="Entrada da igreja dourada com monograma RK">
+  <div class="cross-ornament" aria-hidden="true"><span></span></div>
   <div class="eyebrow blessing">Com a bênção de Deus e de nossas famílias</div>
   <h1>Kathleen <span class="amp">&</span> Railander</h1>
   <div class="gold-divider">───── ❖ ─────</div>
