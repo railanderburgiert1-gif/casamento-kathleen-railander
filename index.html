@@ -2078,6 +2078,23 @@ footer strong{font-family:'Allura',cursive!important;font-size:42px!important}
   .hero-inner.invitation .invitation-copy:first-of-type{margin-top:8px!important}
 }
 
+
+/* Cabeçalho mais limpo e contagem logo após o título principal */
+.topbar .nav{justify-content:center!important}
+.topbar .brand{display:none!important}
+.hero-inner.invitation > .countdown{
+  margin:10px auto 22px!important;
+  padding:10px 14px!important;
+  max-width:520px!important;
+}
+@media(max-width:650px){
+  .hero-inner.invitation > .countdown{
+    margin:7px auto 16px!important;
+    padding:8px 8px!important;
+    gap:10px!important;
+  }
+}
+
 </style>
 </head>
 <body>
@@ -2094,7 +2111,7 @@ footer strong{font-family:'Allura',cursive!important;font-size:42px!important}
   </div>
 </div>
 
-<header class="topbar"><nav class="nav"><a class="brand" href="#">Kathleen & Railander</a><div class="links"><a href="#historia">História</a><a href="#cerimonia">Cerimônia</a><a href="presentes.html">Presentes</a><a href="#rsvp">Presença</a></div></nav></header>
+<header class="topbar"><nav class="nav"><div class="links"><a href="#historia">História</a><a href="#cerimonia">Cerimônia</a><a href="presentes.html">Presentes</a><a href="#rsvp">Presença</a></div></nav></header>
 <main>
 <section class="hero" id="inicio">
 <div class="hero-inner invitation">
@@ -2104,6 +2121,7 @@ footer strong{font-family:'Allura',cursive!important;font-size:42px!important}
     <div class="hero-wedding-ornament" aria-hidden="true">✧ ───── ❧ ───── ✧</div>
     <p>Será uma alegria ter você conosco neste dia tão especial.</p>
   </div>
+  <div class="countdown" id="countdown"><div><strong>---</strong><span>Dias</span></div><div><strong>--</strong><span>Horas</span></div><div><strong>--</strong><span>Minutos</span></div><div><strong>--</strong><span>Segundos</span></div></div>
   <div class="eyebrow blessing">Com a bênção de Deus e de nossas famílias</div>
   <h1>Kathleen <span class="amp">&</span> Railander</h1>
   <div class="gold-divider">───── ❖ ─────</div>
@@ -2128,7 +2146,7 @@ footer strong{font-family:'Allura',cursive!important;font-size:42px!important}
       <small>Lista de presentes</small>
     </a>
   </nav>
-  <div class="countdown" id="countdown"><div><strong>---</strong><span>Dias</span></div><div><strong>--</strong><span>Horas</span></div><div><strong>--</strong><span>Minutos</span></div><div><strong>--</strong><span>Segundos</span></div></div>
+  
   <div class="invitation-bottom">✦</div>
 </div>
 </section>
