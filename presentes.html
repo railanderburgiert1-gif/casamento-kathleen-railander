@@ -817,6 +817,46 @@ body{font-family:'Manrope',Arial,sans-serif;font-size:15px;line-height:1.6}
 .gift-admin-photo small{display:block;color:#777;margin-top:5px;line-height:1.45}
 @media(max-width:520px){.gift-admin-photo{grid-template-columns:84px minmax(0,1fr)}.gift-admin-photo img{width:84px;height:84px}}
 
+
+/* Unidade visual com o convite: azulejaria portuguesa azul-cobalto e marfim */
+:root{--navy:#173d70;--blue:#24558f;--gold:#b69a68;--ivory:#fbf8f0;--ink:#243752}
+html,body{font-family:'Manrope',sans-serif!important;background-color:var(--ivory)}
+body{
+ background-image:linear-gradient(rgba(251,248,240,.95),rgba(251,248,240,.95)),url('assets/azulejo-pattern.svg')!important;
+ background-size:auto,150px 150px!important;
+}
+body:before{content:"";position:fixed;z-index:19;pointer-events:none;inset:9px;border:1px solid rgba(36,85,143,.58);outline:4px solid rgba(182,154,104,.13);outline-offset:3px}
+.topbar{background:rgba(251,248,240,.97)!important;border-bottom:2px solid #244f88!important;box-shadow:0 3px 15px rgba(23,61,112,.08)!important}
+.brand{font:36px 'Allura',cursive!important;color:#173d70!important}
+.links{font-family:'Manrope',sans-serif!important;color:#244b7b!important;letter-spacing:.12em!important}
+.section-title,.giftgrid .gift h3,.pix-copy>p,.pix-instructions{font-family:'Bodoni Moda','Cormorant Garamond',serif!important;color:#173d70!important}
+.section-title:after{content:"✧  ─────  ❧  ─────  ✧";display:block;margin-top:10px;color:#b69a68;font:17px 'Cormorant Garamond',serif}
+body.gift-page main>.gifts{
+ background:linear-gradient(rgba(251,248,240,.85),rgba(251,248,240,.88)),url('assets/azulejo-pattern.svg') repeat!important;
+ background-size:auto,145px 145px!important;
+ border-top:1px solid #315f91;border-bottom:1px solid #b69a68;
+}
+.giftgrid .gift{
+ position:relative;border:1px solid #315f91!important;border-radius:0!important;
+ background:#fffdf8!important;box-shadow:0 7px 19px rgba(23,61,112,.08)!important;
+}
+.giftgrid .gift:before{content:"✦";position:absolute;top:8px;left:10px;color:#315f91;font-size:13px}
+.giftgrid .gift img{border:4px solid #f8f5ee;outline:1px solid #c7ae81;outline-offset:1px}
+.giftgrid .gift h3{font-weight:500!important}
+.giftgrid .gift button,.pix-options button{
+ border:1px solid #315f91!important;background:#173d70!important;color:#fffaf0!important;
+ letter-spacing:.1em!important;min-height:44px;
+}
+.giftgrid .gift button:disabled{background:#e8e5de!important;color:#747c86!important;border-color:#c8c4ba!important}
+.pixbox{
+ background:#fffdf8!important;border:1px solid #315f91!important;border-radius:0!important;
+ outline:1px solid #b69a68;outline-offset:4px;box-shadow:0 9px 24px rgba(23,61,112,.07)!important;
+}
+.pix-key{background:#f1f4f7!important;border:1px solid #d2dce7;color:#173d70}
+footer{background:rgba(251,248,240,.96)!important;border-top:2px solid #315f91!important}
+footer strong{font:42px 'Allura',cursive!important;color:#173d70!important}
+@media(max-width:720px){body:before{inset:5px}.brand{font-size:30px!important}.giftgrid{gap:12px}}
+
 </style>
 </head>
 <body class="gift-page">
