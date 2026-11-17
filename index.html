@@ -2235,6 +2235,44 @@ footer strong{font-family:'Allura',cursive!important;font-size:42px!important}
   .church-video figcaption{font-size:15px!important;padding:11px 5px 2px!important}
 }
 
+
+/* RSVP simplificado: um único caminho de confirmação e campos confortáveis no celular */
+.rsvp .form{
+  max-width:560px!important;grid-template-columns:1fr!important;gap:15px!important;
+  padding:24px!important;margin:24px auto 0!important;
+  background:#fffdf8!important;border:1px solid #b69a68!important;
+  border-radius:10px!important;box-shadow:0 10px 28px rgba(16,43,89,.10)!important;
+}
+.rsvp .form label{
+  display:block!important;color:#173d70!important;font:600 12px/1.45 'Manrope',sans-serif!important;
+  letter-spacing:.015em!important;text-transform:none!important;
+}
+.rsvp .form input,.rsvp .form select{
+  display:block!important;width:100%!important;min-height:49px!important;
+  margin-top:7px!important;padding:12px 13px!important;
+  border:1px solid #b8c5d5!important;border-radius:7px!important;
+  background:#fff!important;color:#173d70!important;font:15px 'Manrope',sans-serif!important;
+}
+.rsvp .form input:focus,.rsvp .form select:focus{
+  outline:3px solid rgba(49,95,145,.18)!important;border-color:#315f91!important;
+}
+.rsvp .form button{
+  grid-column:1!important;width:100%!important;min-height:52px!important;
+  margin-top:5px!important;padding:14px 18px!important;border-radius:7px!important;
+  background:#173d70!important;color:#fff!important;border:1px solid #b69a68!important;
+  font:700 12px 'Manrope',sans-serif!important;letter-spacing:.09em!important;
+  cursor:pointer!important;
+}
+.rsvp .form button:disabled{opacity:.65;cursor:wait}
+#rsvpFeedback{max-width:560px!important;padding:0 12px;min-height:1.5em}
+#rsvpQuantityLabel.rsvp-hidden{display:none!important}
+@media(max-width:520px){
+ .rsvp .form{padding:18px 15px!important;gap:13px!important;margin-top:18px!important}
+ .rsvp .form label{font-size:12px!important}
+ .rsvp .form input,.rsvp .form select{min-height:50px!important;font-size:16px!important}
+ .rsvp .form button{min-height:54px!important;font-size:12px!important}
+}
+
 </style>
 </head>
 <body>
@@ -2313,13 +2351,15 @@ footer strong{font-family:'Allura',cursive!important;font-size:42px!important}
     <a class="button" href="presentes.html">Ver lista de presentes</a>
   </div>
 </section>
-<section class="rsvp" id="rsvp"><div class="wrap"><div class="section-kicker">Queremos celebrar com você</div><h2 class="section-title">Confirme sua presença</h2><p class="intro">Preencha seus dados para nos ajudar na organização deste dia.</p>
-<form class="form" id="rsvpForm"><label>Nome completo<input required name="nome" maxlength="120" placeholder="Seu nome"></label><label>Telefone / WhatsApp<input required name="telefone" maxlength="25" placeholder="(00) 00000-0000"></label><label>Você poderá comparecer?<select name="presenca"><option>Sim, estarei presente</option><option>Não poderei comparecer</option></select></label><label>Quantidade de pessoas<input type="number" min="1" max="10" value="1" name="quantidade"></label><label class="full">Mensagem aos noivos (opcional)<textarea name="mensagem" rows="3" maxlength="1000" placeholder="Deixe uma mensagem..."></textarea></label><button type="submit">Enviar confirmação</button></form><p id="rsvpFeedback" role="status" style="text-align:center;font-size:13px;color:#17345f;margin:14px auto;max-width:600px"></p>
-<p style="text-align:center;font-size:11px;color:#dce2ef;margin-top:18px">Escolha para qual dos noivos deseja enviar sua confirmação.</p>
-<div style="display:flex;gap:10px;justify-content:center;flex-wrap:wrap;margin-top:12px">
-<a class="button outline" style="border-color:#d7bd88;color:white" href="https://wa.me/5566999084016" id="rsvpRailander">WhatsApp do Railander</a>
-<a class="button outline" style="border-color:#d7bd88;color:white" href="https://wa.me/5588992638694" id="rsvpKathleen">WhatsApp da Kathleen</a>
-</div>
+<section class="rsvp" id="rsvp"><div class="wrap"><div class="section-kicker">Queremos celebrar com você</div><h2 class="section-title">Confirme sua presença</h2><p class="intro">É rápido e simples. Preencha seus dados e envie sua resposta.</p>
+<form class="form" id="rsvpForm" novalidate>
+<label>1. Nome completo<input required name="nome" type="text" autocomplete="name" maxlength="120" placeholder="Digite seu nome completo"></label>
+<label>2. WhatsApp com DDD<input required name="telefone" type="tel" autocomplete="tel" inputmode="tel" maxlength="25" placeholder="(00) 00000-0000"></label>
+<label class="full">3. Você poderá comparecer?<select name="presenca" required><option value="" selected disabled>Selecione uma opção</option><option value="Sim, estarei presente">Sim, estarei presente</option><option value="Não poderei comparecer">Não poderei comparecer</option></select></label>
+<label class="full" id="rsvpQuantityLabel">4. Quantas pessoas irão?<input type="number" min="1" max="10" value="1" name="quantidade" inputmode="numeric" required></label>
+<button type="submit">Confirmar minha resposta</button>
+</form>
+<p id="rsvpFeedback" role="status" aria-live="polite" style="text-align:center;font-size:13px;color:#17345f;margin:14px auto;max-width:600px"></p>
 <div class="rsvp-change-note" id="rsvpCancelArea">
   <h3>Já confirmou presença?</h3>
   <p>Se seus planos mudaram, localize sua confirmação para solicitar o cancelamento.</p>
@@ -2413,16 +2453,14 @@ document.getElementById('rsvpForm').addEventListener('submit',async e=>{
   const guest={nome:String(f.get('nome')||'').trim(),telefone:String(f.get('telefone')||'').trim(),
     presenca:String(f.get('presenca')||''),quantidade:Number(f.get('quantidade')||1),mensagem:String(f.get('mensagem')||'').trim()};
   const feedback=document.getElementById('rsvpFeedback');
-  setRsvpWhatsAppLinks(guest);
-  if(!weddingDb){
-    feedback.textContent='O formulário online está em configuração. Para confirmar agora, use um dos botões de WhatsApp abaixo.';
-    document.getElementById('rsvpRailander').scrollIntoView({behavior:'smooth',block:'center'});
-    return;
+    if(!weddingDb){
+    feedback.textContent='A confirmação online está temporariamente indisponível. Tente novamente em alguns instantes.';
+      return;
   }
   button.disabled=true;button.textContent='Enviando…';feedback.textContent='';
   const {error}=await weddingDb.from('rsvps').insert(guest);
   button.disabled=false;button.textContent='Enviar confirmação';
-  if(error){feedback.textContent='Não foi possível registrar agora. Tente novamente ou envie sua confirmação pelo WhatsApp.';return}
+  if(error){feedback.textContent='Não foi possível registrar sua resposta. Verifique sua conexão e tente novamente.';return}
   feedback.textContent='Confirmação registrada. Obrigado por responder!';
   form.reset();
 });
