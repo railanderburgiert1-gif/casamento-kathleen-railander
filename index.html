@@ -2182,6 +2182,30 @@ footer strong{font-family:'Allura',cursive!important;font-size:42px!important}
 }
 .church-location-link em{display:inline-block;margin-top:2px}
 
+
+/* Fotografia da capela: proporção mais vertical para mostrar a fachada inteira */
+.church-photo{
+  max-width:900px!important;margin:30px auto 0!important;
+  padding:10px!important;border-radius:2px;
+}
+.church-photo img{
+  width:100%!important;height:auto!important;aspect-ratio:4/3!important;
+  object-fit:cover!important;object-position:center 48%!important;
+  background:#f7f2e9;
+}
+.church-photo figcaption{
+  padding:12px 8px 3px!important;text-align:center!important;
+  font-size:11px!important;letter-spacing:.045em!important;
+}
+@media(max-width:720px){
+  .church-photo{width:100%!important;max-width:none!important;margin:22px 0 0!important;padding:7px!important}
+  .church-photo img{
+    height:auto!important;aspect-ratio:4/3!important;
+    object-fit:cover!important;object-position:center 48%!important;
+  }
+  .church-photo figcaption{font-size:10px!important;padding:10px 5px 2px!important}
+}
+
 </style>
 </head>
 <body>
