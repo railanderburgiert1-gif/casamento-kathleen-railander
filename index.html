@@ -2352,7 +2352,7 @@ footer strong{font-family:'Allura',cursive!important;font-size:42px!important}
   </div>
 </section>
 <section class="rsvp" id="rsvp"><div class="wrap"><div class="section-kicker">Queremos celebrar com você</div><h2 class="section-title">Confirme sua presença</h2><p class="intro">É rápido e simples. Preencha seus dados e envie sua resposta.</p>
-<form class="form" id="rsvpForm" novalidate>
+<form class="form" id="rsvpForm">
 <label>1. Nome completo<input required name="nome" type="text" autocomplete="name" maxlength="120" placeholder="Digite seu nome completo"></label>
 <label>2. WhatsApp com DDD<input required name="telefone" type="tel" autocomplete="tel" inputmode="tel" maxlength="25" placeholder="(00) 00000-0000"></label>
 <label class="full">3. Você poderá comparecer?<select name="presenca" required><option value="" selected disabled>Selecione uma opção</option><option value="Sim, estarei presente">Sim, estarei presente</option><option value="Não poderei comparecer">Não poderei comparecer</option></select></label>
@@ -2459,10 +2459,11 @@ document.getElementById('rsvpForm').addEventListener('submit',async e=>{
   }
   button.disabled=true;button.textContent='Enviando…';feedback.textContent='';
   const {error}=await weddingDb.from('rsvps').insert(guest);
-  button.disabled=false;button.textContent='Enviar confirmação';
+  button.disabled=false;button.textContent='Confirmar minha resposta';
   if(error){feedback.textContent='Não foi possível registrar sua resposta. Verifique sua conexão e tente novamente.';return}
   feedback.textContent='Confirmação registrada. Obrigado por responder!';
   form.reset();
+  form.elements.presenca.dispatchEvent(new Event('change'));
 });
 
 
