@@ -2273,6 +2273,83 @@ footer strong{font-family:'Allura',cursive!important;font-size:42px!important}
  .rsvp .form button{min-height:54px!important;font-size:12px!important}
 }
 
+
+
+/* Refinamento da primeira tela e navegação responsiva — nov/2026 */
+html{scroll-padding-top:76px}
+section[id],figure[id],div[id]{scroll-margin-top:76px}
+.topbar{z-index:100;box-shadow:0 3px 14px rgba(16,43,89,.06)}
+.topbar .nav{min-height:58px;padding:10px 22px}
+.topbar .links{align-items:center;gap:clamp(18px,3vw,34px)}
+.topbar .links a{display:inline-flex;align-items:center;min-height:40px;padding:0 3px;position:relative}
+.topbar .links a:after{content:"";position:absolute;left:3px;right:3px;bottom:2px;height:1px;background:#ad8744;transform:scaleX(0);transform-origin:center;transition:transform .2s ease}
+.topbar .links a:hover:after,.topbar .links a:focus-visible:after{transform:scaleX(1)}
+.hero{min-height:0;padding:clamp(42px,6vw,76px) 22px 48px}
+.hero-inner.invitation{display:flex;flex-direction:column;align-items:center;max-width:880px}
+.hero-inner.invitation>.invitation-top{order:0}
+.hero-inner.invitation>.hero-wedding-heading{order:1}
+.hero-inner.invitation>.blessing{order:2}
+.hero-inner.invitation>h1{order:3}
+.hero-inner.invitation>.gold-divider{order:4}
+.hero-inner.invitation>.invitation-copy:first-of-type{order:5}
+.hero-inner.invitation>.invitation-second{order:6}
+.hero-inner.invitation>.date-row{order:7}
+.hero-inner.invitation>.location-line{order:8}
+.hero-inner.invitation>.quick-actions{order:9}
+.hero-inner.invitation>.countdown{order:10}
+.hero-inner.invitation>.invitation-bottom{order:11}
+.hero-inner.invitation>.hero-wedding-heading{margin-bottom:clamp(15px,2vw,24px)}
+.hero-inner.invitation>.blessing{margin:12px auto 5px!important}
+.hero-inner.invitation>h1{margin:5px auto 8px!important}
+.hero-inner.invitation>.gold-divider{margin:6px 0 12px}
+.hero-inner.invitation>.invitation-copy{max-width:66ch;margin:7px auto 10px;font-size:clamp(16px,1.6vw,19px);line-height:1.65}
+.hero-inner.invitation>.date-row{margin:20px auto 12px}
+.hero-inner.invitation>.location-line{margin:8px auto 16px}
+.hero-inner.invitation>.countdown{margin:20px auto 8px!important}
+.quick-actions{width:min(100%,720px);margin:16px auto 8px}
+.quick-action{min-width:0}
+.quick-action:focus-visible,.button:focus-visible,.topbar a:focus-visible{outline:2px solid #ad8744;outline-offset:4px}
+@media(max-width:720px){
+ html{scroll-padding-top:112px}
+ section[id],figure[id],div[id]{scroll-margin-top:112px}
+ .topbar{position:sticky!important;top:0!important;z-index:100;background:rgba(251,247,239,.97);backdrop-filter:blur(12px)}
+ .topbar .nav{display:block!important;width:100%;padding:7px 10px!important;min-height:0}
+ .topbar .links{display:flex!important;justify-content:space-between!important;align-items:center;gap:5px!important;width:100%;overflow-x:auto;overflow-y:hidden;scrollbar-width:none;padding:1px 2px 3px!important}
+ .topbar .links::-webkit-scrollbar{display:none}
+ .topbar .links a{flex:0 0 auto;min-height:42px;padding:0 8px!important;font-size:9px!important;letter-spacing:.045em!important;border:1px solid rgba(173,135,68,.35);border-radius:3px}
+ .topbar .links a:after{display:none}
+ .hero{padding:30px 14px 28px!important;min-height:0!important}
+ .hero-inner.invitation{padding:16px 10px 12px!important}
+ .hero-inner.invitation>.hero-wedding-heading{margin:0 auto 9px!important}
+ .hero-inner.invitation>.hero-wedding-heading h2{font-size:clamp(29px,7.8vw,36px)!important}
+ .hero-inner.invitation>.hero-wedding-heading p{font-size:15px!important;line-height:1.4!important}
+ .hero-inner.invitation>.blessing{font-size:9px!important;letter-spacing:.13em!important;margin:9px auto 4px!important}
+ .hero-inner.invitation>h1{font-size:clamp(43px,11vw,58px)!important;line-height:1.04!important;margin:4px auto 6px!important}
+ .hero-inner.invitation>.invitation-copy{max-width:39ch;font-size:15px!important;line-height:1.5!important;margin:6px auto 8px!important}
+ .hero-inner.invitation>.invitation-second{margin-top:5px!important}
+ .hero-inner.invitation>.date-row{margin:13px auto 8px!important;padding:11px 8px!important;font-size:18px!important;gap:10px!important}
+ .hero-inner.invitation>.date-row i{height:24px}
+ .hero-inner.invitation>.location-line{margin:7px auto 10px!important;padding:11px 10px!important;font-size:13px!important;line-height:1.45!important}
+ .hero-inner.invitation>.location-line em{font-size:16px!important}
+ .quick-actions{gap:7px!important;margin:10px auto 5px!important}
+ .quick-action{padding:10px 6px!important}
+ .quick-action-label{font-size:10px!important;line-height:1.25}
+ .quick-action small{font-size:8px!important}
+ .hero-inner.invitation>.countdown{margin:12px auto 3px!important;padding:7px 5px!important;gap:5px!important}
+ .hero-inner.invitation>.countdown>div{padding:6px 3px!important}
+ .hero-inner.invitation>.countdown strong{font-size:24px!important}
+ .hero-inner.invitation>.countdown span{font-size:7px!important}
+ .hero-inner.invitation>.invitation-bottom{margin-top:5px}
+}
+@media(max-width:360px){
+ .topbar .links a{padding:0 6px!important;font-size:8px!important}
+ .hero-inner.invitation>h1{font-size:42px!important}
+ .hero-inner.invitation>.date-row{font-size:16px!important}
+}
+@media(prefers-reduced-motion:reduce){
+ .topbar .links a:after{transition:none}
+}
+
 </style>
 </head>
 <body>
