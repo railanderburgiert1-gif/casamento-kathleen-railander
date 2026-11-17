@@ -2206,6 +2206,35 @@ footer strong{font-family:'Allura',cursive!important;font-size:42px!important}
   .church-photo figcaption{font-size:10px!important;padding:10px 5px 2px!important}
 }
 
+
+/* Player da capela: formato vertical, moldura discreta e melhor leitura no celular */
+.church-video{
+  width:min(100%,590px)!important;
+  margin:28px auto 0!important;
+  padding:10px!important;
+  border:1px solid #315f91!important;
+  outline:1px solid #b69a68!important;
+  outline-offset:3px;
+  background:#fffdf8!important;
+  box-shadow:0 12px 30px rgba(23,61,112,.12)!important;
+}
+.church-video video{
+  display:block;width:100%!important;height:auto!important;
+  max-height: min(76vh,780px)!important;
+  aspect-ratio:9/16;object-fit:contain!important;
+  background:#101820;border:0;
+}
+.church-video figcaption{
+  padding:13px 8px 3px!important;text-align:center!important;
+  font:italic 17px/1.35 "Cormorant Garamond",serif!important;
+  letter-spacing:.015em;color:#59677d!important;
+}
+@media(max-width:720px){
+  .church-video{width:100%!important;margin:22px 0 0!important;padding:7px!important}
+  .church-video video{max-height:66svh!important;aspect-ratio:9/16}
+  .church-video figcaption{font-size:15px!important;padding:11px 5px 2px!important}
+}
+
 </style>
 </head>
 <body>
@@ -2275,7 +2304,7 @@ footer strong{font-family:'Allura',cursive!important;font-size:42px!important}
   <p><a class="church-media-link" href="#fotos-igreja">Igreja São Sebastião</a><br>Canoa Quebrada · Aracati, CE</p>
   <a class="detail-card-hint" href="#mapa-igreja">Ver localização ↗</a>
 </div>
-</div><figure class="church-photo" id="fotos-igreja"><img src="temp_image_A2601429-6E15-4153-A27D-582162E420E7.webp" alt="Fachada da Capela São Sebastião em Canoa Quebrada, com escadaria central e fachada branca" loading="lazy" decoding="async"><figcaption>Capela de Canoa Quebrada · Fotografia enviada pelos noivos</figcaption></figure><figure class="church-video"><video controls playsinline preload="metadata" poster="temp_image_A2601429-6E15-4153-A27D-582162E420E7.webp"><source src="video-capela-sao-sebastiao-otimizado.mov" type="video/quicktime">Seu navegador não consegue reproduzir este vídeo. Atualize o navegador para assistir.</video><figcaption>Conheça em vídeo o local da nossa cerimônia</figcaption></figure><div class="map-panel" id="mapa-igreja"><div class="map-info"><div class="symbol">⌖</div><h3>Como chegar</h3><p>A igreja fica na Rua Toquinho, em Canoa Quebrada. Use o mapa ao lado para visualizar a localização e planejar seu trajeto.</p><p class="arrival-note">A cerimônia começa às 16h. Programe sua chegada com antecedência.</p><a class="button" target="_blank" rel="noopener" href="https://www.google.com/maps/dir/?api=1&destination=Igreja+de+S%C3%A3o+Sebasti%C3%A3o%2C+Rua+Toquinho%2C+539%2C+Canoa+Quebrada%2C+Aracati+-+CE">Abrir navegação no Google Maps</a></div><div class="map-frame"><iframe title="Mapa da Igreja São Sebastião em Canoa Quebrada" src="https://www.google.com/maps?q=Igreja+de+S%C3%A3o+Sebasti%C3%A3o%2C+Rua+Toquinho%2C+539%2C+Canoa+Quebrada%2C+Aracati+-+CE&output=embed" loading="lazy" referrerpolicy="no-referrer-when-downgrade" allowfullscreen></iframe></div></div></div></section>
+</div><figure class="church-photo" id="fotos-igreja"><img src="temp_image_A2601429-6E15-4153-A27D-582162E420E7.webp" alt="Fachada da Capela São Sebastião em Canoa Quebrada, com escadaria central e fachada branca" loading="lazy" decoding="async"><figcaption>Capela de Canoa Quebrada · Fotografia enviada pelos noivos</figcaption></figure><figure class="church-video" aria-label="Vídeo da Igreja São Sebastião"><video controls playsinline preload="metadata" poster="temp_image_A2601429-6E15-4153-A27D-582162E420E7.webp" aria-label="Vídeo da fachada e do entorno da Igreja São Sebastião"><source src="video-capela-sao-sebastiao.mp4" type="video/mp4">Seu navegador não consegue reproduzir este vídeo. Atualize o navegador para assistir.</video><figcaption>Um olhar especial sobre o lugar onde vamos celebrar nosso casamento</figcaption></figure><div class="map-panel" id="mapa-igreja"><div class="map-info"><div class="symbol">⌖</div><h3>Como chegar</h3><p>A igreja fica na Rua Toquinho, em Canoa Quebrada. Use o mapa ao lado para visualizar a localização e planejar seu trajeto.</p><p class="arrival-note">A cerimônia começa às 16h. Programe sua chegada com antecedência.</p><a class="button" target="_blank" rel="noopener" href="https://www.google.com/maps/dir/?api=1&destination=Igreja+de+S%C3%A3o+Sebasti%C3%A3o%2C+Rua+Toquinho%2C+539%2C+Canoa+Quebrada%2C+Aracati+-+CE">Abrir navegação no Google Maps</a></div><div class="map-frame"><iframe title="Mapa da Igreja São Sebastião em Canoa Quebrada" src="https://www.google.com/maps?q=Igreja+de+S%C3%A3o+Sebasti%C3%A3o%2C+Rua+Toquinho%2C+539%2C+Canoa+Quebrada%2C+Aracati+-+CE&output=embed" loading="lazy" referrerpolicy="no-referrer-when-downgrade" allowfullscreen></iframe></div></div></div></section>
 <section class="gift-page-cta">
   <div class="gift-page-cta-inner">
     <div class="section-kicker">Um carinho para nossa nova etapa</div>
